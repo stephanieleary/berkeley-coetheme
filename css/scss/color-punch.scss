@@ -1,0 +1,167 @@
+$blue: 					#003262;
+$gold: 					#fdb515;
+$founders-rock: 		#3b7ea1;
+$medalist: 				#c4820e;
+$wellman-tile: 			#d9661f;
+$rose-garden:			#ee1f60;
+$golden-gate:			#ed4e33;
+$south-hall:			#6c3302;
+$bay-fog:				#ddd5c7;
+$lawrence:				#00b0da;
+$lap-lane:				#00a598;
+$pacific:				#46535e;
+$sather-gate:			#b9d3b6;
+$ion:					#cfdd45;
+$soybean:				#859438;
+$stone-pine:			#584f29;
+$light-gray:			#eee;
+$med-gray:				#888;
+$super-light-gray:		#f0f0f0;
+
+
+/* # Punch */
+
+.punch.light .site-title a,
+.punch.light .site-title a:hover {
+	color: $founders-rock;
+}
+
+.punch.light .site-description {
+	color: $lawrence;
+}
+
+.punch tbody {
+	border-bottom: 1px solid lighten($soybean, 30%);
+}
+
+.punch td,
+.punch th {
+	border-top: 1px solid lighten($soybean, 40%);
+}
+
+.punch tr:nth-child(odd) th,
+.punch tr:nth-child(odd) td {
+	background: lighten($soybean, 53%);
+}
+
+.punch thead tr:nth-child(odd) th,
+.punch tfoot tr:nth-child(odd) th {
+	background: lighten($soybean, 40%);
+}
+
+.punch .sidebar .widget.widget_search,
+.punch .sidebar .widget.widget_search .widget-title {
+	background-color: $rose-garden;
+	color: #fff;
+}
+
+.punch .sidebar .widget.bold,
+.punch-light .sidebar .widget.bold {
+	background: $soybean;
+	color: #fff;
+}
+
+.punch button,
+.punch input[type="button"],
+.punch input[type="reset"],
+.punch input[type="submit"],
+.punch .button {
+	background-color: $ion;
+	color: $blue;
+}
+
+.punch button:hover,
+.punch input:hover[type="button"],
+.punch input:hover[type="reset"],
+.punch input:hover[type="submit"],
+.punch .button:hover {
+	background-color: $blue;
+	color: $ion;
+}
+
+.punch .sidebar .widget.subtle {
+	background: lighten($soybean, 40%);
+	color: $blue;
+}
+
+.punch .sidebar .widget.subtle .button {
+	background: $blue;
+	color: $ion;
+}
+
+.punch .accordion-toggle:nth-of-type(odd),
+.punch .accordion-content:nth-of-type(odd) {
+	background-color: lighten($soybean, 40%);
+}
+
+.punch .accordion-toggle:nth-of-type(1),
+.punch .accordion-content:nth-of-type(1) {
+	background-color: $soybean;
+	color: #fff;
+}
+
+.punch #genesis-footer-widgets .widget,
+.punch #genesis-footer-widgets .widget.index-1,
+.punch #genesis-footer-widgets .widget.index-5,
+.punch #genesis-footer-widgets .widget.index-9 {
+	background: darken($lawrence, 5%);
+	color: #fff;
+}
+
+.punch #genesis-footer-widgets .widget.index-2,
+.punch #genesis-footer-widgets .widget.index-6,
+.punch #genesis-footer-widgets .widget.index-2 .widget-title,
+.punch #genesis-footer-widgets .widget.index-6 .widget-title, {
+	background: darken($soybean, 2%);
+	color: #fff;
+}
+
+.punch #genesis-footer-widgets .widget.index-3,
+.punch #genesis-footer-widgets .widget.index-7 {
+	background: darken($gold, 8%);
+	color: #fff;
+}
+
+.punch #genesis-footer-widgets .widget.index-4,
+.punch #genesis-footer-widgets .widget.index-8 {
+	background: darken($rose-garden, 8%);
+	color: #fff;
+}
+
+.punch #genesis-footer-widgets .widget a,
+.punch #genesis-footer-widgets .widget.index-1 a,
+.punch #genesis-footer-widgets .widget.index-5 a,
+.punch #genesis-footer-widgets .widget.index-9 a {
+	color: #000;
+}
+
+.punch #genesis-footer-widgets .widget.index-2 a,
+.punch #genesis-footer-widgets .widget.index-6 a,
+.punch #genesis-footer-widgets .widget.index-3 a,
+.punch #genesis-footer-widgets .widget.index-7 a, {
+	color: $blue;
+}
+
+.punch #genesis-footer-widgets .widget.index-4 a,
+.punch #genesis-footer-widgets .widget.index-8 a {
+	color: $ion;
+}
+
+.punch #genesis-footer-widgets .widget.index-2 button,
+.punch #genesis-footer-widgets .widget.index-2 input[type="button"],
+.punch #genesis-footer-widgets .widget.index-2 input[type="reset"],
+.punch #genesis-footer-widgets .widget.index-2 input[type="submit"],
+.punch #genesis-footer-widgets .widget.index-2 .button,
+.punch #genesis-footer-widgets .widget.index-6 button,
+.punch #genesis-footer-widgets .widget.index-6 input[type="button"],
+.punch #genesis-footer-widgets .widget.index-6 input[type="reset"],
+.punch #genesis-footer-widgets .widget.index-6 input[type="submit"],
+.punch #genesis-footer-widgets .widget.index-6 .button,
+.punch #genesis-footer-widgets .widget.index-4 button,
+.punch #genesis-footer-widgets .widget.index-4 input[type="button"],
+.punch #genesis-footer-widgets .widget.index-4 input[type="reset"],
+.punch #genesis-footer-widgets .widget.index-4 input[type="submit"],
+.punch #genesis-footer-widgets .widget.index-4 .button {
+	background-color: darken($ion, 10%);
+	color: $blue;
+}

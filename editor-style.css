@@ -1,0 +1,273 @@
+/* ## Typographical Elements
+--------------------------------------------- */
+body {
+  color: #46535e;
+  font-family: "freight sans pro", "open sans", Arial, sans-serif;
+  font-size: 18px;
+}
+
+body.whitepaper {
+	font-family: "source serif pro", "Georgia", "Times New Roman", serif;
+}
+
+a {
+  color: #3b7ea1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00b0da;
+}
+
+p {
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+ol > li {
+  list-style-type: decimal;
+}
+
+ol li li {
+  list-style-type: upper-alpha;
+}
+
+ol li li li {
+  list-style-type: upper-roman;
+}
+
+ol li li li li {
+  list-style-type: lower-alpha;
+}
+
+ol li li li li li {
+  list-style-type: lower-roman;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 20px 20px 20px 30px;
+}
+
+blockquote::before {
+  content: "\201C";
+  display: block;
+  font-size: 30px;
+  height: 0;
+  left: -20px;
+  position: relative;
+  top: -10px;
+}
+
+/* ## Headings
+--------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #46535e;
+  font-family: "freight sans pro", "open sans", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+img {
+  height: auto;
+}
+
+.featured-content img,
+.gallery img {
+  width: auto;
+}
+
+/* ## Tables
+--------------------------------------------- */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 2;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+tbody {
+  border-bottom: 1px solid #c0dae8;
+}
+
+td,
+th {
+  text-align: left;
+  border-top: 1px solid #c0dae8;
+  padding: .5em 1em .5em .5em;
+  vertical-align: top;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+  padding: .5em;
+}
+
+th {
+  font-weight: 700;
+}
+
+tr:nth-child(odd) th,
+tr:nth-child(odd) td {
+  background: #f1f7fa;
+}
+
+thead tr:nth-child(odd) th,
+tfoot tr:nth-child(odd) th {
+  background: #d3e5ef;
+}
+
+/* ## WordPress
+--------------------------------------------- */
+a.aligncenter img {
+  display: block;
+  margin: 0 auto;
+}
+
+a.alignnone {
+  display: inline-block;
+}
+
+.alignleft {
+  float: left;
+  text-align: left;
+}
+
+.alignright {
+  float: right;
+  text-align: right;
+}
+
+.pullquote.alignright {
+  text-align: left;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+  max-width: 100%;
+}
+
+img.centered,
+.aligncenter {
+  display: block;
+  margin: 0 auto 24px;
+}
+
+img.alignnone,
+.alignnone {
+  margin-bottom: 12px;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+  margin: 0 24px 24px 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+  margin: 0 0 24px 24px;
+}
+
+.wp-caption-text {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}
+
+p.wp-caption-text {
+  margin-bottom: 0;
+}
+
+.pullquote {
+  background-color: #fdb515;
+  color: #003262;
+  width: 16em;
+  margin: 1em;
+}
+
+.pullquote.alignnone {
+  width: 24em;
+}
+
+.pullquote.alignright {
+  margin-right: 0;
+}
+
+.pullquote.alignleft {
+  margin-left: 0;
+}
+
+ol,
+ul {
+  margin-bottom: 28px;
+  margin-left: 40px;
+}
+
+ul > li {
+  list-style-type: disc;
+}
+
+ol ol,
+ul ul {
+  margin-bottom: 0;
+}
+
+code {
+  background-color: #46535e;
+  color: #ddd;
+}
+
