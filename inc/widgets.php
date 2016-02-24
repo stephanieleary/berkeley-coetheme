@@ -30,7 +30,7 @@ function berkeley_widget_class_form_extend( $instance, $widget ) {
 add_filter( 'widget_form_callback', 'berkeley_widget_class_form_extend', 10, 2 );
 
 function berkeley_widget_class_update( $instance, $new_instance ) {
-	if ( in_array( $new_instance['classes'], array( 'bold', 'subtle' ) ) )
+	if ( isset( $new_instance['classes'] ) && in_array( $new_instance['classes'], array( 'bold', 'subtle' ) ) )
 		$instance['classes'] = $new_instance['classes'];
 	return $instance;
 }
