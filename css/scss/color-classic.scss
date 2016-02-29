@@ -21,6 +21,11 @@ $super-light-gray:		#f0f0f0;
 
 /* # Classic */
 
+.classic .featured-image {
+	background-color: $wellman-tile;
+	color: #fff;
+}
+
 .classic .archive-pagination li a {
 	background-color: $blue;
 	color: #fff;
@@ -34,6 +39,10 @@ $super-light-gray:		#f0f0f0;
 .classic .pullquote {
 	background-color: $medalist;
 	color: #fff;
+}
+
+.classic .site-header .widget-area .select-menu {
+	background-color: $founders-rock;
 }
 
 .classic .genesis-nav-menu a,

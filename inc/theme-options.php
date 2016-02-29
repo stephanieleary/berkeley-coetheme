@@ -4,7 +4,6 @@
 function berkeley_settings_admin_styles( $hook ) {
     //if ( 'genesis' == $hook || 'toplevel_page_genesis' == $hook )
 		wp_enqueue_style( 'genesis-theme-options-css', get_stylesheet_directory_uri() . '/css/admin-style.css' );
-    
 }
 add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
 
@@ -12,9 +11,7 @@ add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
 function berkeley_register_options_settings_box( $_genesis_theme_settings_pagehook ) {
 	add_meta_box( 'berkeley-logo-settings', __('Berkeley Engineering Logo'), 'berkeley_logo_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
 	add_meta_box( 'berkeley-color-settings', __('Color Scheme'), 'berkeley_color_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
-	add_meta_box( 'berkeley-layout-settings', __('Default Layout'), 'berkeley_layout_metabox', $_genesis_theme_settings_pagehook, 'main', 'high' );
 	remove_meta_box( 'genesis-theme-settings-style-selector', $_genesis_theme_settings_pagehook, 'main' );
-	remove_meta_box( 'genesis-theme-settings-layout', $_genesis_theme_settings_pagehook, 'main' );
 	remove_meta_box( 'genesis-theme-settings-header', $_genesis_theme_settings_pagehook, 'main' );
 }
 add_action( 'genesis_theme_settings_metaboxes', 'berkeley_register_options_settings_box' );
@@ -192,27 +189,5 @@ function berkeley_color_settings_box() {
 
 			</tbody>
 			</table>
-	<?php
-}
-
-function berkeley_layout_metabox() { ?>
-	<table class="form-table">
-	<tbody>
-
-		<tr valign="top">
-			<th scope="row"><?php _e( 'Select Default Layout', 'genesis' ); ?></th>
-			<td>
-				<fieldset class="genesis-layout-selector">
-				<legend class="screen-reader-text"><?php _e( 'Default Layout', 'genesis' ); ?></legend>
-
-				<?php genesis_layout_selector( array( 'name' => GENESIS_SETTINGS_FIELD . "['site_layout']", 'selected' => genesis_get_option( 'site_layout' ), 'type' => 'site' ) );?>
-
-				</fieldset>
-				<br class="clear" />
-			</td>
-		</tr>
-
-	</tbody>
-	</table>
 	<?php
 }

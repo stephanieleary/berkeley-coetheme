@@ -20,6 +20,14 @@ $super-light-gray:		#f0f0f0;
 
 /* # Pacific */
 
+.pacific .site-header .widget-area .select-menu {
+	background-color: $pacific;
+}
+
+.pacific .featured-image {
+	background: $golden-gate;
+	color: #fff;
+}
 
 .pacific .site-header,
 .pacific .site-footer {

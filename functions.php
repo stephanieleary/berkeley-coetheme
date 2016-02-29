@@ -3,6 +3,7 @@
 include_once( get_template_directory() 	 . '/lib/init.php' );
 include_once( get_stylesheet_directory() . '/inc/announcements.php' );
 include_once( get_stylesheet_directory() . '/inc/content-filters.php' );
+//include_once( get_stylesheet_directory() . '/inc/cpt-grid-loops.php' );
 include_once( get_stylesheet_directory() . '/inc/editor.php' );
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/inc/loops.php' );
@@ -18,11 +19,11 @@ define( 'CHILD_THEME_URL', 'http://www.stephanieleary.com/' );
 define( 'CHILD_THEME_VERSION', '2.1.2' ); 
 
 //* Add Fonts
-add_action( 'wp_head', 'berkeley_typekit' );
-function berkeley_typekit() {
+add_action( 'wp_head', 'berkeley_fonts' );
+function berkeley_fonts() {
 	if ( !is_admin() )
-		echo '<script src="https://use.typekit.net/yna8wsa.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>';
+		echo "<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700' rel='stylesheet' type='text/css'>";
 }
 
 //* Add HTML5 markup structure
@@ -37,6 +38,17 @@ remove_theme_support( 'genesis-custom-header' );
 
 //* Add support for after-entry widget area (blog posts only)
 // add_theme_support( 'genesis-after-entry-widget-area' );
+//* Add support for after-entry widget area to posts pages
+add_action( 'genesis_entry_footer', 'berkeley_after_entry_widget'  ); 
+function berkeley_after_entry_widget() {
+	if ( ! is_single() && ! is_page() )
+		return;
+
+	genesis_widget_area( 'after-entry', array(
+		'before' => '<div class="after-entry widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+	) );
+}
 
 //* Accessibility features
 add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu', 'search-form', 'skip-links', 'rems' ) );

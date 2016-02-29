@@ -64,6 +64,9 @@ body.woods {
   background: #584f29;
   color: #fdb515; }
 
+.woods .site-header .widget-area .select-menu {
+  background-color: #6e7a2e; }
+
 .woods .genesis-nav-menu a,
 .woods .genesis-nav-menu .sub-menu a {
   color: #6e7a2e; }

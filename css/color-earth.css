@@ -291,6 +291,9 @@ body.earth {
 .earth.light .sidebar .widget_nav_menu li {
   border-color: #ddd5c7; }
 
+.earth .site-header .widget-area .select-menu {
+  background-color: #6c3302; }
+
 .earth.light .genesis-nav-menu a,
 .earth.light .genesis-nav-menu .sub-menu a {
   color: #ddd5c7; }

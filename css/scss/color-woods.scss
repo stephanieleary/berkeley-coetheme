@@ -103,6 +103,10 @@ body.woods {
 	color: $gold;
 }
 
+.woods .site-header .widget-area .select-menu {
+	background-color: darken($soybean, 7%);
+}
+
 .woods .genesis-nav-menu a,
 .woods .genesis-nav-menu .sub-menu a {
 	color: darken($soybean, 7%);

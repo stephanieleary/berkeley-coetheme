@@ -1,4 +1,8 @@
 /* # Classic */
+.classic .featured-image {
+  background-color: #d9661f;
+  color: #fff; }
+
 .classic .archive-pagination li a {
   background-color: #003262;
   color: #fff; }
@@ -10,6 +14,9 @@
 .classic .pullquote {
   background-color: #c4820e;
   color: #fff; }
+
+.classic .site-header .widget-area .select-menu {
+  background-color: #3b7ea1; }
 
 .classic .genesis-nav-menu a,
 .classic .genesis-nav-menu .sub-menu a {

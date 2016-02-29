@@ -83,7 +83,7 @@ $stone-pine:			#584f29;
 $light-gray:			#eee;
 $med-gray:				#888;
 $super-light-gray:		#f0f0f0;
-$fonts-sans:			"freight sans pro", "open sans", Arial, sans-serif;
+$fonts-sans:			"Lato", "open sans", Arial, sans-serif;
 $fonts-serif:			"source serif pro", "Georgia", "Times New Roman", serif;
 $standard-padding: 		16px 24px;
 $widget-padding: 		24px 24px 16px;
@@ -335,9 +335,10 @@ i {
 }
 
 blockquote {
-	margin: 20px 20px 20px 30px;
+	margin: 20px;
 }
 
+/*
 blockquote::before {
 	content: "\201C";
 	display: block;
@@ -347,6 +348,7 @@ blockquote::before {
 	position: relative;
 	top: -10px;
 }
+/**/
 
 blockquote cite {
 	display: block;
@@ -926,6 +928,15 @@ img.alignright,
 .sticky {
 }
 
+.featured-image {
+	background: $soybean;
+	color: #fff;
+}
+
+.featured-image img {
+	display: block;
+	margin: 0 auto;
+}
 
 /* # Widgets
 ---------------------------------------------------------------------------------------------------- */
@@ -1143,6 +1154,38 @@ img.alignright,
 	color: #fff;
 }
 
+/* # Nav Menu Dropdown Widget
+----------------------------------------------- */
+
+.select-menu select {
+	margin-top: 8px;
+	width: 262px;
+}
+
+/* # Berkeley Events Widget
+----------------------------------------------- */
+
+.event-title {
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.event-date {
+	color: $med-gray;
+}
+
+.event-title,
+.event-date,
+.event-locations,
+.event-desc,
+.event-speakers {
+	margin-bottom: 0;
+}
+
+.event-desc {
+	margin-top: 1em;
+}
+
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1172,8 +1215,8 @@ img.alignright,
 
 .site-title {
 	font-family: $fonts-serif;
-	font-size: 36px;
-	font-weight: 400;
+	font-size: 42px;
+	font-weight: 600;
 	line-height: 1.2;
 }
 
@@ -1210,6 +1253,30 @@ img.alignright,
 .pool .site-header .button {
 	background-color: $gold;
 	color: $blue;
+}
+
+.site-header .widget-area .select-menu {
+	background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+	background-color: $lawrence;
+    float: right;
+    height: 36px;
+    margin-top: 0.5em;
+    overflow: hidden;
+    text-align: left;
+    width: 282px;
+}
+
+.site-header .widget-area .select-menu select {
+	background: transparent;
+	border: none;
+	color: #fff;
+	height: inherit;
+	max-width: 120%;
+	padding: 0 5px;
+}
+
+.site-header .widget-area .select-menu option {
+	border: none;
 }
 
 /* # Site Navigation
@@ -1705,12 +1772,9 @@ li.comment {
 }
 
 .site-footer .footer-content {
-	clear: left;
-	float: left;
 	margin: 0;
 	padding: 1.2em 0;
-	text-align: left;
-	width: 31.623931623931625%; /* 1/3; see column widths */
+	text-align: center;
 }
 
 .site-footer .genesis-nav-menu {
@@ -1718,11 +1782,8 @@ li.comment {
 }
 
 .site-footer .genesis-nav-menu .footer-menu {
-	float: right;
-	margin-left: 2.564102564102564%;
-	text-align: right;
-	vertical-align: top;
-	width: 65.81196581196582%; /* 2/3; see column widths */
+	margin: 0 0 1em;
+	text-align: center;
 }
 
 .site-footer .genesis-nav-menu .footer-menu a {
@@ -1925,17 +1986,6 @@ li.comment {
 	.footer-widgets .widget.span-3,
 	.sidebar-primary {
 		width: 300px;
-	}
-	
-	.site-footer .footer-content {
-		text-align: center;
-		width: 100%;
-	}
-	
-	.site-footer .genesis-nav-menu .footer-menu {
-		margin: 0 0 1em;
-		text-align: center;
-		width: 100%;
 	}
 
 }
