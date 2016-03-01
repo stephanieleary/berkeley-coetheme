@@ -8,7 +8,21 @@ function berkeley_course_table_loop() {
 
 		do_action( 'genesis_before_while' );
 		
-		$headers = array( __('Course Number'), __('Credits'), __('Title') );
+		$args = array(
+			'post_type' => 'course',
+			'meta_query' => array(
+				array(
+					'key' => 'times',
+					'compare' => 'EXISTS',
+				)
+			)
+		 );
+		$havetimes = get_posts( $args );
+		
+		$headers = array( __('Course'), __('Number'), __('Instructor(s)') );
+		if ( count( $havetimes ) )
+			$headers[] = __('Times');
+			
 		echo berkeley_loop_table_headers( $headers );
 	
 		while ( have_posts() ) : the_post();
@@ -16,10 +30,12 @@ function berkeley_course_table_loop() {
 			do_action( 'genesis_before_entry' );
 			
 			$data = array( 
-				__('Course Number') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_field( 'course_number' ) ),
-				__('Credits') => get_field( 'credits' ),
-				__('Title') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() )		
-					);
+				__('Course') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
+				__('Number') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_field( 'course_number' ) ),
+				__('Instructor(s)') => get_field( 'instructors' )		
+			);
+			if ( count( $havetimes ) )
+				$data[__('Times')] = get_field( 'times' );
 			
 			echo berkeley_loop_table_cells( $data );
 			

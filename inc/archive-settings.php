@@ -13,8 +13,8 @@ function berkeley_cpt_slugs() {
 		if ( empty( $slug ) )
 			continue;
 		
-		if ( taxonomy_exists( $slug ) || post_type_exists( $slug )  ) {		
-			add_action( 'admin_notices', 'berkeley_cpt_error_notice' );
+		if ( taxonomy_exists( $slug ) || post_type_exists( $slug ) ) {		
+			add_action( 'admin_notices', 'berkeley_cpt_url_error_notice' );
 			return;
 		}	
 
@@ -65,7 +65,7 @@ function berkeley_cpt_url_genesis_sanitize_settings() {
     
 }
 
-function berkeley_cpt_error_notice() {
+function berkeley_cpt_url_error_notice() {
 	printf( '<div class="error notice"><p>%s</p></div>', __( 'The URL slug you have entered is already being used by another post type or taxonomy. This archive will be unreachable until you choose a different slug.' ) );
 }
 
