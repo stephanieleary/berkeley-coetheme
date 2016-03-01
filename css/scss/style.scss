@@ -1154,14 +1154,6 @@ img.alignright,
 	color: #fff;
 }
 
-/* # Nav Menu Dropdown Widget
------------------------------------------------ */
-
-.select-menu select {
-	margin-top: 8px;
-	width: 262px;
-}
-
 /* # Berkeley Events Widget
 ----------------------------------------------- */
 
@@ -1263,7 +1255,7 @@ img.alignright,
     margin-top: 0.5em;
     overflow: hidden;
     text-align: left;
-    width: 282px;
+    width: 262px;
 }
 
 .site-header .widget-area .select-menu select {
@@ -1273,6 +1265,7 @@ img.alignright,
 	height: inherit;
 	max-width: 120%;
 	padding: 0 5px;
+	width: 282px; /* hide browser dropdown arrow */
 }
 
 .site-header .widget-area .select-menu option {
