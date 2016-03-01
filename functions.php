@@ -2,8 +2,8 @@
 //* Start the engine
 include_once( get_template_directory() 	 . '/lib/init.php' );
 include_once( get_stylesheet_directory() . '/inc/announcements.php' );
+include_once( get_stylesheet_directory() . '/inc/archive-settings.php' );
 include_once( get_stylesheet_directory() . '/inc/content-filters.php' );
-//include_once( get_stylesheet_directory() . '/inc/cpt-grid-loops.php' );
 include_once( get_stylesheet_directory() . '/inc/editor.php' );
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/inc/loops.php' );
