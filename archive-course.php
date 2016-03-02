@@ -9,10 +9,12 @@ function berkeley_course_table_loop() {
 		do_action( 'genesis_before_while' );
 		
 		$args = array(
-			'post_type' => 'course',
-			'meta_query' => array(
+			'post_type'  	  => 'course',
+			'posts_per_page'  => -1,
+			'fields' 		  => 'ids',
+			'meta_query' 	  => array(
 				array(
-					'key' => 'times',
+					'key' 	  => 'times',
 					'compare' => 'EXISTS',
 				)
 			)
