@@ -246,13 +246,13 @@ body.woods {
 	background: lighten($soybean, 40%);
 }
 
-.woods .accordion-toggle:nth-of-type(odd),
-.woods .accordion-content:nth-of-type(odd) {
+.woods .accordion-toggle:nth-of-type(even),
+.woods .accordion-content:nth-of-type(even) {
 	background-color: lighten($soybean, 40%);
 }
 
-.woods .accordion-toggle:nth-of-type(1),
-.woods .accordion-content:nth-of-type(1) {
+.woods .accordion-toggle:nth-of-type(odd),
+.woods .accordion-content:nth-of-type(odd) {
 	background-color: darken($soybean, 7%);
 	color: #fff;
 }

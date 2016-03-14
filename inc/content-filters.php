@@ -6,6 +6,9 @@ add_action( 'genesis_before_entry', 'berkeley_featured_image_singular', 8 );
 function berkeley_featured_image_singular() {
 	if ( ! is_singular() || ! has_post_thumbnail() )
 		return;
+	
+	if ( !get_field( 'display_featured_image' ) )
+		return;
 		
 	/*
     $imgdata = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
@@ -140,16 +143,20 @@ function berkeley_display_custom_field_content( $content ) {
 	// check if the repeater field has rows of data
 	if ( have_rows( 'collapsing_sections' ) ):
 		$after_content .= '<div id="accordion">';
+		$i = 1;
 	 	// loop through the rows of data
 	    while ( have_rows( 'collapsing_sections' ) ) : the_row();
 	        // display a sub field value
 			$heading = get_sub_field( 'section_heading' );
 			$section_content = get_sub_field( 'collapsible_section' );
+			$default = '';
 			if ( !empty( $heading ) && !empty( $section_content ) ) {
-				$after_content .= sprintf( '<h2 class="accordion-toggle">%s</h2>', $heading );
+				if ( 1 == $i )
+					$default = 'default';
+				$after_content .= sprintf( '<h3 class="accordion-toggle %s">%s</h3>', $default, $heading );
 				$after_content .= sprintf( '<div class="accordion-content">%s</div>', $section_content );
 			}
-			
+			$i++;
 	    endwhile;
 		$after_content .= '</div> <!-- #accordion -->';
 	endif;

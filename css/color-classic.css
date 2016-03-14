@@ -118,12 +118,12 @@
 .classic tfoot tr:nth-child(odd) th {
   background: #fed57a; }
 
-.classic .accordion-toggle:nth-of-type(odd),
-.classic .accordion-content:nth-of-type(odd) {
+.classic .accordion-toggle:nth-of-type(even),
+.classic .accordion-content:nth-of-type(even) {
   background-color: #fff5df; }
 
-.classic .accordion-toggle:nth-of-type(1),
-.classic .accordion-content:nth-of-type(1) {
+.classic .accordion-toggle:nth-of-type(odd),
+.classic .accordion-content:nth-of-type(odd) {
   background-color: #fed57a;
   color: #003262; }
 

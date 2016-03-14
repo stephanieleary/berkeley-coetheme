@@ -1251,13 +1251,13 @@ img.alignright,
   margin: 1em 0 0;
 }
 
-.accordion-toggle:nth-of-type(odd),
-.accordion-content:nth-of-type(odd) {
+.accordion-toggle:nth-of-type(even),
+.accordion-content:nth-of-type(even) {
   background-color: #e5f0f6;
 }
 
-.accordion-toggle:nth-of-type(1),
-.accordion-content:nth-of-type(1) {
+.accordion-toggle:nth-of-type(odd),
+.accordion-content:nth-of-type(odd) {
   background-color: #3b7ea1;
   color: #fff;
 }

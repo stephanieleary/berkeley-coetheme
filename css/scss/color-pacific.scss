@@ -246,13 +246,13 @@ $super-light-gray:		#f0f0f0;
 }
 
 
-.pacific .accordion-toggle:nth-of-type(odd),
-.pacific .accordion-content:nth-of-type(odd) {
+.pacific .accordion-toggle:nth-of-type(even),
+.pacific .accordion-content:nth-of-type(even) {
 	background-color: $super-light-gray;
 }
 
-.pacific .accordion-toggle:nth-of-type(1),
-.pacific .accordion-content:nth-of-type(1) {
+.pacific .accordion-toggle:nth-of-type(odd),
+.pacific .accordion-content:nth-of-type(odd) {
 	background-color: darken($super-light-gray, 10%);
 	color: $pacific;
 }

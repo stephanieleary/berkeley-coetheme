@@ -182,12 +182,12 @@ body.woods {
 .woods tfoot tr:nth-child(odd) th {
   background: #dce3b5; }
 
-.woods .accordion-toggle:nth-of-type(odd),
-.woods .accordion-content:nth-of-type(odd) {
+.woods .accordion-toggle:nth-of-type(even),
+.woods .accordion-content:nth-of-type(even) {
   background-color: #dce3b5; }
 
-.woods .accordion-toggle:nth-of-type(1),
-.woods .accordion-content:nth-of-type(1) {
+.woods .accordion-toggle:nth-of-type(odd),
+.woods .accordion-content:nth-of-type(odd) {
   background-color: #6e7a2e;
   color: #fff; }
 

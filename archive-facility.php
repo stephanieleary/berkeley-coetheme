@@ -10,8 +10,6 @@ function berkeley_facility_loop() {
 	
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 		
-		//printf( '<h1>%s</h1>', post_type_archive_title( '', false ) );
-		
 		echo '<ul>';
 		foreach ( $terms as $term_id => $term_name ) {
 			printf( '<li><a href="%s">%s</a></li>', get_term_link( $term_id, 'facility_type' ), $term_name );

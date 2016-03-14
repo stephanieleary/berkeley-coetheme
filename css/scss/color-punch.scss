@@ -89,13 +89,13 @@ $super-light-gray:		#f0f0f0;
 	color: $ion;
 }
 
-.punch .accordion-toggle:nth-of-type(odd),
-.punch .accordion-content:nth-of-type(odd) {
+.punch .accordion-toggle:nth-of-type(even),
+.punch .accordion-content:nth-of-type(even) {
 	background-color: lighten($soybean, 40%);
 }
 
-.punch .accordion-toggle:nth-of-type(1),
-.punch .accordion-content:nth-of-type(1) {
+.punch .accordion-toggle:nth-of-type(odd),
+.punch .accordion-content:nth-of-type(odd) {
 	background-color: $soybean;
 	color: #fff;
 }

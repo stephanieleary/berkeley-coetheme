@@ -182,12 +182,12 @@
 .pacific tfoot tr:nth-child(odd) th {
   background: #d7d7d7; }
 
-.pacific .accordion-toggle:nth-of-type(odd),
-.pacific .accordion-content:nth-of-type(odd) {
+.pacific .accordion-toggle:nth-of-type(even),
+.pacific .accordion-content:nth-of-type(even) {
   background-color: #f0f0f0; }
 
-.pacific .accordion-toggle:nth-of-type(1),
-.pacific .accordion-content:nth-of-type(1) {
+.pacific .accordion-toggle:nth-of-type(odd),
+.pacific .accordion-content:nth-of-type(odd) {
   background-color: #d7d7d7;
   color: #46535e; }
 

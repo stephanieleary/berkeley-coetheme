@@ -243,13 +243,13 @@ body.earth {
 	background: $bay-fog;
 }
 
-.earth .accordion-toggle:nth-of-type(odd),
-.earth .accordion-content:nth-of-type(odd) {
+.earth .accordion-toggle:nth-of-type(even),
+.earth .accordion-content:nth-of-type(even) {
 	background-color: lighten($bay-fog, 10%);
 }
 
-.earth .accordion-toggle:nth-of-type(1),
-.earth .accordion-content:nth-of-type(1) {
+.earth .accordion-toggle:nth-of-type(odd),
+.earth .accordion-content:nth-of-type(odd) {
 	background-color: $bay-fog;
 	color: $south-hall;
 }

@@ -69,6 +69,7 @@ blockquote {
   margin: 20px 20px 20px 30px;
 }
 
+/*
 blockquote::before {
   content: "\201C";
   display: block;
@@ -78,6 +79,7 @@ blockquote::before {
   position: relative;
   top: -10px;
 }
+/**/
 
 /* ## Headings
 --------------------------------------------- */
