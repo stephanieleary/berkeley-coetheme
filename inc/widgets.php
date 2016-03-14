@@ -14,7 +14,7 @@ function berkeley_after_entry_widget() {
 	) );
 }
 
-add_action( 'after_theme_setup', 'berkeley_register_sidebars' );
+add_action( 'after_setup_theme', 'berkeley_register_sidebars' );
 
 
 function berkeley_register_sidebars() {
@@ -82,6 +82,9 @@ function berkeley_do_sidebar() {
 	dynamic_sidebar( $type );
 }
 
+
+
+
 // Add background color selector to specific widgets
 // cf. http://ednailor.com/2011/01/24/adding-custom-css-classes-to-sidebar-widgets/
 function berkeley_editor_widget_class_form_extend( $instance, $widget ) {
@@ -92,12 +95,11 @@ function berkeley_editor_widget_class_form_extend( $instance, $widget ) {
 		$instance['classes'] = '';
 	
 	$myclasses = array( 0 => 'None', 'bold' => 'Bold', 'subtle' => 'Subtle' );
-	$fieldname = sprintf( 'widget-%s[%d][classes]', $widget->id_base, $widget->number );
-	$field_id = sprintf( 'widget-%s-%d-classes', $widget->id_base, $widget->number );
 	
+	// Do not change the format of the <select> markup below
 	$row = '<p>';
-	$row .= sprintf( '<label for="%s">%s</label>', $field_id, 'Background color:' );
-	$row .= sprintf( '<select name="%s" id="%s" class="widefat">', $fieldname, $field_id );
+	$row .= "<label for='widget-{$widget->id_base}-{$widget->number}-classes'>Background color:</label>";
+	$row .= "<select name='widget-{$widget->id_base}[{$widget->number}][classes]' id='widget-{$widget->id_base}-{$widget->number}-classes' class='widefat'>";
 
 	foreach( $myclasses as $class => $label ) {
 		$row .= sprintf( '<option value="%s" %s >%s</option>', $class, selected( $class, $instance['classes'], false ), $label );
@@ -119,6 +121,9 @@ function berkeley_editor_widget_class_update( $instance, $new_instance ) {
 add_filter( 'widget_update_callback', 'berkeley_editor_widget_class_update', 10, 2 );
 
 function berkeley_editor_widget_class_params( $params ) {
+	if ( is_admin() )
+		return $params;
+	
 	global $wp_registered_widgets;
 	$widget_id    = $params[0]['widget_id'];
 	$widget_obj   = $wp_registered_widgets[$widget_id];

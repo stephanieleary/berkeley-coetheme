@@ -70,7 +70,9 @@ add_action( 'genesis_footer', 'genesis_footer_widget_areas', 6 );
 // And add a note about 3-widget limit to widget description. 
 add_filter( 'dynamic_sidebar_params', 'berkeley_widget_count_params' );
 function berkeley_widget_count_params( $params ) {
-	
+	if ( is_admin() )
+		return $params;
+		
 	$sidebar_id = $params[0]['id'];
 	if ( !in_array( $sidebar_id, array( 'footer-1', 'footer-2', 'footer-3' ) ) )
 		return $params;
