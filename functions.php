@@ -35,20 +35,6 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_theme_support( 'custom-header' );
 remove_theme_support( 'genesis-custom-header' );
 
-//* Add support for after-entry widget area (blog posts only)
-// add_theme_support( 'genesis-after-entry-widget-area' );
-//* Add support for after-entry widget area to posts pages
-add_action( 'genesis_entry_footer', 'berkeley_after_entry_widget'  ); 
-function berkeley_after_entry_widget() {
-	if ( ! is_single() && ! is_page() )
-		return;
-
-	genesis_widget_area( 'after-entry', array(
-		'before' => '<div class="after-entry widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
-}
-
 //* Accessibility features
 add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu', 'search-form', 'skip-links', 'rems' ) );
 //add_filter( 'genesis_skip_links_output', 'prefix_skip_links' );
