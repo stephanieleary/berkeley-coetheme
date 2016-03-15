@@ -7,7 +7,7 @@ include_once( get_stylesheet_directory() . '/inc/editor.php' );
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/inc/loops.php' );
 include_once( get_stylesheet_directory() . '/inc/maps.php' );
-include_once( get_stylesheet_directory() . '/inc/shortcodes.php' );
+include_once( get_stylesheet_directory() . '/inc/sidebars.php' );
 include_once( get_stylesheet_directory() . '/inc/theme-options.php' );
 include_once( get_stylesheet_directory() . '/inc/widgets.php' );
 
@@ -37,7 +37,6 @@ remove_theme_support( 'genesis-custom-header' );
 
 //* Accessibility features
 add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu', 'search-form', 'skip-links', 'rems' ) );
-//add_filter( 'genesis_skip_links_output', 'prefix_skip_links' );
 
 //* Create color style options
 add_theme_support( 'genesis-style-selector', berkeley_get_colors() );
@@ -115,9 +114,11 @@ function berkeley_editor_styles() {
 // Add color scheme classes to rich text editor
 function berkeley_tiny_mce_before_init( $init_array ) {
     $init_array['body_class'] = genesis_get_option( 'style_selection' );
+
 	$template = get_post_meta( get_the_ID(), '_wp_page_template', true );
 	if ( isset( $template ) && 'page_whitepaper.php' == $template )
 		$init_array['body_class'] .= ' whitepaper';
+		
     return $init_array;
 }
-add_filter('tiny_mce_before_init', 'berkeley_tiny_mce_before_init');
+add_filter( 'tiny_mce_before_init', 'berkeley_tiny_mce_before_init' );
