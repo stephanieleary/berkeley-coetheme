@@ -277,12 +277,18 @@ a:hover {
 	color: $lawrence;
 }
 
+address,
 p {
+	font-style: normal;
 	margin: 0 0 28px;
 	padding: 0;
 }
 
-.course-info p {
+.course-info p,
+.job_title p,
+.bio-links,
+.bio-email,
+.bio-phone {
 	margin: 0;
 }
 
@@ -920,9 +926,13 @@ img.alignright,
 }
 
 .wp-caption-text {
-	font-size: 14px;
-	font-style: italic;
-	text-align: center;
+	font-size: 16px;
+	font-style: normal;
+	text-align: left;
+}
+
+.wp-caption-text p {
+	margin-bottom: 12px;
 }
 
 .entry-content p.wp-caption-text {
@@ -933,12 +943,22 @@ img.alignright,
 }
 
 .featured-image {
-	background: $soybean;
-	color: #fff;
+	background: $light-gray;
+	color: #000;
 }
 
 .featured-image img {
 	display: block;
+	margin: 0 auto;
+}
+
+.featured-image .wp-caption-text {
+	padding: .5em 1em 0;
+}
+
+.post-type-archive-people .alignleft,
+.post-type-archive-people .alignright {
+	float: none;
 	margin: 0 auto;
 }
 
@@ -1133,6 +1153,23 @@ img.alignright,
 	padding: 8px 16px;
 }
 
+
+.accordion-toggle:after {
+	content: "+";
+	display: block;
+	float: right;
+}
+
+.accordion-toggle.default.activated:after {
+	content: "";
+}
+
+.accordion-toggle.activated:after {
+	content: "-";
+	display: block;
+	float: right;
+}
+
 .accordion-content {
 	display: none; 
 	margin: 0;
@@ -1192,7 +1229,7 @@ img.alignright,
 }
 
 .site-header .wrap {
-	padding: 40px 0;
+	padding: 10px 0 40px;
 }
 
 /* ## Title Area
@@ -1240,6 +1277,7 @@ img.alignright,
 	float: right;
 	text-align: right;
 	width: 360px;
+	padding-top: 30px;
 }
 
 .pool .site-header button,
@@ -1252,7 +1290,7 @@ img.alignright,
 }
 
 .site-header .widget-area .select-menu {
-	background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+	background: url(images/down-arrow.png) no-repeat 96% 0;
 	background-color: $lawrence;
     float: right;
     height: 36px;

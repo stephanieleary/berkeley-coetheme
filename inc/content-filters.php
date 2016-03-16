@@ -22,9 +22,14 @@ function berkeley_cpt_archive_sort( $query ) {
 			break;
 			
 		case 'facility':
-		case 'people':
 			$query->set( 'order', 'ASC' );
 			$query->set( 'orderby', 'title' );
+			break;
+		
+		case 'people':
+			$query->set( 'order', 'ASC' );
+			$query->set( 'orderby', 'meta_value title' );
+			$query->set( 'meta_key', 'last_name' );
 			break;
 			
 		default:
@@ -40,7 +45,7 @@ add_action( 'genesis_before_entry', 'berkeley_featured_image_singular', 8 );
 function berkeley_featured_image_singular() {
 	if ( ! is_singular() || ! has_post_thumbnail() || !get_field( 'display_featured_image' ) )
 		return;
-
+		
 	/*
     $imgdata = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
     $imgwidth = $imgdata[1]; // thumbnail's width                   
@@ -54,7 +59,7 @@ function berkeley_featured_image_singular() {
 	// use post content to use description field instead
 	$img = get_the_post_thumbnail( get_the_ID(), 'large' );
 	$caption = apply_filters( 'the_excerpt', get_post_field( 'post_excerpt', get_post_thumbnail_id() ) );
-	printf( '<div class="featured-image">%s<p class="wp-caption-text">%s</p></div>', $img, $caption );
+	printf( '<div class="featured-image">%s<div class="wp-caption-text">%s</div></div>', $img, $caption );
 }
 
 
@@ -157,86 +162,114 @@ function berkeley_display_custom_field_content( $content ) {
 	if ( 'people' == $post_type ) :
 		
 		$before_content = $after_content = '';
-
-		$hours = get_field( 'hours' );
-		if ( !empty( $hours ) ) :
-			$before_content .= sprintf( '<p><strong>Hours</strong>%s</p>', $hours );
-		endif;
+		
+		$before_content = sprintf( '<div class="job_title">%s</div> ', get_field( 'job_title' ) );
 
 		$phone = get_field( 'phone_number' );
 		if ( !empty( $phone ) ) :
 			$punctuation = array( '(', ')', '-', ':', '.', ' ' );
 			$number = str_replace( $punctuation, '', $phone );
-			$phone = sprintf( '<a href="tel:%d">%s</address>', $number, $phone );
+			$before_content .= sprintf( '<p class="bio-phone"><strong>Phone: </strong><a href="tel:%d">%s</a></p>', $number, $phone );
 		endif;
 
 		$email = get_field( 'email' );
 		if ( !empty( $email ) ) :
-			$email = sprintf( '<a href="mailto:%1$s">%1$s</a>', $email );
+			$before_content .= sprintf( '<p class="bio-email"><a href="mailto:%1$s">%1$s</a></p>', $email );
 		endif;
-
-		$address = array_filter( array( 
-			'phone' => $phone,
-			'email' => $email,
-			'line1' => get_field( 'address_line_1' ), 
-			'line2' => get_field( 'address_line_2' ),
-			'city'  => get_field( 'city' ),
-			'state' => get_field( 'state' ),
-			'zip' 	=> get_field( 'zip' ),
-			'country' => get_field( 'country' )
-		) );
-
-		// avoid line breaks and commas in between certain fields if they're empty
-		if ( isset( $address['line2'] ) ) {
-			$address['line1'] .= $address['line2'];
-			unset($address['line2']);
-		}
-
-		if ( isset( $address['state'] ) ) {
-			$address['city'] .= ', ' . $address['state'];
-			unset($address['state']);
-		}
-
-		if ( isset( $address['zip'] ) ) {
-			$address['city'] .= ' ' . $address['zip'];
-			unset($address['zip']);
-		}
-
-		$before_content .= sprintf( '<p><address>%s</address></p>', implode( '<br>', array_filter( $address ) ) );
-
+		
 		// links repeater
 		// check if the repeater field has rows of data
 		if ( have_rows( 'links' ) ):
-			$after_content .= '<div id="bio-links">';
+			$links = array();
+			$before_content .= '<p id="bio-links">';
 		 	// loop through the rows of data
 		    while ( have_rows( 'links' ) ) : the_row();
-				$after_content .= '<ul>';
 				$url = get_sub_field( 'url' );
 				$site_title = get_sub_field( 'link_text' );
 				if ( !empty( $url ) && !empty( $site_title ) ) {
-					$after_content .= sprintf( '<li><a href="%s">%s</a></li>', $url, $site_title );
+					$links[] = sprintf( '<a href="%s">%s</a>', $url, $site_title );
 				}
-				$after_content .= '</ul>';
 		    endwhile;
-			$after_content .= '</div> <!-- #bio-links -->';
+			$before_content .= sprintf( '%s </p> <!-- #bio-links -->', implode( '<br>', array_filter( $links ) ) );
 		endif;
+		
+		
+		if ( is_singular() ) {
 
-		// WYSIWYG fields
-		$sections = array(
-			'education'					=> 'Education',
-			'awards'					=> 'Awards',
-			'experience'				=> 'Experience',
-			'publications'				=> 'Publications',
-			'additional_information'	=> 'Additional Information',
-			'responsibilities'			=> 'Responsibilities'
-		);
+			$address = array_filter( array( 
+				'line1' => get_field( 'address_line_1' ), 
+				'line2' => get_field( 'address_line_2' ),
+				'city'  => get_field( 'city' ),
+				'state' => get_field( 'state' ),
+				'zip' 	=> get_field( 'zip' ),
+				'country' => get_field( 'country' )
+			) );
 
-		foreach ( $sections as $section => $section_title ) {
-			$section_content = get_field( $section );
-			if ( !empty( $section_content ) ) {
-				$after_content .= sprintf( '<h2 id="%s">%s</h2> %s', $section, $section_title, $section_content );
+			// avoid line breaks and commas in between certain fields if they're empty
+			if ( isset( $address['line2'] ) ) {
+				$address['line1'] .= $address['line2'];
+				unset($address['line2']);
 			}
 
+			if ( isset( $address['state'] ) ) {
+				$address['city'] .= ', ' . $address['state'];
+				unset($address['state']);
+			}
+
+			if ( isset( $address['zip'] ) ) {
+				$address['city'] .= ' ' . $address['zip'];
+				unset($address['zip']);
+			}
+
+			$before_content .= sprintf( '<address>%s</address>', implode( '<br>', array_filter( $address ) ) );
+
+
+			$hours = get_field( 'hours' );
+			if ( !empty( $hours ) ) :
+				$before_content .= sprintf( '<p class="bio-hours"><strong>Hours:</strong> %s</p>', $hours );
+			endif;
+
+		
+			$before_content = '<div class="one-half first alignleft">' . $before_content;
+
+			$content .= '</div>';
+
+			$after_content .= '<div class="one-half alignright">';
+			
+			// featured image
+			$after_content .= get_the_post_thumbnail( get_the_ID(), 'medium' );
+
+			if ( has_term( 'student', 'people_type' ) ) {
+				$after_content .= sprintf( '<p class="class-major">%</p>', get_field( 'major' ) );
+				$after_content .= sprintf( '<p class="class-year">%</p>', get_field( 'class_year' ) );
+				$after_content .= get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
+			}
+
+			if ( has_term( '', 'subject_area' ) )
+				$after_content .= get_the_term_list( get_the_ID(), 'subject_area', '<h3>Research Interests:</h3><span class="subject_area">', ', ', '</span>' );
+
+			if ( has_term( 'faculty', 'people_type' ) )	
+				$after_content .= get_field( 'research_description' );
+
+			$after_content .= '</div>';
+
+			// WYSIWYG fields
+			$sections = array(
+				'education'					=> 'Education',
+				'awards'					=> 'Awards',
+				'experience'				=> 'Experience',
+				'publications'				=> 'Publications',
+				'additional_information'	=> 'Additional Information',
+				'responsibilities'			=> 'Responsibilities'
+			);
+
+			foreach ( $sections as $section => $section_title ) {
+				$section_content = get_field( $section );
+				if ( !empty( $section_content ) ) {
+					$after_content .= sprintf( '<h2 id="%s">%s</h2> %s', $section, $section_title, $section_content );
+				}
+
+			}
 		}
 
 	endif; // people
@@ -256,7 +289,7 @@ function berkeley_display_custom_field_content( $content ) {
 			$default = '';
 			if ( !empty( $heading ) && !empty( $section_content ) ) {
 				if ( 1 == $i )
-					$default = 'default';
+					$default = 'default activated';
 				$after_content .= sprintf( '<h3 class="accordion-toggle">%s</h3>', $heading );
 				$after_content .= sprintf( '<div class="accordion-content %s">%s</div>', $default, $section_content );
 			}
@@ -296,7 +329,7 @@ function berkeley_post_info_filter( $post_meta ) {
 			break;
 			
 		case 'people':
-			if ( is_archive() ) :
+			if ( is_search() ) :
 				
 				$post_meta = sprintf( '<span class="job_title">%s</span> ', get_field( 'job_title' ) );
 

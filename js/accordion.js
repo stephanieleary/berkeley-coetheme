@@ -3,10 +3,12 @@ jQuery(document).ready(function( $ ) {
 	$('#accordion').find('.accordion-toggle').click(function(){
 
       //Expand or collapse this panel
-      $(this).next().slideToggle('fast');
+	  $(this).toggleClass( "activated" );
+      $(this).next().toggleClass( "activated" ).slideToggle('fast');
 
       //Hide the other panels
-      $(".accordion-content").not($(this).next()).slideUp('fast');
+	  $(".accordion-toggle").not($(this)).removeClass( "activated" );
+      $(".accordion-content").not($(this).next()).removeClass( "activated" ).slideUp('fast');
 
     });
 });

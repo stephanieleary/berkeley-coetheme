@@ -27,7 +27,7 @@ function berkeley_logo_display() {
 	$logo = genesis_get_option( 'be_logo' );
 	if ( $logo ) {
 		$path 		= get_stylesheet_directory_uri() . '/images/';
-		$img_black	= 'be_logo_black.png';
+		$img_blue	= 'be_logo_blue.png';
 		$img_white	= 'be_logo_white.png';
 		$colors = genesis_get_option( 'style_selection' );
 		switch ( $colors ) {
@@ -37,7 +37,7 @@ function berkeley_logo_display() {
 			case 'earth light':
 			case 'woods light':
 			case 'pacific light':
-				$path .= $img_black;
+				$path .= $img_blue;
 				break;
 			default: 
 				$path .= $img_white;
@@ -46,7 +46,7 @@ function berkeley_logo_display() {
 		printf( '<div id="berkeley-engineering-logo"><img src="%s" alt="%s"></div>', $path, __('Berkeley College of Engineering Logo') );
 	}
 }
-add_action( 'genesis_site_description', 'berkeley_logo_display', 99 );
+add_action( 'genesis_site_title', 'berkeley_logo_display', 1 );
 
 function berkeley_logo_defaults( $defaults ) {
 	$defaults['be_logo'] = false;
@@ -58,7 +58,7 @@ function berkeley_logo_settings_box() {
 	
 	$logo		= genesis_get_option( 'be_logo' );
 	$path 		= get_stylesheet_directory_uri() . '/images/';
-	$img_black	= 'be_logo_black.png';
+	$img_black	= 'be_logo_blue.png';
 	$img_white	= 'be_logo_white.png';
 	$bg 		= '#fff';
 	$blue 		= '#003262';

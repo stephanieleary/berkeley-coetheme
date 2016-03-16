@@ -1,3 +1,7 @@
+.post-type-people #titlediv {
+	display: none;
+}
+
 #berkeley-color-settings .genesis-layout-selector label.box {
 	max-height: inherit;
 }
