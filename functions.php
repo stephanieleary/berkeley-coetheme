@@ -19,27 +19,83 @@ define( 'CHILD_THEME_VERSION', '2.1.2' );
 
 //* Add Fonts
 add_action( 'wp_head', 'berkeley_fonts' );
+
 function berkeley_fonts() {
 	if ( !is_admin() )
 		echo "<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700' rel='stylesheet' type='text/css'>";
 }
 
-//* Add HTML5 markup structure
-add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+add_action( 'after_setup_theme', 'berkeley_setup_theme' );
 
-//* Add viewport meta tag for mobile browsers
-add_theme_support( 'genesis-responsive-viewport' );
+function berkeley_setup_theme() {
+	remove_theme_support( 'genesis-custom-header' );
+	add_theme_support( 'genesis-style-selector', berkeley_get_colors() );
+	$colors = genesis_get_option( 'style_selection' );
+	switch ( $colors ) {
+		case 'pool':
+		case 'pacific':
+			$text = 'ffffff';
+			break;
+		case 'punch':
+		case 'classic':
+			$text = 'fdb515';	// gold
+			break;
+		case 'punch light':
+			$text = '3b7ea1';  // founders-rock
+			break;
+		case 'earth':
+			$text = 'ddd5c7';	// bay fog
+			break;
+		case 'woods light':
+			$text = '584f29';	// stone pine
+			break;
+		case 'earth light':
+			$text = '6c3302';	// south hall
+			break;
+		default: 
+			$text = '003262';	// blue
+			break;
+	}
+	
+	$headers = array(
+        'default-image'      => get_stylesheet_directory_uri() . 'images/header.png',
+        'default-text-color' => $text,
+        'width'              => 800,
+        'height'             => 240,
+        'flex-width'         => true,
+        'flex-height'        => true,
+		'random-default'	 => false,
+		'wp-head-callback'	 => 'berkeley_header_body_classes',
+    );
+    add_theme_support( 'custom-header', $headers );
+	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+	add_theme_support( 'genesis-responsive-viewport' );
+	add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu', 'search-form', 'skip-links', 'rems' ) );
+}
 
-//* Add support for WordPress header image feature; remove Genesis's proprietary header feature
-add_theme_support( 'custom-header' );
-remove_theme_support( 'genesis-custom-header' );
+function berkeley_header_body_classes() {
+	add_filter( 'body_class', 'berkeley_header_style' );
+}
 
-//* Accessibility features
-add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu', 'search-form', 'skip-links', 'rems' ) );
+function berkeley_header_style( $classes ) {
+     if ( HEADER_TEXTCOLOR == get_header_textcolor() && '' == get_header_image() )
+        return $classes;
 
-//* Create color style options
-add_theme_support( 'genesis-style-selector', berkeley_get_colors() );
+	if ( 'blank' == get_header_textcolor() )
+		$classes[] = 'custom-header-hide-text';
+	
+	return $classes;
+}
+
+add_action( 'genesis_site_title', 'berkeley_header_image', 2 );
+
+function berkeley_header_image() {
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) : 
+		printf( '<a href="%s"><img id="custom-header" src="%s" alt="%s" /></a>', esc_url( get_option( 'home' ) ), esc_url( $header_image ), get_option( 'blogname' ) );
+	endif;
+}
 
 function berkeley_get_colors() {
 	return array( 
@@ -56,6 +112,18 @@ function berkeley_get_colors() {
 		'pacific'		=> __( 'Pacific' ),
 		'pacific light'	=> __( 'Pacific Light' ),
 	);
+}
+
+// Color schemes
+function berkeley_get_color_stylesheet( $color ) {
+	if ( !isset( $color ) )
+		return;
+		
+	$color = str_replace( ' light', '', $color );
+	if ( 'pool' == $color )
+		return;
+
+	return get_stylesheet_directory_uri() . '/css/color-' . $color . '.css';
 }
 
 //* Add scripts
@@ -85,40 +153,3 @@ function berkeley_menu_buttons() {
 	echo '<button id="secondary-toggle" class="menu-toggle" role="button" aria-pressed="false"></button>';
 	echo '<button id="primary-toggle" class="menu-toggle" role="button" aria-pressed="false"></button>';
 }
-
-// Color schemes
-function berkeley_get_color_stylesheet( $color ) {
-	if ( !isset( $color ) )
-		return;
-		
-	$color = str_replace( ' light', '', $color );
-	if ( 'pool' == $color )
-		return;
-
-	return get_stylesheet_directory_uri() . '/css/color-' . $color . '.css';
-}
-
-//* Editor CSS
-add_action( 'admin_init', 'berkeley_editor_styles' );
-
-function berkeley_editor_styles() {
-	// add base editor stylesheet
-	add_editor_style();
-	
-	// add color scheme stylesheet
-	$path = berkeley_get_color_stylesheet( genesis_get_option( 'style_selection' ) );
-	if ( !empty( $path ) )
-		add_editor_style( $path );
-}
-
-// Add color scheme classes to rich text editor
-function berkeley_tiny_mce_before_init( $init_array ) {
-    $init_array['body_class'] = genesis_get_option( 'style_selection' );
-
-	$template = get_post_meta( get_the_ID(), '_wp_page_template', true );
-	if ( isset( $template ) && 'page_whitepaper.php' == $template )
-		$init_array['body_class'] .= ' whitepaper';
-		
-    return $init_array;
-}
-add_filter( 'tiny_mce_before_init', 'berkeley_tiny_mce_before_init' );

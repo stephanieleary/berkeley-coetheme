@@ -76,7 +76,7 @@ $super-light-gray:		#f0f0f0;
 	background-color: #fff;
 }
 
-.classic .nav-secondary a,
+.classic .nav-secondary .genesis-nav-menu a,
 .classic .nav-secondary .genesis-nav-menu .sub-menu a {
 	color: $medalist;
 }
@@ -152,12 +152,12 @@ $super-light-gray:		#f0f0f0;
 
 .classic tr:nth-child(odd) th,
 .classic tr:nth-child(odd) td {
-	background: lighten($gold, 40%);
+	background-color: lighten($gold, 40%);
 }
 
 .classic thead tr:nth-child(odd) th,
 .classic tfoot tr:nth-child(odd) th {
-	background: lighten($gold, 20%);
+	background-color: lighten($gold, 20%);
 }
 
 .classic .accordion-toggle:nth-of-type(even),
@@ -199,17 +199,17 @@ $super-light-gray:		#f0f0f0;
 }
 
 .classic .sidebar .widget.bold {
-	background: $medalist;
+	background-color: $medalist;
 	color: #fff;
 }
 
 .classic .sidebar .widget.bold a.button {
-	background: $gold;
+	background-color: $gold;
 	color: $blue;
 }
 
 .classic .sidebar .widget.subtle {
-	background: lighten($gold, 20%);
+	background-color: lighten($gold, 40%);
 	color: $blue;
 }
 
@@ -237,7 +237,7 @@ $super-light-gray:		#f0f0f0;
 .classic #genesis-footer-widgets .widget.index-1,
 .classic #genesis-footer-widgets .widget.index-5,
 .classic #genesis-footer-widgets .widget.index-9 {
-	background: darken($wellman-tile, 5%);
+	background-color: darken($wellman-tile, 5%);
 	color: #fff;
 }
 
@@ -245,19 +245,19 @@ $super-light-gray:		#f0f0f0;
 .classic #genesis-footer-widgets .widget.index-6,
 .classic #genesis-footer-widgets .widget.index-2 .widget-title,
 .classic #genesis-footer-widgets .widget.index-6 .widget-title, {
-	background: darken($gold, 8%);
+	background-color: darken($gold, 8%);
 	color: #fff;
 }
 
 .classic #genesis-footer-widgets .widget.index-3,
 .classic #genesis-footer-widgets .widget.index-7 {
-	background: darken($medalist, 8%);
+	background-color: darken($medalist, 8%);
 	color: #fff;
 }
 
 .classic #genesis-footer-widgets .widget.index-4,
 .classic #genesis-footer-widgets .widget.index-8 {
-	background: darken($founders-rock, 2%);
+	background-color: darken($founders-rock, 2%);
 	color: #fff;
 }
 
@@ -301,7 +301,7 @@ $super-light-gray:		#f0f0f0;
 .classic.light #genesis-footer-widgets .widget.index-1,
 .classic.light #genesis-footer-widgets .widget.index-5,
 .classic.light #genesis-footer-widgets .widget.index-9 {
-	background: $blue;
+	background-color: $blue;
 	color: #fff;
 }
 

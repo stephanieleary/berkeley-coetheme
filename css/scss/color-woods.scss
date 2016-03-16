@@ -56,7 +56,7 @@ body.woods {
 }
 
 .woods .site-footer a.button {
-	background: $bay-fog;
+	background-color: $bay-fog;
 }
 
 .woods .site-footer a:hover {
@@ -80,27 +80,27 @@ body.woods {
 }
 
 .woods .sidebar .widget.bold,
-.woods-light .sidebar .widget.bold {
-	background: $medalist;
+.woods.light .sidebar .widget.bold {
+	background-color: $medalist;
 	color: #fff;
 }
 
 .woods .sidebar .widget.bold a.button,
-.woods-light .sidebar .widget.bold a.button {
-	background: $gold;
+.woods.light .sidebar .widget.bold a.button {
+	background-color: $bay-fog;
 	color: $stone-pine;
 }
 
 .woods .sidebar .widget.subtle,
-.woods-light .sidebar .widget.subtle {
-	background: lighten($soybean, 20%);
+.woods.light .sidebar .widget.subtle {
+	background-color: lighten($soybean, 40%);
 	color: $stone-pine;
 }
 
 .woods .sidebar .widget.subtle a.button,
-.woods-light .sidebar .widget.subtle a.button {
-	background: $stone-pine;
-	color: $gold;
+.woods.light .sidebar .widget.subtle a.button {
+	background-color: $stone-pine;
+	color: $bay-fog;
 }
 
 .woods .site-header .widget-area .select-menu {
@@ -139,9 +139,14 @@ body.woods {
 	color: $bay-fog;
 }
 
-.woods .nav-secondary a,
+.woods .nav-secondary .genesis-nav-menu a,
 .woods .nav-secondary .genesis-nav-menu .sub-menu a {
 	color: $soybean;
+}
+
+.woods .nav-secondary .genesis-nav-menu a:hover,
+.woods .nav-secondary .genesis-nav-menu .sub-menu a:hover {
+	color: $stone-pine;
 }
 
 .woods .genesis-nav-menu .sub-menu a {
@@ -175,7 +180,7 @@ body.woods {
 }
 
 .woods .site-footer .genesis-nav-menu .footer-menu .social-icon {
-	background: $stone-pine;
+	background-color: $stone-pine;
 }
 
 .woods .site-footer .genesis-nav-menu .footer-menu .social-icon a {
@@ -210,7 +215,7 @@ body.woods {
 .woods input:hover[type="reset"],
 .woods input:hover[type="submit"],
 .woods .button:hover {
-	background-color: lighten($gold, 5%);
+	background-color: lighten($gold, 20%);
 	color: darken($stone-pine, 10%);
 }
 
@@ -238,12 +243,12 @@ body.woods {
 
 .woods tr:nth-child(odd) th,
 .woods tr:nth-child(odd) td {
-	background: lighten($soybean, 53%);
+	background-color: lighten($soybean, 53%);
 }
 
 .woods thead tr:nth-child(odd) th,
 .woods tfoot tr:nth-child(odd) th {
-	background: lighten($soybean, 40%);
+	background-color: lighten($soybean, 40%);
 }
 
 .woods .accordion-toggle:nth-of-type(even),
@@ -288,7 +293,7 @@ body.woods {
 .woods #genesis-footer-widgets .widget.index-1,
 .woods #genesis-footer-widgets .widget.index-5,
 .woods #genesis-footer-widgets .widget.index-9 {
-	background: $south-hall;
+	background-color: $south-hall;
 	color: #fff;
 }
 
@@ -296,13 +301,13 @@ body.woods {
 .woods #genesis-footer-widgets .widget.index-6,
 .woods #genesis-footer-widgets .widget.index-2 .widget-title,
 .woods #genesis-footer-widgets .widget.index-6 .widget-title, {
-	background: darken($soybean, 8%);
+	background-color: darken($soybean, 8%);
 	color: #fff;
 }
 
 .woods #genesis-footer-widgets .widget.index-3,
 .woods #genesis-footer-widgets .widget.index-7 {
-	background: darken($medalist, 14%);
+	background-color: darken($medalist, 14%);
 	color: #fff;
 }
 
@@ -310,7 +315,7 @@ body.woods {
 .woods #genesis-footer-widgets .widget.index-8,
 .woods #genesis-footer-widgets .widget.index-4 .widget-title,
 .woods #genesis-footer-widgets .widget.index-8 .widget-title {
-	background: lighten($soybean, 20%);
+	background-color: lighten($soybean, 20%);
 	color: $stone-pine;
 }
 
@@ -380,7 +385,7 @@ body.woods {
 .woods.light #genesis-footer-widgets .widget.index-8,
 .woods.light #genesis-footer-widgets .widget.index-4 .widget-title,
 .woods.light #genesis-footer-widgets .widget.index-8 .widget-title {
-	background: $stone-pine;
+	background-color: $stone-pine;
 	color: #fff;
 }
 

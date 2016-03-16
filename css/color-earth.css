@@ -27,7 +27,7 @@ body.earth {
   border: 1px solid #584f29; }
 
 .earth .site-footer a.button {
-  background: #ddd5c7; }
+  background-color: #ddd5c7; }
 
 .earth .site-footer a:hover {
   color: #fff; }
@@ -67,6 +67,7 @@ body.earth {
   color: #6c3302; }
 
 .earth .nav-primary .genesis-nav-menu a:hover,
+.earth .nav-secondary .genesis-nav-menu a:hover,
 .earth .nav-primary .genesis-nav-menu .current-menu-item > a,
 .earth .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
   color: #d9661f; }
@@ -74,7 +75,7 @@ body.earth {
 .earth .nav-secondary {
   background-color: #fff; }
 
-.earth .nav-secondary a,
+.earth .nav-secondary .genesis-nav-menu a,
 .earth .nav-secondary .genesis-nav-menu .sub-menu a {
   color: #6c3302; }
 
@@ -103,7 +104,7 @@ body.earth {
   color: #ed4e33; }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon {
-  background: #6c3302; }
+  background-color: #6c3302; }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a {
   background-color: #c4820e;
@@ -125,8 +126,8 @@ body.earth {
 .earth input:hover[type="reset"],
 .earth input:hover[type="submit"],
 .earth .button:hover {
-  background-color: #c4820e;
-  color: #6c3302; }
+  background-color: #6c3302;
+  color: #fff; }
 
 .earth .entry-content .button:hover {
   color: #fff; }
@@ -147,7 +148,7 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-5 .button,
 .earth #genesis-footer-widgets .widget.index-9 .button {
   background-color: #6c3302;
-  color: #ddd5c7; }
+  color: #fff; }
 
 .earth #genesis-footer-widgets .widget.index-1 button:hover,
 .earth #genesis-footer-widgets .widget.index-5 button:hover,
@@ -165,7 +166,7 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-5 .button:hover,
 .earth #genesis-footer-widgets .widget.index-9 .button:hover {
   background-color: #c4820e;
-  color: #ddd5c7; }
+  color: #fff; }
 
 .earth tbody {
   border-bottom: 1px solid #b6a588; }
@@ -176,11 +177,11 @@ body.earth {
 
 .earth tr:nth-child(odd) th,
 .earth tr:nth-child(odd) td {
-  background: #f0ede7; }
+  background-color: #f0ede7; }
 
 .earth thead tr:nth-child(odd) th,
 .earth tfoot tr:nth-child(odd) th {
-  background: #ddd5c7; }
+  background-color: #ddd5c7; }
 
 .earth .accordion-toggle:nth-of-type(even),
 .earth .accordion-content:nth-of-type(even) {
@@ -215,17 +216,21 @@ body.earth {
 
 .earth .sidebar .widget.bold,
 .earth-light .sidebar .widget.bold {
-  background: #d9661f;
+  background-color: #d9661f;
   color: #fff; }
 
 .earth .sidebar .widget.bold a.button,
 .earth-light .sidebar .widget.bold a.button {
-  background: #fdb515;
+  background-color: #fdb515;
   color: #6c3302; }
+
+.earth .sidebar .widget.bold a.button:hover,
+.earth-light .sidebar .widget.bold a.button:hover {
+  background-color: #fed57a; }
 
 .earth .sidebar .widget.subtle,
 .earth-light .sidebar .widget.subtle {
-  background: #fed57a;
+  background-color: #f0ede7;
   color: #6c3302; }
 
 .earth #genesis-footer-widgets .widget.index-1,
@@ -234,26 +239,26 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-1 .widget-title,
 .earth #genesis-footer-widgets .widget.index-5 .widget-title,
 .earth #genesis-footer-widgets .widget.index-9 .widget-title {
-  background: #d3c9b7;
+  background-color: #d3c9b7;
   color: #6c3302; }
 
 .earth #genesis-footer-widgets .widget.index-2,
 .earth #genesis-footer-widgets .widget.index-6,
 .earth #genesis-footer-widgets .widget.index-2 .widget-title,
 .earth #genesis-footer-widgets .widget.index-6 .widget-title {
-  background: #c35c1c;
+  background-color: #c35c1c;
   color: #fff; }
 
 .earth #genesis-footer-widgets .widget.index-3,
 .earth #genesis-footer-widgets .widget.index-7 {
-  background: #9e690b;
+  background-color: #9e690b;
   color: #fff; }
 
 .earth #genesis-footer-widgets .widget.index-4,
 .earth #genesis-footer-widgets .widget.index-8,
 .earth #genesis-footer-widgets .widget.index-4 .widget-title,
 .earth #genesis-footer-widgets .widget.index-8 .widget-title {
-  background: #7e8d35;
+  background-color: #7e8d35;
   color: #fff; }
 
 .earth #genesis-footer-widgets .widget a,
@@ -276,12 +281,10 @@ body.earth {
 .earth.light .site-title a:hover {
   color: #6c3302; }
 
-.earth.light a,
 .earth.light .site-footer a {
   color: #859438; }
 
 .earth.light .site-description,
-.earth.light a:hover,
 .earth.light .site-footer a:hover {
   color: #c4820e; }
 
@@ -297,6 +300,10 @@ body.earth {
 .earth.light .genesis-nav-menu a,
 .earth.light .genesis-nav-menu .sub-menu a {
   color: #ddd5c7; }
+
+.earth.light .nav-secondary .genesis-nav-menu a,
+.earth.light .nav-secondary .genesis-nav-menu .sub-menu a {
+  color: #859438; }
 
 .earth.light .genesis-nav-menu a:hover,
 .earth.light .genesis-nav-menu .current-menu-item > a,
@@ -332,7 +339,7 @@ body.earth {
 .earth.light #genesis-footer-widgets .widget.index-1 .widget-title,
 .earth.light #genesis-footer-widgets .widget.index-5 .widget-title,
 .earth.light #genesis-footer-widgets .widget.index-9 .widget-title {
-  background: #6c3302;
+  background-color: #6c3302;
   color: #ddd5c7; }
 
 .earth.light #genesis-footer-widgets .widget a,

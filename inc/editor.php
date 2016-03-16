@@ -1,4 +1,30 @@
 <?php
+
+//* Editor CSS
+add_action( 'admin_init', 'berkeley_editor_styles' );
+
+function berkeley_editor_styles() {
+	// add base editor stylesheet
+	add_editor_style();
+	
+	// add color scheme stylesheet
+	$path = berkeley_get_color_stylesheet( genesis_get_option( 'style_selection' ) );
+	if ( !empty( $path ) )
+		add_editor_style( $path );
+}
+
+// Add color scheme classes to rich text editor
+function berkeley_tiny_mce_before_init( $init_array ) {
+    $init_array['body_class'] = genesis_get_option( 'style_selection' );
+
+	$template = get_post_meta( get_the_ID(), '_wp_page_template', true );
+	if ( isset( $template ) && 'page_whitepaper.php' == $template )
+		$init_array['body_class'] .= ' whitepaper';
+		
+    return $init_array;
+}
+add_filter( 'tiny_mce_before_init', 'berkeley_tiny_mce_before_init' );
+
 // Callback function to insert 'styleselect' into the $buttons array
 function berkeley_mce_buttons( $buttons ) {
     array_unshift( $buttons, 'styleselect' );

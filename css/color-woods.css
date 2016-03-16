@@ -27,7 +27,7 @@ body.woods {
   border: 1px solid #584f29; }
 
 .woods .site-footer a.button {
-  background: #ddd5c7; }
+  background-color: #ddd5c7; }
 
 .woods .site-footer a:hover {
   color: #fff; }
@@ -45,24 +45,24 @@ body.woods {
   color: #fff; }
 
 .woods .sidebar .widget.bold,
-.woods-light .sidebar .widget.bold {
-  background: #c4820e;
+.woods.light .sidebar .widget.bold {
+  background-color: #c4820e;
   color: #fff; }
 
 .woods .sidebar .widget.bold a.button,
-.woods-light .sidebar .widget.bold a.button {
-  background: #fdb515;
+.woods.light .sidebar .widget.bold a.button {
+  background-color: #ddd5c7;
   color: #584f29; }
 
 .woods .sidebar .widget.subtle,
-.woods-light .sidebar .widget.subtle {
-  background: #b8c76b;
+.woods.light .sidebar .widget.subtle {
+  background-color: #dce3b5;
   color: #584f29; }
 
 .woods .sidebar .widget.subtle a.button,
-.woods-light .sidebar .widget.subtle a.button {
-  background: #584f29;
-  color: #fdb515; }
+.woods.light .sidebar .widget.subtle a.button {
+  background-color: #584f29;
+  color: #ddd5c7; }
 
 .woods .site-header .widget-area .select-menu {
   background-color: #6e7a2e; }
@@ -94,9 +94,13 @@ body.woods {
 .woods .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
   color: #ddd5c7; }
 
-.woods .nav-secondary a,
+.woods .nav-secondary .genesis-nav-menu a,
 .woods .nav-secondary .genesis-nav-menu .sub-menu a {
   color: #859438; }
+
+.woods .nav-secondary .genesis-nav-menu a:hover,
+.woods .nav-secondary .genesis-nav-menu .sub-menu a:hover {
+  color: #584f29; }
 
 .woods .genesis-nav-menu .sub-menu a {
   background-color: #fff;
@@ -123,7 +127,7 @@ body.woods {
   color: #ddd5c7; }
 
 .woods .site-footer .genesis-nav-menu .footer-menu .social-icon {
-  background: #584f29; }
+  background-color: #584f29; }
 
 .woods .site-footer .genesis-nav-menu .footer-menu .social-icon a {
   background-color: #c4820e;
@@ -153,7 +157,7 @@ body.woods {
 .woods input:hover[type="reset"],
 .woods input:hover[type="submit"],
 .woods .button:hover {
-  background-color: #fdbd2e;
+  background-color: #fed57a;
   color: #353019; }
 
 .woods .entry-content .button:hover {
@@ -176,11 +180,11 @@ body.woods {
 
 .woods tr:nth-child(odd) th,
 .woods tr:nth-child(odd) td {
-  background: #f3f5e5; }
+  background-color: #f3f5e5; }
 
 .woods thead tr:nth-child(odd) th,
 .woods tfoot tr:nth-child(odd) th {
-  background: #dce3b5; }
+  background-color: #dce3b5; }
 
 .woods .accordion-toggle:nth-of-type(even),
 .woods .accordion-content:nth-of-type(even) {
@@ -217,26 +221,26 @@ body.woods {
 .woods #genesis-footer-widgets .widget.index-1,
 .woods #genesis-footer-widgets .widget.index-5,
 .woods #genesis-footer-widgets .widget.index-9 {
-  background: #6c3302;
+  background-color: #6c3302;
   color: #fff; }
 
 .woods #genesis-footer-widgets .widget.index-2,
 .woods #genesis-footer-widgets .widget.index-6,
 .woods #genesis-footer-widgets .widget.index-2 .widget-title,
 .woods #genesis-footer-widgets .widget.index-6 .widget-title {
-  background: #6a762d;
+  background-color: #6a762d;
   color: #fff; }
 
 .woods #genesis-footer-widgets .widget.index-3,
 .woods #genesis-footer-widgets .widget.index-7 {
-  background: #815609;
+  background-color: #815609;
   color: #fff; }
 
 .woods #genesis-footer-widgets .widget.index-4,
 .woods #genesis-footer-widgets .widget.index-8,
 .woods #genesis-footer-widgets .widget.index-4 .widget-title,
 .woods #genesis-footer-widgets .widget.index-8 .widget-title {
-  background: #b8c76b;
+  background-color: #b8c76b;
   color: #584f29; }
 
 .woods #genesis-footer-widgets .widget a,
@@ -293,7 +297,7 @@ body.woods {
 .woods.light #genesis-footer-widgets .widget.index-8,
 .woods.light #genesis-footer-widgets .widget.index-4 .widget-title,
 .woods.light #genesis-footer-widgets .widget.index-8 .widget-title {
-  background: #584f29;
+  background-color: #584f29;
   color: #fff; }
 
 .woods.light #genesis-footer-widgets .widget.index-4 a,

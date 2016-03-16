@@ -412,8 +412,8 @@ textarea:focus,
 }
 
 a {
-  color: #3b7ea1;
-  text-decoration: none;
+  color: #01b3e3;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -682,6 +682,7 @@ input[type="submit"],
   font-size: 16px;
   font-weight: bold;
   padding: 8px;
+  text-decoration: none;
   width: auto;
 }
 
@@ -976,10 +977,12 @@ td:before {
 .entry-title a,
 .sidebar .widget-title a {
   color: #46535e;
+  text-decoration: none;
 }
 
 .entry-title a:hover {
-  color: #859438;
+  color: #003262;
+  text-decoration: underline;
 }
 
 .widget-title {
@@ -1360,6 +1363,7 @@ img.alignright,
 .site-title a,
 .site-title a:hover {
   color: #fff;
+  text-decoration: none;
 }
 
 .site-description {
@@ -1372,6 +1376,11 @@ img.alignright,
 .site-description,
 .site-title {
   margin-bottom: 0;
+}
+
+.custom-header-hide-text .site-title,
+.custom-header-hide-text .site-description {
+  display: none;
 }
 
 /* ## Widget Area
@@ -1437,6 +1446,7 @@ img.alignright,
   color: #00b0da;
   display: block;
   padding: 16px 24px;
+  text-decoration: none;
 }
 
 .genesis-nav-menu a:hover,
@@ -1670,6 +1680,7 @@ p.entry-meta {
   display: inline-block;
   font-size: 16px;
   padding: 8px 12px;
+  text-decoration: none;
 }
 
 .archive-pagination li a:hover,
@@ -2171,6 +2182,14 @@ li.comment {
     font-weight: 400;
   }
 
+  .site-header {
+    position: relative;
+  }
+
+  .site-header .wrap {
+    padding: 0 5%;
+  }
+
   .content,
   .sidebar,
   .site-footer,
@@ -2252,29 +2271,27 @@ li.comment {
 
   .header-widget-area {
     display: none;
-    position: absolute;
-    top: 7.9em;
-    left: 0;
-    background-color: #f0f0f0;
   }
 
   .title-area {
     float: none;
-    margin-bottom: -40px;
   }
 
   .search-toggle {
     display: block;
     visibility: inherit;
-    font-size: 14px;
-    position: relative;
-    right: -85%;
-    bottom: -58px;
+    font-size: 16px;
+    position: absolute;
+    bottom: -38px;
+    right: 0;
     z-index: 30;
   }
 
   .search-toggle:before {
-    content: "Search";
+    display: block;
+    height: 22px;
+    width: 22px;
+    content: url(images/search.png);
   }
 
   .nav-primary,

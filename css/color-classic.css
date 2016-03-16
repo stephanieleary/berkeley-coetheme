@@ -44,7 +44,7 @@
 .classic .nav-secondary {
   background-color: #fff; }
 
-.classic .nav-secondary a,
+.classic .nav-secondary .genesis-nav-menu a,
 .classic .nav-secondary .genesis-nav-menu .sub-menu a {
   color: #c4820e; }
 
@@ -108,11 +108,11 @@
 
 .classic tr:nth-child(odd) th,
 .classic tr:nth-child(odd) td {
-  background: #fff5df; }
+  background-color: #fff5df; }
 
 .classic thead tr:nth-child(odd) th,
 .classic tfoot tr:nth-child(odd) th {
-  background: #fed57a; }
+  background-color: #fed57a; }
 
 .classic .accordion-toggle:nth-of-type(even),
 .classic .accordion-content:nth-of-type(even) {
@@ -146,15 +146,15 @@
   color: #fff; }
 
 .classic .sidebar .widget.bold {
-  background: #c4820e;
+  background-color: #c4820e;
   color: #fff; }
 
 .classic .sidebar .widget.bold a.button {
-  background: #fdb515;
+  background-color: #fdb515;
   color: #003262; }
 
 .classic .sidebar .widget.subtle {
-  background: #fed57a;
+  background-color: #fff5df;
   color: #003262; }
 
 .classic .site-footer .genesis-nav-menu .footer-menu a {
@@ -175,24 +175,24 @@
 .classic #genesis-footer-widgets .widget.index-1,
 .classic #genesis-footer-widgets .widget.index-5,
 .classic #genesis-footer-widgets .widget.index-9 {
-  background: #c35c1c;
+  background-color: #c35c1c;
   color: #fff; }
 
 .classic #genesis-footer-widgets .widget.index-2,
 .classic #genesis-footer-widgets .widget.index-6,
 .classic #genesis-footer-widgets .widget.index-2 .widget-title,
 .classic #genesis-footer-widgets .widget.index-6 .widget-title {
-  background: #e7a002;
+  background-color: #e7a002;
   color: #fff; }
 
 .classic #genesis-footer-widgets .widget.index-3,
 .classic #genesis-footer-widgets .widget.index-7 {
-  background: #9e690b;
+  background-color: #9e690b;
   color: #fff; }
 
 .classic #genesis-footer-widgets .widget.index-4,
 .classic #genesis-footer-widgets .widget.index-8 {
-  background: #38789a;
+  background-color: #38789a;
   color: #fff; }
 
 .classic #genesis-footer-widgets .widget a,
@@ -229,7 +229,7 @@
 .classic.light #genesis-footer-widgets .widget.index-1,
 .classic.light #genesis-footer-widgets .widget.index-5,
 .classic.light #genesis-footer-widgets .widget.index-9 {
-  background: #003262;
+  background-color: #003262;
   color: #fff; }
 
 .classic.light #genesis-footer-widgets .widget.index-1 a,

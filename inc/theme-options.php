@@ -1,5 +1,14 @@
 <?php
 
+add_filter( 'default_hidden_meta_boxes', 'berkeley_hidden_meta_boxes', 10, 2 );
+
+function berkeley_hidden_meta_boxes( $hidden, $screen ) {
+    return array( 
+		'genesis-theme-settings-version', 
+		'genesis-theme-settings-feeds', 
+	);
+}
+
 // Stylesheet for Genesis theme settings screen
 function berkeley_settings_admin_styles( $hook ) {
     //if ( 'genesis' == $hook || 'toplevel_page_genesis' == $hook )
@@ -43,7 +52,7 @@ function berkeley_logo_display() {
 				$path .= $img_white;
 				break;
 		}
-		printf( '<div id="berkeley-engineering-logo"><img src="%s" alt="%s"></div>', $path, __('Berkeley College of Engineering Logo') );
+		printf( '<div id="berkeley-engineering-logo"><a href="http://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, __('Berkeley College of Engineering Logo') );
 	}
 }
 add_action( 'genesis_site_title', 'berkeley_logo_display', 1 );

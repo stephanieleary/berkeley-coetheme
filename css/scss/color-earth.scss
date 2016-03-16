@@ -56,7 +56,7 @@ body.earth {
 }
 
 .earth .site-footer a.button {
-	background: $bay-fog;
+	background-color: $bay-fog;
 }
 
 .earth .site-footer a:hover {
@@ -106,6 +106,7 @@ body.earth {
 }
 
 .earth .nav-primary .genesis-nav-menu a:hover,
+.earth .nav-secondary .genesis-nav-menu a:hover,
 .earth .nav-primary .genesis-nav-menu .current-menu-item > a,
 .earth .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
 	color: $wellman-tile;
@@ -115,7 +116,7 @@ body.earth {
 	background-color: #fff;
 }
 
-.earth .nav-secondary a,
+.earth .nav-secondary .genesis-nav-menu a,
 .earth .nav-secondary .genesis-nav-menu .sub-menu a {
 	color: $south-hall;
 }
@@ -152,7 +153,7 @@ body.earth {
 }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon {
-	background: $south-hall;
+	background-color: $south-hall;
 }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a {
@@ -178,8 +179,8 @@ body.earth {
 .earth input:hover[type="reset"],
 .earth input:hover[type="submit"],
 .earth .button:hover {
-	background-color: $medalist;
-	color: $south-hall;
+	background-color: $south-hall;
+	color: #fff;
 }
 
 .earth .entry-content .button:hover {
@@ -202,7 +203,7 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-5 .button,
 .earth #genesis-footer-widgets .widget.index-9 .button {
 	background-color: $south-hall;
-	color: $bay-fog;
+	color: #fff;
 }
 
 .earth #genesis-footer-widgets .widget.index-1 button:hover,
@@ -221,7 +222,7 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-5 .button:hover,
 .earth #genesis-footer-widgets .widget.index-9 .button:hover {
 	background-color: $medalist;
-	color: $bay-fog;
+	color: #fff;
 }
 
 .earth tbody {
@@ -235,12 +236,12 @@ body.earth {
 
 .earth tr:nth-child(odd) th,
 .earth tr:nth-child(odd) td {
-	background: lighten($bay-fog, 10%);
+	background-color: lighten($bay-fog, 10%);
 }
 
 .earth thead tr:nth-child(odd) th,
 .earth tfoot tr:nth-child(odd) th {
-	background: $bay-fog;
+	background-color: $bay-fog;
 }
 
 .earth .accordion-toggle:nth-of-type(even),
@@ -283,19 +284,24 @@ body.earth {
 
 .earth .sidebar .widget.bold,
 .earth-light .sidebar .widget.bold {
-	background: $wellman-tile;
+	background-color: $wellman-tile;
 	color: #fff;
 }
 
 .earth .sidebar .widget.bold a.button,
 .earth-light .sidebar .widget.bold a.button {
-	background: $gold;
+	background-color: $gold;
 	color: $south-hall;
+}
+
+.earth .sidebar .widget.bold a.button:hover,
+.earth-light .sidebar .widget.bold a.button:hover {
+	background-color: lighten($gold, 20%);
 }
 
 .earth .sidebar .widget.subtle,
 .earth-light .sidebar .widget.subtle {
-	background: lighten($gold, 20%);
+	background-color: lighten($bay-fog, 10%);
 	color: $south-hall;
 }
 
@@ -305,7 +311,7 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-1 .widget-title,
 .earth #genesis-footer-widgets .widget.index-5 .widget-title,
 .earth #genesis-footer-widgets .widget.index-9 .widget-title {
-	background: darken($bay-fog, 5%);
+	background-color: darken($bay-fog, 5%);
 	color: $south-hall;
 }
 
@@ -313,13 +319,13 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-6,
 .earth #genesis-footer-widgets .widget.index-2 .widget-title,
 .earth #genesis-footer-widgets .widget.index-6 .widget-title {
-	background: darken($wellman-tile, 5%);
+	background-color: darken($wellman-tile, 5%);
 	color: #fff;
 }
 
 .earth #genesis-footer-widgets .widget.index-3,
 .earth #genesis-footer-widgets .widget.index-7 {
-	background: darken($medalist, 8%);
+	background-color: darken($medalist, 8%);
 	color: #fff;
 }
 
@@ -327,7 +333,7 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-8,
 .earth #genesis-footer-widgets .widget.index-4 .widget-title,
 .earth #genesis-footer-widgets .widget.index-8 .widget-title {
-	background: darken($soybean, 2%);
+	background-color: darken($soybean, 2%);
 	color: #fff;
 }
 
@@ -354,13 +360,11 @@ body.earth {
 	color: $south-hall;
 }
 
-.earth.light a,
 .earth.light .site-footer a {
 	color: $soybean;
 }
 
 .earth.light .site-description,
-.earth.light a:hover,
 .earth.light .site-footer a:hover {
 	color: $medalist;
 }
@@ -380,6 +384,11 @@ body.earth {
 .earth.light .genesis-nav-menu a,
 .earth.light .genesis-nav-menu .sub-menu a {
 	color: $bay-fog;
+}
+
+.earth.light .nav-secondary .genesis-nav-menu a,
+.earth.light .nav-secondary .genesis-nav-menu .sub-menu a {
+	color: $soybean;
 }
 
 .earth.light .genesis-nav-menu a:hover,
@@ -421,7 +430,7 @@ body.earth {
 .earth.light #genesis-footer-widgets .widget.index-1 .widget-title,
 .earth.light #genesis-footer-widgets .widget.index-5 .widget-title,
 .earth.light #genesis-footer-widgets .widget.index-9 .widget-title {
-	background: $south-hall;
+	background-color: $south-hall;
 	color: $bay-fog;
 }
 
