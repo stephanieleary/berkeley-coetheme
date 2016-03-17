@@ -1,8 +1,8 @@
 <?php
 
-add_filter( 'default_hidden_meta_boxes', 'berkeley_hidden_meta_boxes', 10, 2 );
+add_filter( 'default_hidden_meta_boxes', 'berkeley_coetheme_hidden_meta_boxes', 10, 2 );
 
-function berkeley_hidden_meta_boxes( $hidden, $screen ) {
+function berkeley_coetheme_hidden_meta_boxes( $hidden, $screen ) {
     return array( 
 		'genesis-theme-settings-version', 
 		'genesis-theme-settings-feeds', 
@@ -11,7 +11,7 @@ function berkeley_hidden_meta_boxes( $hidden, $screen ) {
 
 // Stylesheet for Genesis theme settings screen
 function berkeley_settings_admin_styles( $hook ) {
-    //if ( 'genesis' == $hook || 'toplevel_page_genesis' == $hook )
+    if ( 'genesis' == $hook || 'toplevel_page_genesis' == $hook )
 		wp_enqueue_style( 'genesis-theme-options-css', get_stylesheet_directory_uri() . '/css/admin-style.css' );
 }
 add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );

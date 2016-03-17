@@ -1,6 +1,4 @@
-.post-type-people #titlediv {
-	display: none;
-}
+/* Genesis Settings screen */
 
 #berkeley-color-settings .genesis-layout-selector label.box {
 	max-height: inherit;
@@ -26,6 +24,8 @@ table .genesis-layout-selector label.box.selected {
 	max-width: 100%;
 }
 
+/* Widget limits */
+
 div#widgets-right .widgets-sortables {
 	margin-bottom: 0;
 	padding: 0 8px 9px;
@@ -38,6 +38,8 @@ div#widgets-right .widgets-sortables {
 .sidebar-morethanfull {
     background-color: #c43 !important;
 }
+
+/* Blockquote + Cite editor toolbar button */
 
 i.mce-i-icon {
     font: 400 20px/1 dashicons;
