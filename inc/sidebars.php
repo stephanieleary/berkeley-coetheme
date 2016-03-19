@@ -71,7 +71,7 @@ function berkeley_cpt_switch_sidebar() {
 	if ( is_admin() )
 		return;
 	
-	$type = get_post_type();
+	$type = get_query_var( 'post_type' );
 	
 	if ( isset( $type ) && in_array( $type, array( 'post', 'page', 'attachment' ) ) )
 		return;
@@ -81,6 +81,6 @@ function berkeley_cpt_switch_sidebar() {
 }
 
 function berkeley_do_sidebar() {
-	$type = get_post_type();
+	$type = get_query_var( 'post_type' );
 	dynamic_sidebar( $type );
 }
