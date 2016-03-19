@@ -35,21 +35,35 @@ add_action( 'genesis_theme_settings_metaboxes', 'berkeley_register_options_setti
 function berkeley_logo_display() {
 	$logo = genesis_get_option( 'be_logo' );
 	if ( $logo ) {
-		$path 		= get_stylesheet_directory_uri() . '/images/';
-		$img_blue	= 'be_logo_blue.png';
-		$img_white	= 'be_logo_white.png';
+		$path = get_stylesheet_directory_uri() . '/images/';
 		$colors = genesis_get_option( 'style_selection' );
 		switch ( $colors ) {
-			case 'pool light':
-			case 'punch light':
-			case 'classic light':
 			case 'earth light':
+				$path .= 'BE-southhall.png';
+				break;
 			case 'woods light':
+				$path .= 'BE-stonepine.png';
+				break;
 			case 'pacific light':
-				$path .= $img_blue;
+				$path .= 'BE-pacific.png';
+				break;
+			case 'pool light':
+			case 'classic light':
+				$path .= 'BE-blue.png';
+				break;
+			case 'punch light':
+				$path .= 'BE-foundersrock.png';
+				break;
+			case 'classic':
+			case 'punch':
+				$path .= 'BE-gold.png';
+				break;
+			case 'earth':
+			case 'woods':
+				$path .= 'BE-bayfog.png';
 				break;
 			default: 
-				$path .= $img_white;
+				$path .= 'be_logo_white.png';
 				break;
 		}
 		printf( '<div id="berkeley-engineering-logo"><a href="http://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, __('Berkeley College of Engineering Logo') );

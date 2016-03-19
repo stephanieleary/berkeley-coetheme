@@ -1,4 +1,9 @@
 <?php
+
+remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+remove_action( 'genesis_post_content', 'genesis_do_post_image' );
+add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
+	
 // replace the usual post listing with directory table
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'berkeley_course_table_loop' );
@@ -33,7 +38,7 @@ function berkeley_course_table_loop() {
 			
 			$data = array( 
 				__('Course') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
-				__('Number') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_field( 'course_number' ) ),
+				__('Number') => get_field( 'course_number' ),
 				__('Instructor(s)') => get_field( 'instructors' )		
 			);
 			if ( count( $havetimes ) )
