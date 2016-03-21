@@ -6,8 +6,7 @@ function berkeley_loop_table_headers( $headers ) {
 		$headerrow .= sprintf( "<th>%s</th>\n", $header );
 	}
 	
-	return sprintf( '<div class="entry">
-	<table cellspacing="0" class="responsive">
+	return sprintf( '<table cellspacing="0" class="responsive">
 		<thead>
 			<tr>
 		      %s
@@ -26,7 +25,7 @@ function berkeley_loop_table_cells( $data ) {
 }
 
 function berkeley_loop_table_footer() {
-	return "</tbody>\n </table>\n </div> <!-- .entry -->";
+	return "</tbody>\n </table>\n";
 }
 
 

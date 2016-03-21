@@ -300,9 +300,9 @@ function berkeley_display_custom_field_content( $content ) {
 			if ( !empty( $heading ) && !empty( $section_content ) ) {
 				$open = get_sub_field( 'open' );
 				if ( $open )
-					$class = 'open activated';
+					$class = 'activated';
 				$after_content .= sprintf( '<h3 class="accordion-toggle %s">%s</h3>', $class, $heading );
-				$after_content .= sprintf( '<div class="accordion-content %s">%s</div>', $default, $section_content );
+				$after_content .= sprintf( '<div class="accordion-content %s">%s</div>', $class, $section_content );
 			}
 	    endwhile;
 		$after_content .= '</div> <!-- #accordion -->';

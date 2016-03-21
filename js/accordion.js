@@ -4,7 +4,7 @@ jQuery(document).ready(function( $ ) {
 
       //Expand or collapse this panel
 	  $(this).toggleClass( "activated" );
-      $(this).next().toggleClass( "activated" ).slideToggle('fast');
+      $(this).next().toggleClass( "activated" );
 
       //Hide the other panels
 	  $(".accordion-toggle").not($(this)).removeClass( "activated" );

@@ -1182,6 +1182,13 @@ img.alignright,
   margin-top: 24px;
 }
 
+/* ## Sticky posts loop
+--------------------------------------------- */
+.sticky-posts {
+  background: #e5f0f6;
+  color: #003262;
+}
+
 /* ## Rich text widget
 --------------------------------------------- */
 .sidebar .widget.bold {
@@ -1285,10 +1292,15 @@ img.alignright,
 
 /* # Accordion Content
 ----------------------------------------------- */
+.accordion {
+  padding-top: 16px;
+}
+
 .accordion-toggle {
   cursor: pointer;
   margin: 0;
   padding: 8px 16px;
+  margin: 0;
 }
 
 .accordion-toggle:after {
@@ -1311,9 +1323,10 @@ img.alignright,
   display: none;
   margin: 0;
   padding: 8px 16px;
+  overflow: auto;
 }
 
-.accordion-content.open.activated {
+.accordion-content.activated {
   display: block;
 }
 
@@ -1690,6 +1703,10 @@ img.alignright,
   margin-top: 1em;
 }
 
+.entry-content h3.accordion-toggle {
+  margin-top: 0;
+}
+
 /* ## Entry Meta
 --------------------------------------------- */
 p.entry-meta {
@@ -1828,6 +1845,10 @@ li.comment {
   background-color: #fff;
   margin-bottom: 16px;
   padding: 24px 24px 16px;
+}
+
+.sidebar .widget:nth-of-type(1) {
+  padding-top: 0;
 }
 
 .sidebar .widget.widget_search,
