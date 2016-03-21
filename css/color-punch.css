@@ -47,6 +47,11 @@
   background-color: #003262;
   color: #cfdd45; }
 
+.punch .content .stickies .entry.sticky,
+.punch.blog .entry.sticky {
+  background: #dce3b5;
+  color: #003262; }
+
 .punch .sidebar .widget.subtle {
   background: #dce3b5;
   color: #003262; }

@@ -7,7 +7,10 @@ function berkeley_cpt_archive_sort( $query ) {
 		return $query;
 	if ( !is_archive() || !isset( $query->query['post_type'] ) )
 		return $query;
-		
+	/*
+	if ( $query->is_main_query() )
+		$query->set( 'ignore_sticky_posts', true );
+	/**/	
 	switch ( $query->query['post_type'] ) {
 		
 		case 'course':
@@ -21,6 +24,7 @@ function berkeley_cpt_archive_sort( $query ) {
 					'compare' => 'EXISTS',
 				)
 			) );
+			$query->set( 'ignore_sticky_posts', true );
 			break;
 			
 		case 'facility':
@@ -153,23 +157,26 @@ function berkeley_display_custom_field_content( $content ) {
 	
 	if ( 'course' == $post_type ) :
 		
-		$before_content .= get_field( 'course_number' );
+		if ( is_singular() ) {
 		
-		// description is the main content field
+			$before_content .= get_field( 'course_number' );
 		
-		$after_content .= '<div class="course-info">';
-		if ( !empty( get_field( 'instructors' ) ) )
-			$after_content .= sprintf( '<p><strong>Instructor(s):</strong> %s</p>', get_field( 'instructors' ) );
-		if ( !empty( get_field( 'credits' ) ) )
-			$after_content .= sprintf( '<p><strong>Credits:</strong> %s</p>', 		get_field( 'credits' ) );
-		if ( !empty( get_field( 'prerequisites' ) ) )
-			$after_content .= sprintf( '<p><strong>Prerequisites:</strong> %s</p>', get_field( 'prerequisites' ) );
-		if ( !empty( get_field( 'times' ) ) )
-			$after_content .= sprintf( '<p><strong>Time:</strong> %s</p>', 			get_field( 'times' ) );
-		if ( !empty( get_field( 'location' ) ) )
-			$after_content .= sprintf( '<p><strong>Location:</strong> %s</p>', 		get_field( 'location' ) );
-		$after_content .= '</div>';
+			// description is the main content field
 		
+			$after_content .= '<div class="course-info">';
+			if ( !empty( get_field( 'instructors' ) ) )
+				$after_content .= sprintf( '<p><strong>Instructor(s):</strong> %s</p>', get_field( 'instructors' ) );
+			if ( !empty( get_field( 'credits' ) ) )
+				$after_content .= sprintf( '<p><strong>Credits:</strong> %s</p>', 		get_field( 'credits' ) );
+			if ( !empty( get_field( 'prerequisites' ) ) )
+				$after_content .= sprintf( '<p><strong>Prerequisites:</strong> %s</p>', get_field( 'prerequisites' ) );
+			if ( !empty( get_field( 'times' ) ) )
+				$after_content .= sprintf( '<p><strong>Time:</strong> %s</p>', 			get_field( 'times' ) );
+			if ( !empty( get_field( 'location' ) ) )
+				$after_content .= sprintf( '<p><strong>Location:</strong> %s</p>', 		get_field( 'location' ) );
+			$after_content .= '</div>';
+		
+		}
 	endif; // course
 	
 	
@@ -381,6 +388,11 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 			if ( get_field( 'link' ) )
 				$pre .= sprintf( '<p class="facility-link"><a href="%s">Website</a></p>', $link );
 				
+			break;
+		
+		case 'course':
+			if ( get_field( 'course_number' ) )
+				$pre = sprintf( '<p class="course-number">%s</p>', get_field( 'course_number' ) );
 			break;
 			
 		default: break;

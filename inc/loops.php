@@ -1,5 +1,31 @@
 <?php
 
+// Sticky posts
+
+function berkeley_sticky_post_loop() {
+	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+	if ( 1 == $paged ) :
+		global $query_args;
+		$args = array(
+			'post_type'  	  => get_query_var( 'post_type' ),
+			'post__in'		  => get_option( 'sticky_posts' ),
+		 );
+		echo '<div class="stickies">';
+		genesis_custom_loop( wp_parse_args( $query_args, $args ) );
+		echo '</div>';
+	endif;
+}
+
+add_filter( 'post_class', 'berkeley_sticky_post_class' );
+
+function berkeley_sticky_post_class( $classes ) {
+	if ( in_array( get_the_ID(), get_option( 'sticky_posts' ) ) )
+		$classes[] = 'sticky';
+	return $classes;
+}
+
+// Table loops
+
 function berkeley_loop_table_headers( $headers ) {
 	$headerrow = '';
 	foreach ( $headers as $header ) {

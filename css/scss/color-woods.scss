@@ -79,6 +79,12 @@ body.woods {
 	color: #fff;
 }
 
+.woods .content .stickies .entry.sticky,
+.woods.blog .entry.sticky {
+	background-color: lighten($soybean, 40%);
+	color: $stone-pine;
+}
+
 .woods .sidebar .widget.bold,
 .woods.light .sidebar .widget.bold {
 	background-color: $medalist;

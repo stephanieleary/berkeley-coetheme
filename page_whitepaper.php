@@ -20,6 +20,7 @@ remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 
 //* Remove navigation
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 
 //* Remove breadcrumbs
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
@@ -33,36 +34,48 @@ remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 
 add_action( 'genesis_footer', 'berkeley_whitepaper_footer' );
 
-// footer without navigation menus
-berkeley_whitepaper_footer() {
-	echo '<div class="footer-content">';
+// footer without navigation menus or widget areas
+function berkeley_whitepaper_footer() {
+	echo '<div class="footer-content"><div class="wrap">';
+	do_action( 'whitepaper_footer' );
 	echo do_shortcode( get_field( 'footer_text', 'option' ) );
-	echo '</div><!-- end .footer-content -->';
+	echo '</div></div><!-- end .footer-content -->';
 }
 
-berkeley_whitepaper_nav() {
+add_action( 'genesis_entry_footer', 'berkeley_whitepaper_children' );
+add_action( 'genesis_entry_footer', 'berkeley_whitepaper_nav' );
+
+function berkeley_whitepaper_children() {
+	echo '<h3>In this section:</h3>' . do_shortcode( '[child-pages]' );
+}
+
+function berkeley_whitepaper_nav() {
 	$post_id = get_the_ID();
 	$prev = $top = $next = '';
 	
+	// get all Whitepaper pages in a flat list
 	$args = array(
 		'sort_column' => 'menu_order',
 		'sort_order' => 'ASC',
-		'fields' => 'ids'
+		'fields' => 'ids',
+		'post_type' => 'page',
+		'meta_key' => '_wp_page_template',
+		'meta_value' => 'page_whitepaper.php'
 	);
 	$pages = get_pages( $args );
 	$pages = berkeley_whitepaper_flatten_array( $pages );
 	$key = array_search( $post_id, $pages );
 	
-	if ( isset( $pages[$key+1] ) && 'page_whitepaper.php' == get_post_meta( $pages[$key+1], '_wp_page_template', true ) ) {
-		$next = sprintf( '<a class="next alignright" href="%s">%s</a>', get_the_permalink( $pages[$key+1], get_the_title( $pages[$key+1] ) ) )
-	}
-	if ( isset( $pages[$key-1] ) && 'page_whitepaper.php' == get_post_meta( $pages[$key-1], '_wp_page_template', true ) )
-		$prev = sprintf( '<a class="prev alignleft" href="%s">%s</a>', get_the_permalink( $pages[$key-1], get_the_title( $pages[$key-1] ) ) );
-	}
+	if ( isset( $pages[$key+1] ) )
+		$next = sprintf( '<a class="next alignright" href="%s">Next: %s</a>', get_the_permalink( $pages[$key+1], get_the_title( $pages[$key+1] ) ) );
 	
-	$top_id = berkeley_top_whitepaper_parent();
-	if ( !empty( $top_id ) && $page_id !== $top_id )
-		$top = sprintf( '<a class="top aligncenter" href="%s">%s</a>', get_the_permalink( $top_id, get_the_title( $top_id ) ) );
+	if ( isset( $pages[$key-1] ) )
+		$prev = sprintf( '<a class="prev alignleft" href="%s">Previous: %s</a>', get_the_permalink( $pages[$key-1], get_the_title( $pages[$key-1] ) ) );
+	
+	$parent = wp_get_post_parent_id( $post_id );
+		
+	if ( isset( $parent ) && !empty( $parent ) )
+		$top = sprintf( '<a class="top aligncenter" href="%s">Up: %s</a>', get_the_permalink( $parent ), get_the_title( $parent ) );
 	
 	echo $prev . $top . $next;
 }
@@ -71,33 +84,6 @@ function berkeley_whitepaper_flatten_array(array $array) {
     $return = array();
     array_walk_recursive($array, function($a) use (&$return) { $return[] = $a; });
     return $return;
-}
-
-function berkeley_top_whitepaper_parent( $post_id = NULL ) {
-	if ( !is_page() )
-    	return;
-
-    if ( !isset( $post_id ) )
-        $post_id = get_the_ID();
-		
-	$ancestors = get_ancestors( $post_id, 'page' );
-
-	if ( !empty( $ancestors ) ) {
-		global $wpdb;
-		$all_whitepapers = $wpdb->prepare( $wpdb->get_col( 
-			"SELECT post_id FROM $wpdb->postmeta
-			 WHERE meta_key = %s
-			 AND meta_value = %s
-			 GROUP BY post_id" ),
-			'_wp_page_template',
-			'page_whitepaper.php'
-		);
-		$parent_whitepapers = array_merge( $ancestors, $all_whitepapers );
-		if ( !empty( $parent_whitepapers ) )
-			return end( $parent_whitepapers );
-	}
-	
-	return $post_id;
 }
 
 //* Run the Genesis loop

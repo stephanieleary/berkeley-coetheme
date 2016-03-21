@@ -1097,8 +1097,8 @@ img.alignright,
   margin-bottom: 0;
 }
 
-.post-type-archive-people .alignleft,
-.post-type-archive-people .alignright {
+.post-type-archive-people .teaser .alignleft,
+.post-type-archive-people .teaser .alignright {
   float: none;
   margin: 0 auto;
 }
@@ -1180,13 +1180,6 @@ img.alignright,
 
 .sidebar .widget form + p {
   margin-top: 24px;
-}
-
-/* ## Sticky posts loop
---------------------------------------------- */
-.sticky-posts {
-  background: #e5f0f6;
-  color: #003262;
 }
 
 /* ## Rich text widget
@@ -1657,7 +1650,8 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 /* ## Entries
 --------------------------------------------- */
-.entry {
+.entry,
+.entry.sticky.has-post-thumbnail {
   padding: 16px 24px;
 }
 
@@ -1668,6 +1662,12 @@ img.alignright,
 .content .entry {
   background-color: #fff;
   margin-bottom: 1em;
+}
+
+.content .stickies .entry.sticky,
+.blog .entry.sticky {
+  background: #e5f0f6;
+  color: #003262;
 }
 
 .entry-content ol,
@@ -1967,6 +1967,10 @@ li.comment {
 
 .site-footer a {
   color: #00b0da;
+}
+
+.footer-content {
+  text-align: center;
 }
 
 .site-footer input {

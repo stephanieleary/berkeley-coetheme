@@ -213,7 +213,11 @@ $super-light-gray:		#f0f0f0;
 	color: $blue;
 }
 
-
+.classic .content .stickies .entry.sticky,
+.classic.blog .entry.sticky {
+	background-color: lighten($gold, 40%);
+	color: $blue;
+}
 
 .classic .site-footer .genesis-nav-menu .footer-menu a {
 	background-color: $founders-rock;

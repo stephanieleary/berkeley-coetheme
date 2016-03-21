@@ -31,6 +31,11 @@
 .pacific .archive-pagination .active a {
   background-color: #46535e; }
 
+.pacific .content .stickies .entry.sticky,
+.pacific.blog .entry.sticky {
+  background-color: #eee;
+  color: #46535e; }
+
 .pacific .pullquote {
   background-color: #ddd5c7;
   color: #584f29; }

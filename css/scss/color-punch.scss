@@ -79,6 +79,12 @@ $super-light-gray:		#f0f0f0;
 	color: $ion;
 }
 
+.punch .content .stickies .entry.sticky,
+.punch.blog .entry.sticky {
+	background: lighten($soybean, 40%);
+	color: $blue;
+}
+
 .punch .sidebar .widget.subtle {
 	background: lighten($soybean, 40%);
 	color: $blue;

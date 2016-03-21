@@ -282,25 +282,27 @@ body.earth {
 	color: #fff;
 }
 
-.earth .sidebar .widget.bold,
-.earth-light .sidebar .widget.bold {
+.earth .sidebar .widget.bold {
 	background-color: $wellman-tile;
 	color: #fff;
 }
 
-.earth .sidebar .widget.bold a.button,
-.earth-light .sidebar .widget.bold a.button {
+.earth .sidebar .widget.bold a.button {
 	background-color: $gold;
 	color: $south-hall;
 }
 
-.earth .sidebar .widget.bold a.button:hover,
-.earth-light .sidebar .widget.bold a.button:hover {
+.earth .sidebar .widget.bold a.button:hover {
 	background-color: lighten($gold, 20%);
 }
 
-.earth .sidebar .widget.subtle,
-.earth-light .sidebar .widget.subtle {
+.earth .sidebar .widget.subtle {
+	background-color: lighten($bay-fog, 10%);
+	color: $south-hall;
+}
+
+.earth .content .stickies .entry.sticky,
+.earth.blog .entry.sticky {
 	background-color: lighten($bay-fog, 10%);
 	color: $south-hall;
 }

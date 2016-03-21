@@ -44,6 +44,11 @@ body.woods {
   background-color: #6e7a2e;
   color: #fff; }
 
+.woods .content .stickies .entry.sticky,
+.woods.blog .entry.sticky {
+  background-color: #dce3b5;
+  color: #584f29; }
+
 .woods .sidebar .widget.bold,
 .woods.light .sidebar .widget.bold {
   background-color: #c4820e;

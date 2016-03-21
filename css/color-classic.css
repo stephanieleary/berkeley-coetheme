@@ -157,6 +157,11 @@
   background-color: #fff5df;
   color: #003262; }
 
+.classic .content .stickies .entry.sticky,
+.classic.blog .entry.sticky {
+  background-color: #fff5df;
+  color: #003262; }
+
 .classic .site-footer .genesis-nav-menu .footer-menu a {
   background-color: #3b7ea1;
   color: #fff; }

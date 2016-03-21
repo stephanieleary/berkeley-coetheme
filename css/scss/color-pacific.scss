@@ -60,6 +60,12 @@ $super-light-gray:		#f0f0f0;
 	background-color: $pacific;
 }
 
+.pacific .content .stickies .entry.sticky,
+.pacific.blog .entry.sticky {
+	background-color: $light-gray;
+	color: $pacific;
+}
+
 .pacific .pullquote {
 	background-color: $bay-fog;
 	color: $stone-pine;
