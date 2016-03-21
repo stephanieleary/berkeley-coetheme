@@ -1449,7 +1449,9 @@ img.alignright,
 }
 
 .site-header .widget-area .select-menu {
-  background: url(images/down-arrow.png) no-repeat 96% 0;
+  background-image: url(images/down-arrow.png);
+  background-position: 96% 0;
+  background-repeat: no-repeat;
   background-color: #00b0da;
   float: right;
   height: 36px;
@@ -1463,7 +1465,7 @@ img.alignright,
   background: transparent;
   border: none;
   color: #fff;
-  height: inherit;
+  height: 2em;
   max-width: 120%;
   padding: 0 5px;
   width: 282px;
@@ -1847,7 +1849,7 @@ li.comment {
   padding: 24px 24px 16px;
 }
 
-.sidebar .widget:nth-of-type(1) {
+.archive .sidebar .widget:nth-of-type(1) {
   padding-top: 0;
 }
 

@@ -11,6 +11,7 @@ function berkeley_sticky_post_loop() {
 			'post__in'		  => get_option( 'sticky_posts' ),
 		 );
 		echo '<div class="stickies">';
+		remove_action( 'genesis_loop_else', 'genesis_do_noposts' );
 		genesis_custom_loop( wp_parse_args( $query_args, $args ) );
 		echo '</div>';
 	endif;

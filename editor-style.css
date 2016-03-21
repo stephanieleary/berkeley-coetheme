@@ -81,6 +81,14 @@ blockquote::before {
 }
 /**/
 
+blockquote cite {
+	display: block;
+}
+
+blockquote cite::before {
+	content: "\2014 ";
+}
+
 /* ## Headings
 --------------------------------------------- */
 h1,

@@ -66,18 +66,20 @@ function berkeley_register_sidebars() {
 
 
 // Do widget areas on corresponding post types
+
 add_action( 'get_header', 'berkeley_cpt_switch_sidebar' );
+
 function berkeley_cpt_switch_sidebar() {
 	if ( is_admin() )
 		return;
 	
 	$type = get_query_var( 'post_type' );
 	
-	if ( isset( $type ) && in_array( $type, array( 'post', 'page', 'attachment' ) ) )
-		return;
+	if ( isset( $type ) && !empty( $type ) && !in_array( $type, array( 'post', 'page', 'attachment' ) ) ) {
+		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' ); 
+		add_action( 'genesis_sidebar', 'berkeley_do_sidebar' );
+	}
 	
-	remove_action( 'genesis_sidebar', 'genesis_do_sidebar' ); 
-	add_action( 'genesis_sidebar', 'berkeley_do_sidebar' ); 
 }
 
 function berkeley_do_sidebar() {

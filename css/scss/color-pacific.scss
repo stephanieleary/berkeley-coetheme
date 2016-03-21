@@ -22,14 +22,24 @@ $super-light-gray:		#f0f0f0;
 
 .pacific .site-header .widget-area .select-menu,
 .pacific .site-header .widget-area .select-menu select {
+	background-image: url(../images/down-arrow.png);
+	background-position: 88% 0;
+	background-repeat: no-repeat;
 	background-color: $super-light-gray;
 	color: #000;
 }
 
 .pacific.light .site-header .widget-area .select-menu,
 .pacific.light .site-header .widget-area .select-menu select {
+	background-image: url(../images/down-arrow.png);
+	background-position: 88% 0;
+	background-repeat: no-repeat;
 	background-color: $pacific;
 	color: #fff;
+}
+
+.pacific .site-header .widget-area .select-menu option {
+	border: none;
 }
 
 .pacific .site-header,
