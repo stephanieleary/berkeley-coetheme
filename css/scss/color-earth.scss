@@ -375,11 +375,20 @@ body.earth {
 	border: 1px solid darken($bay-fog, 20%);
 }
 
+.earth.light .site-header input[type="submit"],
+.earth.light .site-header input:focus[type="submit"] {
+	border: none;
+}
+
 .earth.light .sidebar .widget_nav_menu li {
 	border-color: $bay-fog;
 }
 
 .earth .site-header .widget-area .select-menu {
+	background-color: $medalist;
+}
+
+.earth.light .site-header .widget-area .select-menu {
 	background-color: $south-hall;
 }
 

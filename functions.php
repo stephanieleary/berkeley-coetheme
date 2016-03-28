@@ -15,7 +15,7 @@ include_once( get_stylesheet_directory() . '/inc/widgets.php' );
 define( 'CHILD_THEME_NAME', 'Berkeley Engineering Theme' );
 define( 'CHILD_THEME_URL', 'http://www.stephanieleary.com/' );
 // based on Genesis version:
-define( 'CHILD_THEME_VERSION', '2.1.2' ); 
+define( 'CHILD_THEME_VERSION', '2.2.7' ); 
 
 //* Add Fonts
 add_action( 'wp_head', 'berkeley_fonts' );

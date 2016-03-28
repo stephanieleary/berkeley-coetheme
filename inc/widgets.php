@@ -1,5 +1,8 @@
 <?php
 
+// Remove the WP Engine widget
+unregister_widget( 'wpe_widget_powered_by' );
+
 // Add background color selector to specific widgets
 // cf. http://ednailor.com/2011/01/24/adding-custom-css-classes-to-sidebar-widgets/
 function berkeley_editor_widget_class_form_extend( $instance, $widget ) {

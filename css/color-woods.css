@@ -280,6 +280,9 @@ body.woods {
 .woods.light .site-header input {
   border: 1px solid #cad590; }
 
+.woods.light .site-header input[type="submit"] {
+  border: none; }
+
 .woods.light .site-footer a {
   color: #859438; }
 

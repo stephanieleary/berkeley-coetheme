@@ -56,11 +56,13 @@ function berkeley_logo_display() {
 				break;
 			case 'classic':
 			case 'punch':
-				$path .= 'BE-gold.png';
+				$path .= 'BE-gold-blue.png';
 				break;
 			case 'earth':
+				$path .= 'BE-bayfog-southhall.png';
+				break;
 			case 'woods':
-				$path .= 'BE-bayfog.png';
+				$path .= 'BE-bayfog-stonepine.png';
 				break;
 			default: 
 				$path .= 'be_logo_white.png';

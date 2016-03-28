@@ -292,10 +292,17 @@ body.earth {
 .earth.light .site-header input {
   border: 1px solid #b6a588; }
 
+.earth.light .site-header input[type="submit"],
+.earth.light .site-header input:focus[type="submit"] {
+  border: none; }
+
 .earth.light .sidebar .widget_nav_menu li {
   border-color: #ddd5c7; }
 
 .earth .site-header .widget-area .select-menu {
+  background-color: #c4820e; }
+
+.earth.light .site-header .widget-area .select-menu {
   background-color: #6c3302; }
 
 .earth.light .genesis-nav-menu a,

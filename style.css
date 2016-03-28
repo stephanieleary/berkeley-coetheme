@@ -341,6 +341,10 @@ tr.entry:after {
   position: relative;
 }
 
+.site-header .search-form .screen-reader-text:focus {
+  display: none;
+}
+
 /* # Skip Links
 ------------------------------------------ */
 .genesis-skip-link {
@@ -423,7 +427,7 @@ a:hover {
 address,
 p {
   font-style: normal;
-  margin: 0 0 28px;
+  margin: 28px 0;
   padding: 0;
 }
 
@@ -654,7 +658,7 @@ input,
 select,
 textarea {
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   color: #46535e;
   font-size: 16px;
   padding: 8px;
@@ -662,14 +666,15 @@ textarea {
   max-width: 80%;
 }
 
-.site-header input {
-  border: none;
-}
-
 input:focus,
 textarea:focus {
   border: 1px solid #888;
   outline: none;
+}
+
+.site-header input[type="submit"],
+.site-header input[type="submit"]:focus {
+  border: none;
 }
 
 input[type="checkbox"],
@@ -727,6 +732,14 @@ input[type="search"]::-webkit-search-results-button {
   display: none;
 }
 
+.site-header button,
+.site-header input[type="button"],
+.site-header input[type="reset"],
+.site-header input[type="submit"],
+.site-header .button {
+  padding: 9px 8px;
+}
+
 /* ## Tables
 --------------------------------------------- */
 table {
@@ -779,7 +792,7 @@ td:before {
 .site-inner,
 .wrap {
   margin: 0 auto;
-  max-width: 1200px;
+  width: 1200px;
 }
 
 .site-inner {
@@ -830,7 +843,7 @@ td:before {
 /* ### Primary Sidebar */
 .sidebar-primary {
   float: right;
-  width: 300px;
+  width: 290px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -841,7 +854,7 @@ td:before {
 /* ### Secondary Sidebar */
 .sidebar-secondary {
   float: left;
-  width: 300px;
+  width: 290px;
 }
 
 .content-sidebar-sidebar .sidebar-secondary {
@@ -933,6 +946,7 @@ td:before {
 
 .archive-description {
   font-size: 110%;
+  padding: 0 24px 12px;
 }
 
 .author-box {
@@ -1150,7 +1164,8 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 /* ## Form Widgets
 --------------------------------------------- */
-.sidebar .widget form {
+.sidebar .widget form,
+.sidebar .widget.widget_wgs_widget {
   background-color: #00a598;
   color: #fff;
 }
@@ -1180,6 +1195,65 @@ img.alignright,
 
 .sidebar .widget form + p {
   margin-top: 24px;
+}
+
+/* ## Google CSE widget
+--------------------------------------------- */
+.widget_wgs_widget .widget-title {
+  color: #fff;
+}
+
+.widget_wgs_widget .gsc-input-box,
+.wgs_wrapper .gsib_a,
+.wgs_wrapper .gsib_b {
+  height: auto;
+}
+
+input.gsc-input {
+  height: auto !important;
+  padding: 8px !important;
+}
+
+.wgs_wrapper table th,
+.wgs_wrapper table td,
+.widget_wgs_widget table.gsc-search-box td {
+  background: none !important;
+}
+
+.wgs_wrapper input.gsc-search-button,
+.widget_wgs_widget input.gsc-search-button {
+  background-color: #003262;
+  border: 4px #003262;
+  border-radius: 0;
+  color: #fff;
+  height: 24px;
+  width: 36px;
+  margin-bottom: 0;
+}
+
+.wgs_wrapper input.gsc-search-button:hover,
+.wgs_wrapper input.gsc-search-button:focus,
+.widget_wgs_widget input.gsc-search-button:hover,
+.widget_wgs_widget input.gsc-search-button:focus {
+  background-color: #00b0da;
+}
+
+.gsc-completion-container {
+  position: absolute !important;
+  top: 30px !important;
+}
+
+.wgs_wrapper .gsc-input-box {
+  height: auto;
+}
+
+.wgs_wrapper .gsc-tabsArea,
+.wgs_wrapper .gsc-tabHeader.gsc-tabhActive {
+  border-color: #ddd;
+}
+
+.wgs_wrapper .gsc-result .gs-title {
+  height: 1.4em;
 }
 
 /* ## Rich text widget
@@ -1657,6 +1731,11 @@ img.alignright,
   padding: 16px 24px;
 }
 
+.stickies .entry.sticky,
+.content .loop {
+  margin-left: 24px;
+}
+
 .entry.has-post-thumbnail {
   padding-top: 0;
 }
@@ -2096,12 +2175,6 @@ li.comment {
 .classic.light .site-header,
 .classic.light .site-footer {
   color: #003262;
-}
-
-.pool.light .site-header input,
-.pool.light .site-header input,
-.pacific.light .site-header input {
-  border: 1px solid #888;
 }
 
 .pool.light .sidebar .widget_nav_menu a,

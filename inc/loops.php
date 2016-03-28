@@ -3,16 +3,25 @@
 // Sticky posts
 
 function berkeley_sticky_post_loop() {
+	
 	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 	if ( 1 == $paged ) :
 		global $query_args;
 		$args = array(
+			'posts_per_page'  => 1,
+			'posts_per_archive_page' => 1,
 			'post_type'  	  => get_query_var( 'post_type' ),
 			'post__in'		  => get_option( 'sticky_posts' ),
 		 );
+		if ( is_tax() ) {
+			$queried_object = get_queried_object();
+			$args[$queried_object->taxonomy] = $queried_object->slug;
+		}
+			
 		echo '<div class="stickies">';
 		remove_action( 'genesis_loop_else', 'genesis_do_noposts' );
-		genesis_custom_loop( wp_parse_args( $query_args, $args ) );
+		remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+		genesis_custom_loop( wp_parse_args( $args, $query_args ) );
 		echo '</div>';
 	endif;
 }
@@ -33,7 +42,7 @@ function berkeley_loop_table_headers( $headers ) {
 		$headerrow .= sprintf( "<th>%s</th>\n", $header );
 	}
 	
-	return sprintf( '<table cellspacing="0" class="responsive">
+	return sprintf( '<div class="loop"><table cellspacing="0" class="responsive">
 		<thead>
 			<tr>
 		      %s
@@ -52,7 +61,7 @@ function berkeley_loop_table_cells( $data ) {
 }
 
 function berkeley_loop_table_footer() {
-	return "</tbody>\n </table>\n";
+	return "</tbody>\n </table>\n</div><!-- .loop -->\n";
 }
 
 

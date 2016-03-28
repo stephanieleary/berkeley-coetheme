@@ -364,6 +364,10 @@ body.woods {
 	border: 1px solid lighten($soybean, 30%);
 }
 
+.woods.light .site-header input[type="submit"] {
+	border: none;
+}
+
 .woods.light .site-footer a {
 	color: $soybean;
 }

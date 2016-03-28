@@ -81,6 +81,18 @@ function berkeley_filter_term_links() {
 		add_filter( 'term_link', 'taxonomy_link_for_post_type', 10, 3 );
 }
 
+// Filter the "no content matched your criteria" error
+add_filter( 'genesis_noposts_text', 'berkeley_noposts_text', 10, 2 );
+function berkeley_noposts_text( $text ) {
+	if ( is_search() ) {
+		$text = __( "I'm sorry. I couldn't find any pages with that phrase. Try again?" );
+	} elseif ( is_archive() ) {
+		$text = __( "There are no entries in this section." );
+	}
+	$text .= get_search_form( false );
+	return $text;
+}
+
 /*	Content is filtered here instead of in single- and archive- templates
 	so the filters will be applied throughout the site--e.g., search results.
 /**/
@@ -267,7 +279,7 @@ function berkeley_display_custom_field_content( $content ) {
 			}
 
 			if ( has_term( '', 'subject_area' ) )
-				$after_content .= get_the_term_list( get_the_ID(), 'subject_area', '<h3>Research Interests</h3><span class="subject_area">', ', ', '</span>' );
+				$after_content .= get_the_term_list( get_the_ID(), 'subject_area', '<h3>Research Interests</h3><div class="subject_area">', ', ', '</div>' );
 
 			if ( has_term( 'faculty', 'people_type' ) )	
 				$after_content .= get_field( 'research_description' );
@@ -353,7 +365,7 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 				if ( get_field( 'major' ) )
 					$excerpt .= sprintf( '<p class="class-major"><strong>Major:</strong> %s</p> ', get_field( 'major' ) );
 				if ( get_field( 'class_year' ) )
-					$excerpt .= sprintf( '<p class="class-year"><strong>Class Year:</strong> %s</p>', get_field( 'class_year' ) );
+					$excerpt .= sprintf( '<p class="class-year"><strong>Class:</strong> %s</p>', get_field( 'class_year' ) );
 			}
 			
 			if ( has_term( 'faculty', 'people_type' ) ) {
