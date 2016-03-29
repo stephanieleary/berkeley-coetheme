@@ -125,6 +125,18 @@
 .pacific .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover {
   color: #00b0da; }
 
+.pacific .wgs_wrapper input.gsc-search-button,
+.pacific .widget_wgs_widget input.gsc-search-button {
+  background-color: #3b7ea1;
+  border: 4px #3b7ea1; }
+
+.pacific .wgs_wrapper input.gsc-search-button:hover,
+.pacific .wgs_wrapper input.gsc-search-button:focus,
+.pacific .widget_wgs_widget input.gsc-search-button:hover,
+.pacific .widget_wgs_widget input.gsc-search-button:focus {
+  background-color: #00b0da;
+  border: 4px #00b0da; }
+
 .pacific button,
 .pacific input[type="button"],
 .pacific input[type="reset"],
@@ -164,8 +176,10 @@
 .pacific .author-box a {
   color: #b9d3b6; }
 
+.pacific .sidebar .widget.widget_wgs_widget,
 .pacific .sidebar .widget.widget_search,
 .pacific .sidebar .widget.widget_search .widget-title,
+.pacific .sidebar .widget.widget_wgs_widget .widget-title,
 .pacific .sidebar .widget form {
   background-color: #46535e;
   color: #fff; }

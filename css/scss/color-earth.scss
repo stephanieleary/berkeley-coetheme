@@ -47,6 +47,10 @@ body.earth {
 	color: #fff;
 }
 
+.earth .site-description {
+	color: #fff;
+}
+
 .earth .site-footer a {
 	color: $bay-fog;
 }
@@ -165,6 +169,22 @@ body.earth {
 	color: $bay-fog;
 }
 
+.earth .wgs_wrapper input.gsc-search-button,
+.earth .widget_wgs_widget input.gsc-search-button {
+	background-color: $soybean;
+	color: #fff;
+	border: 4px $soybean;
+}
+
+.earth .wgs_wrapper input.gsc-search-button:hover,
+.earth .wgs_wrapper input.gsc-search-button:focus,
+.earth .widget_wgs_widget input.gsc-search-button:hover,
+.earth .widget_wgs_widget input.gsc-search-button:focus {
+	background-color: $south-hall;
+	color: #fff;
+	border: 4px $south-hall;
+}
+
 .earth button,
 .earth input[type="button"],
 .earth input[type="reset"],
@@ -264,22 +284,19 @@ body.earth {
 	color: $gold;
 }
 
+.earth .sidebar .widget.widget_wgs_widget,
 .earth .sidebar .widget.widget_search, 
 .earth .sidebar .widget.widget_search .widget-title,
+.earth .sidebar .widget.widget_wgs_widget .widget-title,
 .earth .sidebar .widget form {
 	background-color: $stone-pine;
 	color: #fff;
 }
 
-.earth .sidebar .widget form.search-form {
+.earth .sidebar .widget form.search-form,
+.earth .sidebar .widget.widget_wgs_widget form {
 	background-color: inherit;
 	color: inherit;
-}
-
-.earth .sidebar .widget.widget_search,
-.earth .sidebar .widget.widget_search .widget-title {
-	background-color: $stone-pine;
-	color: #fff;
 }
 
 .earth .sidebar .widget.bold {

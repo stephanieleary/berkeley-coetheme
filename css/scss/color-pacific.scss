@@ -176,6 +176,20 @@ $super-light-gray:		#f0f0f0;
 	color: $lawrence;
 }
 
+.pacific .wgs_wrapper input.gsc-search-button,
+.pacific .widget_wgs_widget input.gsc-search-button {
+	background-color: $founders-rock;
+	border: 4px $founders-rock;
+}
+
+.pacific .wgs_wrapper input.gsc-search-button:hover,
+.pacific .wgs_wrapper input.gsc-search-button:focus,
+.pacific .widget_wgs_widget input.gsc-search-button:hover,
+.pacific .widget_wgs_widget input.gsc-search-button:focus {
+	background-color: $lawrence;
+	border: 4px $lawrence;
+}
+
 .pacific button,
 .pacific input[type="button"],
 .pacific input[type="reset"],
@@ -221,8 +235,10 @@ $super-light-gray:		#f0f0f0;
 	color: $sather-gate;
 }
 
+.pacific .sidebar .widget.widget_wgs_widget,
 .pacific .sidebar .widget.widget_search, 
 .pacific .sidebar .widget.widget_search .widget-title,
+.pacific .sidebar .widget.widget_wgs_widget .widget-title,
 .pacific .sidebar .widget form {
 	background-color: $pacific;
 	color: #fff;

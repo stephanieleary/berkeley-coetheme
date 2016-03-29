@@ -21,13 +21,40 @@ $super-light-gray:		#f0f0f0;
 
 /* # Punch */
 
+.punch.light .site-header,
+.punch.light .site-footer {
+	color: $blue;
+}
+
+.punch .site-title a,
+.punch .site-title a:hover {
+	color: $gold;
+}
+
 .punch.light .site-title a,
 .punch.light .site-title a:hover {
 	color: $founders-rock;
 }
 
+.punch .site-description {
+	color: #fff;
+}
+
 .punch.light .site-description {
 	color: $lawrence;
+}
+
+.punch.light .sidebar .widget_nav_menu a {
+	background-color: #fff;
+	color: $blue;
+}
+
+.punch.light .site-footer .genesis-nav-menu .footer-menu a {
+	color: #fff;
+}
+
+.punch.light .site-footer .genesis-nav-menu .footer-menu a:hover {
+	color: $blue;
 }
 
 .punch tbody {
@@ -49,16 +76,40 @@ $super-light-gray:		#f0f0f0;
 	background: lighten($soybean, 40%);
 }
 
+.punch .sidebar .widget.widget_wgs_widget,
 .punch .sidebar .widget.widget_search,
-.punch .sidebar .widget.widget_search .widget-title {
+.punch .sidebar .widget.widget_search .widget-title,
+.punch .sidebar .widget.widget_wgs_widget .widget-title {
 	background-color: $rose-garden;
 	color: #fff;
+}
+
+.punch .sidebar .widget form.search-form,
+.punch .sidebar .widget.widget_wgs_widget form {
+	background-color: inherit;
+	color: inherit;
 }
 
 .punch .sidebar .widget.bold,
 .punch-light .sidebar .widget.bold {
 	background: $soybean;
 	color: #fff;
+}
+
+.punch .wgs_wrapper input.gsc-search-button,
+.punch .widget_wgs_widget input.gsc-search-button {
+	background-color: $ion;
+	color: $blue;
+	border: 4px $ion;
+}
+
+.punch .wgs_wrapper input.gsc-search-button:hover,
+.punch .wgs_wrapper input.gsc-search-button:focus,
+.punch .widget_wgs_widget input.gsc-search-button:hover,
+.punch .widget_wgs_widget input.gsc-search-button:focus {
+	background-color: $blue;
+	color: $ion;
+	border: 4px $blue;
 }
 
 .punch button,

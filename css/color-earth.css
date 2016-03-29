@@ -20,6 +20,9 @@ body.earth {
   background-color: #6c3302;
   color: #fff; }
 
+.earth .site-description {
+  color: #fff; }
+
 .earth .site-footer a {
   color: #ddd5c7; }
 
@@ -113,6 +116,20 @@ body.earth {
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover {
   color: #ddd5c7; }
 
+.earth .wgs_wrapper input.gsc-search-button,
+.earth .widget_wgs_widget input.gsc-search-button {
+  background-color: #859438;
+  color: #fff;
+  border: 4px #859438; }
+
+.earth .wgs_wrapper input.gsc-search-button:hover,
+.earth .wgs_wrapper input.gsc-search-button:focus,
+.earth .widget_wgs_widget input.gsc-search-button:hover,
+.earth .widget_wgs_widget input.gsc-search-button:focus {
+  background-color: #6c3302;
+  color: #fff;
+  border: 4px #6c3302; }
+
 .earth button,
 .earth input[type="button"],
 .earth input[type="reset"],
@@ -199,20 +216,18 @@ body.earth {
 .earth .author-box a {
   color: #fdb515; }
 
+.earth .sidebar .widget.widget_wgs_widget,
 .earth .sidebar .widget.widget_search,
 .earth .sidebar .widget.widget_search .widget-title,
+.earth .sidebar .widget.widget_wgs_widget .widget-title,
 .earth .sidebar .widget form {
   background-color: #584f29;
   color: #fff; }
 
-.earth .sidebar .widget form.search-form {
+.earth .sidebar .widget form.search-form,
+.earth .sidebar .widget.widget_wgs_widget form {
   background-color: inherit;
   color: inherit; }
-
-.earth .sidebar .widget.widget_search,
-.earth .sidebar .widget.widget_search .widget-title {
-  background-color: #584f29;
-  color: #fff; }
 
 .earth .sidebar .widget.bold {
   background-color: #d9661f;

@@ -21,6 +21,21 @@ $super-light-gray:		#f0f0f0;
 
 /* # Classic */
 
+.classic.light .site-header,
+.classic.light .site-footer {
+	color: $blue;
+}
+
+.classic .site-title a,
+.classic .site-title a:hover,
+.classic .site-footer a {
+	color: $gold;
+}
+
+.classic .site-description {
+	color: #fff;
+}
+
 .classic .archive-pagination li a {
 	background-color: $blue;
 	color: #fff;
@@ -99,6 +114,22 @@ $super-light-gray:		#f0f0f0;
 
 .classic .sidebar .widget_nav_menu li {
 	border-color: darken($founders-rock, 10%);
+}
+
+.classic .wgs_wrapper input.gsc-search-button,
+.classic .widget_wgs_widget input.gsc-search-button {
+	background-color: $gold;
+	color: $blue;
+	border: 4px $gold;
+}
+
+.classic .wgs_wrapper input.gsc-search-button:hover,
+.classic .wgs_wrapper input.gsc-search-button:focus,
+.classic .widget_wgs_widget input.gsc-search-button:hover,
+.classic .widget_wgs_widget input.gsc-search-button:focus {
+	background-color: $blue;
+	color: #fff;
+	border: 4px $blue;
 }
 
 .classic button,
@@ -180,22 +211,19 @@ $super-light-gray:		#f0f0f0;
 	color: $gold;
 }
 
+.classic .sidebar .widget.widget_wgs_widget,
 .classic .sidebar .widget.widget_search, 
 .classic .sidebar .widget.widget_search .widget-title,
+.classic .sidebar .widget.widget_wgs_widget .widget-title,
 .classic .sidebar .widget form {
 	background-color: $blue;
 	color: #fff;
 }
 
-.classic .sidebar .widget form.search-form {
+.classic .sidebar .widget form.search-form,
+.classic .sidebar .widget.widget_wgs_widget form {
 	background-color: inherit;
 	color: inherit;
-}
-
-.classic .sidebar .widget.widget_search,
-.classic .sidebar .widget.widget_search .widget-title {
-	background-color: $blue;
-	color: #fff;
 }
 
 .classic .sidebar .widget.bold {

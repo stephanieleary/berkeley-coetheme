@@ -1,4 +1,16 @@
 /* # Classic */
+.classic.light .site-header,
+.classic.light .site-footer {
+  color: #003262; }
+
+.classic .site-title a,
+.classic .site-title a:hover,
+.classic .site-footer a {
+  color: #fdb515; }
+
+.classic .site-description {
+  color: #fff; }
+
 .classic .archive-pagination li a {
   background-color: #003262;
   color: #fff; }
@@ -63,6 +75,20 @@
 
 .classic .sidebar .widget_nav_menu li {
   border-color: #2d617c; }
+
+.classic .wgs_wrapper input.gsc-search-button,
+.classic .widget_wgs_widget input.gsc-search-button {
+  background-color: #fdb515;
+  color: #003262;
+  border: 4px #fdb515; }
+
+.classic .wgs_wrapper input.gsc-search-button:hover,
+.classic .wgs_wrapper input.gsc-search-button:focus,
+.classic .widget_wgs_widget input.gsc-search-button:hover,
+.classic .widget_wgs_widget input.gsc-search-button:focus {
+  background-color: #003262;
+  color: #fff;
+  border: 4px #003262; }
 
 .classic button,
 .classic input[type="button"],
@@ -130,20 +156,18 @@
 .classic .author-box a {
   color: #fdb515; }
 
+.classic .sidebar .widget.widget_wgs_widget,
 .classic .sidebar .widget.widget_search,
 .classic .sidebar .widget.widget_search .widget-title,
+.classic .sidebar .widget.widget_wgs_widget .widget-title,
 .classic .sidebar .widget form {
   background-color: #003262;
   color: #fff; }
 
-.classic .sidebar .widget form.search-form {
+.classic .sidebar .widget form.search-form,
+.classic .sidebar .widget.widget_wgs_widget form {
   background-color: inherit;
   color: inherit; }
-
-.classic .sidebar .widget.widget_search,
-.classic .sidebar .widget.widget_search .widget-title {
-  background-color: #003262;
-  color: #fff; }
 
 .classic .sidebar .widget.bold {
   background-color: #c4820e;
