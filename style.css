@@ -792,7 +792,7 @@ td:before {
 .site-inner,
 .wrap {
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .site-inner {
@@ -843,7 +843,7 @@ td:before {
 /* ### Primary Sidebar */
 .sidebar-primary {
   float: right;
-  width: 290px;
+  width: 300px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -854,7 +854,7 @@ td:before {
 /* ### Secondary Sidebar */
 .sidebar-secondary {
   float: left;
-  width: 290px;
+  width: 300px;
 }
 
 .content-sidebar-sidebar .sidebar-secondary {
