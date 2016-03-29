@@ -5,41 +5,53 @@ add_filter( 'pre_get_posts', 'berkeley_cpt_archive_sort' );
 function berkeley_cpt_archive_sort( $query ) {
 	if ( is_admin() )
 		return $query;
-	if ( !is_archive() || !isset( $query->query['post_type'] ) )
+	if ( !is_archive() )
 		return $query;
+	
+	//var_dump( $query->query );
+	
 	/*
 	if ( $query->is_main_query() )
 		$query->set( 'ignore_sticky_posts', true );
 	/**/	
-	switch ( $query->query['post_type'] ) {
-		
-		case 'course':
-			$query->set( 'posts_per_page', -1 );
-			$query->set( 'order', 'ASC' );
-			$query->set( 'orderby', 'meta_value meta_value_num' );
-			$query->set( 'meta_key', 'course_number' );
-			$query->set( 'meta_query', array(
-				array(
-					'key' 	  => 'course_number',
-					'compare' => 'EXISTS',
-				)
-			) );
-			$query->set( 'ignore_sticky_posts', true );
-			break;
-			
-		case 'facility':
-			$query->set( 'order', 'ASC' );
-			$query->set( 'orderby', 'title' );
-			break;
-		
-		case 'people':
-			$query->set( 'order', 'ASC' );
-			$query->set( 'orderby', 'meta_value title' );
-			$query->set( 'meta_key', 'last_name' );
-			break;
-			
-		default:
-			break;
+	if ( isset ($query->query['post_type'] ) ) {
+		switch ( $query->query['post_type'] ) {
+
+			case 'course':
+				$query->set( 'posts_per_page', -1 );
+				$query->set( 'order', 'ASC' );
+				$query->set( 'orderby', 'meta_value meta_value_num' );
+				$query->set( 'meta_key', 'course_number' );
+				$query->set( 'meta_query', array(
+					array(
+						'key' 	  => 'course_number',
+						'compare' => 'EXISTS',
+					)
+				) );
+				$query->set( 'ignore_sticky_posts', true );
+				break;
+
+			case 'facility':
+				$query->set( 'order', 'ASC' );
+				$query->set( 'orderby', 'title' );
+				break;
+
+			case 'people':
+				$query->set( 'order', 'ASC' );
+				$query->set( 'orderby', 'meta_value title' );
+				$query->set( 'meta_key', 'last_name' );
+				break;
+
+			default:
+				break;
+		}
+	}
+	
+	
+	if ( isset( $query->query['people_type'] ) ) {
+		$query->set( 'order', 'ASC' );
+		$query->set( 'orderby', 'meta_value title' );
+		$query->set( 'meta_key', 'last_name' );
 	}
 	
 	return $query;
