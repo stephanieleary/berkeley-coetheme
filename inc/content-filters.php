@@ -48,6 +48,11 @@ function berkeley_cpt_archive_sort( $query ) {
 		$query->set( 'meta_key', 'last_name' );
 	}
 	
+	if ( isset( $query->query['facility_type'] ) ) {
+		$query->set( 'order', 'ASC' );
+		$query->set( 'orderby', 'title' );
+	}
+	
 	return $query;
 }
 
