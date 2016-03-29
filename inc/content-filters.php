@@ -7,13 +7,7 @@ function berkeley_cpt_archive_sort( $query ) {
 		return $query;
 	if ( !is_archive() )
 		return $query;
-	
-	//var_dump( $query->query );
-	
-	/*
-	if ( $query->is_main_query() )
-		$query->set( 'ignore_sticky_posts', true );
-	/**/	
+		
 	if ( isset ($query->query['post_type'] ) ) {
 		switch ( $query->query['post_type'] ) {
 
@@ -247,13 +241,6 @@ function berkeley_display_custom_field_content( $content ) {
 				'country' => get_field( 'country' )
 			) );
 
-			// avoid line breaks and commas in between certain fields if they're empty
-			/*
-			if ( isset( $address['line2'] ) ) {
-				$address['line1'] .= $address['line2'];
-				unset($address['line2']);
-			}
-			/**/
 			if ( isset( $address['state'] ) ) {
 				$address['city'] .= ', ' . $address['state'];
 				unset($address['state']);
@@ -443,29 +430,12 @@ function berkeley_post_info_filter( $post_meta ) {
 			break;
 		
 		case 'facility':
-			/*
-			if ( is_archive() ) :
-				$post_meta = sprintf( '<p class="location">%s</p>', get_field( 'location' ) );
-				$url = get_field( 'link' );
-				if ( !empty( $url ) )
-					$post_meta .= sprintf( '<a href="%s" title="URL for %s">Website</p>', esc_url( $url ), the_title_attribute( 'echo=0' ) );
-			endif;
-			/**/
 			break;
 			
 		case 'people':
 			break;
 			
 		case 'publication':
-			/*
-			if ( is_archive() ) :
-				$post_meta = sprintf( '<span class="author">%s</span> ', get_field( 'author' ) );
-				$link = get_field( 'link' );
-				if ( !empty( $link ) )
-					$post_meta .= sprintf( '<span class="pub-link"><a href="%s">%s</a></span>', $link, get_field( 'publication_name' ) );
-				$post_meta .= sprintf( ' <span class="date">%s</span>', get_field( 'publication_date') );
-			endif;
-			/**/
 			break;
 			
 		default: 
@@ -487,10 +457,6 @@ function berkeley_post_meta_filter( $post_meta ) {
 			break;
 		
 		case 'publication':
-			/*
-			if ( has_term( '', 'subject_area' ) )
-				$post_meta = get_the_term_list( $post_id, 'subject_area', '<span class="subject_area">', ', ', '</span>' );
-			/**/
 			break;
 			
 		default: 
