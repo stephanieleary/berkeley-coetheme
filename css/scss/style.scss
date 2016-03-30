@@ -2279,7 +2279,6 @@ li.comment {
 	.archive-description,
 	.author-box,
 	.comment-respond,
-	.entry,
 	.entry-comments,
 	.entry-pings,
 	.site-header,
@@ -2424,22 +2423,6 @@ li.comment {
 	.archive-pagination li a {
 		margin-bottom: 4px;
 	}
-
-	.five-sixths,
-	.four-sixths,
-	.one-fourth,
-	.one-half,
-	.one-sixth,
-	.one-third,
-	.three-fourths,
-	.three-sixths,
-	.two-fourths,
-	.two-sixths,
-	.two-thirds {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
 	
 	.site-footer .genesis-nav-menu a, 
 	.site-footer .genesis-nav-menu > .first > a, 
@@ -2471,6 +2454,25 @@ li.comment {
 		display: inline-block;
 	}
 
+}
+
+@media only screen and (max-width: 560px) {
+	
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 420px) {
@@ -2509,7 +2511,8 @@ li.comment {
 		border-width: 0;
 	}
 	
-	.content tr.entry {
+	.content tr.entry,
+	.content tr.entry.sticky {
 		padding: 0;
 		margin-bottom: 0;
 	}
@@ -2542,5 +2545,10 @@ li.comment {
 		padding-right: 1em; 
 		white-space: nowrap;
 		content: attr(title);
+	}
+	
+	.responsive td.empty,
+	.responsive td.empty:before {
+		display: none;
 	}
 }

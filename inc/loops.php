@@ -54,7 +54,10 @@ function berkeley_loop_table_headers( $headers ) {
 function berkeley_loop_table_cells( $data ) {
 	$datarow = '';
 	foreach ( $data as $title => $field ) {
-		$datarow .= sprintf( '<td title="%s">%s</td>'."\n", $title, $field );
+		$class = '';
+		if ( empty( trim ( $field ) ) )
+			$class = 'empty';
+		$datarow .= sprintf( '<td title="%s" class="%s">%s</td>'."\n", $title, $class, $field );
 	}
 	
 	return sprintf( "<tr id='post-%d' %s>\n %s \n </tr>\n", get_the_ID(), genesis_attr( 'entry' ), $datarow );
