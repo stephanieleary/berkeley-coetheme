@@ -601,6 +601,10 @@ input[type="search"]::-webkit-search-results-button {
 	padding: 9px 8px;
 }
 
+.site-header button.search-toggle {
+	padding: 10px;
+}
+
 /* ## Tables
 --------------------------------------------- */
 
@@ -2305,7 +2309,7 @@ li.comment {
 		overflow: hidden;
 		text-align: left;
 		visibility: visible;
-		padding: .4em 1em 0;
+		padding: 8px 1em 0;
 		background-color: $lawrence;
 		color: #fff;
 	}
@@ -2359,7 +2363,7 @@ li.comment {
 		visibility: inherit;
 		font-size: 16px;
 	    position: absolute;
-	    bottom: -38px;
+	    bottom: -42px;
 		right: 0;
 	    z-index: 30;
 	}
@@ -2488,6 +2492,11 @@ li.comment {
 	
 	.site-description {
 		font-size: 12px;
+	}
+	
+	#berkeley-engineering-logo img {
+		height: 12px;
+		width: 123px;
 	}
 	
 	.site-inner {
