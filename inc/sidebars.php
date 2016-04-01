@@ -37,31 +37,38 @@ function berkeley_register_sidebars() {
 	
 	
 	// CPT-specific sidebar names match CPT names; see berkeley_do_sidebar() below
-	genesis_register_sidebar( array(
-		'id'			=>	'people',
-		'name'			=>	__( 'People' ),
-		'description'	=>	__( 'This is the primary sidebar on People pages.' ),
-	) );
-	genesis_register_sidebar( array(
-		'id'			=>	'facility',
-		'name'			=>	__( 'Facilities' ),
-		'description'	=>	__( 'This is the primary sidebar on Facility pages.' ),
-	) );
-	genesis_register_sidebar( array(
-		'id'			=>	'course',
-		'name'			=>	__( 'Courses' ),
-		'description'	=>	__( 'This is the primary sidebar on Course pages.' ),
-	) );
-	genesis_register_sidebar( array(
-		'id'			=>	'publication',
-		'name'			=>	__( 'Publications' ),
-		'description'	=>	__( 'This is the primary sidebar on Publication pages.' ),
-	) );
-	genesis_register_sidebar( array(
-		'id'			=>	'research',
-		'name'			=>	__( 'Research' ),
-		'description'	=>	__( 'This is the primary sidebar on Research pages.' ),
-	) );
+	$cpts = get_option( 'berkeley_cpts' );
+	
+	if ( 1 == $cpts[ 'people' ] )
+		genesis_register_sidebar( array(
+			'id'			=>	'people',
+			'name'			=>	__( 'People' ),
+			'description'	=>	__( 'This is the primary sidebar on People pages.' ),
+		) );
+	if ( 1 == $cpts[ 'facility' ] )
+		genesis_register_sidebar( array(
+			'id'			=>	'facility',
+			'name'			=>	__( 'Facilities' ),
+			'description'	=>	__( 'This is the primary sidebar on Facility pages.' ),
+		) );
+	if ( 1 == $cpts[ 'course' ] )
+		genesis_register_sidebar( array(
+			'id'			=>	'course',
+			'name'			=>	__( 'Courses' ),
+			'description'	=>	__( 'This is the primary sidebar on Course pages.' ),
+		) );
+	if ( 1 == $cpts[ 'publication' ] )
+		genesis_register_sidebar( array(
+			'id'			=>	'publication',
+			'name'			=>	__( 'Publications' ),
+			'description'	=>	__( 'This is the primary sidebar on Publication pages.' ),
+		) );
+	if ( 1 == $cpts[ 'research' ] )
+		genesis_register_sidebar( array(
+			'id'			=>	'research',
+			'name'			=>	__( 'Research' ),
+			'description'	=>	__( 'This is the primary sidebar on Research pages.' ),
+		) );
 }
 
 
@@ -73,16 +80,8 @@ function berkeley_cpt_switch_sidebar() {
 	if ( is_admin() )
 		return;
 	
-	if ( function_exists( 'berkeley_find_post_type' ) )
-		$type = berkeley_find_post_type();
-	else
-		$type = get_query_var( 'post_type' );
-	
-	if ( isset( $type ) && !empty( $type ) && !in_array( $type, array( 'any', 'post', 'page', 'attachment' ) ) ) {
-		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' ); 
-		add_action( 'genesis_sidebar', 'berkeley_do_sidebar' );
-	}
-	
+	remove_action( 'genesis_sidebar', 'genesis_do_sidebar' ); 
+	add_action( 'genesis_sidebar', 'berkeley_do_sidebar' );
 }
 
 function berkeley_do_sidebar() {
@@ -90,5 +89,9 @@ function berkeley_do_sidebar() {
 		$type = berkeley_find_post_type();
 	else
 		$type = get_query_var( 'post_type' );
-	dynamic_sidebar( $type );
+	
+	if ( isset( $type ) && !empty( $type ) && !in_array( $type, array( 'any', 'post', 'page', 'attachment' ) ) )
+		dynamic_sidebar( $type );
+	else
+		genesis_do_sidebar();
 }
