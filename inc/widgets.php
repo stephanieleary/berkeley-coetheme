@@ -3,6 +3,21 @@
 // Remove the WP Engine widget
 unregister_widget( 'wpe_widget_powered_by' );
 
+// Filter the Recent Posts widget to specify the post type when possible
+add_filter( 'widget_posts_args', 'berkeley_recent_post_widget_args' );
+
+function berkeley_recent_post_widget_args( $args ) {
+	if ( function_exists( 'berkeley_find_post_type' ) )
+		$type = berkeley_find_post_type();
+	else
+		$type = get_query_var( 'post_type' );
+	
+	if ( isset( $type ) && !empty( $type ) && !in_array( $type, array( 'any', 'post', 'page', 'attachment' ) ) )
+		$args['post_type'] = $type;
+	
+	return $args;
+}
+
 // Add background color selector to specific widgets
 // cf. http://ednailor.com/2011/01/24/adding-custom-css-classes-to-sidebar-widgets/
 function berkeley_editor_widget_class_form_extend( $instance, $widget ) {
