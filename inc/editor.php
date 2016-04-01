@@ -37,7 +37,7 @@ add_filter( 'mce_buttons_2', 'berkeley_mce_buttons' );
 function berkeley_mce_style_options( $init_array ) {  
     // Define the style_formats array
     $style_formats = array(  
-        // Each array child is a format with it's own settings
+        // Each array child is a format with its own settings
         array(  
             'title' => 'Button Link',  
             'selector' => 'a',  

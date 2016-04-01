@@ -73,9 +73,12 @@ function berkeley_cpt_switch_sidebar() {
 	if ( is_admin() )
 		return;
 	
-	$type = get_query_var( 'post_type' );
+	if ( function_exists( 'berkeley_find_post_type' ) )
+		$type = berkeley_find_post_type();
+	else
+		$type = get_query_var( 'post_type' );
 	
-	if ( isset( $type ) && !empty( $type ) && !in_array( $type, array( 'post', 'page', 'attachment' ) ) ) {
+	if ( isset( $type ) && !empty( $type ) && !in_array( $type, array( 'any', 'post', 'page', 'attachment' ) ) ) {
 		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' ); 
 		add_action( 'genesis_sidebar', 'berkeley_do_sidebar' );
 	}
@@ -83,6 +86,9 @@ function berkeley_cpt_switch_sidebar() {
 }
 
 function berkeley_do_sidebar() {
-	$type = get_query_var( 'post_type' );
+	if ( function_exists( 'berkeley_find_post_type' ) )
+		$type = berkeley_find_post_type();
+	else
+		$type = get_query_var( 'post_type' );
 	dynamic_sidebar( $type );
 }
