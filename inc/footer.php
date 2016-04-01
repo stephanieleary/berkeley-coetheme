@@ -4,8 +4,8 @@
 if ( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page( array(
-		'page_title' 	=> __('Footer Contents'),
-		'menu_title'	=> __('Footer Contents'),
+		'page_title' 	=> __('Footer Contents', 'beng'),
+		'menu_title'	=> __('Footer Contents', 'beng'),
 		'menu_slug' 	=> 'berkeley-footer-settings',
 		'parent_slug' 	=> 'genesis',
 		'capability'	=> 'edit_pages',
@@ -25,7 +25,7 @@ function berkeley_theme_setup() {
 
 // Add menu location in footer
 function berkeley_register_footer_menu() {
-	register_nav_menu( 'footer-menu', __( 'Footer Navigation Menu' ) );
+	register_nav_menu( 'footer-menu', __( 'Footer Navigation Menu', 'beng' ) );
 }
 add_action( 'init', 'berkeley_register_footer_menu' );
 
@@ -105,7 +105,7 @@ function berkeley_widget_count_params( $params ) {
 	
 	$params[0]['before_widget'] = str_replace( 'class="widget ', 'class="widget ' . $width_class . $index_class . ' ', $params[0]['before_widget'] );
 	
-	$params[0]['description'] .= __(' Limited to three widgets.');
+	$params[0]['description'] .= __(' Limited to three widgets.', 'beng');
 	return $params;
 }
 

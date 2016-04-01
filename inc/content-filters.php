@@ -96,9 +96,9 @@ function berkeley_filter_term_links() {
 add_filter( 'genesis_noposts_text', 'berkeley_noposts_text', 10, 2 );
 function berkeley_noposts_text( $text ) {
 	if ( is_search() ) {
-		$text = __( "I'm sorry. I couldn't find any pages with that phrase. Try again?" );
+		$text = __( "I'm sorry. I couldn't find any pages with that phrase. Try again?", 'beng' );
 	} elseif ( is_archive() ) {
-		$text = __( "There are no entries in this section." );
+		$text = __( "There are no entries in this section.", 'beng' );
 	}
 	$text .= get_search_form( false );
 	return $text;

@@ -31,9 +31,9 @@ function berkeley_course_table_loop() {
 		 );
 		$havetimes = get_posts( $args );
 		
-		$headers = array( __('Course'), __('Number'), __('Instructor(s)') );
+		$headers = array( __('Course', 'beng'), __('Number', 'beng'), __('Instructor(s)', 'beng') );
 		if ( count( $havetimes ) )
-			$headers[] = __('Times');
+			$headers[] = __('Times', 'beng');
 			
 		echo berkeley_loop_table_headers( $headers );
 	
@@ -42,12 +42,12 @@ function berkeley_course_table_loop() {
 			//do_action( 'genesis_before_entry' );
 			
 			$data = array( 
-				__('Course') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
-				__('Number') => get_field( 'course_number' ),
-				__('Instructor(s)') => get_field( 'instructors' )		
+				__('Course', 'beng') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
+				__('Number', 'beng') => get_field( 'course_number' ),
+				__('Instructor(s)', 'beng') => get_field( 'instructors' )		
 			);
 			if ( count( $havetimes ) )
-				$data[__('Times')] = get_field( 'times' );
+				$data[__('Times', 'beng')] = get_field( 'times' );
 			
 			echo berkeley_loop_table_cells( $data );
 			

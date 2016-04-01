@@ -25,14 +25,14 @@ function berkeley_register_sidebars() {
 	// * Announcement feature
 	genesis_register_sidebar( array(
 		'id'			=> 'berkeley-announcements',
-		'name'			=> __( 'Emergency Announcements' ),
-		'description'	=> __( 'Area between the logo and the main navigation.' ),
+		'name'			=> __( 'Emergency Announcements', 'beng' ),
+		'description'	=> __( 'Area between the logo and the main navigation.' , 'beng'),
 	) );
 	// * Slideshow widget area
 	genesis_register_sidebar( array(
 		'id'			=> 'berkeley-featured',
-		'name'			=> __( 'Featured Content' ),
-		'description'	=> __( 'Full-width area below the main navigation.' ),
+		'name'			=> __( 'Featured Content', 'beng' ),
+		'description'	=> __( 'Full-width area below the main navigation.', 'beng' ),
 	) );
 	
 	
@@ -42,32 +42,32 @@ function berkeley_register_sidebars() {
 	if ( 1 == $cpts[ 'people' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'people',
-			'name'			=>	__( 'People' ),
-			'description'	=>	__( 'This is the primary sidebar on People pages.' ),
+			'name'			=>	__( 'People', 'beng' ),
+			'description'	=>	__( 'This is the primary sidebar on People pages.', 'beng' ),
 		) );
 	if ( 1 == $cpts[ 'facility' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'facility',
-			'name'			=>	__( 'Facilities' ),
-			'description'	=>	__( 'This is the primary sidebar on Facility pages.' ),
+			'name'			=>	__( 'Facilities', 'beng' ),
+			'description'	=>	__( 'This is the primary sidebar on Facility pages.', 'beng' ),
 		) );
 	if ( 1 == $cpts[ 'course' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'course',
-			'name'			=>	__( 'Courses' ),
-			'description'	=>	__( 'This is the primary sidebar on Course pages.' ),
+			'name'			=>	__( 'Courses', 'beng' ),
+			'description'	=>	__( 'This is the primary sidebar on Course pages.', 'beng' ),
 		) );
 	if ( 1 == $cpts[ 'publication' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'publication',
-			'name'			=>	__( 'Publications' ),
-			'description'	=>	__( 'This is the primary sidebar on Publication pages.' ),
+			'name'			=>	__( 'Publications', 'beng' ),
+			'description'	=>	__( 'This is the primary sidebar on Publication pages.', 'beng' ),
 		) );
 	if ( 1 == $cpts[ 'research' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'research',
-			'name'			=>	__( 'Research' ),
-			'description'	=>	__( 'This is the primary sidebar on Research pages.' ),
+			'name'			=>	__( 'Research', 'beng' ),
+			'description'	=>	__( 'This is the primary sidebar on Research pages.', 'beng' ),
 		) );
 }
 

@@ -5,7 +5,8 @@ Description: This is the Berkeley College of Engineering theme created for the G
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
 Template: genesis  
-Template Version: 2.1.2  
+Template Version: 2.2.7
+Text Domain: beng
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
@@ -1087,7 +1088,8 @@ img.alignright,
   margin: 0 0 24px 24px;
 }
 
-.wp-caption-text {
+.wp-caption-text,
+.gallery-caption {
   font-size: 16px;
   font-style: normal;
   text-align: left;

@@ -68,6 +68,7 @@ function berkeley_setup_theme() {
 		'random-default'	 => false,
 		'wp-head-callback'	 => 'berkeley_header_body_classes',
     );
+	add_theme_support( "title-tag" );
     add_theme_support( 'custom-header', $headers );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 	add_theme_support( 'genesis-responsive-viewport' );
@@ -93,24 +94,24 @@ add_action( 'genesis_site_title', 'berkeley_header_image', 2 );
 function berkeley_header_image() {
 	$header_image = get_header_image();
 	if ( ! empty( $header_image ) ) : 
-		printf( '<a href="%s"><img id="custom-header" src="%s" alt="%s" /></a>', esc_url( get_option( 'home' ) ), esc_url( $header_image ), get_option( 'blogname' ) );
+		printf( '<a href="%s"><img id="custom-header" src="%s" alt="%s" /></a>', home_url(), esc_url( $header_image ), get_option( 'blogname' ) );
 	endif;
 }
 
 function berkeley_get_colors() {
 	return array( 
-		'pool'			=> __( 'Pool' ), 
-		'pool light'	=> __( 'Pool Light' ),
-		'punch'			=> __( 'Punch' ), 
-		'punch light'	=> __( 'Punch Light' ),
-		'classic'		=> __( 'Classic' ), 
-		'classic light'	=> __( 'Classic Light' ), 
-		'earth'			=> __( 'Earth' ), 
-		'earth light'	=> __( 'Earth Light' ), 
-		'woods'			=> __( 'Woods' ),
-		'woods light'	=> __( 'Woods Light' ), 
-		'pacific'		=> __( 'Pacific' ),
-		'pacific light'	=> __( 'Pacific Light' ),
+		'pool'			=> __( 'Pool', 'beng' ), 
+		'pool light'	=> __( 'Pool Light', 'beng' ),
+		'punch'			=> __( 'Punch', 'beng' ), 
+		'punch light'	=> __( 'Punch Light', 'beng' ),
+		'classic'		=> __( 'Classic', 'beng' ), 
+		'classic light'	=> __( 'Classic Light', 'beng' ), 
+		'earth'			=> __( 'Earth', 'beng' ), 
+		'earth light'	=> __( 'Earth Light', 'beng' ), 
+		'woods'			=> __( 'Woods', 'beng' ),
+		'woods light'	=> __( 'Woods Light', 'beng' ), 
+		'pacific'		=> __( 'Pacific', 'beng' ),
+		'pacific light'	=> __( 'Pacific Light', 'beng' ),
 	);
 }
 

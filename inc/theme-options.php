@@ -18,8 +18,8 @@ add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
 
 // Register theme settings boxes
 function berkeley_register_options_settings_box( $_genesis_theme_settings_pagehook ) {
-	add_meta_box( 'berkeley-logo-settings', __('Berkeley Engineering Logo'), 'berkeley_logo_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
-	add_meta_box( 'berkeley-color-settings', __('Color Scheme'), 'berkeley_color_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
+	add_meta_box( 'berkeley-logo-settings', __('Berkeley Engineering Logo', 'beng'), 'berkeley_logo_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
+	add_meta_box( 'berkeley-color-settings', __('Color Scheme', 'beng'), 'berkeley_color_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
 	remove_meta_box( 'genesis-theme-settings-style-selector', $_genesis_theme_settings_pagehook, 'main' );
 	remove_meta_box( 'genesis-theme-settings-header', $_genesis_theme_settings_pagehook, 'main' );
 }
@@ -68,7 +68,7 @@ function berkeley_logo_display() {
 				$path .= 'be_logo_white.png';
 				break;
 		}
-		printf( '<div id="berkeley-engineering-logo"><a href="http://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, __('Berkeley College of Engineering Logo') );
+		printf( '<div id="berkeley-engineering-logo"><a href="http://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, __('Berkeley College of Engineering Logo', 'beng') );
 	}
 }
 add_action( 'genesis_site_title', 'berkeley_logo_display', 1 );
@@ -120,11 +120,11 @@ function berkeley_logo_settings_box() {
 			<tbody>
 
 				<tr valign="top">
-					<th scope="row"><?php _e('Logo Visibility'); ?></th>
+					<th scope="row"><?php _e( 'Logo Visibility', 'beng' ); ?></th>
 					<td>
 						<fieldset class="genesis-logo-selector">
 							<p><label><input type="checkbox" name="<?php echo GENESIS_SETTINGS_FIELD; ?>[be_logo]" value="1" <?php checked( $logo, 1 ); ?> /> 
-							<?php _e( 'Display Berkeley logo below site title and description' );?></label></p>
+							<?php _e( 'Display Berkeley logo below site title and description', 'beng' );?></label></p>
 							<div class="be-logo-preview" style="background: <?php echo esc_attr( $bg ); ?>">
 								<?php if ( $logo ) {
 									printf( '<img src="%s" alt="Berkeley Engineering Logo">', $path );
@@ -170,10 +170,10 @@ function berkeley_color_settings_box() {
 			<tbody>
 
 				<tr valign="top">
-					<th scope="row"><?php _e('Select Theme Colors') ?></th>
+					<th scope="row"><?php _e( 'Select Theme Colors', 'beng' ) ?></th>
 					<td>
 						<fieldset class="genesis-layout-selector">
-							<legend class="screen-reader-text"><?php _e('Color Scheme'); ?></legend>
+							<legend class="screen-reader-text"><?php _e( 'Color Scheme', 'beng' ); ?></legend>
 
 							<?php
 

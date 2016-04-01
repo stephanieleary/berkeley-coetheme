@@ -73,7 +73,7 @@ function berkeley_people_table_loop() {
 
 		do_action( 'genesis_before_while' );
 		
-		$headers = array( __('Name'), __('Title'), __('Office'), __('Email') );
+		$headers = array( __('Name', 'beng'), __('Title', 'beng'), __('Office', 'beng'), __('Email', 'beng') );
 		
 		echo berkeley_loop_table_headers( $headers );
 	
@@ -82,10 +82,10 @@ function berkeley_people_table_loop() {
 			do_action( 'genesis_before_entry' );
 			
 			$data = array( 
-				__('Name')   => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
-				__('Title')  => get_field( 'job_title' ),
-				__('Office') => get_field( 'address_line_1' ),
-				__('Email')  => sprintf( '<a href="mailto:%1$s">%1$s</a>', get_field( 'email' ) )
+				__('Name', 'beng')   => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
+				__('Title', 'beng')  => get_field( 'job_title' ),
+				__('Office', 'beng') => get_field( 'address_line_1' ),
+				__('Email', 'beng')  => sprintf( '<a href="mailto:%1$s">%1$s</a>', get_field( 'email' ) )
 			);
 			
 			echo berkeley_loop_table_cells( $data );
