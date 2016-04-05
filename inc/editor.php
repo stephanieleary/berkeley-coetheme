@@ -1,6 +1,6 @@
 <?php
 
-//* Editor CSS
+//* TinyMCE CSS
 add_action( 'admin_init', 'berkeley_editor_styles' );
 
 function berkeley_editor_styles() {
@@ -13,7 +13,7 @@ function berkeley_editor_styles() {
 		add_editor_style( $path );
 }
 
-// Add color scheme classes to rich text editor
+// Add color scheme classes to TinyMCE styles
 function berkeley_tiny_mce_before_init( $init_array ) {
     $init_array['body_class'] = genesis_get_option( 'style_selection' );
 
@@ -25,12 +25,12 @@ function berkeley_tiny_mce_before_init( $init_array ) {
 }
 add_filter( 'tiny_mce_before_init', 'berkeley_tiny_mce_before_init' );
 
-// Callback function to insert 'styleselect' into the $buttons array
+// Callback function to insert 'styleselect' (Formats) into the $buttons array
 function berkeley_mce_buttons( $buttons ) {
     array_unshift( $buttons, 'styleselect' );
     return $buttons;
 }
-// Register our callback to the appropriate filter
+
 add_filter( 'mce_buttons_2', 'berkeley_mce_buttons' );
 
 // Callback function to filter the MCE settings
@@ -50,11 +50,13 @@ function berkeley_mce_style_options( $init_array ) {
     return $init_array;  
 
 } 
-// Attach callback to 'tiny_mce_before_init' 
+
 add_filter( 'tiny_mce_before_init', 'berkeley_mce_style_options' );
 
 
 // New TinyMCE button for blockquotes with cite
+
+
 function berkeley_pullquote_mce_button() {
 	// check if WYSIWYG is enabled
 	if ( 'true' == get_user_option( 'rich_editing' ) ) {

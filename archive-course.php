@@ -47,7 +47,7 @@ function berkeley_course_table_loop() {
 				__('Instructor(s)', 'beng') => get_field( 'instructors' )		
 			);
 			if ( count( $havetimes ) )
-				$data[__('Times', 'beng')] = get_field( 'times' );
+				$data[__('Time', 'beng')] = get_field( 'times' );
 			
 			echo berkeley_loop_table_cells( $data );
 			

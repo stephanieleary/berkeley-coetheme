@@ -284,6 +284,10 @@ body.earth {
 	color: $gold;
 }
 
+.earth .soliloquy-caption a:hover {
+	color: $bay-fog;
+}
+
 .earth .sidebar .widget.widget_wgs_widget,
 .earth .sidebar .widget.widget_search, 
 .earth .sidebar .widget.widget_search .widget-title,

@@ -1,9 +1,11 @@
 /*
 Theme Name: Berkeley Engineering (Genesis)
-Theme URI: http://my.studiopress.com/themes/genesis/  
-Description: This is the Berkeley College of Engineering theme created for the Genesis Framework.   
+Theme URI: https://github.com/sillybean/berkeley-coetheme
+GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
+Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
+Version: 1.0
 Template: genesis  
 Template Version: 2.2.7
 Text Domain: beng
@@ -38,8 +40,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 - Widgets
 	- Featured Content
 - Plugins
-	- Genesis eNews Extended
+	- Form Widgets
+	- Google CSE
+	- Rich Text widget
+	- Pull Quotes
 	- Jetpack
+	- Announcements
+	- Soliloquy
+	- Accordion
+	- Posts by Term
+	- Berkeley Events
 - Site Header
 	- Title Area
 	- Widget Area
@@ -60,6 +70,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	- Max-width: 1200px
 	- Max-width: 960px
 	- Max-width: 800px
+	- Max-width: 560px
+	- Max-width: 420px
 */
 
 /* # SASS Variables
@@ -83,6 +95,7 @@ $soybean:				#859438;
 $stone-pine:			#584f29;
 $light-gray:			#eee;
 $med-gray:				#888;
+$dark-gray: 			#333;
 $super-light-gray:		#f0f0f0;
 $fonts-sans:			"Lato", "open sans", Arial, sans-serif;
 $fonts-serif:			"source serif pro", "Georgia", "Times New Roman", serif;
@@ -183,7 +196,7 @@ tr.entry:after {
 	font-size: 1em;
 	font-weight: bold;
 	padding: 15px 23px 14px;
-	color: #333;
+	color: $dark-gray;
 	background: #fff;
 	z-index: 100000; /* Above WP toolbar. */
 	text-decoration: none;
@@ -212,8 +225,8 @@ tr.entry:after {
 
 /* Display outline on focus */
 :focus {
- color: #333;
- outline: #ccc solid 1px;
+ color: $dark-gray;
+ outline: $med-gray solid 1px;
 }
 
 /* ## Accessible Menu
@@ -272,12 +285,12 @@ textarea:focus,
 }
 
 a {
-	color: #01b3e3;
-	text-decoration: underline;
+	color: $lawrence;
 }
 
 a:hover {
-	color: $lawrence;
+	color: $founders-rock;
+	text-decoration: underline;
 }
 
 address,
@@ -504,7 +517,7 @@ img {
 }
 
 .gallery img {
-	border: 1px solid #ddd;
+	border: 1px solid $med-gray;
 	height: auto;
 	padding: 4px;
 }
@@ -1140,7 +1153,7 @@ input.gsc-input {
 
 .wgs_wrapper .gsc-tabsArea,
 .wgs_wrapper .gsc-tabHeader.gsc-tabhActive {
-	border-color: #ddd;
+	border-color: $med-gray;
 }
 
 .wgs_wrapper .gsc-result .gs-title {
@@ -1172,7 +1185,7 @@ input.gsc-input {
 	display: none;
 }
 
-/* ## Pull Quotes / Shortcode UI
+/* ## Pull Quotes
 --------------------------------------------- */
 
 .pullquote {
@@ -1194,7 +1207,7 @@ input.gsc-input {
 	margin-left: 0;
 }
 
-/* ## Announcements & Featured Content
+/* ## Announcements
 ---------------------------------------------- */
 
 .announcements,
@@ -1216,6 +1229,9 @@ input.gsc-input {
 	color: $medalist;
 }
 
+/* # Soliloquy (Featured widget area)
+----------------------------------------------- */
+
 .has-slideshow .site-inner {
 	padding-top: 0;
 }
@@ -1231,19 +1247,6 @@ input.gsc-input {
 
 .soliloquy-caption a:hover {
 	color: $lawrence;
-}
-
-.pacific .soliloquy-caption a {
-	color: $bay-fog;
-}
-
-.pacific .soliloquy-caption a:hover {
-	color: $golden-gate;
-}
-
-.earth .soliloquy-caption a:hover,
-.woods .soliloquy-caption a:hover {
-	color: $bay-fog;
 }
 
 /* # Posts By Term Widget
@@ -1339,7 +1342,7 @@ input.gsc-input {
 .acf-map {
 	width: 100%;
 	height: 400px;
-	border: #ccc solid 1px;
+	border: 1px solid $med-gray;
 	margin: 20px 0;
 }
 
@@ -1680,7 +1683,7 @@ input.gsc-input {
 
 .entry-content code {
 	background-color: $pacific;
-	color: #ddd;
+	color: $light-gray;
 }
 
 .archive .entry-content p {
@@ -2424,11 +2427,6 @@ li.comment {
 
 	.nav-primary .sub-menu .sub-menu .sub-menu a {
 		padding-left: 5em;
-	}
-
-	.nav-primary a:hover,
-	.nav-primary .current-menu-item > a {
-		color: #500000;
 	}
 
 	.archive-pagination li a {
