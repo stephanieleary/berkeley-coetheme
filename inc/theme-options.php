@@ -33,7 +33,7 @@ add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
 
 // Register theme settings boxes
 function berkeley_register_options_settings_box( $_genesis_theme_settings_pagehook ) {
-	add_meta_box( 'berkeley-logo-settings', __('Berkeley Engineering Logo', 'beng'), 'berkeley_logo_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
+	add_meta_box( 'berkeley-logo-settings', __('Logo and Front Page Title', 'beng'), 'berkeley_logo_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
 	add_meta_box( 'berkeley-color-settings', __('Color Scheme', 'beng'), 'berkeley_color_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
 	remove_meta_box( 'genesis-theme-settings-style-selector', $_genesis_theme_settings_pagehook, 'main' );
 	remove_meta_box( 'genesis-theme-settings-header', $_genesis_theme_settings_pagehook, 'main' );
@@ -42,10 +42,24 @@ add_action( 'genesis_theme_settings_metaboxes', 'berkeley_register_options_setti
 
 
 /**
- * Logo option
+ * Logo and Home Page Title options
  *
- * Add an option to display the Berkeley logo below the site title and description.
+ * Add an option to display the Berkeley logo below the site title and description, 
+ * and to hide the title on the home page.
  */
+
+add_action( 'get_header', 'berkeley_hide_home_title' );
+
+function berkeley_hide_home_title() {
+	if ( !is_front_page() )
+		return;
+	
+	$hide_title	= genesis_get_option( 'hide_home_title' );
+	if ( !$hide_title )
+		return;
+		
+	remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+}
 
 function berkeley_logo_display() {
 	$logo = genesis_get_option( 'be_logo' );
@@ -90,43 +104,37 @@ add_action( 'genesis_site_title', 'berkeley_logo_display', 1 );
 
 function berkeley_logo_defaults( $defaults ) {
 	$defaults['be_logo'] = false;
+	$defaults['hide_home_title'] = false;
 	return $defaults;
 }
 add_filter( 'genesis_theme_settings_defaults', 'berkeley_logo_defaults' );
 
 function berkeley_logo_settings_box() {
-	
+	$hide_title	= genesis_get_option( 'hide_home_title' );
 	$logo		= genesis_get_option( 'be_logo' );
-	$path 		= get_stylesheet_directory_uri() . '/images/';
-	$img_black	= 'be_logo_blue.png';
-	$img_white	= 'be_logo_white.png';
+	$colors 	= genesis_get_option( 'style_selection' );
 	$bg 		= '#fff';
 	$blue 		= '#003262';
 	$south_hall = '#6c3302';
 	$pacific 	= '#46535e';
 	$stone_pine = '#584f29';
-	$colors = genesis_get_option( 'style_selection' );
+	
 	switch ( $colors ) {
 		case 'pool':
 		case 'punch':
 		case 'classic':
 			$bg = $blue;
-			$path = $path . $img_white;
 			break;
 		case 'earth':
 			$bg = $south_hall;
-			$path = $path . $img_white;
 			break;
 		case 'woods':
 			$bg = $stone_pine;
-			$path = $path . $img_white;
 			break;
 		case 'pacific':
 			$bg = $pacific;
-			$path = $path . $img_white;
 			break;
 		default: 
-			$path = $path . $img_black;
 			break;
 	}
 	?>
@@ -135,15 +143,24 @@ function berkeley_logo_settings_box() {
 			<tbody>
 
 				<tr valign="top">
+					<th scope="row"><?php _e( 'Front Page Title', 'beng' ); ?></th>
+					<td>
+						<fieldset>
+							<p><label><input type="checkbox" name="<?php echo GENESIS_SETTINGS_FIELD; ?>[hide_home_title]" value="1" <?php checked( $hide_title, 1 ); ?> /> 
+							<?php _e( 'Hide page title on front page', 'beng' );?></label></p>
+							</fieldset>
+					</td>
+				</tr>
+
+
+				<tr valign="top">
 					<th scope="row"><?php _e( 'Logo Visibility', 'beng' ); ?></th>
 					<td>
 						<fieldset class="genesis-logo-selector">
 							<p><label><input type="checkbox" name="<?php echo GENESIS_SETTINGS_FIELD; ?>[be_logo]" value="1" <?php checked( $logo, 1 ); ?> /> 
-							<?php _e( 'Display Berkeley logo below site title and description', 'beng' );?></label></p>
-							<div class="be-logo-preview" style="background: <?php echo esc_attr( $bg ); ?>">
-								<?php if ( $logo ) {
-									printf( '<img src="%s" alt="Berkeley Engineering Logo">', $path );
-								} ?>
+							<?php _e( 'Display Berkeley logo above site title and description', 'beng' );?></label></p>
+							<div class="be-logo-preview" style="background-color: <?php echo $bg; ?>">
+								<?php berkeley_logo_display(); ?>
 							</div>
 							</fieldset>
 					</td>
@@ -161,6 +178,7 @@ function berkeley_register_logo_sanitization_filters() {
 		GENESIS_SETTINGS_FIELD,
 		array(
 			'be_logo',
+			'hide_home_title'
 		) 
 	);
 }
