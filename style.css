@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.1.1
+Version: 1.1.2
 Template: genesis  
 Template Version: 2.2.7
 Text Domain: beng
@@ -458,7 +458,7 @@ width: 1px;
 --------------------------------------------- */
 .entry-title { font-size: 24px; }
 
-.archive-title, .single .entry-title { font-size: 36px; }
+.archive-title, .single .entry-title, .page .entry-title { font-size: 36px; }
 
 .entry-title a, .sidebar .widget-title a { color: #46535e; text-decoration: none; }
 
@@ -565,6 +565,8 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 /* ## Rich text widget
 --------------------------------------------- */
 .sidebar .widget.bold { background: #00a598; color: #fff; }
+
+.sidebar .widget.bold a { color: #f0f5c6; text-decoration: underline; }
 
 .sidebar .widget.bold a.button { background: #cfdd45; color: #003262; }
 
@@ -984,6 +986,8 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
   .site-header .widget-area .select-menu { float: none; margin: .5em auto; }
   .content, .sidebar, .site-footer, .wrap { padding-left: 5%; padding-right: 5%; }
   .content { padding-top: 1em; }
+  .single .entry-content .wp-post-image { max-width: 240px; }
+  .single-people .entry-content .wp-post-image { max-width: 400px; }
   .site-inner, .archive-description, .author-box, .comment-respond, .entry-comments, .entry-pings, .site-header, .featured .wrap, .footer-widgets .wrap { padding: 0; }
   .nav-primary .menu-item, .nav-secondary .menu-item { display: block; width: 100%; }
   button.menu-toggle, button.sub-menu-toggle { display: block; margin: 0 auto; overflow: hidden; text-align: left; visibility: visible; padding: 8px 1em 0; background-color: #00b0da; color: #fff; }
@@ -1018,6 +1022,8 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 @media only screen and (max-width: 420px) { .site-title { font-size: 24px; }
   .site-description { font-size: 12px; }
   #berkeley-engineering-logo img { height: 12px; width: 123px; }
+  .single .entry-content .wp-post-image { max-width: 140px; }
+  .single-people .entry-content .wp-post-image { max-width: 240px; }
   .site-inner { padding: 0; }
   .whitepaper .entry { margin: 0; padding: 2em; }
   .pullquote { width: 12em; }

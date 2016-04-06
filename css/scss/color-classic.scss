@@ -231,6 +231,10 @@ $super-light-gray:		#f0f0f0;
 	color: #fff;
 }
 
+.classic .sidebar .widget.bold a {
+	color: $bay-fog;
+}
+
 .classic .sidebar .widget.bold a.button {
 	background-color: $gold;
 	color: $blue;

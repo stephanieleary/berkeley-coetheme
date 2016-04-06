@@ -23,6 +23,8 @@
 
 .pacific .sidebar .widget.bold { background-color: #888; color: #fff; }
 
+.pacific .sidebar .widget.bold a { color: #ddd5c7; }
+
 .pacific .sidebar .widget.bold a.button { background-color: #eee; color: #3b7ea1; }
 
 .pacific .sidebar .widget.subtle { background-color: #eee; color: #46535e; }

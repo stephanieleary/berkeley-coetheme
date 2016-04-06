@@ -95,6 +95,10 @@ body.woods {
 	color: #fff;
 }
 
+.woods .sidebar .widget.bold a {
+	color: $bay-fog;
+}
+
 .woods .sidebar .widget.bold a.button,
 .woods.light .sidebar .widget.bold a.button {
 	background-color: $bay-fog;

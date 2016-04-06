@@ -95,6 +95,8 @@ body.earth { color: #000; }
 
 .earth .sidebar .widget.bold { background-color: #d9661f; color: #fff; }
 
+.earth .sidebar .widget.bold a { color: #ddd5c7; }
+
 .earth .sidebar .widget.bold a.button { background-color: #fdb515; color: #6c3302; }
 
 .earth .sidebar .widget.bold a.button:hover { background-color: #fed57a; }

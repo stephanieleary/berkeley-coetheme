@@ -29,6 +29,8 @@ body.woods { color: #000; }
 
 .woods .sidebar .widget.bold, .woods.light .sidebar .widget.bold { background-color: #c4820e; color: #fff; }
 
+.woods .sidebar .widget.bold a { color: #ddd5c7; }
+
 .woods .sidebar .widget.bold a.button, .woods.light .sidebar .widget.bold a.button { background-color: #ddd5c7; color: #584f29; }
 
 .woods .sidebar .widget.subtle, .woods.light .sidebar .widget.subtle { background-color: #dce3b5; color: #584f29; }
