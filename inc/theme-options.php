@@ -59,6 +59,12 @@ function berkeley_hide_home_title() {
 		return;
 		
 	remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+	add_filter( 'body_class', 'berkeley_notitle_body_class' );
+}
+
+function berkeley_notitle_body_class( $classes ) {
+   $classes[] = 'notitle';
+   return $classes;  
 }
 
 function berkeley_logo_display() {
