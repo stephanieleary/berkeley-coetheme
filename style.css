@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.1
+Version: 1.1.1
 Template: genesis  
 Template Version: 2.2.7
 Text Domain: beng
@@ -207,7 +207,7 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
 
 ::selection { background-color: #46535e; color: #fff; }
 
-a { color: #00b0da; }
+a { color: #00b0da; text-decoration: none; }
 
 a:hover { color: #3b7ea1; text-decoration: underline; }
 
@@ -372,7 +372,7 @@ td:before { display: none; }
 .sidebar-content-sidebar .content-sidebar-wrap, .sidebar-sidebar-content .content-sidebar-wrap { float: right; }
 
 /* ### Content */
-.content { float: right; width: 886px; }
+.content { float: right; width: 886px; padding-bottom: 40px; }
 
 .content-sidebar .content, .content-sidebar-sidebar .content, .sidebar-content-sidebar .content { float: left; }
 
@@ -755,7 +755,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 ---------------------------------------------------------------------------------------------------- */
 /* ## Entries
 --------------------------------------------- */
-.entry, .entry.sticky, .entry.sticky.has-post-thumbnail { padding: 16px 24px; }
+.entry, .entry.sticky, .entry.sticky.has-post-thumbnail, .after-entry.widget-area { padding: 16px 24px; }
 
 .entry.has-post-thumbnail { padding-top: 0; }
 

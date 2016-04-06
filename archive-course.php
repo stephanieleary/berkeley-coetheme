@@ -33,7 +33,7 @@ function berkeley_course_table_loop() {
 		
 		$headers = array( __('Course', 'beng'), __('Number', 'beng'), __('Instructor(s)', 'beng') );
 		if ( count( $havetimes ) )
-			$headers[] = __('Times', 'beng');
+			$headers[] = __('Time', 'beng');
 			
 		echo berkeley_loop_table_headers( $headers );
 	
