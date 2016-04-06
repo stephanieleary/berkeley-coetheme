@@ -59,7 +59,7 @@ function berkeley_setup_theme() {
 	}
 	
 	$headers = array(
-        'default-image'      => get_stylesheet_directory_uri() . 'images/header.png',
+        'default-image'      => '',
         'default-text-color' => $text,
         'width'              => 800,
         'height'             => 240,

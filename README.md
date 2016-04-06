@@ -1,16 +1,11 @@
-# Genesis Sample Theme
+# Berkeley College of Engineering Theme
 
-Github project link: https://github.com/copyblogger/genesis-sample
-
-
-## Installation Instructions
-
-1. Upload the Genesis Sample theme folder via FTP to your wp-content/themes/ directory. (The Genesis parent theme needs to be in the wp-content/themes/ directory as well.)
-2. Go to your WordPress dashboard and select Appearance.
-3. Activate the Genesis Sample theme.
-4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking.
+Github project link: https://github.com/sillybean/berkeley-coetheme
 
 
-## Theme Support
+## Changelog
 
-Please visit http://my.studiopress.com/help/ for theme support.
+1.1.3: Corrected default header image path
+1.1.2: bold widget links; page title size; img max-widths
+1.1.1: after entry styles
+1.1: home page title option; updated logo preview function
