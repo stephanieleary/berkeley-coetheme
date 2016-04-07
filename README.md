@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.1.5: Announcements text style corrections; slideshow hook correction
 1.1.4: Gforms sidebar styles; corrected p padding when front page title is hidden
 1.1.3: Corrected default header image path
 1.1.2: bold widget links; page title size; img max-widths

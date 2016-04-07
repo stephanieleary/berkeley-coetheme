@@ -1236,9 +1236,11 @@ input.gsc-input {
 ---------------------------------------------- */
 
 .announcements,
-.announcements .widget {
-	background: #000;
+.announcements .widget, 
+.announcements .widget-title  {
+	background-color: #000;
 	color: #fff;
+	text-align: center;
 }
 
 .announcements .widget p {
