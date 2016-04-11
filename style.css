@@ -588,6 +588,8 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 --------------------------------------------- */
 .pullquote { background-color: #fdb515; color: #003262; width: 16em; margin: 1em; }
 
+.pullquote a { color: #fff; text-decoration: underline; }
+
 .pullquote.alignnone { width: 24em; }
 
 .pullquote.alignright { margin-right: 0; }
