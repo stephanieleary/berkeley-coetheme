@@ -249,6 +249,11 @@ p.wp-caption-text {
   margin: 1em;
 }
 
+.pullquote a {
+	color: #fff;
+	text-decoration: underline;
+}
+
 .pullquote.alignnone {
   width: 24em;
 }
