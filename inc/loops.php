@@ -29,7 +29,7 @@ function berkeley_sticky_post_loop() {
 add_filter( 'post_class', 'berkeley_sticky_post_class' );
 
 function berkeley_sticky_post_class( $classes ) {
-	if ( in_array( get_the_ID(), get_option( 'sticky_posts' ) ) )
+	if ( is_sticky() || in_array( get_the_ID(), get_option( 'sticky_posts' ) ) )
 		$classes[] = 'sticky';
 	return $classes;
 }
