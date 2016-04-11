@@ -128,8 +128,13 @@ function berkeley_get_color_stylesheet( $color ) {
 }
 
 //* Add scripts
-add_action( 'wp_enqueue_scripts', 'berkeley_enqueue_files', 1 );
 
+add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
+function berkeley_settings_admin_styles( $hook ) {
+    wp_enqueue_style( 'berkeley-admin-css', get_stylesheet_directory_uri() . '/css/admin-style.css' );
+}
+
+add_action( 'wp_enqueue_scripts', 'berkeley_enqueue_files', 1 );
 function berkeley_enqueue_files() {
 	if ( is_admin() )
 		return;

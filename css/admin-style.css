@@ -51,3 +51,7 @@ i.mce-i-icon {
     margin-left: -2px;
     padding-right: 2px
 }
+
+.mce-btn .mce-ico {
+	font-family: dashicons,tinymce,arial !important;
+}

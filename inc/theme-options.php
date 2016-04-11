@@ -24,13 +24,6 @@ function berkeley_coetheme_closed_meta_boxes( $classes ) {
 	return $classes;
 }
 
-// Stylesheet for Genesis theme settings screen
-function berkeley_settings_admin_styles( $hook ) {
-    if ( 'genesis' == $hook || 'toplevel_page_genesis' == $hook )
-		wp_enqueue_style( 'genesis-theme-options-css', get_stylesheet_directory_uri() . '/css/admin-style.css' );
-}
-add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
-
 // Register theme settings boxes
 function berkeley_register_options_settings_box( $_genesis_theme_settings_pagehook ) {
 	add_meta_box( 'berkeley-logo-settings', __('Logo and Front Page Title', 'beng'), 'berkeley_logo_settings_box', $_genesis_theme_settings_pagehook, 'main', 'high' );
