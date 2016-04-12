@@ -97,6 +97,9 @@ function berkeley_do_sidebar() {
 	else
 		$type = get_query_var( 'post_type' );
 	
+	if ( is_home() && !is_front_page() )
+		$type = 'post';
+	
 	if ( isset( $type ) && !empty( $type ) && is_active_sidebar( $type ) && !in_array( $type, array( 'any', 'page', 'attachment' ) ) )
 		dynamic_sidebar( $type );
 	else
