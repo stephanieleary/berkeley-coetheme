@@ -34,6 +34,13 @@ function berkeley_register_sidebars() {
 		'name'			=> __( 'Featured Content', 'beng' ),
 		'description'	=> __( 'Full-width area below the main navigation.', 'beng' ),
 	) );
+	//* News widget area
+	// * Slideshow widget area
+	genesis_register_sidebar( array(
+		'id'			=> 'post',
+		'name'			=> __( 'News', 'beng' ),
+		'description'	=> __( 'This is the primary sidebar on news/blog archives.', 'beng' ),
+	) );
 	
 	
 	// CPT-specific sidebar names match CPT names; see berkeley_do_sidebar() below
@@ -90,7 +97,7 @@ function berkeley_do_sidebar() {
 	else
 		$type = get_query_var( 'post_type' );
 	
-	if ( isset( $type ) && !empty( $type ) && !in_array( $type, array( 'any', 'post', 'page', 'attachment' ) ) )
+	if ( isset( $type ) && !empty( $type ) && is_active_sidebar( $type ) && !in_array( $type, array( 'any', 'page', 'attachment' ) ) )
 		dynamic_sidebar( $type );
 	else
 		genesis_do_sidebar();

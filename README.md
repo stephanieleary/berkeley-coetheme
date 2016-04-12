@@ -5,7 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
-1.1.8: Pull quote link colors
+1.1.8: Pull quote link colors; news sidebar & primary/secondary fallback for CPTs
 1.1.7: Fixed icon font; moved admin-style.css to functions.php & enqueue on all admin screens
 1.1.6: Added home.php blog template
 1.1.5: Announcements text style corrections; slideshow hook correction
