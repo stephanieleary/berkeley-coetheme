@@ -103,15 +103,19 @@
 
 .pacific #genesis-footer-widgets .widget.index-2, .pacific #genesis-footer-widgets .widget.index-6, .pacific #genesis-footer-widgets .widget.index-2 .widget-title, .pacific #genesis-footer-widgets .widget.index-6 .widget-title { background-color: #ddd5c7; }
 
-.pacific #genesis-footer-widgets .widget.index-3, .pacific #genesis-footer-widgets .widget.index-7 { background-color: #888; }
+.pacific #genesis-footer-widgets .widget.index-3, .pacific #genesis-footer-widgets .widget.index-7, .pacific #genesis-footer-widgets .widget.index-4, .pacific #genesis-footer-widgets .widget.index-8 { background-color: #888; }
 
-.pacific #genesis-footer-widgets .widget.index-4, .pacific #genesis-footer-widgets .widget.index-8 { background-color: #888; }
+.pacific #genesis-footer-widgets .widget a, .pacific #genesis-footer-widgets .widget.index-1 a, .pacific #genesis-footer-widgets .widget.index-5 a, .pacific #genesis-footer-widgets .widget.index-9 a { color: #2d617c; text-decoration: underline; }
 
-.pacific #genesis-footer-widgets .widget a, .pacific #genesis-footer-widgets .widget.index-1 a, .pacific #genesis-footer-widgets .widget.index-5 a, .pacific #genesis-footer-widgets .widget.index-9 a { color: #3b7ea1; }
+.pacific #genesis-footer-widgets .widget.index-2 a, .pacific #genesis-footer-widgets .widget.index-6 a, .pacific.light #genesis-footer-widgets .widget.index-2 a, .pacific.light #genesis-footer-widgets .widget.index-6 a { color: #2d617c; text-decoration: underline; }
 
-.pacific #genesis-footer-widgets .widget.index-2 a, .pacific #genesis-footer-widgets .widget.index-6 a, .pacific.light #genesis-footer-widgets .widget.index-2 a, .pacific.light #genesis-footer-widgets .widget.index-6 a { color: #3b7ea1; }
+.pacific #genesis-footer-widgets .widget.index-3 a, .pacific #genesis-footer-widgets .widget.index-7 a, .pacific #genesis-footer-widgets .widget.index-4 a, .pacific #genesis-footer-widgets .widget.index-8 a { color: #fff; text-decoration: underline; }
 
-.pacific #genesis-footer-widgets .widget.index-3 a, .pacific #genesis-footer-widgets .widget.index-7 a, .pacific #genesis-footer-widgets .widget.index-4 a, .pacific #genesis-footer-widgets .widget.index-8 a { color: #ddd5c7; }
+.pacific.light #genesis-footer-widgets .widget.index-1, .pacific.light #genesis-footer-widgets .widget.index-5, .pacific.light #genesis-footer-widgets .widget.index-9, .pacific.light #genesis-footer-widgets .widget.index-1 .widget-title, .pacific.light #genesis-footer-widgets .widget.index-5 .widget-title, .pacific.light #genesis-footer-widgets .widget.index-9 .widget-title { background-color: #003262; color: #fff; }
+
+.pacific.light #genesis-footer-widgets .widget.index-1 a, .pacific.light #genesis-footer-widgets .widget.index-5 a, .pacific.light #genesis-footer-widgets .widget.index-9 a { color: #ddd5c7; text-decoration: underline; }
+
+.pacific.light #genesis-footer-widgets .widget.index-1 a:hover, .pacific.light #genesis-footer-widgets .widget.index-5 a:hover, .pacific.light #genesis-footer-widgets .widget.index-9 a:hover { color: #fff; }
 
 .pacific.light .site-header a, .pacific.light .site-header a:hover .pacific.light .site-header, .pacific.light .site-description, .pacific.light .site-footer { color: #46535e; }
 
@@ -148,11 +152,3 @@
 .pacific.light .site-footer .genesis-nav-menu .footer-menu .social-icon a { background-color: #3b7ea1; color: #fff; }
 
 .pacific.light .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover { color: #ddd5c7; }
-
-.pacific.light #genesis-footer-widgets .widget.index-1, .pacific.light #genesis-footer-widgets .widget.index-5, .pacific.light #genesis-footer-widgets .widget.index-9, .pacific.light #genesis-footer-widgets .widget.index-1 .widget-title, .pacific.light #genesis-footer-widgets .widget.index-5 .widget-title, .pacific.light #genesis-footer-widgets .widget.index-9 .widget-title { background-color: #003262; color: #fff; }
-
-.pacific.light #genesis-footer-widgets .widget a { color: #ddd5c7; }
-
-.pacific.light #genesis-footer-widgets .widget a:hover { color: #b9d3b6; }
-
-.pacific.light #genesis-footer-widgets .widget.index-2 a:hover, .pacific.light #genesis-footer-widgets .widget.index-6 a:hover { color: #003262; }

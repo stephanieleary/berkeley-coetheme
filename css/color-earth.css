@@ -49,7 +49,11 @@ body.earth { color: #000; }
 
 .earth .site-footer .genesis-nav-menu .footer-menu a { background-color: #ddd5c7; color: #6c3302; }
 
+.earth.light .site-footer .genesis-nav-menu .footer-menu a { background-color: #6c3302; color: #fff; }
+
 .earth .site-footer .genesis-nav-menu .footer-menu a:hover { color: #ed4e33; }
+
+.earth.light .site-footer .genesis-nav-menu .footer-menu a:hover { color: #ddd5c7; }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon { background-color: #6c3302; }
 
@@ -107,15 +111,15 @@ body.earth { color: #000; }
 
 .earth #genesis-footer-widgets .widget.index-1, .earth #genesis-footer-widgets .widget.index-5, .earth #genesis-footer-widgets .widget.index-9, .earth #genesis-footer-widgets .widget.index-1 .widget-title, .earth #genesis-footer-widgets .widget.index-5 .widget-title, .earth #genesis-footer-widgets .widget.index-9 .widget-title { background-color: #d3c9b7; color: #6c3302; }
 
-.earth #genesis-footer-widgets .widget.index-2, .earth #genesis-footer-widgets .widget.index-6, .earth #genesis-footer-widgets .widget.index-2 .widget-title, .earth #genesis-footer-widgets .widget.index-6 .widget-title { background-color: #c35c1c; color: #fff; }
+.earth #genesis-footer-widgets .widget.index-2, .earth #genesis-footer-widgets .widget.index-6, .earth #genesis-footer-widgets .widget.index-2 .widget-title, .earth #genesis-footer-widgets .widget.index-6 .widget-title { background-color: #ba571b; color: #fff; }
 
-.earth #genesis-footer-widgets .widget.index-3, .earth #genesis-footer-widgets .widget.index-7 { background-color: #9e690b; color: #fff; }
+.earth #genesis-footer-widgets .widget.index-3, .earth #genesis-footer-widgets .widget.index-7 { background-color: #b1750d; color: #fff; }
 
-.earth #genesis-footer-widgets .widget.index-4, .earth #genesis-footer-widgets .widget.index-8, .earth #genesis-footer-widgets .widget.index-4 .widget-title, .earth #genesis-footer-widgets .widget.index-8 .widget-title { background-color: #7e8d35; color: #fff; }
+.earth #genesis-footer-widgets .widget.index-4, .earth #genesis-footer-widgets .widget.index-8, .earth #genesis-footer-widgets .widget.index-4 .widget-title, .earth #genesis-footer-widgets .widget.index-8 .widget-title { background-color: #6a762d; color: #fff; }
 
 .earth #genesis-footer-widgets .widget a, .earth #genesis-footer-widgets .widget.index-1 a, .earth #genesis-footer-widgets .widget.index-5 a, .earth #genesis-footer-widgets .widget.index-9 a { color: #6c3302; }
 
-.earth #genesis-footer-widgets .widget.index-2 a, .earth #genesis-footer-widgets .widget.index-6 a, .earth #genesis-footer-widgets .widget.index-3 a, .earth #genesis-footer-widgets .widget.index-7 a, .earth #genesis-footer-widgets .widget.index-4 a, .earth #genesis-footer-widgets .widget.index-8 a { color: #fecd61; }
+.earth #genesis-footer-widgets .widget.index-2 a, .earth #genesis-footer-widgets .widget.index-6 a, .earth #genesis-footer-widgets .widget.index-3 a, .earth #genesis-footer-widgets .widget.index-7 a, .earth #genesis-footer-widgets .widget.index-4 a, .earth #genesis-footer-widgets .widget.index-8 a { color: #fee2a3; }
 
 .earth.light .site-header, .earth.light .site-footer, .earth.light .site-title a, .earth.light .site-title a:hover { color: #6c3302; }
 
@@ -147,6 +151,6 @@ body.earth { color: #000; }
 
 .earth.light .genesis-nav-menu .sub-menu a, .earth.light .nav-secondary .genesis-nav-menu .sub-menu a { border-color: #3a1b01; }
 
-.earth.light #genesis-footer-widgets .widget.index-1, .earth.light #genesis-footer-widgets .widget.index-5, .earth.light #genesis-footer-widgets .widget.index-9, .earth.light #genesis-footer-widgets .widget.index-1 .widget-title, .earth.light #genesis-footer-widgets .widget.index-5 .widget-title, .earth.light #genesis-footer-widgets .widget.index-9 .widget-title { background-color: #6c3302; color: #ddd5c7; }
+.earth.light #genesis-footer-widgets .widget.index-1, .earth.light #genesis-footer-widgets .widget.index-5, .earth.light #genesis-footer-widgets .widget.index-9, .earth.light #genesis-footer-widgets .widget.index-1 .widget-title, .earth.light #genesis-footer-widgets .widget.index-5 .widget-title, .earth.light #genesis-footer-widgets .widget.index-9 .widget-title { background-color: #6c3302; color: #fff; }
 
-.earth.light #genesis-footer-widgets .widget a, .earth.light #genesis-footer-widgets .widget.index-1 a, .earth.light #genesis-footer-widgets .widget.index-5 a, .earth.light #genesis-footer-widgets .widget.index-9 a { color: #fecd61; }
+.earth.light #genesis-footer-widgets .widget.index-1 a, .earth.light #genesis-footer-widgets .widget.index-5 a, .earth.light #genesis-footer-widgets .widget.index-9 a { color: #fecd61; }

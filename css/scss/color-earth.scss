@@ -152,8 +152,17 @@ body.earth {
 	color: $south-hall;
 }
 
+.earth.light .site-footer .genesis-nav-menu .footer-menu a {
+	background-color: $south-hall;
+	color: #fff;
+}
+
 .earth .site-footer .genesis-nav-menu .footer-menu a:hover {
 	color: $golden-gate;
+}
+
+.earth.light .site-footer .genesis-nav-menu .footer-menu a:hover {
+	color: $bay-fog;
 }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon {
@@ -346,13 +355,13 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-6,
 .earth #genesis-footer-widgets .widget.index-2 .widget-title,
 .earth #genesis-footer-widgets .widget.index-6 .widget-title {
-	background-color: darken($wellman-tile, 5%);
+	background-color: darken($wellman-tile, 7);
 	color: #fff;
 }
 
 .earth #genesis-footer-widgets .widget.index-3,
 .earth #genesis-footer-widgets .widget.index-7 {
-	background-color: darken($medalist, 8%);
+	background-color: darken($medalist, 4);
 	color: #fff;
 }
 
@@ -360,7 +369,7 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-8,
 .earth #genesis-footer-widgets .widget.index-4 .widget-title,
 .earth #genesis-footer-widgets .widget.index-8 .widget-title {
-	background-color: darken($soybean, 2%);
+	background-color: darken($soybean, 8%);
 	color: #fff;
 }
 
@@ -377,7 +386,7 @@ body.earth {
 .earth #genesis-footer-widgets .widget.index-7 a,
 .earth #genesis-footer-widgets .widget.index-4 a,
 .earth #genesis-footer-widgets .widget.index-8 a {
-	color: lighten($gold, 15%);
+	color: lighten($gold, 28);
 }
 
 .earth.light .site-header,
@@ -467,10 +476,10 @@ body.earth {
 .earth.light #genesis-footer-widgets .widget.index-5 .widget-title,
 .earth.light #genesis-footer-widgets .widget.index-9 .widget-title {
 	background-color: $south-hall;
-	color: $bay-fog;
+	color: #fff;
 }
 
-.earth.light #genesis-footer-widgets .widget a,
+
 .earth.light #genesis-footer-widgets .widget.index-1 a,
 .earth.light #genesis-footer-widgets .widget.index-5 a,
 .earth.light #genesis-footer-widgets .widget.index-9 a {

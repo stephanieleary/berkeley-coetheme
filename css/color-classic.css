@@ -87,19 +87,17 @@
 
 .classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover { color: #003262; }
 
-.classic #genesis-footer-widgets .widget, .classic #genesis-footer-widgets .widget.index-1, .classic #genesis-footer-widgets .widget.index-5, .classic #genesis-footer-widgets .widget.index-9 { background-color: #c35c1c; color: #fff; }
+.classic #genesis-footer-widgets .widget, .classic #genesis-footer-widgets .widget.index-1, .classic #genesis-footer-widgets .widget.index-5, .classic #genesis-footer-widgets .widget.index-9 { background-color: #ba571b; color: #fff; }
 
 .classic #genesis-footer-widgets .widget.index-2, .classic #genesis-footer-widgets .widget.index-6, .classic #genesis-footer-widgets .widget.index-2 .widget-title, .classic #genesis-footer-widgets .widget.index-6 .widget-title { background-color: #e7a002; color: #fff; }
 
-.classic #genesis-footer-widgets .widget.index-3, .classic #genesis-footer-widgets .widget.index-7 { background-color: #9e690b; color: #fff; }
+.classic #genesis-footer-widgets .widget.index-3, .classic #genesis-footer-widgets .widget.index-7 { background-color: #b1750d; color: #fff; }
 
-.classic #genesis-footer-widgets .widget.index-4, .classic #genesis-footer-widgets .widget.index-8 { background-color: #38789a; color: #fff; }
+.classic #genesis-footer-widgets .widget.index-4, .classic #genesis-footer-widgets .widget.index-8 { background-color: #367292; color: #fff; }
 
-.classic #genesis-footer-widgets .widget a, .classic #genesis-footer-widgets .widget.index-1 a, .classic #genesis-footer-widgets .widget.index-5 a, .classic #genesis-footer-widgets .widget.index-9 a { color: #000; }
+.classic #genesis-footer-widgets .widget a, .classic #genesis-footer-widgets .widget.index-1 a, .classic #genesis-footer-widgets .widget.index-5 a, .classic #genesis-footer-widgets .widget.index-9 a, .classic #genesis-footer-widgets .widget.index-3 a, .classic #genesis-footer-widgets .widget.index-7 a, .classic #genesis-footer-widgets .widget.index-4 a, .classic #genesis-footer-widgets .widget.index-8 a { color: #fee2a3; }
 
 .classic #genesis-footer-widgets .widget.index-2 a, .classic #genesis-footer-widgets .widget.index-6 a { color: #003262; }
-
-.classic #genesis-footer-widgets .widget.index-3 a, .classic #genesis-footer-widgets .widget.index-7 a, .classic #genesis-footer-widgets .widget.index-4 a, .classic #genesis-footer-widgets .widget.index-8 a { color: #fecd61; }
 
 .classic.light .site-title a, .classic.light .site-title a:hover, .classic.light .site-description { color: #003262; }
 

@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.1.8
+Version: 1.1.9
 Template: genesis  
 Template Version: 2.2.7
 Text Domain: beng
@@ -885,11 +885,11 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 
 #genesis-footer-widgets .widget.index-4, #genesis-footer-widgets .widget.index-8 { background: #346f8e; color: #fff; }
 
-#genesis-footer-widgets .widget a, #genesis-footer-widgets .widget.index-1 a, #genesis-footer-widgets .widget.index-5 a, #genesis-footer-widgets .widget.index-9 a { color: #000; }
+#genesis-footer-widgets .widget a, #genesis-footer-widgets .widget.index-1 a, #genesis-footer-widgets .widget.index-5 a, #genesis-footer-widgets .widget.index-9 a { color: #fff; text-decoration: underline; }
 
 #genesis-footer-widgets .widget.index-2 a, #genesis-footer-widgets .widget.index-6 a { color: #003262; }
 
-#genesis-footer-widgets .widget.index-3 a, #genesis-footer-widgets .widget.index-7 a, #genesis-footer-widgets .widget.index-4 a, #genesis-footer-widgets .widget.index-8 a { color: #cfdd45; }
+#genesis-footer-widgets .widget.index-3 a, #genesis-footer-widgets .widget.index-7 a, #genesis-footer-widgets .widget.index-4 a, #genesis-footer-widgets .widget.index-8 a { color: #f0f5c6; }
 
 #genesis-footer-widgets .widget.index-2 .footer-widgets button, #genesis-footer-widgets .widget.index-2 .footer-widgets input[type="button"], #genesis-footer-widgets .widget.index-2 .footer-widgets input[type="reset"], #genesis-footer-widgets .widget.index-2 .footer-widgets input[type="submit"], #genesis-footer-widgets .widget.index-2 .footer-widgets .button, #genesis-footer-widgets .widget.index-6 .footer-widgets button, #genesis-footer-widgets .widget.index-6 .footer-widgets input[type="button"], #genesis-footer-widgets .widget.index-6 .footer-widgets input[type="reset"], #genesis-footer-widgets .widget.index-6 .footer-widgets input[type="submit"], #genesis-footer-widgets .widget.index-6 .footer-widgets .button { background-color: #003262; color: #fff; }
 

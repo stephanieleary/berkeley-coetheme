@@ -315,34 +315,58 @@ $super-light-gray:		#f0f0f0;
 }
 
 .pacific #genesis-footer-widgets .widget.index-3,
-.pacific #genesis-footer-widgets .widget.index-7 {
-	background-color: $med-gray;
-}
-
+.pacific #genesis-footer-widgets .widget.index-7,
 .pacific #genesis-footer-widgets .widget.index-4,
 .pacific #genesis-footer-widgets .widget.index-8 {
-	background-color: $med-gray;
+	background-color: #888;
 }
 
 .pacific #genesis-footer-widgets .widget a,
 .pacific #genesis-footer-widgets .widget.index-1 a,
 .pacific #genesis-footer-widgets .widget.index-5 a,
 .pacific #genesis-footer-widgets .widget.index-9 a {
-	color: $founders-rock;
+	color: darken($founders-rock, 10%);
+	text-decoration: underline;
 }
 
 .pacific #genesis-footer-widgets .widget.index-2 a,
 .pacific #genesis-footer-widgets .widget.index-6 a,
 .pacific.light #genesis-footer-widgets .widget.index-2 a,
 .pacific.light #genesis-footer-widgets .widget.index-6 a {
-	color: $founders-rock;
+	color: darken($founders-rock, 10%);
+	text-decoration: underline;
 }
 
 .pacific #genesis-footer-widgets .widget.index-3 a,
 .pacific #genesis-footer-widgets .widget.index-7 a,
 .pacific #genesis-footer-widgets .widget.index-4 a,
 .pacific #genesis-footer-widgets .widget.index-8 a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.pacific.light #genesis-footer-widgets .widget.index-1,
+.pacific.light #genesis-footer-widgets .widget.index-5,
+.pacific.light #genesis-footer-widgets .widget.index-9,
+.pacific.light #genesis-footer-widgets .widget.index-1 .widget-title,
+.pacific.light #genesis-footer-widgets .widget.index-5 .widget-title,
+.pacific.light #genesis-footer-widgets .widget.index-9 .widget-title {
+	background-color: $blue;
+	color: #fff;
+}
+
+
+.pacific.light #genesis-footer-widgets .widget.index-1 a,
+.pacific.light #genesis-footer-widgets .widget.index-5 a,
+.pacific.light #genesis-footer-widgets .widget.index-9 a {
 	color: $bay-fog;
+	text-decoration: underline;
+}
+
+.pacific.light #genesis-footer-widgets .widget.index-1 a:hover,
+.pacific.light #genesis-footer-widgets .widget.index-5 a:hover,
+.pacific.light #genesis-footer-widgets .widget.index-9 a:hover {
+	color: #fff;
 }
 
 .pacific.light .site-header a,
@@ -435,27 +459,4 @@ $super-light-gray:		#f0f0f0;
 
 .pacific.light .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover {
 	color: $bay-fog;
-}
-
-.pacific.light #genesis-footer-widgets .widget.index-1,
-.pacific.light #genesis-footer-widgets .widget.index-5,
-.pacific.light #genesis-footer-widgets .widget.index-9,
-.pacific.light #genesis-footer-widgets .widget.index-1 .widget-title,
-.pacific.light #genesis-footer-widgets .widget.index-5 .widget-title,
-.pacific.light #genesis-footer-widgets .widget.index-9 .widget-title {
-	background-color: $blue;
-	color: #fff;
-}
-
-.pacific.light #genesis-footer-widgets .widget a {
-	color: $bay-fog;
-}
-
-.pacific.light #genesis-footer-widgets .widget a:hover {
-	color: $sather-gate;
-}
-
-.pacific.light #genesis-footer-widgets .widget.index-2 a:hover,
-.pacific.light #genesis-footer-widgets .widget.index-6 a:hover {
-	color: $blue;
 }

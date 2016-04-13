@@ -210,7 +210,8 @@ function berkeley_display_custom_field_content( $content ) {
 		$before_content = '<div class="bio-details">';
 		
 		// featured image
-		$before_content .= get_the_post_thumbnail( get_the_ID(), 'medium' );
+		if ( is_singular() )
+			$before_content .= get_the_post_thumbnail( get_the_ID(), 'medium' );
 		
 		$before_content .= sprintf( '<div class="job_title">%s</div> ', get_field( 'job_title' ) );
 		
