@@ -29,6 +29,7 @@ function berkeley_fonts() {
 add_action( 'after_setup_theme', 'berkeley_setup_theme' );
 
 function berkeley_setup_theme() {
+	add_image_size( 'small', 300, 300 );
 	remove_theme_support( 'genesis-custom-header' );
 	add_theme_support( 'genesis-style-selector', berkeley_get_colors() );
 	$colors = genesis_get_option( 'style_selection' );
@@ -68,7 +69,7 @@ function berkeley_setup_theme() {
 		'random-default'	 => false,
 		'wp-head-callback'	 => 'berkeley_header_body_classes',
     );
-	add_theme_support( "title-tag" );
+	add_theme_support( 'title-tag' );
     add_theme_support( 'custom-header', $headers );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 	add_theme_support( 'genesis-responsive-viewport' );

@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.2: Added Small image size (300x300)
 1.1.9: Fixed duplicate portraits on People archives; color contrast fixes
 1.1.8: Pull quote link colors; news sidebar & primary/secondary fallback for CPTs
 1.1.7: Fixed icon font; moved admin-style.css to functions.php & enqueue on all admin screens
