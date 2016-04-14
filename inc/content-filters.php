@@ -424,15 +424,34 @@ add_filter( 'the_excerpt', 'berkeley_display_custom_excerpts' );
 // entry header: post info
 // entry footer: post meta
 
-function berkeley_post_info_filter( $post_meta ) {
+function berkeley_post_info_filter( $post_info ) {
 	$post_type = get_post_type();
 	$post_id = get_the_ID();
-	$post_meta = '';
+	$post_info = '';
 	
 	switch ( $post_type ) {
 		
+		case 'attachment':
+			$image_links = array();
+			$image_meta = wp_get_attachment_metadata( $post_id );
+			$sizes = $image_meta['sizes'];
+			foreach ( $sizes as $size => $file ) {		
+			    $image_url = wp_get_attachment_image_src( $post_id, $size );
+			    if ( ! empty( $image_url[0] ) ) {
+			        $image_links[] = sprintf( '<a href="%s" alt="%s">%s (%s&times;%s)</a>',
+			            esc_url( $image_url[0] ),
+			            esc_attr( the_title_attribute( 'echo=0' ) ),
+			            esc_html( $size ),
+						$file['width'],
+						$file['height']
+			        );
+			    }
+			}
+			$post_info = sprintf( '<span class="image-sizes">%s</span>', implode( ' | ', $image_links ) );
+			break;
+		
 		case 'post':
-			$post_meta = 'Posted on [post_date] by [post_author]';
+			$post_info = genesis_get_option( 'post_info' );
 			break;
 		
 		case 'facility':
@@ -447,7 +466,7 @@ function berkeley_post_info_filter( $post_meta ) {
 		default: 
 			break;
 	}
-	return $post_meta;
+	return $post_info;
 }
 add_filter( 'genesis_post_info', 'berkeley_post_info_filter' );
 
@@ -459,7 +478,7 @@ function berkeley_post_meta_filter( $post_meta ) {
 	switch ( $post_type ) {
 		
 		case 'post':
-			$post_meta = '[post_categories] [post_tags]';
+			$post_meta = genesis_get_option( 'post_meta' );
 			break;
 		
 		case 'publication':
@@ -471,4 +490,3 @@ function berkeley_post_meta_filter( $post_meta ) {
 	return $post_meta;
 }
 add_filter( 'genesis_post_meta', 'berkeley_post_meta_filter' );
-

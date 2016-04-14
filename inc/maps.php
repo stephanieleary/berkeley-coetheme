@@ -15,6 +15,7 @@ function berkeley_map_scripts() {
 	wp_enqueue_script( 'acf-maps', get_stylesheet_directory_uri() . '/js/acf-maps.js', array( 'google-maps-api' ), '1.0.0', true );
 }
 
+// This is now part of berkeley_display_custom_field_content() in content-filters.php
 //add_action( 'genesis_entry_footer', 'berkeley_render_map' );
 
 function berkeley_render_map() {

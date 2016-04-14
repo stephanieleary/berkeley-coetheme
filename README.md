@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.3: Moved attachment.php functions to post_info and post_meta filters; post_meta and post_info theme options; theme options cleanup; sticky post image size overrides
 1.2: Added Small image size (300x300) and attachment.php
 1.1.9: Fixed duplicate portraits on People archives; color contrast fixes
 1.1.8: Pull quote link colors; news sidebar & primary/secondary fallback for CPTs

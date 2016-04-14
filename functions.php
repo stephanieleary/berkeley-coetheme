@@ -1,23 +1,25 @@
 <?php
-//* Start the engine
+// Start the engine
 include_once( get_template_directory() 	 . '/lib/init.php' );
 include_once( get_stylesheet_directory() . '/inc/announcements.php' );
 include_once( get_stylesheet_directory() . '/inc/content-filters.php' );
 include_once( get_stylesheet_directory() . '/inc/editor.php' );
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
+include_once( get_stylesheet_directory() . '/inc/header.php' );
 include_once( get_stylesheet_directory() . '/inc/loops.php' );
 include_once( get_stylesheet_directory() . '/inc/maps.php' );
+include_once( get_stylesheet_directory() . '/inc/metaboxes.php' );
 include_once( get_stylesheet_directory() . '/inc/sidebars.php' );
 include_once( get_stylesheet_directory() . '/inc/theme-options.php' );
 include_once( get_stylesheet_directory() . '/inc/widgets.php' );
 
-//* Child theme (do not remove)
+// Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Berkeley Engineering Theme' );
 define( 'CHILD_THEME_URL', 'http://www.stephanieleary.com/' );
 // based on Genesis version:
 define( 'CHILD_THEME_VERSION', '2.2.7' ); 
 
-//* Add Fonts
+// Add Fonts
 add_action( 'wp_head', 'berkeley_fonts' );
 
 function berkeley_fonts() {
@@ -26,10 +28,11 @@ function berkeley_fonts() {
 		<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700' rel='stylesheet' type='text/css'>";
 }
 
+// Theme Setup
 add_action( 'after_setup_theme', 'berkeley_setup_theme' );
 
 function berkeley_setup_theme() {
-	add_image_size( 'small', 300, 300 );
+	add_image_size( 'small', 300, 300 );  // see also inc/image-sizes.php
 	remove_theme_support( 'genesis-custom-header' );
 	add_theme_support( 'genesis-style-selector', berkeley_get_colors() );
 	$colors = genesis_get_option( 'style_selection' );
@@ -76,47 +79,25 @@ function berkeley_setup_theme() {
 	add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu', 'search-form', 'skip-links', 'rems' ) );
 }
 
-function berkeley_header_body_classes() {
-	add_filter( 'body_class', 'berkeley_header_style' );
-}
-
-function berkeley_header_style( $classes ) {
-     if ( HEADER_TEXTCOLOR == get_header_textcolor() && '' == get_header_image() )
-        return $classes;
-
-	if ( 'blank' == get_header_textcolor() )
-		$classes[] = 'custom-header-hide-text';
-	
-	return $classes;
-}
-
-add_action( 'genesis_site_title', 'berkeley_header_image', 2 );
-
-function berkeley_header_image() {
-	$header_image = get_header_image();
-	if ( ! empty( $header_image ) ) : 
-		printf( '<a href="%s"><img id="custom-header" src="%s" alt="%s" /></a>', home_url(), esc_url( $header_image ), get_option( 'blogname' ) );
-	endif;
-}
+// Color schemes
 
 function berkeley_get_colors() {
 	return array( 
-		'pool'			=> __( 'Pool', 'beng' ), 
-		'pool light'	=> __( 'Pool Light', 'beng' ),
-		'punch'			=> __( 'Punch', 'beng' ), 
-		'punch light'	=> __( 'Punch Light', 'beng' ),
-		'classic'		=> __( 'Classic', 'beng' ), 
+		'pool'			=> __( 'Pool', 			'beng' ), 
+		'pool light'	=> __( 'Pool Light', 	'beng' ),
+		'punch'			=> __( 'Punch', 		'beng' ), 
+		'punch light'	=> __( 'Punch Light', 	'beng' ),
+		'classic'		=> __( 'Classic', 		'beng' ), 
 		'classic light'	=> __( 'Classic Light', 'beng' ), 
-		'earth'			=> __( 'Earth', 'beng' ), 
-		'earth light'	=> __( 'Earth Light', 'beng' ), 
-		'woods'			=> __( 'Woods', 'beng' ),
-		'woods light'	=> __( 'Woods Light', 'beng' ), 
-		'pacific'		=> __( 'Pacific', 'beng' ),
+		'earth'			=> __( 'Earth', 		'beng' ), 
+		'earth light'	=> __( 'Earth Light', 	'beng' ), 
+		'woods'			=> __( 'Woods', 		'beng' ),
+		'woods light'	=> __( 'Woods Light', 	'beng' ), 
+		'pacific'		=> __( 'Pacific', 		'beng' ),
 		'pacific light'	=> __( 'Pacific Light', 'beng' ),
 	);
 }
 
-// Color schemes
 function berkeley_get_color_stylesheet( $color ) {
 	if ( !isset( $color ) )
 		return;
@@ -128,7 +109,7 @@ function berkeley_get_color_stylesheet( $color ) {
 	return get_stylesheet_directory_uri() . '/css/color-' . $color . '.css';
 }
 
-//* Add scripts
+// Add scripts
 
 add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
 function berkeley_settings_admin_styles( $hook ) {
