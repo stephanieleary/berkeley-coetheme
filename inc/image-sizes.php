@@ -15,7 +15,7 @@ function berkeley_image_size_names_choose( $sizes ) {
 add_filter( 'genesis_pre_get_option_image_size', 'berkeley_blog_image_sizes' );
 
 function berkeley_blog_image_sizes( $size = 'thumbnail' ) {
-	if ( is_sticky() )
+	if ( is_sticky() && !is_main_query() ) {
 		return 'medium';
 	
 	return $size;
@@ -24,7 +24,7 @@ function berkeley_blog_image_sizes( $size = 'thumbnail' ) {
 add_filter( 'genesis_attr_entry-image', 'berkeley_blog_image_classes', 10, 2 );
 
 function berkeley_blog_image_classes( $attributes, $context ) {
-	if ( is_sticky() ) {
+	if ( is_sticky() && !is_main_query() ) {
 		$attributes['class'] = str_replace( 'alignleft', '', $attributes['class'] );
 		$attributes['class'] .= ' alignright';
 	}
