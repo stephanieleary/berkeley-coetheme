@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.3.2: Default site icon; default closed metaboxes
 1.3.1: Apply sticky post image size overrides only if not in main query
 1.3: Moved attachment.php functions to post_info and post_meta filters; post_meta and post_info theme options; theme options cleanup; sticky post image size overrides
 1.2: Added Small image size (300x300) and attachment.php

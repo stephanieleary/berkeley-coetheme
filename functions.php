@@ -6,6 +6,7 @@ include_once( get_stylesheet_directory() . '/inc/content-filters.php' );
 include_once( get_stylesheet_directory() . '/inc/editor.php' );
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/inc/header.php' );
+include_once( get_stylesheet_directory() . '/inc/image-sizes.php' );
 include_once( get_stylesheet_directory() . '/inc/loops.php' );
 include_once( get_stylesheet_directory() . '/inc/maps.php' );
 include_once( get_stylesheet_directory() . '/inc/metaboxes.php' );
