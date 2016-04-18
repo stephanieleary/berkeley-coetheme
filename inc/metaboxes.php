@@ -6,14 +6,19 @@ add_filter( 'default_hidden_meta_boxes', 'berkeley_coetheme_hidden_meta_boxes', 
 
 function berkeley_coetheme_hidden_meta_boxes( $hidden, $screen ) {
     return array( 
+		'people_typediv', 
+		'facility_typediv', 
+		'wpe_dify_news_feed',
 		'genesis-theme-settings-version', 
 		'genesis-theme-settings-feeds',
-		'i123_widgets_custom_fields',
 		'genesis_inpost_scripts_box',
+		'i123_widgets_custom_fields',
+		'commentstatusdiv',
 		'slugdiv',
 		'authordiv',
 		'postcustom',
-		'trackbacksdiv'
+		'trackbacksdiv',
+		'sharing_meta'
 	);
 }
 
@@ -45,11 +50,4 @@ function berkeley_close_meta_boxes() {
 function berkeley_coetheme_closed_meta_boxes( $classes ) {
     array_push( $classes, 'closed' );
     return $classes;
-}
-
-function berkeley_coetheme_conditional_closed_meta_boxes( $classes ) {
-	if ( isset( $_POST['my_condition'] ) && 'my_condition' == $_POST['my_condition'] )
-		array_push( $classes, 'closed' );
-
-	return $classes;
 }

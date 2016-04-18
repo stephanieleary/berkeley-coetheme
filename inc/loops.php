@@ -13,6 +13,7 @@ function berkeley_sticky_post_loop() {
 			'post_type'  	  => get_query_var( 'post_type' ),
 			'post__in'		  => get_option( 'sticky_posts' ),
 		 );
+		
 		if ( is_tax() ) {
 			$queried_object = get_queried_object();
 			$args[$queried_object->taxonomy] = $queried_object->slug;

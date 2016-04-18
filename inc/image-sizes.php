@@ -46,8 +46,16 @@ add_filter( 'get_site_icon_url', 'berkeley_site_icon_url', 10, 3 );
 
 function berkeley_site_icon_url( $url = '', $size = 512, $blog_id = 0 ) {
 	$default_url = get_stylesheet_directory_uri() . "/images/BE-favicon-{$size}x{$size}.png";
-	if ( file_exists( $default_url ) ) {
+	if ( file_exists( $default_url ) )
 		$url = $default_url;
-	}
+	else
+		$url = $default_url = get_stylesheet_directory_uri() . "/images/BE-favicon.png";
 	return $url;
+}
+
+
+add_filter( 'genesis_pre_load_favicon', 'berkeley_favicon' );
+
+function berkeley_favicon( $favicon_url ) {
+	return get_stylesheet_directory_uri() . '/images/BE-favicon-150x150.png';
 }
