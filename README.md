@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.3.4: Disable Genesis's default first-uploaded image fallback
 1.3.3: Moving in metabox settings from plugin
 1.3.2: Default site icon; default closed metaboxes
 1.3.1: Apply sticky post image size overrides only if not in main query

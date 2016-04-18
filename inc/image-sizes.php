@@ -1,5 +1,14 @@
 <?php
 
+// Disable Genesis's default first-uploaded image fallback
+
+add_filter( 'genesis_get_image_default_args', 'berkeley_image_default_args' );
+
+function berkeley_image_default_args( $args ) {
+	$args['fallback'] = '';
+	return $args;
+}
+
 // Make custom image size available in Insert Media
 
 add_filter( 'image_size_names_choose', 'berkeley_image_size_names_choose' );
