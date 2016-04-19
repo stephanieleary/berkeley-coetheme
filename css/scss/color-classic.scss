@@ -51,8 +51,10 @@ $super-light-gray:		#f0f0f0;
 	color: #fff;
 }
 
-.classic .site-header .widget-area .select-menu {
+.classic .site-header .widget-area .select-menu,
+.classic .site-header .widget-area .select-menu option {
 	background-color: $founders-rock;
+	color: #fff;
 }
 
 .classic .genesis-nav-menu a,

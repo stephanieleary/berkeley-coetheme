@@ -133,9 +133,9 @@ body.earth { color: #000; }
 
 .earth.light .sidebar .widget_nav_menu li { border-color: #ddd5c7; }
 
-.earth .site-header .widget-area .select-menu { background-color: #c4820e; }
+.earth .site-header .widget-area .select-menu, .earth .site-header .widget-area .select-menu option { background-color: #c4820e; color: #fff; }
 
-.earth.light .site-header .widget-area .select-menu { background-color: #6c3302; }
+.earth.light .site-header .widget-area .select-menu, .earth.light .site-header .widget-area .select-menu option { background-color: #6c3302; color: #fff; }
 
 .earth.light .genesis-nav-menu a, .earth.light .genesis-nav-menu .sub-menu a { color: #ddd5c7; }
 

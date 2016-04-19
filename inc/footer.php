@@ -14,15 +14,6 @@ if ( function_exists('acf_add_options_page') ) {
 	
 }
 
-/*
-add_action( 'genesis_setup', 'berkeley_theme_setup', 99 );
-
-function berkeley_theme_setup() {
-	remove_action( 'after_setup_theme', 'genesis_register_footer_widget_areas' );
-	add_action( 'after_setup_theme', 'berkeley_register_footer_widget_areas' );
-}
-/**/
-
 // Add menu location in footer
 function berkeley_register_footer_menu() {
 	register_nav_menu( 'footer-menu', __( 'Footer Navigation Menu', 'beng' ) );

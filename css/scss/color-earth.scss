@@ -418,12 +418,16 @@ body.earth {
 	border-color: $bay-fog;
 }
 
-.earth .site-header .widget-area .select-menu {
+.earth .site-header .widget-area .select-menu,
+.earth .site-header .widget-area .select-menu option {
 	background-color: $medalist;
+	color: #fff;
 }
 
-.earth.light .site-header .widget-area .select-menu {
+.earth.light .site-header .widget-area .select-menu,
+.earth.light .site-header .widget-area .select-menu option {
 	background-color: $south-hall;
+	color: #fff;
 }
 
 .earth.light .genesis-nav-menu a,

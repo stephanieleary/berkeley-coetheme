@@ -117,8 +117,10 @@ body.woods {
 	color: $bay-fog;
 }
 
-.woods .site-header .widget-area .select-menu {
+.woods .site-header .widget-area .select-menu,
+.woods .site-header .widget-area .select-menu option {
 	background-color: darken($soybean, 7%);
+	color: #fff;
 }
 
 .woods .genesis-nav-menu a,

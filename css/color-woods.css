@@ -37,7 +37,7 @@ body.woods { color: #000; }
 
 .woods .sidebar .widget.subtle a.button, .woods.light .sidebar .widget.subtle a.button { background-color: #584f29; color: #ddd5c7; }
 
-.woods .site-header .widget-area .select-menu { background-color: #6e7a2e; }
+.woods .site-header .widget-area .select-menu, .woods .site-header .widget-area .select-menu option { background-color: #6e7a2e; color: #fff; }
 
 .woods .genesis-nav-menu a, .woods .genesis-nav-menu .sub-menu a { color: #6e7a2e; }
 

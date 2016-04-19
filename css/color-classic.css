@@ -11,7 +11,7 @@
 
 .classic .pullquote { background-color: #c4820e; color: #fff; }
 
-.classic .site-header .widget-area .select-menu { background-color: #3b7ea1; }
+.classic .site-header .widget-area .select-menu, .classic .site-header .widget-area .select-menu option { background-color: #3b7ea1; color: #fff; }
 
 .classic .genesis-nav-menu a, .classic .genesis-nav-menu .sub-menu a { color: #3b7ea1; }
 

@@ -40,6 +40,13 @@ $super-light-gray:		#f0f0f0;
 
 .pacific .site-header .widget-area .select-menu option {
 	border: none;
+	background-color: $super-light-gray;
+	color: #000;
+}
+
+.pacific.light .site-header .widget-area .select-menu option {
+	background-color: $pacific;
+	color: #fff;
 }
 
 .pacific .site-header,

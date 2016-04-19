@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.3.4
+Version: 1.3.5
 Template: genesis  
 Template Version: 2.2.7
 Text Domain: beng
@@ -691,7 +691,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .site-header .widget-area .select-menu select { background: transparent; border: none; color: #fff; height: 2em; max-width: 120%; padding: 0 5px; width: 282px; /* hide browser dropdown arrow */ }
 
-.site-header .widget-area .select-menu option { border: none; }
+.site-header .widget-area .select-menu option { border: none; background-color: #00b0da; color: #fff; }
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
@@ -984,6 +984,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
   .content, .content-sidebar-sidebar .content, .content-sidebar-sidebar .content-sidebar-wrap, .footer-widgets .widget.span-1, .footer-widgets .widget.span-2, .footer-widgets .widget.span-3, .sidebar-content-sidebar .content, .sidebar-content-sidebar .content-sidebar-wrap, .sidebar-primary, .sidebar-secondary, .sidebar-sidebar-content .content, .sidebar-sidebar-content .content-sidebar-wrap, .site-header .widget-area, .title-area, .content-sidebar-sidebar .sidebar-secondary, .sidebar-content-sidebar .sidebar-secondary, .sidebar-sidebar-content .sidebar-secondary { width: 100%; }
   .site-header .wrap { padding: 20px 5%; }
   .header-image .title-area { background-position: center top; }
+  .site-header .widget-area .select-menu { float: none; margin: .5em auto; }
   .genesis-nav-menu li, .site-header ul.genesis-nav-menu, .site-header .search-form { float: none; }
   .genesis-nav-menu, .site-description, .site-header .title-area, .site-header .search-form, .site-title { text-align: center; }
   .genesis-nav-menu a, .genesis-nav-menu > .first > a, .genesis-nav-menu > .last > a { padding: 20px 16px; }
@@ -993,7 +994,6 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 @media only screen and (max-width: 800px) { body { background-color: #fff; font-size: 16px; font-weight: 400; }
   .site-header { position: relative; }
   .site-header .wrap { padding: 0 5%; }
-  .site-header .widget-area .select-menu { float: none; margin: .5em auto; }
   .content, .sidebar, .site-footer, .wrap { padding-left: 5%; padding-right: 5%; }
   .content { padding-top: 1em; }
   .single .entry-content .wp-post-image { max-width: 240px; }

@@ -21,6 +21,7 @@ function berkeley_recent_post_widget_args( $args ) {
 // Add background color selector to specific widgets
 // cf. http://ednailor.com/2011/01/24/adding-custom-css-classes-to-sidebar-widgets/
 function berkeley_editor_widget_class_form_extend( $instance, $widget ) {
+	// apply only to the rich text widget for now
 	if ( 'wp_editor_widget' !== $widget->id_base )
 		return $instance;
 	
