@@ -130,17 +130,13 @@ $super-light-gray:		#f0f0f0;
 	color: $ion;
 }
 
-.punch .content .stickies .entry.sticky,
-.punch.blog .entry.sticky {
-	background-color: lighten($soybean, 40%);
-	color: $blue;
-}
-
 .punch .bypostauthor {
 	background-color: lighten($gold, 40%);
 }
 
-.punch .sidebar .widget.subtle {
+.punch .sidebar .widget.subtle,
+.punch .content .stickies .entry.sticky,
+.punch.blog .entry.sticky {
 	background-color: lighten($soybean, 40%);
 	color: $blue;
 }

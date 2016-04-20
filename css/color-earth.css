@@ -1,39 +1,31 @@
 /* # Earth */
 body.earth { color: #000; }
 
-.earth a, .earth .site-footer a { color: #859438; }
+.earth a, .earth .site-footer a, .earth.light .site-footer a { color: #859438; }
 
-.earth a:hover, .earth .site-footer a:hover { color: #c4820e; }
+.earth a:hover, .earth .site-footer a, .earth.light .site-description, .earth.light .site-footer a:hover { color: #c4820e; }
 
-.earth .site-title a, .earth .site-title a:hover, .earth .site-footer a { color: #ddd5c7; }
+.earth .site-description, .earth .site-footer a:hover, .earth .entry-content .button:hover { color: #fff; }
 
-.earth .site-header, .earth .site-footer { background-color: #6c3302; color: #fff; }
+.earth .site-title a, .earth .site-title a:hover, .earth .site-footer a, .earth .genesis-nav-menu a, .earth .genesis-nav-menu .sub-menu a, .earth .soliloquy-caption a:hover { color: #ddd5c7; }
 
-.earth .site-description { color: #fff; }
-
-.earth .site-footer a { color: #ddd5c7; }
+.earth .site-header, .earth .site-footer, .earth .archive-pagination li a { background-color: #6c3302; color: #fff; }
 
 .earth .site-footer input { border: 1px solid #584f29; }
 
-.earth .site-footer a.button { background-color: #ddd5c7; }
-
-.earth .site-footer a:hover { color: #fff; }
-
-.earth .archive-pagination li a { background-color: #6c3302; color: #fff; }
+.earth.light .site-header input { border: 1px solid #b6a588; }
 
 .earth .archive-pagination li a:hover, .earth .archive-pagination .active a { background-color: #c4820e; }
 
 .earth .pullquote { background-color: #c4820e; color: #fff; }
 
-.earth .genesis-nav-menu a, .earth .genesis-nav-menu .sub-menu a { color: #ddd5c7; }
+.earth.light .site-header, .earth.light .site-footer, .earth.light .site-title a, .earth.light .site-title a:hover, .earth .genesis-nav-menu a:hover, .earth .genesis-nav-menu .current-menu-item > a, .earth .genesis-nav-menu .sub-menu .current-menu-item > a:hover { color: #6c3302; }
 
-.earth .genesis-nav-menu a:hover, .earth .genesis-nav-menu .current-menu-item > a, .earth .genesis-nav-menu .sub-menu .current-menu-item > a:hover { color: #6c3302; }
+.earth .nav-primary, .earth .nav-primary .genesis-nav-menu .sub-menu, .earth .site-footer a.button { background-color: #ddd5c7; }
 
-.earth .nav-primary, .earth .nav-primary .genesis-nav-menu .sub-menu { background-color: #ddd5c7; }
+.earth button.menu-toggle, .earth button.sub-menu-toggle, .earth button.menu-toggle:hover, .earth button.sub-menu-toggle:hover, .earth .nav-primary .genesis-nav-menu a, .earth .nav-primary .genesis-nav-menu .sub-menu a, .earth .sidebar .widget.widget_nav_menu, .earth .sidebar .widget_nav_menu, .earth .sidebar .widget_nav_menu a, .earth .site-footer .genesis-nav-menu .footer-menu a { background-color: #ddd5c7; color: #6c3302; }
 
-.earth button.menu-toggle, .earth button.sub-menu-toggle, .earth button.menu-toggle:hover, .earth button.sub-menu-toggle:hover, .earth .nav-primary .genesis-nav-menu a, .earth .nav-primary .genesis-nav-menu .sub-menu a { background-color: #ddd5c7; color: #6c3302; }
-
-.earth .nav-primary .genesis-nav-menu a:hover, .earth .nav-secondary .genesis-nav-menu a:hover, .earth .nav-primary .genesis-nav-menu .current-menu-item > a, .earth .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover { color: #d9661f; }
+.earth .nav-primary .genesis-nav-menu a:hover, .earth .nav-secondary .genesis-nav-menu a:hover, .earth .nav-primary .genesis-nav-menu .current-menu-item > a, .earth .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .earth .sidebar .widget_nav_menu a:hover { color: #d9661f; }
 
 .earth .nav-secondary { background-color: #fff; }
 
@@ -41,25 +33,17 @@ body.earth { color: #000; }
 
 .earth .genesis-nav-menu .sub-menu a, .earth .nav-secondary .genesis-nav-menu .sub-menu a { border: 1px solid #d3c9b7; border-top: none; }
 
-.earth .sidebar .widget.widget_nav_menu, .earth .sidebar .widget_nav_menu, .earth .sidebar .widget_nav_menu a { background-color: #ddd5c7; color: #6c3302; }
-
-.earth .sidebar .widget_nav_menu a:hover { color: #d9661f; }
-
 .earth .sidebar .widget_nav_menu li { border-color: #cabda7; }
-
-.earth .site-footer .genesis-nav-menu .footer-menu a { background-color: #ddd5c7; color: #6c3302; }
 
 .earth.light .site-footer .genesis-nav-menu .footer-menu a { background-color: #6c3302; color: #fff; }
 
 .earth .site-footer .genesis-nav-menu .footer-menu a:hover { color: #ed4e33; }
 
-.earth.light .site-footer .genesis-nav-menu .footer-menu a:hover { color: #ddd5c7; }
-
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon { background-color: #6c3302; }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a { background-color: #c4820e; color: #fff; }
 
-.earth .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover { color: #ddd5c7; }
+.earth.light .site-footer .genesis-nav-menu .footer-menu a:hover, .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover { color: #ddd5c7; }
 
 .earth .wgs_wrapper input.gsc-search-button, .earth .widget_wgs_widget input.gsc-search-button { background-color: #859438; color: #fff; border: 4px #859438; }
 
@@ -67,11 +51,7 @@ body.earth { color: #000; }
 
 .earth button, .earth input[type="button"], .earth input[type="reset"], .earth input[type="submit"], .earth .button { background-color: #859438; color: #fff; }
 
-.earth button:hover, .earth input:hover[type="button"], .earth input:hover[type="reset"], .earth input:hover[type="submit"], .earth .button:hover { background-color: #6c3302; color: #fff; }
-
-.earth .entry-content .button:hover { color: #fff; }
-
-.earth #genesis-footer-widgets .widget.index-1 button, .earth #genesis-footer-widgets .widget.index-5 button, .earth #genesis-footer-widgets .widget.index-9 button, .earth #genesis-footer-widgets .widget.index-1 input[type="button"], .earth #genesis-footer-widgets .widget.index-5 input[type="button"], .earth #genesis-footer-widgets .widget.index-9 input[type="button"], .earth #genesis-footer-widgets .widget.index-1 input[type="reset"], .earth #genesis-footer-widgets .widget.index-5 input[type="reset"], .earth #genesis-footer-widgets .widget.index-9 input[type="reset"], .earth #genesis-footer-widgets .widget.index-1 input[type="submit"], .earth #genesis-footer-widgets .widget.index-5 input[type="submit"], .earth #genesis-footer-widgets .widget.index-9 input[type="submit"], .earth #genesis-footer-widgets .widget.index-1 .button, .earth #genesis-footer-widgets .widget.index-5 .button, .earth #genesis-footer-widgets .widget.index-9 .button { background-color: #6c3302; color: #fff; }
+.earth button:hover, .earth input:hover[type="button"], .earth input:hover[type="reset"], .earth input:hover[type="submit"], .earth .button:hover, .earth #genesis-footer-widgets .widget.index-1 button, .earth #genesis-footer-widgets .widget.index-5 button, .earth #genesis-footer-widgets .widget.index-9 button, .earth #genesis-footer-widgets .widget.index-1 input[type="button"], .earth #genesis-footer-widgets .widget.index-5 input[type="button"], .earth #genesis-footer-widgets .widget.index-9 input[type="button"], .earth #genesis-footer-widgets .widget.index-1 input[type="reset"], .earth #genesis-footer-widgets .widget.index-5 input[type="reset"], .earth #genesis-footer-widgets .widget.index-9 input[type="reset"], .earth #genesis-footer-widgets .widget.index-1 input[type="submit"], .earth #genesis-footer-widgets .widget.index-5 input[type="submit"], .earth #genesis-footer-widgets .widget.index-9 input[type="submit"], .earth #genesis-footer-widgets .widget.index-1 .button, .earth #genesis-footer-widgets .widget.index-5 .button, .earth #genesis-footer-widgets .widget.index-9 .button { background-color: #6c3302; color: #fff; }
 
 .earth #genesis-footer-widgets .widget.index-1 button:hover, .earth #genesis-footer-widgets .widget.index-5 button:hover, .earth #genesis-footer-widgets .widget.index-9 button:hover, .earth #genesis-footer-widgets .widget.index-1 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-1 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-1 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-1 .button:hover, .earth #genesis-footer-widgets .widget.index-5 .button:hover, .earth #genesis-footer-widgets .widget.index-9 .button:hover { background-color: #c4820e; color: #fff; }
 
@@ -79,21 +59,15 @@ body.earth { color: #000; }
 
 .earth td, .earth th { border-top: 1px solid #b6a588; }
 
-.earth tr:nth-child(odd) th, .earth tr:nth-child(odd) td { background-color: #f0ede7; }
-
 .earth thead tr:nth-child(odd) th, .earth tfoot tr:nth-child(odd) th { background-color: #ddd5c7; }
 
-.earth .accordion-toggle:nth-of-type(even), .earth .accordion-content:nth-of-type(even) { background-color: #f0ede7; }
+.earth tr:nth-child(odd) th, .earth tr:nth-child(odd) td, .earth .bypostauthor, .earth .accordion-toggle:nth-of-type(even), .earth .accordion-content:nth-of-type(even) { background-color: #f0ede7; }
 
 .earth .accordion-toggle:nth-of-type(odd), .earth .accordion-content:nth-of-type(odd) { background-color: #ddd5c7; color: #6c3302; }
 
 .earth .author-box { background-color: #584f29; color: #fff; }
 
 .earth .author-box a { color: #fdb515; }
-
-.earth .bypostauthor { background-color: #f0ede7; }
-
-.earth .soliloquy-caption a:hover { color: #ddd5c7; }
 
 .earth .sidebar .widget.widget_wgs_widget, .earth .sidebar .widget.widget_search, .earth .sidebar .widget.widget_search .widget-title, .earth .sidebar .widget.widget_wgs_widget .widget-title, .earth .sidebar .widget form { background-color: #584f29; color: #fff; }
 
@@ -107,9 +81,7 @@ body.earth { color: #000; }
 
 .earth .sidebar .widget.bold a.button:hover { background-color: #fed57a; }
 
-.earth .sidebar .widget.subtle { background-color: #f0ede7; color: #6c3302; }
-
-.earth .content .stickies .entry.sticky, .earth.blog .entry.sticky { background-color: #f0ede7; color: #6c3302; }
+.earth .sidebar .widget.subtle, .earth .content .stickies .entry.sticky, .earth.blog .entry.sticky { background-color: #f0ede7; color: #6c3302; }
 
 .earth #genesis-footer-widgets .widget.index-1, .earth #genesis-footer-widgets .widget.index-5, .earth #genesis-footer-widgets .widget.index-9, .earth #genesis-footer-widgets .widget.index-1 .widget-title, .earth #genesis-footer-widgets .widget.index-5 .widget-title, .earth #genesis-footer-widgets .widget.index-9 .widget-title { background-color: #d3c9b7; color: #6c3302; }
 
@@ -122,14 +94,6 @@ body.earth { color: #000; }
 .earth #genesis-footer-widgets .widget a, .earth #genesis-footer-widgets .widget.index-1 a, .earth #genesis-footer-widgets .widget.index-5 a, .earth #genesis-footer-widgets .widget.index-9 a { color: #6c3302; }
 
 .earth #genesis-footer-widgets .widget.index-2 a, .earth #genesis-footer-widgets .widget.index-6 a, .earth #genesis-footer-widgets .widget.index-3 a, .earth #genesis-footer-widgets .widget.index-7 a, .earth #genesis-footer-widgets .widget.index-4 a, .earth #genesis-footer-widgets .widget.index-8 a { color: #fee2a3; }
-
-.earth.light .site-header, .earth.light .site-footer, .earth.light .site-title a, .earth.light .site-title a:hover { color: #6c3302; }
-
-.earth.light .site-footer a { color: #859438; }
-
-.earth.light .site-description, .earth.light .site-footer a:hover { color: #c4820e; }
-
-.earth.light .site-header input { border: 1px solid #b6a588; }
 
 .earth.light .site-header input[type="submit"], .earth.light .site-header input:focus[type="submit"] { border: none; }
 

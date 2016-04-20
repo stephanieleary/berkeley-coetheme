@@ -7,8 +7,8 @@ jQuery(document).ready(function( $ ) {
       $(this).next().toggleClass( "activated" );
 
       //Hide the other panels
-	  $(".accordion-toggle").not($(this)).removeClass( "activated" );
-      $(".accordion-content").not($(this).next()).removeClass( "activated" ).slideUp('fast');
+	  //$(".accordion-toggle").not($(this)).removeClass( "activated" );
+      //$(".accordion-content").not($(this).next()).removeClass( "activated" ).slideUp('fast');
 
     });
 });

@@ -22,7 +22,10 @@ $super-light-gray:		#f0f0f0;
 /* # Classic */
 
 .classic.light .site-header,
-.classic.light .site-footer {
+.classic.light .site-footer,
+.classic.light .site-title a,
+.classic.light .site-title a:hover,
+.classic.light .site-description {
 	color: $blue;
 }
 
@@ -36,56 +39,57 @@ $super-light-gray:		#f0f0f0;
 	color: #fff;
 }
 
-.classic .archive-pagination li a {
-	background-color: $blue;
-	color: #fff;
+.classic.light .site-footer a:hover,
+.classic.light .sidebar .widget_nav_menu a:hover {
+	color: $lawrence;
 }
 
+.classic .genesis-nav-menu a,
+.classic .genesis-nav-menu .sub-menu a,
+.classic.light .site-footer a,
+.classic.light .sidebar .widget.widget_nav_menu, 
+.classic.light .sidebar .widget_nav_menu, 
+.classic.light .sidebar .widget_nav_menu a {
+	color: $founders-rock;
+}
+
+.classic .nav-primary,
+.classic .nav-primary .genesis-nav-menu .sub-menu,
 .classic .archive-pagination li a:hover,
 .classic .archive-pagination .active a {
 	background-color: $founders-rock;
 }
 
-.classic .pullquote {
-	background-color: $medalist;
-	color: #fff;
-}
-
+.classic .nav-primary .genesis-nav-menu a,
+.classic .nav-primary .genesis-nav-menu .sub-menu a,
+.classic .site-footer .genesis-nav-menu .footer-menu a,
+.classic .sidebar .widget.widget_nav_menu,
+.classic .sidebar .widget_nav_menu,
+.classic .sidebar .widget_nav_menu a,
 .classic .site-header .widget-area .select-menu,
-.classic .site-header .widget-area .select-menu option {
-	background-color: $founders-rock;
-	color: #fff;
-}
-
-.classic .genesis-nav-menu a,
-.classic .genesis-nav-menu .sub-menu a {
-	color: $founders-rock;
-}
-
-.classic .genesis-nav-menu a:hover,
-.classic .genesis-nav-menu .current-menu-item > a,
-.classic .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: $gold;
-}
-
-.classic .nav-primary,
-.classic .nav-primary .genesis-nav-menu .sub-menu {
-	background-color: $founders-rock;
-}
-
+.classic .site-header .widget-area .select-menu option,
 .classic button.menu-toggle,
 .classic button.sub-menu-toggle,
 .classic button.menu-toggle:hover,
 .classic button.sub-menu-toggle:hover,
-.classic .nav-primary .genesis-nav-menu a,
-.classic .nav-primary .genesis-nav-menu .sub-menu a {
+.classic .footer-widgets button:hover,
+.classic .footer-widgets input:hover[type="button"],
+.classic .footer-widgets input:hover[type="reset"],
+.classic .footer-widgets input:hover[type="submit"],
+.classic .footer-widgets .button:hover {
 	background-color: $founders-rock;
 	color: #fff;
 }
 
 .classic .nav-primary .genesis-nav-menu a:hover,
 .classic .nav-primary .genesis-nav-menu .current-menu-item > a,
-.classic .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+.classic .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+.classic .genesis-nav-menu a:hover,
+.classic .genesis-nav-menu .current-menu-item > a,
+.classic .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+.classic .sidebar .widget_nav_menu a:hover,
+.classic .site-footer .genesis-nav-menu .footer-menu a:hover,
+.classic .author-box a {
 	color: $gold;
 }
 
@@ -103,19 +107,17 @@ $super-light-gray:		#f0f0f0;
 	border-color: darken($founders-rock, 10%);
 }
 
-.classic .sidebar .widget.widget_nav_menu,
-.classic .sidebar .widget_nav_menu,
-.classic .sidebar .widget_nav_menu a {
-	background-color: $founders-rock;
+.classic .sidebar .widget_nav_menu li {
+	border-color: darken($founders-rock, 10%);
+}
+
+.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a {
+	background-color: $gold;
 	color: #fff;
 }
 
-.classic .sidebar .widget_nav_menu a:hover {
-	color: $gold;
-}
-
-.classic .sidebar .widget_nav_menu li {
-	border-color: darken($founders-rock, 10%);
+.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover {
+	color: $blue;
 }
 
 .classic .wgs_wrapper input.gsc-search-button,
@@ -147,7 +149,8 @@ $super-light-gray:		#f0f0f0;
 .classic .footer-widgets input[type="button"],
 .classic .footer-widgets input[type="reset"],
 .classic .footer-widgets input[type="submit"],
-.classic .footer-widgets .button {
+.classic .footer-widgets .button,
+.classic .archive-pagination li a {
 	background-color: $blue;
 	color: #fff;
 }
@@ -165,15 +168,6 @@ $super-light-gray:		#f0f0f0;
 	color: #fff;
 }
 
-.classic .footer-widgets button:hover,
-.classic .footer-widgets input:hover[type="button"],
-.classic .footer-widgets input:hover[type="reset"],
-.classic .footer-widgets input:hover[type="submit"],
-.classic .footer-widgets .button:hover {
-	background-color: $founders-rock;
-	color: #fff;
-}
-
 .classic tbody {
 	border-bottom: 1px solid lighten($medalist, 45%);
 }
@@ -184,7 +178,10 @@ $super-light-gray:		#f0f0f0;
 }
 
 .classic tr:nth-child(odd) th,
-.classic tr:nth-child(odd) td {
+.classic tr:nth-child(odd) td,
+.classic .accordion-toggle:nth-of-type(even),
+.classic .accordion-content:nth-of-type(even),
+.classic .bypostauthor {
 	background-color: lighten($gold, 40%);
 }
 
@@ -193,30 +190,13 @@ $super-light-gray:		#f0f0f0;
 	background-color: lighten($gold, 20%);
 }
 
-.classic .accordion-toggle:nth-of-type(even),
-.classic .accordion-content:nth-of-type(even) {
-	background-color: lighten($gold, 40%);
-}
-
 .classic .accordion-toggle:nth-of-type(odd),
 .classic .accordion-content:nth-of-type(odd) {
 	background-color: lighten($gold, 20%);
 	color: $blue;
 }
 
-.classic .author-box {
-	background-color: $blue;
-	color: #fff;
-}
-
-.classic .author-box a {
-	color: $gold;
-}
-
-.classic .bypostauthor {
-	background-color: lighten($gold, 40%);
-}
-
+.classic .author-box,
 .classic .sidebar .widget.widget_wgs_widget,
 .classic .sidebar .widget.widget_search, 
 .classic .sidebar .widget.widget_search .widget-title,
@@ -232,6 +212,7 @@ $super-light-gray:		#f0f0f0;
 	color: inherit;
 }
 
+.classic .pullquote,
 .classic .sidebar .widget.bold {
 	background-color: $medalist;
 	color: #fff;
@@ -246,32 +227,10 @@ $super-light-gray:		#f0f0f0;
 	color: $blue;
 }
 
-.classic .sidebar .widget.subtle {
-	background-color: lighten($gold, 40%);
-	color: $blue;
-}
-
+.classic .sidebar .widget.subtle,
 .classic .content .stickies .entry.sticky,
 .classic.blog .entry.sticky {
 	background-color: lighten($gold, 40%);
-	color: $blue;
-}
-
-.classic .site-footer .genesis-nav-menu .footer-menu a {
-	background-color: $founders-rock;
-	color: #fff;
-}
-
-.classic .site-footer .genesis-nav-menu .footer-menu a:hover {
-	color: $gold;
-}
-
-.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a {
-	background-color: $gold;
-	color: #fff;
-}
-
-.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover {
 	color: $blue;
 }
 
@@ -317,24 +276,6 @@ $super-light-gray:		#f0f0f0;
 .classic #genesis-footer-widgets .widget.index-2 a,
 .classic #genesis-footer-widgets .widget.index-6 a, {
 	color: $blue;
-}
-
-.classic.light .site-title a,
-.classic.light .site-title a:hover,
-.classic.light .site-description {
-	color: $blue;
-}
-
-.classic.light .site-footer a,
-.classic.light .sidebar .widget.widget_nav_menu, 
-.classic.light .sidebar .widget_nav_menu, 
-.classic.light .sidebar .widget_nav_menu a {
-	color: $founders-rock;
-}
-
-.classic.light .site-footer a:hover,
-.classic.light .sidebar .widget_nav_menu a:hover {
-	color: $lawrence;
 }
 
 .classic.light #genesis-footer-widgets .widget.index-1,

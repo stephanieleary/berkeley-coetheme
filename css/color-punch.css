@@ -37,11 +37,9 @@
 
 .punch button:hover, .punch input:hover[type="button"], .punch input:hover[type="reset"], .punch input:hover[type="submit"], .punch .button:hover { background-color: #003262; color: #cfdd45; }
 
-.punch .content .stickies .entry.sticky, .punch.blog .entry.sticky { background-color: #dce3b5; color: #003262; }
-
 .punch .bypostauthor { background-color: #fff5df; }
 
-.punch .sidebar .widget.subtle { background-color: #dce3b5; color: #003262; }
+.punch .sidebar .widget.subtle, .punch .content .stickies .entry.sticky, .punch.blog .entry.sticky { background-color: #dce3b5; color: #003262; }
 
 .punch .sidebar .widget.subtle .button { background-color: #003262; color: #cfdd45; }
 

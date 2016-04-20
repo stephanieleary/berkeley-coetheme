@@ -50,7 +50,9 @@ $super-light-gray:		#f0f0f0;
 }
 
 .pacific .site-header,
-.pacific .site-footer {
+.pacific .site-footer,
+.pacific .archive-pagination li a:hover,
+.pacific .archive-pagination .active a {
 	background-color: $pacific;
 }
 
@@ -59,10 +61,7 @@ $super-light-gray:		#f0f0f0;
 	color: #fff;
 }
 
-.pacific .site-footer a {
-	color: $bay-fog;
-}
-
+.pacific .site-footer a,
 .pacific .site-description {
 	color: $bay-fog;
 }
@@ -72,10 +71,6 @@ $super-light-gray:		#f0f0f0;
 	color: #fff;
 }
 
-.pacific .archive-pagination li a:hover,
-.pacific .archive-pagination .active a {
-	background-color: $pacific;
-}
 
 .pacific .content .stickies .entry.sticky,
 .pacific.blog .entry.sticky {
@@ -329,17 +324,13 @@ $super-light-gray:		#f0f0f0;
 .pacific #genesis-footer-widgets .widget.index-7,
 .pacific #genesis-footer-widgets .widget.index-4,
 .pacific #genesis-footer-widgets .widget.index-8 {
-	background-color: #888;
+	background-color: $med-gray;
 }
 
 .pacific #genesis-footer-widgets .widget a,
 .pacific #genesis-footer-widgets .widget.index-1 a,
 .pacific #genesis-footer-widgets .widget.index-5 a,
-.pacific #genesis-footer-widgets .widget.index-9 a {
-	color: darken($founders-rock, 10%);
-	text-decoration: underline;
-}
-
+.pacific #genesis-footer-widgets .widget.index-9 a,
 .pacific #genesis-footer-widgets .widget.index-2 a,
 .pacific #genesis-footer-widgets .widget.index-6 a,
 .pacific.light #genesis-footer-widgets .widget.index-2 a,
@@ -365,7 +356,6 @@ $super-light-gray:		#f0f0f0;
 	background-color: $blue;
 	color: #fff;
 }
-
 
 .pacific.light #genesis-footer-widgets .widget.index-1 a,
 .pacific.light #genesis-footer-widgets .widget.index-5 a,
