@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.3.7: Styles for Display Posts Shortcode plugin
 1.3.6: Style consolidation; post author comment styles; comment numbering & whitespace cleanup
 1.3.5: Select/option colors; Cleanup & inline documentation
 1.3.4: Disable Genesis's default first-uploaded image fallback

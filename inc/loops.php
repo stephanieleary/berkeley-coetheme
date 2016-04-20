@@ -98,7 +98,7 @@ function berkeley_people_table_loop() {
 		echo berkeley_loop_table_footer();
 		
 		do_action( 'genesis_after_endwhile' );
-
+		
 	else : //* if no posts exist
 		do_action( 'genesis_loop_else' );
 	endif; //* end loop
