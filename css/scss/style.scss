@@ -342,6 +342,10 @@ li {
 	list-style-type: none;
 }
 
+.comment-content li {
+	list-style-type: inherit;
+}
+
 .entry ol > li,
 .comment-content ol > li,
 .widget ol > li {

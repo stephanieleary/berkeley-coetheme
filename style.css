@@ -223,6 +223,8 @@ ol, ul { margin: 0; padding: 0; }
 
 li { list-style-type: none; }
 
+.comment-content li { list-style-type: inherit; }
+
 .entry ol > li, .comment-content ol > li, .widget ol > li { list-style-type: decimal; }
 
 .entry ol li li, .comment-content ol li li, .widget ol li li { list-style-type: upper-alpha; }
