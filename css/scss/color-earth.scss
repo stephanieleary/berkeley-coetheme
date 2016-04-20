@@ -293,6 +293,10 @@ body.earth {
 	color: $gold;
 }
 
+.earth .bypostauthor {
+	background-color: lighten($bay-fog, 10%);
+}
+
 .earth .soliloquy-caption a:hover {
 	color: $bay-fog;
 }

@@ -213,6 +213,10 @@ $super-light-gray:		#f0f0f0;
 	color: $gold;
 }
 
+.classic .bypostauthor {
+	background-color: lighten($gold, 40%);
+}
+
 .classic .sidebar .widget.widget_wgs_widget,
 .classic .sidebar .widget.widget_search, 
 .classic .sidebar .widget.widget_search .widget-title,

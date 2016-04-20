@@ -91,6 +91,8 @@ body.earth { color: #000; }
 
 .earth .author-box a { color: #fdb515; }
 
+.earth .bypostauthor { background-color: #f0ede7; }
+
 .earth .soliloquy-caption a:hover { color: #ddd5c7; }
 
 .earth .sidebar .widget.widget_wgs_widget, .earth .sidebar .widget.widget_search, .earth .sidebar .widget.widget_search .widget-title, .earth .sidebar .widget.widget_wgs_widget .widget-title, .earth .sidebar .widget form { background-color: #584f29; color: #fff; }

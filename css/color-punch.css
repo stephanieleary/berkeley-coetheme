@@ -19,15 +19,15 @@
 
 .punch td, .punch th { border-top: 1px solid #dce3b5; }
 
-.punch tr:nth-child(odd) th, .punch tr:nth-child(odd) td { background: #f3f5e5; }
+.punch tr:nth-child(odd) th, .punch tr:nth-child(odd) td { background-color: #f3f5e5; }
 
-.punch thead tr:nth-child(odd) th, .punch tfoot tr:nth-child(odd) th { background: #dce3b5; }
+.punch thead tr:nth-child(odd) th, .punch tfoot tr:nth-child(odd) th { background-color: #dce3b5; }
 
 .punch .sidebar .widget.widget_wgs_widget, .punch .sidebar .widget.widget_search, .punch .sidebar .widget.widget_search .widget-title, .punch .sidebar .widget.widget_wgs_widget .widget-title { background-color: #ee1f60; color: #fff; }
 
 .punch .sidebar .widget form.search-form, .punch .sidebar .widget.widget_wgs_widget form { background-color: inherit; color: inherit; }
 
-.punch .sidebar .widget.bold, .punch-light .sidebar .widget.bold { background: #859438; color: #fff; }
+.punch .sidebar .widget.bold, .punch-light .sidebar .widget.bold { background-color: #859438; color: #fff; }
 
 .punch .wgs_wrapper input.gsc-search-button, .punch .widget_wgs_widget input.gsc-search-button { background-color: #cfdd45; color: #003262; border: 4px #cfdd45; }
 
@@ -37,23 +37,25 @@
 
 .punch button:hover, .punch input:hover[type="button"], .punch input:hover[type="reset"], .punch input:hover[type="submit"], .punch .button:hover { background-color: #003262; color: #cfdd45; }
 
-.punch .content .stickies .entry.sticky, .punch.blog .entry.sticky { background: #dce3b5; color: #003262; }
+.punch .content .stickies .entry.sticky, .punch.blog .entry.sticky { background-color: #dce3b5; color: #003262; }
 
-.punch .sidebar .widget.subtle { background: #dce3b5; color: #003262; }
+.punch .bypostauthor { background-color: #fff5df; }
 
-.punch .sidebar .widget.subtle .button { background: #003262; color: #cfdd45; }
+.punch .sidebar .widget.subtle { background-color: #dce3b5; color: #003262; }
+
+.punch .sidebar .widget.subtle .button { background-color: #003262; color: #cfdd45; }
 
 .punch .accordion-toggle:nth-of-type(even), .punch .accordion-content:nth-of-type(even) { background-color: #dce3b5; }
 
 .punch .accordion-toggle:nth-of-type(odd), .punch .accordion-content:nth-of-type(odd) { background-color: #859438; color: #fff; }
 
-.punch #genesis-footer-widgets .widget, .punch #genesis-footer-widgets .widget.index-1, .punch #genesis-footer-widgets .widget.index-5, .punch #genesis-footer-widgets .widget.index-9 { background: #0097bb; color: #fff; }
+.punch #genesis-footer-widgets .widget, .punch #genesis-footer-widgets .widget.index-1, .punch #genesis-footer-widgets .widget.index-5, .punch #genesis-footer-widgets .widget.index-9 { background-color: #0097bb; color: #fff; }
 
-.punch #genesis-footer-widgets .widget.index-2, .punch #genesis-footer-widgets .widget.index-6, .punch #genesis-footer-widgets .widget.index-2 .widget-title, .punch #genesis-footer-widgets .widget.index-6 .widget-title { background: #7e8d35; color: #fff; }
+.punch #genesis-footer-widgets .widget.index-2, .punch #genesis-footer-widgets .widget.index-6, .punch #genesis-footer-widgets .widget.index-2 .widget-title, .punch #genesis-footer-widgets .widget.index-6 .widget-title { background-color: #7e8d35; color: #fff; }
 
-.punch #genesis-footer-widgets .widget.index-3, .punch #genesis-footer-widgets .widget.index-7 { background: #e7a002; color: #fff; }
+.punch #genesis-footer-widgets .widget.index-3, .punch #genesis-footer-widgets .widget.index-7 { background-color: #e7a002; color: #fff; }
 
-.punch #genesis-footer-widgets .widget.index-4, .punch #genesis-footer-widgets .widget.index-8 { background: #d4104e; color: #fff; }
+.punch #genesis-footer-widgets .widget.index-4, .punch #genesis-footer-widgets .widget.index-8 { background-color: #d4104e; color: #fff; }
 
 .punch #genesis-footer-widgets .widget a, .punch #genesis-footer-widgets .widget.index-1 a, .punch #genesis-footer-widgets .widget.index-5 a, .punch #genesis-footer-widgets .widget.index-9 a, .punch #genesis-footer-widgets .widget.index-2 a, .punch #genesis-footer-widgets .widget.index-6 a, .punch #genesis-footer-widgets .widget.index-3 a, .punch #genesis-footer-widgets .widget.index-7 a, .punch #genesis-footer-widgets .widget.index-4 a, .punch #genesis-footer-widgets .widget.index-8 a { color: #fff; text-decoration: underline; }
 

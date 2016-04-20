@@ -89,6 +89,10 @@ body.woods {
 	color: $stone-pine;
 }
 
+.woods .bypostauthor {
+	background-color: lighten($bay-fog, 10%);
+}
+
 .woods .sidebar .widget.bold,
 .woods.light .sidebar .widget.bold {
 	background-color: $medalist;

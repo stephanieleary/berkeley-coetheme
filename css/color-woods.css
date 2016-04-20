@@ -27,6 +27,8 @@ body.woods { color: #000; }
 
 .woods .content .stickies .entry.sticky, .woods.blog .entry.sticky { background-color: #dce3b5; color: #584f29; }
 
+.woods .bypostauthor { background-color: #f0ede7; }
+
 .woods .sidebar .widget.bold, .woods.light .sidebar .widget.bold { background-color: #c4820e; color: #fff; }
 
 .woods .sidebar .widget.bold a { color: #ddd5c7; }

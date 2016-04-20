@@ -92,6 +92,10 @@ $super-light-gray:		#f0f0f0;
 	color: $founders-rock;
 }
 
+.pacific .bypostauthor {
+	background-color: lighten($bay-fog, 10%);
+}
+
 .pacific .sidebar .widget.bold {
 	background-color: $med-gray;
 	color: #fff;

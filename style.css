@@ -223,15 +223,15 @@ ol, ul { margin: 0; padding: 0; }
 
 li { list-style-type: none; }
 
-ol > li { list-style-type: decimal; }
+.entry ol > li, .comment-content ol > li, .widget ol > li { list-style-type: decimal; }
 
-ol li li { list-style-type: upper-alpha; }
+.entry ol li li, .comment-content ol li li, .widget ol li li { list-style-type: upper-alpha; }
 
-ol li li li { list-style-type: upper-roman; }
+.entry ol li li li, .comment-content ol li li li, .widget ol li li li { list-style-type: upper-roman; }
 
-ol li li li li { list-style-type: lower-alpha; }
+.entry ol li li li li, .comment-content ol li li li li, .widget ol li li li li { list-style-type: lower-alpha; }
 
-ol li li li li li { list-style-type: lower-roman; }
+.entry ol li li li li li, .comment-content ol li li li li li, .widget ol li li li li li { list-style-type: lower-roman; }
 
 dt { float: left; clear: left; width: 9em; font-weight: bold; }
 
@@ -340,7 +340,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 
 /* ## Tables
 --------------------------------------------- */
-table { border-collapse: collapse; border-spacing: 0; line-height: 2; margin-bottom: 40px; width: 100%; }
+table { background-color: #fff; border-collapse: collapse; border-spacing: 0; line-height: 2; margin-bottom: 40px; width: 100%; }
 
 tbody { border-bottom: 1px solid #c0dae8; }
 
@@ -829,13 +829,15 @@ p.entry-meta { font-size: 16px; margin-bottom: 24px; }
 
 .entry-comments { padding: 40px; }
 
+.comment-meta { margin: 0 0 12px; }
+
 .comment-header { font-size: 16px; }
 
 li.comment { background-color: #eee; border: 2px solid #fff; border-right: none; }
 
 .comment-content { clear: both; }
 
-.comment-list li { margin-top: 24px; padding: 32px; }
+.comment-list li { margin-top: 24px; padding: 16px 32px; }
 
 .comment-list li li { margin-right: -32px; }
 
@@ -846,6 +848,8 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 .entry-comments .comment-author { margin-bottom: 0; }
 
 .entry-pings .reply { display: none; }
+
+.bypostauthor { background: #e5f0f6; }
 
 .form-allowed-tags { background-color: #eee; font-size: 16px; padding: 24px; }
 

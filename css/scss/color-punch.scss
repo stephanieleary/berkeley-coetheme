@@ -68,12 +68,12 @@ $super-light-gray:		#f0f0f0;
 
 .punch tr:nth-child(odd) th,
 .punch tr:nth-child(odd) td {
-	background: lighten($soybean, 53%);
+	background-color: lighten($soybean, 53%);
 }
 
 .punch thead tr:nth-child(odd) th,
 .punch tfoot tr:nth-child(odd) th {
-	background: lighten($soybean, 40%);
+	background-color: lighten($soybean, 40%);
 }
 
 .punch .sidebar .widget.widget_wgs_widget,
@@ -92,7 +92,7 @@ $super-light-gray:		#f0f0f0;
 
 .punch .sidebar .widget.bold,
 .punch-light .sidebar .widget.bold {
-	background: $soybean;
+	background-color: $soybean;
 	color: #fff;
 }
 
@@ -132,17 +132,21 @@ $super-light-gray:		#f0f0f0;
 
 .punch .content .stickies .entry.sticky,
 .punch.blog .entry.sticky {
-	background: lighten($soybean, 40%);
+	background-color: lighten($soybean, 40%);
 	color: $blue;
 }
 
+.punch .bypostauthor {
+	background-color: lighten($gold, 40%);
+}
+
 .punch .sidebar .widget.subtle {
-	background: lighten($soybean, 40%);
+	background-color: lighten($soybean, 40%);
 	color: $blue;
 }
 
 .punch .sidebar .widget.subtle .button {
-	background: $blue;
+	background-color: $blue;
 	color: $ion;
 }
 
@@ -161,7 +165,7 @@ $super-light-gray:		#f0f0f0;
 .punch #genesis-footer-widgets .widget.index-1,
 .punch #genesis-footer-widgets .widget.index-5,
 .punch #genesis-footer-widgets .widget.index-9 {
-	background: darken($lawrence, 6);
+	background-color: darken($lawrence, 6);
 	color: #fff;
 }
 
@@ -169,19 +173,19 @@ $super-light-gray:		#f0f0f0;
 .punch #genesis-footer-widgets .widget.index-6,
 .punch #genesis-footer-widgets .widget.index-2 .widget-title,
 .punch #genesis-footer-widgets .widget.index-6 .widget-title, {
-	background: darken($soybean, 2%);
+	background-color: darken($soybean, 2%);
 	color: #fff;
 }
 
 .punch #genesis-footer-widgets .widget.index-3,
 .punch #genesis-footer-widgets .widget.index-7 {
-	background: darken($gold, 8%);
+	background-color: darken($gold, 8%);
 	color: #fff;
 }
 
 .punch #genesis-footer-widgets .widget.index-4,
 .punch #genesis-footer-widgets .widget.index-8 {
-	background: darken($rose-garden, 8%);
+	background-color: darken($rose-garden, 8%);
 	color: #fff;
 }
 

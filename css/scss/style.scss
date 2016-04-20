@@ -342,23 +342,33 @@ li {
 	list-style-type: none;
 }
 
-ol > li {
+.entry ol > li,
+.comment-content ol > li,
+.widget ol > li {
 	list-style-type: decimal;
 }
 
-ol li li {
+.entry ol li li,
+.comment-content ol li li,
+.widget ol li li {
 	list-style-type: upper-alpha;
 }
 
-ol li li li {
+.entry ol li li li,
+.comment-content ol li li li,
+.widget ol li li li {
 	list-style-type: upper-roman;
 }
 
-ol li li li li {
+.entry ol li li li li,
+.comment-content ol li li li li,
+.widget ol li li li li {
 	list-style-type: lower-alpha;
 }
 
-ol li li li li li {
+.entry ol li li li li li,
+.comment-content ol li li li li li,
+.widget ol li li li li li {
 	list-style-type: lower-roman;
 }
 
@@ -628,6 +638,7 @@ input[type="search"]::-webkit-search-results-button {
 --------------------------------------------- */
 
 table {
+	background-color: #fff;
 	border-collapse: collapse;
 	border-spacing: 0;
 	line-height: 2;
@@ -1814,6 +1825,10 @@ p.entry-meta {
 	padding: 40px;
 }
 
+.comment-meta {
+	margin: 0 0 12px;
+}
+
 .comment-header {
 	font-size: 16px;
 }
@@ -1830,7 +1845,7 @@ li.comment {
 
 .comment-list li {
 	margin-top: 24px;
-	padding: 32px;
+	padding: 16px 32px;
 }
 
 .comment-list li li {
@@ -1857,6 +1872,7 @@ li.comment {
 }
 
 .bypostauthor {
+	background: lighten($founders-rock, 50%);	
 }
 
 .form-allowed-tags {
