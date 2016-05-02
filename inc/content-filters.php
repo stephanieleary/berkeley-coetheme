@@ -321,11 +321,14 @@ function berkeley_display_custom_field_content( $content ) {
 			$heading = get_sub_field( 'section_heading' );
 			$section_content = get_sub_field( 'collapsible_section' );
 			$class = '';
+			$expanded = 'false';
 			if ( !empty( $heading ) && !empty( $section_content ) ) {
 				$open = get_sub_field( 'open' );
-				if ( $open )
+				if ( $open ) {
 					$class = 'activated';
-				$after_content .= sprintf( '<h3 class="accordion-toggle %s">%s</h3>', $class, $heading );
+					$expanded = 'true';
+				}
+				$after_content .= sprintf( '<h3 class="accordion-toggle %s" aria-expanded="%s">%s</h3>', $class, $expanded, $heading );
 				$after_content .= sprintf( '<div class="accordion-content %s">%s</div>', $class, $section_content );
 			}
 	    endwhile;
@@ -384,7 +387,7 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 			}
 
 			if ( has_term( '', 'subject_area' ) )
-				$excerpt .= get_the_term_list( $post_id, 'subject_area', '<span class="subject_area">', ', ', '</span>' );
+				$excerpt .= get_the_term_list( $post_id, 'subject_area', '<span class="subject_area">Topics: ', ', ', '</span>' );
 			break;
 		case 'publication':
 			$pre = sprintf( '<p class="pub-author">%s</p>', get_field( 'author' ) );

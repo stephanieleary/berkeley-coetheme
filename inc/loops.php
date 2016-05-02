@@ -54,11 +54,16 @@ function berkeley_loop_table_headers( $headers ) {
 
 function berkeley_loop_table_cells( $data ) {
 	$datarow = '';
+	$rowindex = 1;
 	foreach ( $data as $title => $field ) {
 		$class = '';
 		if ( empty( trim ( $field ) ) )
-			$class = 'empty';
-		$datarow .= sprintf( '<td title="%s" class="%s">%s</td>'."\n", $title, $class, $field );
+			$class = ' class="empty"';
+		$tag = 'td';
+		if ( 1 == $rowindex )
+			$tag = 'th';
+		$datarow .= sprintf( '<%s title="%s" %s>%s</%1$s>'."\n", $tag, $title, $class, $field );
+		$rowindex++;
 	}
 	
 	return sprintf( "<tr id='post-%d' %s>\n %s \n </tr>\n", get_the_ID(), genesis_attr( 'entry' ), $datarow );
@@ -83,13 +88,13 @@ function berkeley_people_table_loop() {
 			do_action( 'genesis_before_entry' );
 			
 			$data = array( 
-				__('Name', 'beng')   => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
-				__('Title', 'beng')  => get_field( 'job_title' ),
-				__('Office', 'beng') => get_field( 'address_line_1' ),
-				__('Email', 'beng')  => sprintf( '<a href="mailto:%1$s">%1$s</a>', get_field( 'email' ) )
+				sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
+				get_field( 'job_title' ),
+				get_field( 'address_line_1' ),
+				sprintf( '<a href="mailto:%1$s">%1$s</a>', get_field( 'email' ) )
 			);
 			
-			echo berkeley_loop_table_cells( $data );
+			echo berkeley_loop_table_cells( array_combine( $headers, $data ) );
 			
 			do_action( 'genesis_after_entry' );
 
