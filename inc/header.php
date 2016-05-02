@@ -89,6 +89,7 @@ function berkeley_notitle_body_class( $classes ) {
    return $classes;  
 }
 
+// Replace primary navigation to remove unnecessary "Main navigation" heading
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_after_header', 'berkeley_do_nav' );
 function berkeley_do_nav() {
@@ -107,4 +108,12 @@ function berkeley_do_nav() {
 		'menu_class'     => $class,
 	) );
 
+}
+
+// Filter Skip link text
+add_filter( 'genesis_skip_links_output', 'berkeley_skip_links_output' );
+
+function berkeley_skip_links_output( $links ) {
+	$links['genesis-content'] = __( 'Skip to main content', 'beng' );
+	return $links;
 }
