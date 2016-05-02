@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.3.9: Replace genesis_do_nav to avoid unnecessary skip link header
 1.3.8: Topics prefix in people excerpts; ARIA support for accordion headings; loop table THs; search result titles
 1.3.7: Styles for Display Posts Shortcode plugin
 1.3.6: Style consolidation; post author comment styles; comment numbering & whitespace cleanup

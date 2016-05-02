@@ -88,3 +88,23 @@ function berkeley_notitle_body_class( $classes ) {
    $classes[] = 'notitle';
    return $classes;  
 }
+
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_after_header', 'berkeley_do_nav' );
+function berkeley_do_nav() {
+
+	//* Do nothing if menu not supported
+	if ( ! genesis_nav_menu_supported( 'primary' ) || ! has_nav_menu( 'primary' ) )
+		return;
+
+	$class = 'menu genesis-nav-menu menu-primary';
+	if ( genesis_superfish_enabled() ) {
+		$class .= ' js-superfish';
+	}
+
+	genesis_nav_menu( array(
+		'theme_location' => 'primary',
+		'menu_class'     => $class,
+	) );
+
+}
