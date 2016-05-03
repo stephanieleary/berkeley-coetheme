@@ -42,14 +42,14 @@ function berkeley_course_table_loop() {
 			//do_action( 'genesis_before_entry' );
 			
 			$data = array( 
-				__('Course', 'beng') => sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
-				__('Number', 'beng') => get_field( 'course_number' ),
-				__('Instructor(s)', 'beng') => get_field( 'instructors' )		
+				sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
+				get_field( 'course_number' ),
+				get_field( 'instructors' )		
 			);
 			if ( count( $havetimes ) )
-				$data[__('Time', 'beng')] = get_field( 'times' );
+				$data[] = get_field( 'times' );
 			
-			echo berkeley_loop_table_cells( $data );
+			echo berkeley_loop_table_cells( array_combine( $headers, $data ) );
 			
 			//do_action( 'genesis_after_entry' );
 

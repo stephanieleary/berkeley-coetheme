@@ -124,7 +124,8 @@ function berkeley_display_custom_field_content( $content ) {
 		
 		$link = get_field( 'link' );
 		if ( !empty( $link ) ) :
-			$contact .= sprintf( '<p class="facility-link"><a href="%s">%s</a></p>', $link, 'Website' );
+			$label = apply_filters( 'berkeley_facility_website_label', __( 'Website', 'beng' ) );
+			$contact .= sprintf( '<p class="facility-link"><a href="%s">%s</a></p>', $link, $label );
 		endif;
 		
 		$phone = get_field( 'phone_number' );
@@ -137,7 +138,8 @@ function berkeley_display_custom_field_content( $content ) {
 		if ( !empty( $phone ) ) :
 			$punctuation = array( '(', ')', '-', ':', '.', ' ' );
 			$number = str_replace( $punctuation, '', $phone );
-			$contact .= sprintf( '<p class="facility-phone">Phone: <a class="tel" href="tel:%d">%s</a></p>', $number, $phone );
+			$prefix = apply_filters( 'berkeley_phone_prefix', __( 'Phone:', 'beng' ) );
+			$contact .= sprintf( '<p class="facility-phone">%s <a class="tel" href="tel:%d">%s</a></p>', $prefix, $number, $phone );
 		endif;
 		
 		$content = sprintf( '<div class="one-half first"><div class="facility-details">%s</div> %s</div>', $contact, $content );
@@ -187,16 +189,26 @@ function berkeley_display_custom_field_content( $content ) {
 			// description is the main content field
 		
 			$after_content .= '<div class="course-info">';
-			if ( !empty( get_field( 'instructors' ) ) )
-				$after_content .= sprintf( '<p><strong>Instructor(s):</strong> %s</p>', get_field( 'instructors' ) );
-			if ( !empty( get_field( 'credits' ) ) )
-				$after_content .= sprintf( '<p><strong>Credits:</strong> %s</p>', 		get_field( 'credits' ) );
-			if ( !empty( get_field( 'prerequisites' ) ) )
-				$after_content .= sprintf( '<p><strong>Prerequisites:</strong> %s</p>', get_field( 'prerequisites' ) );
-			if ( !empty( get_field( 'times' ) ) )
-				$after_content .= sprintf( '<p><strong>Time:</strong> %s</p>', 			get_field( 'times' ) );
-			if ( !empty( get_field( 'location' ) ) )
-				$after_content .= sprintf( '<p><strong>Location:</strong> %s</p>', 		get_field( 'location' ) );
+			if ( !empty( get_field( 'instructors' ) ) ) {
+				$prefix = apply_filters( 'berkeley_course_instructors_prefix', __( 'Instructor(s):', 'beng' ) );
+				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'instructors' ) );
+			}
+			if ( !empty( get_field( 'credits' ) ) ) {
+				$prefix = apply_filters( 'berkeley_course_credits_prefix', __( 'Credits:', 'beng' ) );
+				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'credits' ) );
+			}
+			if ( !empty( get_field( 'prerequisites' ) ) ) {
+				$prefix = apply_filters( 'berkeley_course_prereqs_prefix', __( 'Prerequisites:', 'beng' ) );
+				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'prerequisites' ) );
+			}
+			if ( !empty( get_field( 'times' ) ) ) {
+				$prefix = apply_filters( 'berkeley_course_time_prefix', __( 'Time:', 'beng' ) );
+				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'times' ) );
+			}
+			if ( !empty( get_field( 'location' ) ) ) {
+				$prefix = apply_filters( 'berkeley_course_location_prefix', __( 'Location:', 'beng' ) );
+				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'location' ) );
+			}
 			$after_content .= '</div>';
 		
 		}
@@ -227,7 +239,8 @@ function berkeley_display_custom_field_content( $content ) {
 		if ( !empty( $phone ) ) :
 			$punctuation = array( '(', ')', '-', ':', '.', ' ' );
 			$number = str_replace( $punctuation, '', $phone );
-			$before_content .= sprintf( '<p class="bio-phone"><strong>Phone: </strong><a href="tel:%d">%s</a></p>', $number, $phone );
+			$prefix = apply_filters( 'berkeley_phone_prefix', __( 'Phone:', 'beng' ) );
+			$before_content .= sprintf( '<p class="bio-phone"><strong>%s </strong><a href="tel:%d">%s</a></p>', $prefix, $number, $phone );
 		endif;
 
 		
@@ -263,9 +276,9 @@ function berkeley_display_custom_field_content( $content ) {
 			$hours = get_field( 'hours' );
 			if ( !empty( $hours ) ) :
 				if ( has_term( 'staff', 'people_type' ) )
-					$label = 'Hours:';
+					$label = apply_filters( 'berkeley_staff_hours_prefix', __( 'Hours:', 'beng' ) );
 				else
-					$label = 'Office Hours:';
+					$label = apply_filters( 'berkeley_faculty_hours_prefix', __( 'Office Hours:', 'beng' ) );
 				$before_content .= sprintf( '<p class="bio-hours"><strong>%s</strong> %s</p>', $label, $hours );
 			endif;
 			
@@ -275,27 +288,32 @@ function berkeley_display_custom_field_content( $content ) {
 
 			if ( has_term( 'student', 'people_type' ) ) {
 				$before_content .= get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
-				if ( get_field( 'major' ) )
-					$before_content .= sprintf( '<p class="class-major"><strong>Major:</strong> %s</p>', get_field( 'major' ) );
-				if ( get_field( 'class_year' ) )
-					$before_content .= sprintf( '<p class="class-year"><strong>Class:</strong> %s</p>', get_field( 'class_year' ) );
+				if ( get_field( 'major' ) ) {
+					$prefix = apply_filters( 'berkeley_student_major_prefix', __( 'Major:', 'beng' ) );
+					$before_content .= sprintf( '<p class="class-major"><strong>%s</strong> %s</p>', $prefix, get_field( 'major' ) );
+				}
+				if ( get_field( 'class_year' ) ) {
+					$prefix = apply_filters( 'berkeley_class_year_prefix', __( 'Class:', 'beng' ) );
+					$before_content .= sprintf( '<p class="class-year"><strong>%s</strong> %s</p>', $prefix, get_field( 'class_year' ) );
+				}
 					
 				$before_content .= '<p></p>';
 			}
 
-			if ( has_term( '', 'subject_area' ) )
-				$after_content .= get_the_term_list( get_the_ID(), 'subject_area', '<h3>Research Interests</h3><div class="subject_area">', ', ', '</div>' );
-
+			if ( has_term( '', 'subject_area' ) ) {
+				$prefix = apply_filters( 'berkeley_subject_area_prefix', __( 'Research Interests: ', 'beng' ) );
+				$after_content .= get_the_term_list( get_the_ID(), 'subject_area', '<h3>'.$prefix.'</h3><div class="subject_area">', ', ', '</div>' );
+			}
 			if ( has_term( 'faculty', 'people_type' ) )	
 				$after_content .= get_field( 'research_description' );
 
 			// WYSIWYG fields
 			$sections = array(
-				'education'					=> 'Education',
-				'awards'					=> 'Awards',
-				'experience'				=> 'Experience',
-				'publications'				=> 'Publications',
-				'additional_information'	=> 'Additional Information'
+				'education'					=> apply_filters( 'berkeley_people_education_prefix', __( 'Education', 'beng' ) ),
+				'awards'					=> apply_filters( 'berkeley_people_awards_prefix', __( 'Awards', 'beng' ) ),
+				'experience'				=> apply_filters( 'berkeley_people_experience_prefix', __( 'Experience', 'beng' ) ),
+				'publications'				=> apply_filters( 'berkeley_people_publications_prefix', __( 'Publications', 'beng' ) ),
+				'additional_information'	=> apply_filters( 'berkeley_people_additional_prefix', __( 'Additional Information', 'beng' ) ),
 			);
 
 			foreach ( $sections as $section => $section_title ) {
@@ -370,10 +388,14 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 		case 'people':
 			if ( has_term( 'student', 'people_type' ) ) {
 				$excerpt = get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
-				if ( get_field( 'major' ) )
-					$excerpt .= sprintf( '<p class="class-major"><strong>Major:</strong> %s</p> ', get_field( 'major' ) );
-				if ( get_field( 'class_year' ) )
-					$excerpt .= sprintf( '<p class="class-year"><strong>Class:</strong> %s</p>', get_field( 'class_year' ) );
+				if ( get_field( 'major' ) ) {
+					$prefix = apply_filters( 'berkeley_student_major_prefix', __( 'Major:', 'beng' ) );
+					$excerpt .= sprintf( '<p class="class-major"><strong>%s</strong> %s</p> ', $prefix, get_field( 'major' ) );
+				}
+				if ( get_field( 'class_year' ) ) {
+					$prefix = apply_filters( 'berkeley_class_year_prefix', __( 'Class:', 'beng' ) );
+					$excerpt .= sprintf( '<p class="class-year"><strong>%s</strong> %s</p>', $prefix, get_field( 'class_year' ) );
+				}
 			}
 			
 			if ( has_term( 'faculty', 'people_type' ) ) {
@@ -386,8 +408,10 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 				$excerpt .= get_field( 'responsibilities' );
 			}
 
-			if ( has_term( '', 'subject_area' ) )
-				$excerpt .= get_the_term_list( $post_id, 'subject_area', '<span class="subject_area">Topics: ', ', ', '</span>' );
+			if ( has_term( '', 'subject_area' ) ) {
+				$prefix = apply_filters( 'berkeley_subject_area_prefix', __( 'Topics: ', 'beng' ) );
+				$excerpt .= get_the_term_list( $post_id, 'subject_area', '<span class="subject_area"> '.$prefix, ', ', '</span>' );
+			}
 			break;
 		case 'publication':
 			$pre = sprintf( '<p class="pub-author">%s</p>', get_field( 'author' ) );
@@ -405,9 +429,10 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 			if ( get_field( 'street_address' ) )
 				$pre .= sprintf( '<address>%s</address>', get_field( 'street_address' ) );
 			
-			if ( get_field( 'link' ) )
-				$pre .= sprintf( '<p class="facility-link"><a href="%s">Website</a></p>', $link );
-				
+			if ( get_field( 'link' ) ) {
+				$label = apply_filters( 'berkeley_facility_website_label', __( 'Website', 'beng' ) );
+				$pre .= sprintf( '<p class="facility-link"><a href="%s">%s</a></p>', $link, $label );
+			}
 			break;
 		
 		case 'course':

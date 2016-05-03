@@ -31,37 +31,41 @@ function berkeley_logo_display() {
 	$logo = genesis_get_option( 'be_logo' );
 	if ( $logo ) {
 		$path = get_stylesheet_directory_uri() . '/images/';
-		$colors = genesis_get_option( 'style_selection' );
-		switch ( $colors ) {
-			case 'earth light':
-				$path .= 'BE-southhall.png';
-				break;
-			case 'woods light':
-				$path .= 'BE-stonepine.png';
-				break;
-			case 'pacific light':
-				$path .= 'BE-pacific.png';
-				break;
-			case 'pool light':
-			case 'classic light':
-				$path .= 'BE-blue.png';
-				break;
-			case 'punch light':
-				$path .= 'BE-foundersrock.png';
-				break;
-			case 'classic':
-			case 'punch':
-				$path .= 'BE-gold-blue.png';
-				break;
-			case 'earth':
-				$path .= 'BE-bayfog-southhall.png';
-				break;
-			case 'woods':
-				$path .= 'BE-bayfog-stonepine.png';
-				break;
-			default: 
-				$path .= 'be_logo_white.png';
-				break;
+		if ( is_page_template( 'page_whitepaper.php' ) )
+			$path .= 'BE-pacific.png';
+		else {
+			$colors = genesis_get_option( 'style_selection' );
+			switch ( $colors ) {
+				case 'earth light':
+					$path .= 'BE-southhall.png';
+					break;
+				case 'woods light':
+					$path .= 'BE-stonepine.png';
+					break;
+				case 'pacific light':
+					$path .= 'BE-pacific.png';
+					break;
+				case 'pool light':
+				case 'classic light':
+					$path .= 'BE-blue.png';
+					break;
+				case 'punch light':
+					$path .= 'BE-foundersrock.png';
+					break;
+				case 'classic':
+				case 'punch':
+					$path .= 'BE-gold-blue.png';
+					break;
+				case 'earth':
+					$path .= 'BE-bayfog-southhall.png';
+					break;
+				case 'woods':
+					$path .= 'BE-bayfog-stonepine.png';
+					break;
+				default: 
+					$path .= 'be_logo_white.png';
+					break;
+			}
 		}
 		printf( '<div id="berkeley-engineering-logo"><a href="http://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, __('Berkeley College of Engineering Logo', 'beng') );
 	}

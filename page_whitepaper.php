@@ -18,8 +18,22 @@ remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 
+add_action( 'genesis_header', 'berkeley_whitepaper_header' );
+
+function berkeley_whitepaper_header() {
+	genesis_markup( array(
+		'html5'   => '<div %s>',
+		'xhtml'   => '<div id="title-area">',
+		'context' => 'title-area',
+	) );
+	do_action( 'genesis_site_title' );
+	// do_action( 'genesis_site_description' );
+	echo '</div>';
+}
+
 //* Remove navigation
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
+remove_action( 'genesis_after_header', 'berkeley_do_nav' );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 
 //* Remove breadcrumbs
@@ -46,7 +60,8 @@ add_action( 'genesis_entry_footer', 'berkeley_whitepaper_children' );
 add_action( 'genesis_entry_footer', 'berkeley_whitepaper_nav' );
 
 function berkeley_whitepaper_children() {
-	echo '<h3>In this section:</h3>' . do_shortcode( '[child-pages]' );
+	$prefix = apply_filters( 'berkeley_whitepaper_toc_heading', __( 'In this section:', 'beng' ) );
+	echo '<h3>' . $prefix . '</h3>' . do_shortcode( '[child-pages]' );
 }
 
 function berkeley_whitepaper_nav() {
@@ -66,16 +81,22 @@ function berkeley_whitepaper_nav() {
 	$pages = berkeley_whitepaper_flatten_array( $pages );
 	$key = array_search( $post_id, $pages );
 	
-	if ( isset( $pages[$key+1] ) )
-		$next = sprintf( '<a class="next alignright" href="%s">Next: %s</a>', get_the_permalink( $pages[$key+1], get_the_title( $pages[$key+1] ) ) );
+	if ( isset( $pages[$key+1] ) ) {
+		$prefix = apply_filters( 'berkeley_whitepaper_next_label', __( 'Next:', 'beng' ) );
+		$next = sprintf( '<a class="next alignright" href="%s">%s %s</a>', get_the_permalink( $pages[$key+1], $prefix, get_the_title( $pages[$key+1] ) ) );
+	}
 	
-	if ( isset( $pages[$key-1] ) )
-		$prev = sprintf( '<a class="prev alignleft" href="%s">Previous: %s</a>', get_the_permalink( $pages[$key-1], get_the_title( $pages[$key-1] ) ) );
+	if ( isset( $pages[$key-1] ) ) {
+		$prefix = apply_filters( 'berkeley_whitepaper_previous_label', __( 'Previous:', 'beng' ) );
+		$prev = sprintf( '<a class="prev alignleft" href="%s">%s %s</a>', get_the_permalink( $pages[$key-1], $prefix, get_the_title( $pages[$key-1] ) ) );
+	}
 	
 	$parent = wp_get_post_parent_id( $post_id );
 		
-	if ( isset( $parent ) && !empty( $parent ) )
-		$top = sprintf( '<a class="top aligncenter" href="%s">Up: %s</a>', get_the_permalink( $parent ), get_the_title( $parent ) );
+	if ( isset( $parent ) && !empty( $parent ) ) {
+		$prefix = apply_filters( 'berkeley_whitepaper_parent_label', __( 'Up:', 'beng' ) );
+		$top = sprintf( '<a class="top aligncenter" href="%s">%s %s</a>', get_the_permalink( $parent ), $prefix, get_the_title( $parent ) );
+	}
 	
 	echo $prev . $top . $next;
 }
