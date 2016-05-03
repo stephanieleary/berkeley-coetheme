@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.4.1: Custom background support for header
 1.4: Filter all custom field & taxonomy list prefixes and labels. New whitepaper heading.
 1.3.9: Replace genesis_do_nav to avoid unnecessary skip link header
 1.3.8: Topics prefix in people excerpts; ARIA support for accordion headings; loop table THs; search result titles

@@ -1,7 +1,23 @@
 <?php
 
-// Header image
+// Header background
+add_action( 'wp_head', 'berkeley_custom_header_background' );
 
+function berkeley_custom_header_background() {
+	$img = wp_get_attachment_url( get_theme_mod( 'berkeley-header-bg' ) );
+	if ( !empty( $img ) )
+		printf( '<style type="text/css">
+			.site-header { 
+				background-image: url("%s"); 
+				background-position: center top;
+				background-repeat-x: none;
+				background-repeat-y: none;
+				background-size: cover;
+			}
+		</style>', $img );
+}
+
+// Header image
 function berkeley_header_body_classes() {
 	add_filter( 'body_class', 'berkeley_header_style' );
 }
@@ -12,6 +28,9 @@ function berkeley_header_style( $classes ) {
 
 	if ( 'blank' == get_header_textcolor() )
 		$classes[] = 'custom-header-hide-text';
+	
+	if ( !empty( get_theme_mod( 'berkeley-header-bg' ) ) )
+		$classes[] = 'custom-header-background';
 	
 	return $classes;
 }

@@ -3,6 +3,7 @@
 include_once( get_template_directory() 	 . '/lib/init.php' );
 include_once( get_stylesheet_directory() . '/inc/announcements.php' );
 include_once( get_stylesheet_directory() . '/inc/content-filters.php' );
+include_once( get_stylesheet_directory() . '/inc/customizer.php' );
 include_once( get_stylesheet_directory() . '/inc/editor.php' );
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/inc/header.php' );
@@ -73,8 +74,8 @@ function berkeley_setup_theme() {
 		'random-default'	 => false,
 		'wp-head-callback'	 => 'berkeley_header_body_classes',
     );
-	add_theme_support( 'title-tag' );
     add_theme_support( 'custom-header', $headers );
+	add_theme_support( 'title-tag' );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 	add_theme_support( 'genesis-responsive-viewport' );
 	add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu', 'search-form', 'skip-links', 'rems' ) );
