@@ -624,6 +624,8 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .soliloquy-caption a:hover, .soliloquy-caption a:focus { color: #00b0da; }
 
+.soliloquy-container .soliloquy-prev:hover, .soliloquy-container .soliloquy-prev:focus, .soliloquy-container .soliloquy-next:hover, .soliloquy-container .soliloquy-next:focus { background-color: rgba(255, 255, 255, 0.7); }
+
 /* # Posts By Term Widget
 ----------------------------------------------- */
 .posts-by-term .current-page { font-weight: bold; }
