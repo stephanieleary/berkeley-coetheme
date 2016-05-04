@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.4
+Version: 1.4.2
 Template: genesis  
 Template Version: 2.2.7
 Text Domain: beng
@@ -209,7 +209,7 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
 
 a { color: #00b0da; text-decoration: none; }
 
-a:hover { color: #3b7ea1; text-decoration: underline; }
+a:hover, a:focus { color: #3b7ea1; text-decoration: underline; }
 
 address, p { font-style: normal; margin: 28px 0; padding: 0; }
 
@@ -310,7 +310,7 @@ img { height: auto; }
 
 .gallery img { border: 1px solid #888; height: auto; padding: 4px; }
 
-.gallery img:hover { border: 1px solid #888; }
+.gallery img:hover, .gallery img:focus { border: 1px solid #888; }
 
 /* ## Forms
 --------------------------------------------- */
@@ -328,9 +328,9 @@ input[type="checkbox"], input[type="image"], input[type="radio"] { width: auto; 
 
 button, input[type="button"], input[type="reset"], input[type="submit"], .button { background-color: #003262; border: none; color: #fff; cursor: pointer; font-size: 16px; font-weight: bold; padding: 8px; text-decoration: none; width: auto; }
 
-button:hover, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover { background-color: #00b0da; color: #fff; }
+button:hover, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover, button:focus, input:focus[type="button"], input:focus[type="reset"], input:focus[type="submit"], .button:focus { background-color: #00b0da; color: #fff; }
 
-.entry-content .button:hover { color: #fff; }
+.entry-content .button:hover, .entry-content .button:focus { color: #fff; }
 
 .button { display: inline-block; }
 
@@ -466,7 +466,7 @@ width: 1px;
 
 .entry-title a, .sidebar .widget-title a { color: #46535e; text-decoration: none; }
 
-.entry-title a:hover { color: #003262; text-decoration: underline; }
+.entry-title a:hover, .entry-title a:focus { color: #003262; text-decoration: underline; }
 
 .widget-title { font-size: 18px; margin-bottom: 20px; }
 
@@ -612,7 +612,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .announcements .widget a { color: #fdb515; }
 
-.announcements .widget a:hover { color: #c4820e; }
+.announcements .widget a:hover, .announcements .widget a:focus { color: #c4820e; }
 
 /* # Soliloquy (Featured widget area)
 ----------------------------------------------- */
@@ -622,7 +622,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .soliloquy-caption a { color: #fdb515; text-shadow: 0 1px 1px #000; }
 
-.soliloquy-caption a:hover { color: #00b0da; }
+.soliloquy-caption a:hover, .soliloquy-caption a:focus { color: #00b0da; }
 
 /* # Posts By Term Widget
 ----------------------------------------------- */
@@ -681,7 +681,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .site-title { font-family: "source serif pro", "Georgia", "Times New Roman", serif; font-size: 42px; font-weight: 600; line-height: 1.2; }
 
-.site-title a, .site-title a:hover { color: #fff; text-decoration: none; }
+.site-title a, .site-title a:hover, .site-title a:focus { color: #fff; text-decoration: none; }
 
 .site-description { color: #fdb515; font-size: 16px; font-weight: 300; line-height: 1.5; }
 
@@ -709,7 +709,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .genesis-nav-menu a { color: #00b0da; display: block; padding: 16px 24px; text-decoration: none; }
 
-.genesis-nav-menu a:hover, .genesis-nav-menu .current-menu-item > a, .genesis-nav-menu .sub-menu .current-menu-item > a:hover { color: #003262; }
+.genesis-nav-menu a:hover, .genesis-nav-menu a:focus, .genesis-nav-menu .current-menu-item > a, .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .genesis-nav-menu .sub-menu .current-menu-item > a:focus { color: #003262; }
 
 .genesis-nav-menu .sub-menu { font-weight: normal; left: -9999px; opacity: 0; position: absolute; -webkit-transition: opacity .4s ease-in-out; -moz-transition: opacity .4s ease-in-out; -ms-transition: opacity .4s ease-in-out; -o-transition: opacity .4s ease-in-out; transition: opacity .4s ease-in-out; width: 200px; z-index: 99; }
 
@@ -717,7 +717,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .genesis-nav-menu .sub-menu .sub-menu { margin: -47px 0 0 199px; }
 
-.genesis-nav-menu .menu-item:hover { position: static; }
+.genesis-nav-menu .menu-item:hover, .genesis-nav-menu .menu-item:focus { position: static; }
 
 .genesis-nav-menu .menu-item:hover > .sub-menu { left: auto; opacity: 1; }
 
@@ -747,7 +747,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .nav-primary .genesis-nav-menu a, .nav-primary .genesis-nav-menu .sub-menu a { color: #fff; }
 
-.nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu .current-menu-item > a, .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover { color: #003262; }
+.nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu a:focus, .nav-primary .genesis-nav-menu .current-menu-item > a, .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:focus { color: #003262; }
 
 /* ## Secondary Navigation
 --------------------------------------------- */
@@ -755,7 +755,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .nav-secondary .genesis-nav-menu a { color: #3b7ea1; }
 
-.nav-secondary .genesis-nav-menu a:hover { color: #003262; }
+.nav-secondary .genesis-nav-menu a:hover, .nav-secondary .genesis-nav-menu a:focus { color: #003262; }
 
 .nav-secondary .genesis-nav-menu .sub-menu a { background-color: #fff; border: 1px solid #eee; border-top: none; }
 
@@ -765,7 +765,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .sidebar .widget.widget_nav_menu, .sidebar .widget_nav_menu, .sidebar .widget_nav_menu a { background-color: #00b0da; color: #fff; }
 
-.sidebar .widget_nav_menu a:hover { color: #003262; }
+.sidebar .widget_nav_menu a:hover, .sidebar .widget_nav_menu a:focus { color: #003262; }
 
 .sidebar .widget_nav_menu li { border: 1px solid #0087a7; border-width: 0 0 1px; }
 
@@ -827,7 +827,7 @@ p.entry-meta { font-size: 16px; margin-bottom: 24px; }
 
 .archive-pagination li a { background-color: #00b0da; color: #fff; cursor: pointer; display: inline-block; font-size: 16px; padding: 8px 12px; text-decoration: none; }
 
-.archive-pagination li a:hover, .archive-pagination .active a { background-color: #3b7ea1; }
+.archive-pagination li a:hover, .archive-pagination li a:focus, .archive-pagination .active a { background-color: #3b7ea1; }
 
 /* ## Comments
 --------------------------------------------- */
@@ -919,7 +919,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 
 .site-footer a.button { background: #fff; }
 
-.site-footer a:hover { color: #fff; }
+.site-footer a:hover, .site-footer a:focus { color: #fff; }
 
 .site-footer .footer-content { margin: 0; padding: 1.2em 0; text-align: center; }
 
@@ -929,7 +929,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 
 .site-footer .genesis-nav-menu .footer-menu a { background-color: #00b0da; color: #003262; }
 
-.site-footer .genesis-nav-menu .footer-menu a:hover, .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover { color: #fff; }
+.site-footer .genesis-nav-menu .footer-menu a:hover, .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover, .site-footer .genesis-nav-menu .footer-menu a:focus, .site-footer .genesis-nav-menu .footer-menu .social-icon a:focus { color: #fff; }
 
 .site-footer .genesis-nav-menu .footer-menu .social-icon { background-color: #003262; margin-top: .5em; }
 
@@ -949,7 +949,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 ---------------------------------------------------------------------------------------------------- */
 body.whitepaper { background: #eee; }
 
-body.whitepaper .site-title a, body.whitepaper .site-title a:hover { color: #46535e; }
+body.whitepaper .site-title a, body.whitepaper .site-title a:hover, body.whitepaper .site-title a:focus { color: #46535e; }
 
 body.whitepaper .title-area { width: auto; max-width: 50em; float: none; margin: 0 auto; }
 
@@ -975,7 +975,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 
 .light .site-footer .genesis-nav-menu .footer-menu a { color: #fff; }
 
-.light .site-footer .genesis-nav-menu .footer-menu a:hover { color: #003262; }
+.light .site-footer .genesis-nav-menu .footer-menu a:hover, .light .site-footer .genesis-nav-menu .footer-menu a:focus { color: #003262; }
 
 .light .title-area { text-shadow: none; }
 
@@ -1018,7 +1018,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
   .nav-primary .menu-item, .nav-secondary .menu-item { display: block; width: 100%; }
   button.menu-toggle, button.sub-menu-toggle { display: block; margin: 0 auto; overflow: hidden; text-align: left; visibility: visible; padding: 8px 1em 0; background-color: #00b0da; color: #fff; }
   button.menu-toggle { display: block; width: 100%; margin: 0 auto; }
-  button.menu-toggle:hover { box-shadow: none; }
+  button.menu-toggle:hover, button.menu-toggle:focus { box-shadow: none; }
   .sub-menu-toggle { padding: 12px; position: absolute; right: 0; top: 0; }
   #primary-toggle:before { content: "Menu"; font-style: normal; margin: 0; text-transform: uppercase; }
   #primary-toggle.activated:before { content: "Menu \2191"; }
@@ -1026,12 +1026,12 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
   .sub-menu-toggle.activated:before { content: "-"; }
   .header-widget-area { display: none; }
   .title-area { float: none; }
-  .search-toggle { display: block; visibility: inherit; font-size: 16px; position: absolute; bottom: -42px; right: 0; z-index: 30; }
-  .search-toggle:before { display: block; height: 22px; width: 22px; content: url(images/search.png); }
+  .header-right-active .search-toggle { display: block; visibility: inherit; font-size: 16px; position: absolute; bottom: -42px; right: 0; z-index: 30; }
+  .header-right-active .search-toggle:before { display: block; height: 22px; width: 22px; content: url(images/search.png); }
   .nav-primary, .nav-secondary { display: none; position: relative; }
   .nav-primary a, .nav-primary > .first > a, .nav-primary > .last > a { padding: .5em 1em; }
   .nav-primary .menu-item { display: block; position: relative; text-align: left; }
-  .nav-primary .menu-item:hover { position: relative; }
+  .nav-primary .menu-item:hover, .nav-primary .menu-item:focus { position: relative; }
   .nav-primary .sub-menu { clear: both; display: none; opacity: 1; padding-bottom: 0; position: static; width: 100%; }
   .nav-primary .sub-menu a { border-width: 0 0 1px 0; position: relative; width: auto; }
   .nav-primary .sub-menu .sub-menu { margin: 0; }

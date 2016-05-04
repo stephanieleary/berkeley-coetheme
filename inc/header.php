@@ -23,14 +23,15 @@ function berkeley_header_body_classes() {
 }
 
 function berkeley_header_style( $classes ) {
-     if ( HEADER_TEXTCOLOR == get_header_textcolor() && '' == get_header_image() )
-        return $classes;
-
+	
 	if ( 'blank' == get_header_textcolor() )
 		$classes[] = 'custom-header-hide-text';
 	
 	if ( !empty( get_theme_mod( 'berkeley-header-bg' ) ) )
 		$classes[] = 'custom-header-background';
+	
+	if ( is_active_sidebar( 'header-right' ) )
+		$classes[] = 'header-right-active';
 	
 	return $classes;
 }

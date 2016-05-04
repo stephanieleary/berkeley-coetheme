@@ -1,19 +1,19 @@
 /* # Classic */
-.classic.light .site-header, .classic.light .site-footer, .classic.light .site-title a, .classic.light .site-title a:hover, .classic.light .site-description { color: #003262; }
+.classic.light .site-header, .classic.light .site-footer, .classic.light .site-title a, .classic.light .site-title a:hover, .classic.light .site-title a:focus, .classic.light .site-description { color: #003262; }
 
-.classic .site-title a, .classic .site-title a:hover, .classic .site-footer a { color: #fdb515; }
+.classic .site-title a, .classic .site-title a:hover, .classic .site-title a:focus, .classic .site-footer a { color: #fdb515; }
 
 .classic .site-description { color: #fff; }
 
-.classic.light .site-footer a:hover, .classic.light .sidebar .widget_nav_menu a:hover { color: #00b0da; }
+.classic.light .site-footer a:hover, .classic.light .sidebar .widget_nav_menu a:hover, .classic.light .sidebar .widget_nav_menu a:focus { color: #00b0da; }
 
 .classic .genesis-nav-menu a, .classic .genesis-nav-menu .sub-menu a, .classic.light .site-footer a, .classic.light .sidebar .widget.widget_nav_menu, .classic.light .sidebar .widget_nav_menu, .classic.light .sidebar .widget_nav_menu a { color: #3b7ea1; }
 
-.classic .nav-primary, .classic .nav-primary .genesis-nav-menu .sub-menu, .classic .archive-pagination li a:hover, .classic .archive-pagination .active a { background-color: #3b7ea1; }
+.classic .nav-primary, .classic .nav-primary .genesis-nav-menu .sub-menu, .classic .archive-pagination li a:hover, .classic .archive-pagination li a:focus, .classic .archive-pagination .active a { background-color: #3b7ea1; }
 
-.classic .nav-primary .genesis-nav-menu a, .classic .nav-primary .genesis-nav-menu .sub-menu a, .classic .site-footer .genesis-nav-menu .footer-menu a, .classic .sidebar .widget.widget_nav_menu, .classic .sidebar .widget_nav_menu, .classic .sidebar .widget_nav_menu a, .classic .site-header .widget-area .select-menu, .classic .site-header .widget-area .select-menu option, .classic button.menu-toggle, .classic button.sub-menu-toggle, .classic button.menu-toggle:hover, .classic button.sub-menu-toggle:hover, .classic .footer-widgets button:hover, .classic .footer-widgets input:hover[type="button"], .classic .footer-widgets input:hover[type="reset"], .classic .footer-widgets input:hover[type="submit"], .classic .footer-widgets .button:hover { background-color: #3b7ea1; color: #fff; }
+.classic .nav-primary .genesis-nav-menu a, .classic .nav-primary .genesis-nav-menu .sub-menu a, .classic .site-footer .genesis-nav-menu .footer-menu a, .classic .sidebar .widget.widget_nav_menu, .classic .sidebar .widget_nav_menu, .classic .sidebar .widget_nav_menu a, .classic .site-header .widget-area .select-menu, .classic .site-header .widget-area .select-menu option, .classic button.menu-toggle, .classic button.sub-menu-toggle, .classic button.menu-toggle:hover, .classic button.sub-menu-toggle:hover, .classic .footer-widgets button:hover, .classic .footer-widgets input:hover[type="button"], .classic .footer-widgets input:hover[type="reset"], .classic .footer-widgets input:hover[type="submit"], .classic .footer-widgets .button:hover, .classic button.menu-toggle:focus, .classic button.sub-menu-toggle:focus, .classic .footer-widgets button:focus, .classic .footer-widgets input:focus[type="button"], .classic .footer-widgets input:focus[type="reset"], .classic .footer-widgets input:focus[type="submit"], .classic .footer-widgets .button:focus { background-color: #3b7ea1; color: #fff; }
 
-.classic .nav-primary .genesis-nav-menu a:hover, .classic .nav-primary .genesis-nav-menu .current-menu-item > a, .classic .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .classic .genesis-nav-menu a:hover, .classic .genesis-nav-menu .current-menu-item > a, .classic .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .classic .sidebar .widget_nav_menu a:hover, .classic .site-footer .genesis-nav-menu .footer-menu a:hover, .classic .author-box a { color: #fdb515; }
+.classic .nav-primary .genesis-nav-menu a:hover, .classic .nav-primary .genesis-nav-menu .current-menu-item > a, .classic .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .classic .genesis-nav-menu a:hover, .classic .genesis-nav-menu .current-menu-item > a, .classic .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .classic .sidebar .widget_nav_menu a:hover, .classic .site-footer .genesis-nav-menu .footer-menu a:hover, .classic .nav-primary .genesis-nav-menu a:focus, .classic .nav-primary .genesis-nav-menu .current-menu-item > a, .classic .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:focus, .classic .genesis-nav-menu a:focus, .classic .genesis-nav-menu .current-menu-item > a, .classic .genesis-nav-menu .sub-menu .current-menu-item > a:focus, .classic .sidebar .widget_nav_menu a:focus, .classic .site-footer .genesis-nav-menu .footer-menu a:focus, .classic .author-box a { color: #fdb515; }
 
 .classic .nav-secondary { background-color: #fff; }
 
@@ -25,7 +25,7 @@
 
 .classic .site-footer .genesis-nav-menu .footer-menu .social-icon a { background-color: #fdb515; color: #fff; }
 
-.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover { color: #003262; }
+.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover, .classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:focus { color: #003262; }
 
 .classic .wgs_wrapper input.gsc-search-button, .classic .widget_wgs_widget input.gsc-search-button { background-color: #fdb515; color: #003262; border: 4px #fdb515; }
 
@@ -35,9 +35,9 @@
 
 .classic .footer-widgets button, .classic .footer-widgets input[type="button"], .classic .footer-widgets input[type="reset"], .classic .footer-widgets input[type="submit"], .classic .footer-widgets .button, .classic .archive-pagination li a { background-color: #003262; color: #fff; }
 
-.classic button:hover, .classic input:hover[type="button"], .classic input:hover[type="reset"], .classic input:hover[type="submit"], .classic .button:hover { background-color: #c4820e; color: #000; }
+.classic button:hover, .classic input:hover[type="button"], .classic input:hover[type="reset"], .classic input:hover[type="submit"], .classic .button:hover, .classic button:focus, .classic input:focus[type="button"], .classic input:focus[type="reset"], .classic input:focus[type="submit"], .classic .button:focus { background-color: #c4820e; color: #000; }
 
-.classic .entry-content .button:hover { color: #fff; }
+.classic .entry-content .button:hover, .classic .entry-content .button:focus { color: #fff; }
 
 .classic tbody { border-bottom: 1px solid #fae4bd; }
 

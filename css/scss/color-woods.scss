@@ -31,12 +31,14 @@ body.woods {
 }
 
 .woods a:hover,
-.woods .site-footer a:hover {
+.woods .site-footer a:hover,
+.woods .site-footer a:focus {
 	color: $medalist;
 }
 
 .woods .site-title a,
 .woods .site-title a:hover,
+.woods .site-title a:focus,
 .woods .site-footer a {
 	color: $bay-fog;
 }
@@ -63,7 +65,8 @@ body.woods {
 	background-color: $bay-fog;
 }
 
-.woods .site-footer a:hover {
+.woods .site-footer a:hover,
+.woods .site-footer a:focus {
 	color: #fff;
 }
 
@@ -74,6 +77,7 @@ body.woods {
 }
 
 .woods .archive-pagination li a:hover,
+.woods .archive-pagination li a:focus,
 .woods .archive-pagination .active a {
 	background-color: $stone-pine;
 }
@@ -146,7 +150,9 @@ body.woods {
 .woods button.menu-toggle,
 .woods button.sub-menu-toggle,
 .woods button.menu-toggle:hover,
+.woods button.menu-toggle:focus,
 .woods button.sub-menu-toggle:hover,
+.woods button.sub-menu-toggle:focus,
 .woods .nav-primary .genesis-nav-menu a,
 .woods .nav-primary .genesis-nav-menu .sub-menu a {
 	background-color: darken($soybean, 7%);
@@ -154,8 +160,10 @@ body.woods {
 }
 
 .woods .nav-primary .genesis-nav-menu a:hover,
+.woods .nav-primary .genesis-nav-menu a:focus,
 .woods .nav-primary .genesis-nav-menu .current-menu-item > a,
-.woods .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+.woods .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+.woods .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:focus {
 	color: $bay-fog;
 }
 
@@ -165,7 +173,9 @@ body.woods {
 }
 
 .woods .nav-secondary .genesis-nav-menu a:hover,
-.woods .nav-secondary .genesis-nav-menu .sub-menu a:hover {
+.woods .nav-secondary .genesis-nav-menu .sub-menu a:hover,
+.woods .nav-secondary .genesis-nav-menu a:focus,
+.woods .nav-secondary .genesis-nav-menu .sub-menu a:focus {
 	color: $stone-pine;
 }
 
@@ -182,7 +192,8 @@ body.woods {
 	color: #fff;
 }
 
-.woods .sidebar .widget_nav_menu a:hover {
+.woods .sidebar .widget_nav_menu a:hover,
+.woods .sidebar .widget_nav_menu a:focus {
 	color: $bay-fog;
 }
 
@@ -195,7 +206,8 @@ body.woods {
 	color: #fff;
 }
 
-.woods .site-footer .genesis-nav-menu .footer-menu a:hover {
+.woods .site-footer .genesis-nav-menu .footer-menu a:hover,
+.woods .site-footer .genesis-nav-menu .footer-menu a:focus {
 	color: $bay-fog;
 }
 
@@ -208,7 +220,8 @@ body.woods {
 	color: #fff;
 }
 
-.woods .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover {
+.woods .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover,
+.woods .site-footer .genesis-nav-menu .footer-menu .social-icon a:focus {
 	color: $bay-fog;
 }
 
@@ -250,7 +263,12 @@ body.woods {
 .woods input:hover[type="button"],
 .woods input:hover[type="reset"],
 .woods input:hover[type="submit"],
-.woods .button:hover {
+.woods .button:hover,
+.woods button:focus,
+.woods input:focus[type="button"],
+.woods input:focus[type="reset"],
+.woods input:focus[type="submit"],
+.woods .button:focus {
 	background-color: lighten($gold, 20%);
 	color: darken($stone-pine, 10%);
 }
@@ -263,7 +281,12 @@ body.woods {
 .woods .footer-widgets input:hover[type="button"],
 .woods .footer-widgets input:hover[type="reset"],
 .woods .footer-widgets input:hover[type="submit"],
-.woods .footer-widgets .button:hover {
+.woods .footer-widgets .button:hover,
+.woods .footer-widgets button:focus,
+.woods .footer-widgets input:focus[type="button"],
+.woods .footer-widgets input:focus[type="reset"],
+.woods .footer-widgets input:focus[type="submit"],
+.woods .footer-widgets .button:focus {
 	background-color: darken($medalist, 5%);
 	color: #fff;
 }
@@ -307,7 +330,8 @@ body.woods {
 	color: $gold;
 }
 
-.woods .soliloquy-caption a:hover {
+.woods .soliloquy-caption a:hover,
+.woods .soliloquy-caption a:focus {
 	color: $bay-fog;
 }
 
@@ -367,7 +391,8 @@ body.woods {
 	color: lighten($gold, 40%);
 }
 
-.woods #genesis-footer-widgets .widget a:hover {
+.woods #genesis-footer-widgets .widget a:hover,
+.woods #genesis-footer-widgets .widget a:focus {
 	color: $bay-fog;
 }
 
@@ -377,12 +402,15 @@ body.woods {
 }
 
 .woods #genesis-footer-widgets .widget.index-4 a:hover,
-.woods #genesis-footer-widgets .widget.index-8 a:hover {
+.woods #genesis-footer-widgets .widget.index-8 a:hover,
+.woods #genesis-footer-widgets .widget.index-4 a:focus,
+.woods #genesis-footer-widgets .widget.index-8 a:focus {
 	color: darken($soybean, 15%);
 }
 
 .woods.light .site-title a,
 .woods.light .site-title a:hover,
+.woods.light .site-title a:focus,
 .woods.light .site-footer {
 	color: $stone-pine;
 }
@@ -403,7 +431,8 @@ body.woods {
 	color: $soybean;
 }
 
-.woods.light .site-footer a:hover {
+.woods.light .site-footer a:hover,
+.woods.light .site-footer a:focus {
 	color: $medalist;
 }
 
@@ -414,7 +443,8 @@ body.woods {
 	color: $soybean;
 }
 
-.woods.light .sidebar .widget_nav_menu a:hover {
+.woods.light .sidebar .widget_nav_menu a:hover,
+.woods.light .sidebar .widget_nav_menu a:focus {
 	color: $bay-fog;
 }
 
@@ -436,6 +466,8 @@ body.woods {
 }
 
 .woods.light #genesis-footer-widgets .widget.index-4 a:hover,
-.woods.light #genesis-footer-widgets .widget.index-8 a:hover {
+.woods.light #genesis-footer-widgets .widget.index-8 a:hover,
+.woods.light #genesis-footer-widgets .widget.index-4 a:focus,
+.woods.light #genesis-footer-widgets .widget.index-8 a:focus {
 	color: $bay-fog;
 }

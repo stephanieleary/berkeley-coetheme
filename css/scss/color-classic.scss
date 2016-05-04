@@ -25,12 +25,14 @@ $super-light-gray:		#f0f0f0;
 .classic.light .site-footer,
 .classic.light .site-title a,
 .classic.light .site-title a:hover,
+.classic.light .site-title a:focus,
 .classic.light .site-description {
 	color: $blue;
 }
 
 .classic .site-title a,
 .classic .site-title a:hover,
+.classic .site-title a:focus,
 .classic .site-footer a {
 	color: $gold;
 }
@@ -40,7 +42,8 @@ $super-light-gray:		#f0f0f0;
 }
 
 .classic.light .site-footer a:hover,
-.classic.light .sidebar .widget_nav_menu a:hover {
+.classic.light .sidebar .widget_nav_menu a:hover,
+.classic.light .sidebar .widget_nav_menu a:focus {
 	color: $lawrence;
 }
 
@@ -56,6 +59,7 @@ $super-light-gray:		#f0f0f0;
 .classic .nav-primary,
 .classic .nav-primary .genesis-nav-menu .sub-menu,
 .classic .archive-pagination li a:hover,
+.classic .archive-pagination li a:focus,
 .classic .archive-pagination .active a {
 	background-color: $founders-rock;
 }
@@ -76,7 +80,14 @@ $super-light-gray:		#f0f0f0;
 .classic .footer-widgets input:hover[type="button"],
 .classic .footer-widgets input:hover[type="reset"],
 .classic .footer-widgets input:hover[type="submit"],
-.classic .footer-widgets .button:hover {
+.classic .footer-widgets .button:hover,
+.classic button.menu-toggle:focus,
+.classic button.sub-menu-toggle:focus,
+.classic .footer-widgets button:focus,
+.classic .footer-widgets input:focus[type="button"],
+.classic .footer-widgets input:focus[type="reset"],
+.classic .footer-widgets input:focus[type="submit"],
+.classic .footer-widgets .button:focus {
 	background-color: $founders-rock;
 	color: #fff;
 }
@@ -89,6 +100,14 @@ $super-light-gray:		#f0f0f0;
 .classic .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
 .classic .sidebar .widget_nav_menu a:hover,
 .classic .site-footer .genesis-nav-menu .footer-menu a:hover,
+.classic .nav-primary .genesis-nav-menu a:focus,
+.classic .nav-primary .genesis-nav-menu .current-menu-item > a,
+.classic .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
+.classic .genesis-nav-menu a:focus,
+.classic .genesis-nav-menu .current-menu-item > a,
+.classic .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
+.classic .sidebar .widget_nav_menu a:focus,
+.classic .site-footer .genesis-nav-menu .footer-menu a:focus,
 .classic .author-box a {
 	color: $gold;
 }
@@ -116,7 +135,8 @@ $super-light-gray:		#f0f0f0;
 	color: #fff;
 }
 
-.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover {
+.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover,
+.classic .site-footer .genesis-nav-menu .footer-menu .social-icon a:focus {
 	color: $blue;
 }
 
@@ -159,12 +179,18 @@ $super-light-gray:		#f0f0f0;
 .classic input:hover[type="button"],
 .classic input:hover[type="reset"],
 .classic input:hover[type="submit"],
-.classic .button:hover {
+.classic .button:hover,
+.classic button:focus,
+.classic input:focus[type="button"],
+.classic input:focus[type="reset"],
+.classic input:focus[type="submit"],
+.classic .button:focus {
 	background-color: $medalist;
 	color: #000;
 }
 
-.classic .entry-content .button:hover {
+.classic .entry-content .button:hover,
+.classic .entry-content .button:focus {
 	color: #fff;
 }
 

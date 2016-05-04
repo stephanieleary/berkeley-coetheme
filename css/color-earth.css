@@ -3,11 +3,11 @@ body.earth { color: #000; }
 
 .earth a, .earth .site-footer a, .earth.light .site-footer a { color: #859438; }
 
-.earth a:hover, .earth .site-footer a, .earth.light .site-description, .earth.light .site-footer a:hover { color: #c4820e; }
+.earth a:hover, .earth a:focus, .earth .site-footer a, .earth.light .site-description, .earth.light .site-footer a:hover, .earth.light .site-footer a:focus { color: #c4820e; }
 
-.earth .site-description, .earth .site-footer a:hover, .earth .entry-content .button:hover { color: #fff; }
+.earth .site-description, .earth .site-footer a:hover, .earth .site-footer a:focus, .earth .entry-content .button:hover, .earth .entry-content .button:focus { color: #fff; }
 
-.earth .site-title a, .earth .site-title a:hover, .earth .site-footer a, .earth .genesis-nav-menu a, .earth .genesis-nav-menu .sub-menu a, .earth .soliloquy-caption a:hover { color: #ddd5c7; }
+.earth .site-title a, .earth .site-title a:hover, .earth .site-title a:focus, .earth .site-footer a, .earth .genesis-nav-menu a, .earth .genesis-nav-menu .sub-menu a, .earth .soliloquy-caption a:hover, .earth .soliloquy-caption a:focus { color: #ddd5c7; }
 
 .earth .site-header, .earth .site-footer, .earth .archive-pagination li a { background-color: #6c3302; color: #fff; }
 
@@ -15,17 +15,17 @@ body.earth { color: #000; }
 
 .earth.light .site-header input { border: 1px solid #b6a588; }
 
-.earth .archive-pagination li a:hover, .earth .archive-pagination .active a { background-color: #c4820e; }
+.earth .archive-pagination li a:hover, .earth .archive-pagination li a:focus, .earth .archive-pagination .active a { background-color: #c4820e; }
 
 .earth .pullquote { background-color: #c4820e; color: #fff; }
 
-.earth.light .site-header, .earth.light .site-footer, .earth.light .site-title a, .earth.light .site-title a:hover, .earth .genesis-nav-menu a:hover, .earth .genesis-nav-menu .current-menu-item > a, .earth .genesis-nav-menu .sub-menu .current-menu-item > a:hover { color: #6c3302; }
+.earth.light .site-header, .earth.light .site-footer, .earth.light .site-title a, .earth.light .site-title a:hover, .earth.light .site-title a:focus, .earth .genesis-nav-menu a:hover, .earth .genesis-nav-menu a:focus, .earth .genesis-nav-menu .current-menu-item > a, .earth .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .earth .genesis-nav-menu .sub-menu .current-menu-item > a:focus { color: #6c3302; }
 
 .earth .nav-primary, .earth .nav-primary .genesis-nav-menu .sub-menu, .earth .site-footer a.button { background-color: #ddd5c7; }
 
-.earth button.menu-toggle, .earth button.sub-menu-toggle, .earth button.menu-toggle:hover, .earth button.sub-menu-toggle:hover, .earth .nav-primary .genesis-nav-menu a, .earth .nav-primary .genesis-nav-menu .sub-menu a, .earth .sidebar .widget.widget_nav_menu, .earth .sidebar .widget_nav_menu, .earth .sidebar .widget_nav_menu a, .earth .site-footer .genesis-nav-menu .footer-menu a { background-color: #ddd5c7; color: #6c3302; }
+.earth button.menu-toggle, .earth button.sub-menu-toggle, .earth button.menu-toggle:hover, .earth button.sub-menu-toggle:hover, .earth button.sub-menu-toggle:focus, .earth .nav-primary .genesis-nav-menu a, .earth .nav-primary .genesis-nav-menu .sub-menu a, .earth .sidebar .widget.widget_nav_menu, .earth .sidebar .widget_nav_menu, .earth .sidebar .widget_nav_menu a, .earth .site-footer .genesis-nav-menu .footer-menu a { background-color: #ddd5c7; color: #6c3302; }
 
-.earth .nav-primary .genesis-nav-menu a:hover, .earth .nav-secondary .genesis-nav-menu a:hover, .earth .nav-primary .genesis-nav-menu .current-menu-item > a, .earth .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .earth .sidebar .widget_nav_menu a:hover { color: #d9661f; }
+.earth .nav-primary .genesis-nav-menu a:hover, .earth .nav-primary .genesis-nav-menu a:focus, .earth .nav-secondary .genesis-nav-menu a:hover, .earth .nav-secondary .genesis-nav-menu a:focus, .earth .nav-primary .genesis-nav-menu .current-menu-item > a, .earth .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .earth .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:focus, .earth .sidebar .widget_nav_menu a:hover, .earth .sidebar .widget_nav_menu a:focus { color: #d9661f; }
 
 .earth .nav-secondary { background-color: #fff; }
 
@@ -37,13 +37,13 @@ body.earth { color: #000; }
 
 .earth.light .site-footer .genesis-nav-menu .footer-menu a { background-color: #6c3302; color: #fff; }
 
-.earth .site-footer .genesis-nav-menu .footer-menu a:hover { color: #ed4e33; }
+.earth .site-footer .genesis-nav-menu .footer-menu a:hover, .earth .site-footer .genesis-nav-menu .footer-menu a:focus { color: #ed4e33; }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon { background-color: #6c3302; }
 
 .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a { background-color: #c4820e; color: #fff; }
 
-.earth.light .site-footer .genesis-nav-menu .footer-menu a:hover, .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover { color: #ddd5c7; }
+.earth.light .site-footer .genesis-nav-menu .footer-menu a:hover, .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a:hover, .earth.light .site-footer .genesis-nav-menu .footer-menu a:focus, .earth .site-footer .genesis-nav-menu .footer-menu .social-icon a:focus { color: #ddd5c7; }
 
 .earth .wgs_wrapper input.gsc-search-button, .earth .widget_wgs_widget input.gsc-search-button { background-color: #859438; color: #fff; border: 4px #859438; }
 
@@ -51,9 +51,9 @@ body.earth { color: #000; }
 
 .earth button, .earth input[type="button"], .earth input[type="reset"], .earth input[type="submit"], .earth .button { background-color: #859438; color: #fff; }
 
-.earth button:hover, .earth input:hover[type="button"], .earth input:hover[type="reset"], .earth input:hover[type="submit"], .earth .button:hover, .earth #genesis-footer-widgets .widget.index-1 button, .earth #genesis-footer-widgets .widget.index-5 button, .earth #genesis-footer-widgets .widget.index-9 button, .earth #genesis-footer-widgets .widget.index-1 input[type="button"], .earth #genesis-footer-widgets .widget.index-5 input[type="button"], .earth #genesis-footer-widgets .widget.index-9 input[type="button"], .earth #genesis-footer-widgets .widget.index-1 input[type="reset"], .earth #genesis-footer-widgets .widget.index-5 input[type="reset"], .earth #genesis-footer-widgets .widget.index-9 input[type="reset"], .earth #genesis-footer-widgets .widget.index-1 input[type="submit"], .earth #genesis-footer-widgets .widget.index-5 input[type="submit"], .earth #genesis-footer-widgets .widget.index-9 input[type="submit"], .earth #genesis-footer-widgets .widget.index-1 .button, .earth #genesis-footer-widgets .widget.index-5 .button, .earth #genesis-footer-widgets .widget.index-9 .button { background-color: #6c3302; color: #fff; }
+.earth button:hover, .earth input:hover[type="button"], .earth input:hover[type="reset"], .earth input:hover[type="submit"], .earth .button:hover, .earth button:focus, .earth input:focus[type="button"], .earth input:focus[type="reset"], .earth input:focus[type="submit"], .earth .button:focus, .earth #genesis-footer-widgets .widget.index-1 button, .earth #genesis-footer-widgets .widget.index-5 button, .earth #genesis-footer-widgets .widget.index-9 button, .earth #genesis-footer-widgets .widget.index-1 input[type="button"], .earth #genesis-footer-widgets .widget.index-5 input[type="button"], .earth #genesis-footer-widgets .widget.index-9 input[type="button"], .earth #genesis-footer-widgets .widget.index-1 input[type="reset"], .earth #genesis-footer-widgets .widget.index-5 input[type="reset"], .earth #genesis-footer-widgets .widget.index-9 input[type="reset"], .earth #genesis-footer-widgets .widget.index-1 input[type="submit"], .earth #genesis-footer-widgets .widget.index-5 input[type="submit"], .earth #genesis-footer-widgets .widget.index-9 input[type="submit"], .earth #genesis-footer-widgets .widget.index-1 .button, .earth #genesis-footer-widgets .widget.index-5 .button, .earth #genesis-footer-widgets .widget.index-9 .button { background-color: #6c3302; color: #fff; }
 
-.earth #genesis-footer-widgets .widget.index-1 button:hover, .earth #genesis-footer-widgets .widget.index-5 button:hover, .earth #genesis-footer-widgets .widget.index-9 button:hover, .earth #genesis-footer-widgets .widget.index-1 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-1 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-1 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-1 .button:hover, .earth #genesis-footer-widgets .widget.index-5 .button:hover, .earth #genesis-footer-widgets .widget.index-9 .button:hover { background-color: #c4820e; color: #fff; }
+.earth #genesis-footer-widgets .widget.index-1 button:hover, .earth #genesis-footer-widgets .widget.index-5 button:hover, .earth #genesis-footer-widgets .widget.index-9 button:hover, .earth #genesis-footer-widgets .widget.index-1 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="button"], .earth #genesis-footer-widgets .widget.index-1 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="reset"], .earth #genesis-footer-widgets .widget.index-1 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-5 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-9 input:hover[type="submit"], .earth #genesis-footer-widgets .widget.index-1 .button:hover, .earth #genesis-footer-widgets .widget.index-5 .button:hover, .earth #genesis-footer-widgets .widget.index-9 .button:hover, .earth #genesis-footer-widgets .widget.index-1 button:focus, .earth #genesis-footer-widgets .widget.index-5 button:focus, .earth #genesis-footer-widgets .widget.index-9 button:focus, .earth #genesis-footer-widgets .widget.index-1 input:focus[type="button"], .earth #genesis-footer-widgets .widget.index-5 input:focus[type="button"], .earth #genesis-footer-widgets .widget.index-9 input:focus[type="button"], .earth #genesis-footer-widgets .widget.index-1 input:focus[type="reset"], .earth #genesis-footer-widgets .widget.index-5 input:focus[type="reset"], .earth #genesis-footer-widgets .widget.index-9 input:focus[type="reset"], .earth #genesis-footer-widgets .widget.index-1 input:focus[type="submit"], .earth #genesis-footer-widgets .widget.index-5 input:focus[type="submit"], .earth #genesis-footer-widgets .widget.index-9 input:focus[type="submit"], .earth #genesis-footer-widgets .widget.index-1 .button:focus, .earth #genesis-footer-widgets .widget.index-5 .button:focus, .earth #genesis-footer-widgets .widget.index-9 .button:focus { background-color: #c4820e; color: #fff; }
 
 .earth tbody { border-bottom: 1px solid #b6a588; }
 
@@ -79,7 +79,7 @@ body.earth { color: #000; }
 
 .earth .sidebar .widget.bold a.button { background-color: #fdb515; color: #6c3302; }
 
-.earth .sidebar .widget.bold a.button:hover { background-color: #fed57a; }
+.earth .sidebar .widget.bold a.button:hover, .earth .sidebar .widget.bold a.button:focus { background-color: #fed57a; }
 
 .earth .sidebar .widget.subtle, .earth .content .stickies .entry.sticky, .earth.blog .entry.sticky { background-color: #f0ede7; color: #6c3302; }
 
@@ -107,13 +107,13 @@ body.earth { color: #000; }
 
 .earth.light .nav-secondary .genesis-nav-menu a, .earth.light .nav-secondary .genesis-nav-menu .sub-menu a { color: #859438; }
 
-.earth.light .genesis-nav-menu a:hover, .earth.light .genesis-nav-menu .current-menu-item > a, .earth.light .genesis-nav-menu .sub-menu .current-menu-item > a:hover { color: #6c3302; }
+.earth.light .genesis-nav-menu a:hover, .earth.light .genesis-nav-menu a:focus, .earth.light .genesis-nav-menu .current-menu-item > a, .earth.light .genesis-nav-menu .sub-menu .current-menu-item > a:hover .earth.light .genesis-nav-menu .sub-menu .current-menu-item > a:focus { color: #6c3302; }
 
 .earth.light .nav-primary, .earth.light .nav-primary .genesis-nav-menu .sub-menu { background-color: #6c3302; }
 
-.earth.light button.menu-toggle, .earth.light button.sub-menu-toggle, .earth.light button.menu-toggle:hover, .earth.light button.sub-menu-toggle:hover, .earth.light .nav-primary .genesis-nav-menu a, .earth.light .nav-primary .genesis-nav-menu .sub-menu a { background-color: #6c3302; color: #ddd5c7; }
+.earth.light button.menu-toggle, .earth.light button.sub-menu-toggle, .earth.light button.menu-toggle:hover, .earth.light button.menu-toggle:focus, .earth.light button.sub-menu-toggle:hover, .earth.light button.sub-menu-toggle:focus, .earth.light .nav-primary .genesis-nav-menu a, .earth.light .nav-primary .genesis-nav-menu .sub-menu a { background-color: #6c3302; color: #ddd5c7; }
 
-.earth.light .nav-primary .genesis-nav-menu a:hover, .earth.light .nav-primary .genesis-nav-menu .current-menu-item > a, .earth.light .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .earth.light .footer-menu a:hover { color: #fdb515; }
+.earth.light .nav-primary .genesis-nav-menu a:hover, .earth.light .nav-primary .genesis-nav-menu a:focus, .earth.light .nav-primary .genesis-nav-menu .current-menu-item > a, .earth.light .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .earth.light .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:focus, .earth.light .footer-menu a:hover, .earth.light .footer-menu a:focus { color: #fdb515; }
 
 .earth.light .genesis-nav-menu .sub-menu a, .earth.light .nav-secondary .genesis-nav-menu .sub-menu a { border-color: #3a1b01; }
 
