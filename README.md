@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+1.4.3: Fix menu toggle padding
 1.4.2: Focus styles; hide search toggle when Header Right sidebar is empty
 1.4.1: Custom background support for header
 1.4: Filter all custom field & taxonomy list prefixes and labels. New whitepaper heading.

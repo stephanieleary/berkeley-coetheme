@@ -5,7 +5,7 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.4.2
+Version: 1.4.3
 Template: genesis  
 Template Version: 2.2.7
 Text Domain: beng
@@ -2435,15 +2435,24 @@ li.comment {
 		overflow: hidden;
 		text-align: left;
 		visibility: visible;
-		padding: 8px 1em 0;
+		padding: 8px 1em;
 		background-color: $lawrence;
 		color: #fff;
 	}
 	
-	button.menu-toggle {
+	button.menu-toggle,
+	button.sub-menu-toggle {
 		display: block;
 		width: 100%;
 		margin: 0 auto;
+	}
+	
+	button#secondary-toggle.menu-toggle {
+		display: none;
+	}
+	
+	.nav-secondary-active button#secondary-toggle.menu-toggle {
+		display: block;
 	}
 	
 	button.menu-toggle:hover,

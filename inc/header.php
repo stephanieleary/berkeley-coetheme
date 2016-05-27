@@ -33,6 +33,10 @@ function berkeley_header_style( $classes ) {
 	if ( is_active_sidebar( 'header-right' ) )
 		$classes[] = 'header-right-active';
 	
+	if ( has_nav_menu( 'secondary' ) ) {
+	     $classes[] = 'nav-secondary-active';
+	}
+	
 	return $classes;
 }
 
