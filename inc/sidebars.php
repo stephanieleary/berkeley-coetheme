@@ -35,11 +35,16 @@ function berkeley_register_sidebars() {
 		'description'	=> __( 'Full-width area below the main navigation.', 'beng' ),
 	) );
 	//* News widget area
-	// * Slideshow widget area
 	genesis_register_sidebar( array(
 		'id'			=> 'post',
 		'name'			=> __( 'News', 'beng' ),
 		'description'	=> __( 'This is the primary sidebar on news/blog archives.', 'beng' ),
+	) );
+	//* Whitepaper template widget area
+	genesis_register_sidebar( array(
+		'id'			=> 'whitepaper',
+		'name'			=> __( 'Whitepaper', 'beng' ),
+		'description'	=> __( 'This is the navigation area on Whitepaper template pages.', 'beng' ),
 	) );
 	
 	

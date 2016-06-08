@@ -56,55 +56,10 @@ function berkeley_whitepaper_footer() {
 	echo '</div></div><!-- end .footer-content -->';
 }
 
-add_action( 'genesis_entry_footer', 'berkeley_whitepaper_children' );
-add_action( 'genesis_entry_footer', 'berkeley_whitepaper_nav' );
+add_action( 'genesis_entry_footer', 'berkeley_whitepaper_do_sidebar' );
 
-function berkeley_whitepaper_children() {
-	$prefix = apply_filters( 'berkeley_whitepaper_toc_heading', __( 'In this section:', 'beng' ) );
-	echo '<h3>' . $prefix . '</h3>' . do_shortcode( '[child-pages]' );
-}
-
-function berkeley_whitepaper_nav() {
-	$post_id = get_the_ID();
-	$prev = $top = $next = '';
-	
-	// get all Whitepaper pages in a flat list
-	$args = array(
-		'sort_column' => 'menu_order',
-		'sort_order' => 'ASC',
-		'fields' => 'ids',
-		'post_type' => 'page',
-		'meta_key' => '_wp_page_template',
-		'meta_value' => 'page_whitepaper.php'
-	);
-	$pages = get_pages( $args );
-	$pages = berkeley_whitepaper_flatten_array( $pages );
-	$key = array_search( $post_id, $pages );
-	
-	if ( isset( $pages[$key+1] ) ) {
-		$prefix = apply_filters( 'berkeley_whitepaper_next_label', __( 'Next:', 'beng' ) );
-		$next = sprintf( '<a class="next alignright" href="%s">%s %s</a>', get_the_permalink( $pages[$key+1], $prefix, get_the_title( $pages[$key+1] ) ) );
-	}
-	
-	if ( isset( $pages[$key-1] ) ) {
-		$prefix = apply_filters( 'berkeley_whitepaper_previous_label', __( 'Previous:', 'beng' ) );
-		$prev = sprintf( '<a class="prev alignleft" href="%s">%s %s</a>', get_the_permalink( $pages[$key-1], $prefix, get_the_title( $pages[$key-1] ) ) );
-	}
-	
-	$parent = wp_get_post_parent_id( $post_id );
-		
-	if ( isset( $parent ) && !empty( $parent ) ) {
-		$prefix = apply_filters( 'berkeley_whitepaper_parent_label', __( 'Up:', 'beng' ) );
-		$top = sprintf( '<a class="top aligncenter" href="%s">%s %s</a>', get_the_permalink( $parent ), $prefix, get_the_title( $parent ) );
-	}
-	
-	echo $prev . $top . $next;
-}
-
-function berkeley_whitepaper_flatten_array(array $array) {
-    $return = array();
-    array_walk_recursive($array, function($a) use (&$return) { $return[] = $a; });
-    return $return;
+function berkeley_whitepaper_do_sidebar() {
+	dynamic_sidebar( 'whitepaper' );
 }
 
 //* Run the Genesis loop
