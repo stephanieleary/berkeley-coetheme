@@ -217,7 +217,7 @@ function berkeley_postmeta_settings_box() {	?>
 				</p>
 				
 				<p class="description">
-				<?php printf( __('See <a href="%s" target="_blank">all available shortcodes</a>', 'beng'), 'http://my.studiopress.com/docs/shortcode-reference/#post-shortcodes' ); ?>
+				<?php printf( __('See <a href="%s" target="_blank">the documentation</a> for all available shortcodes', 'beng'), 'admin.php?page=wp-help-documents' ); ?>
 				</p>
 			</td>
 		</tr>
