@@ -140,6 +140,6 @@ function berkeley_enqueue_files() {
 // Add menu toggle buttons with specific IDs
 add_action( 'genesis_after_header', 'berkeley_menu_buttons', 99 );
 function berkeley_menu_buttons() {
-	echo '<button id="secondary-toggle" class="menu-toggle" role="button" aria-pressed="false"></button>';
-	echo '<button id="primary-toggle" class="menu-toggle" role="button" aria-pressed="false"></button>';
+	echo '<button id="secondary-toggle" class="menu-toggle" role="button" aria-pressed="false">Secondary Menu</button>';
+	echo '<button id="primary-toggle" class="menu-toggle" role="button" aria-pressed="false">Menu</button>';
 }
