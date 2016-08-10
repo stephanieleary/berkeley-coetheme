@@ -170,6 +170,12 @@ function berkeley_enqueue_files() {
 	// Enqueue accordion js for Additional Content fields on single templates
 	if ( is_singular() )
 		wp_enqueue_script( 'berkeley-accordion', get_stylesheet_directory_uri() . '/js/accordion.js', array( 'jquery' ), false, true );
+	
+	// Enqueue ACF maps scripts on facilities
+	if ( is_singular( 'facility' ) && function_exists( 'get_field' ) && get_field( 'map', get_the_ID() ) ) {
+		wp_enqueue_script( 'berkeley-google-maps-api', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', '', '1.0.0', true );
+		wp_enqueue_script( 'berkeley-acf-maps', get_stylesheet_directory_uri() . '/js/acf-maps.js', array( 'google-maps-api' ), '1.0.0', true );
+	}
 }
 
 // Add menu toggle buttons with specific IDs
