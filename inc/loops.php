@@ -79,7 +79,7 @@ function berkeley_people_table_loop() {
 
 		do_action( 'genesis_before_while' );
 		
-		$headers = array( __('Name', 'beng'), __('Title', 'beng'), __('Office', 'beng'), __('Email', 'beng') );
+		$headers = array( esc_html__('Name', 'berkeley-coe-theme'), esc_html__('Title', 'berkeley-coe-theme'), esc_html__('Office', 'berkeley-coe-theme'), esc_html__('Email', 'berkeley-coe-theme') );
 		
 		echo berkeley_loop_table_headers( $headers );
 	
@@ -88,10 +88,10 @@ function berkeley_people_table_loop() {
 			do_action( 'genesis_before_entry' );
 			
 			$data = array( 
-				sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
+				sprintf( '<a href="%s" title="%s">%s</a>', esc_url( get_permalink() ), the_title_attribute( 'echo=0' ), get_the_title() ),
 				get_field( 'job_title' ),
 				get_field( 'address_line_1' ),
-				sprintf( '<a href="mailto:%1$s">%1$s</a>', get_field( 'email' ) )
+				sprintf( '<a href="mailto:%1$s">%1$s</a>', antispambot( get_field( 'email' ) ) )
 			);
 			
 			echo berkeley_loop_table_cells( array_combine( $headers, $data ) );

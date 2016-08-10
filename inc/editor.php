@@ -1,11 +1,11 @@
 <?php
 
 //* TinyMCE CSS
-add_action( 'admin_init', 'berkeley_editor_styles' );
+add_action( 'after_setup_theme', 'berkeley_editor_styles' );
 
 function berkeley_editor_styles() {
-	// add base editor stylesheet
-	add_editor_style();
+	// add base editor stylesheet and fonts
+	add_editor_style( array( 'editor-style.css', berkeley_theme_fonts_url() ) );
 	
 	// add color scheme stylesheet
 	$path = berkeley_get_color_stylesheet( genesis_get_option( 'style_selection' ) );

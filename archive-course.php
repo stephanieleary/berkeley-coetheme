@@ -31,9 +31,9 @@ function berkeley_course_table_loop() {
 		 );
 		$havetimes = get_posts( $args );
 		
-		$headers = array( __('Course', 'beng'), __('Number', 'beng'), __('Instructor(s)', 'beng') );
+		$headers = array( esc_html__('Course', 'berkeley-coe-theme'), esc_html__('Number', 'berkeley-coe-theme'), esc_html__('Instructor(s)', 'berkeley-coe-theme') );
 		if ( count( $havetimes ) )
-			$headers[] = __('Time', 'beng');
+			$headers[] = esc_html__('Time', 'berkeley-coe-theme');
 			
 		echo berkeley_loop_table_headers( $headers );
 	
@@ -42,7 +42,7 @@ function berkeley_course_table_loop() {
 			//do_action( 'genesis_before_entry' );
 			
 			$data = array( 
-				sprintf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() ),
+				sprintf( '<a href="%s" title="%s">%s</a>', esc_url( get_permalink() ), the_title_attribute( 'echo=0' ), get_the_title() ),
 				get_field( 'course_number' ),
 				get_field( 'instructors' )		
 			);

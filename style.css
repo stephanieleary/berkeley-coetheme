@@ -1,14 +1,14 @@
 /*
-Theme Name: Berkeley Engineering (Genesis)
+Theme Name: Berkeley CoE Theme
 Theme URI: https://github.com/sillybean/berkeley-coetheme
 GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.4.6
+Version: 1.5
 Template: genesis  
 Template Version: 2.2.7
-Text Domain: beng
+Text Domain: berkeley-coe-theme
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
@@ -677,7 +677,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 /* ## Title Area
 --------------------------------------------- */
-.title-area { float: left; padding: 10px 0; width: 800px; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); }
+.title-area { float: left; padding: 10px 0; width: 800px; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); -ms-word-wrap: break-word; word-wrap: break-word; }
 
 .header-full-width .title-area { width: 100%; }
 
@@ -787,11 +787,13 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 	margin-left: 24px;
 }
 /**/
-.content .entry { background-color: #fff; margin-bottom: 1em; }
+.content .entry { background-color: #fff; margin-bottom: 1em; -ms-word-wrap: break-word; word-wrap: break-word; }
 
 .content .stickies .entry.sticky, .blog .entry.sticky { background: #e5f0f6; color: #003262; }
 
 .entry-content ol, .entry-content ul { margin-bottom: 28px; margin-left: 40px; }
+
+.entry-content li ol, .entry-content li ul { margin-bottom: 0; }
 
 .entry-content ul > li { list-style-type: disc; }
 
@@ -865,7 +867,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
-.sidebar { font-size: 16px; }
+.sidebar { font-size: 16px; -ms-word-wrap: break-word; word-wrap: break-word; }
 
 .sidebar li { border-bottom: 1px dotted #888; margin-bottom: 10px; padding-bottom: 10px; }
 
@@ -877,7 +879,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 
 /* # Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
-.footer-widgets { clear: both; padding-top: 40px; }
+.footer-widgets { clear: both; padding-top: 40px; -ms-word-wrap: break-word; word-wrap: break-word; }
 
 .footer-widgets li { margin-bottom: .8em; }
 
@@ -909,7 +911,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
 
 /* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
-.site-footer { background-color: #003262; color: #fff; box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.5); font-size: 14px; line-height: 1.4; padding: 40px 0; }
+.site-footer { background-color: #003262; color: #fff; box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.5); font-size: 14px; line-height: 1.4; padding: 40px 0; -ms-word-wrap: break-word; word-wrap: break-word; }
 
 .site-footer p { margin-bottom: 0; }
 

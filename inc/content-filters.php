@@ -88,17 +88,17 @@ function berkeley_featured_image_singular() {
 add_action( 'genesis_before', 'berkeley_filter_term_links' );
 
 function berkeley_filter_term_links() {
-	if ( !is_admin() && function_exists( 'taxonomy_link_for_post_type' ) )
-		add_filter( 'term_link', 'taxonomy_link_for_post_type', 10, 3 );
+	if ( !is_admin() && function_exists( 'berkeley_taxonomy_link_for_post_type' ) )
+		add_filter( 'term_link', 'berkeley_taxonomy_link_for_post_type', 10, 3 );
 }
 
 // Filter the "no content matched your criteria" error
 add_filter( 'genesis_noposts_text', 'berkeley_noposts_text', 10, 2 );
 function berkeley_noposts_text( $text ) {
 	if ( is_search() ) {
-		$text = __( "I'm sorry. I couldn't find any pages with that phrase. Try again?", 'beng' );
+		$text = esc_html__( "I'm sorry. I couldn't find any pages with that phrase. Try again?", 'berkeley-coe-theme' );
 	} elseif ( is_archive() ) {
-		$text = __( "There are no entries in this section.", 'beng' );
+		$text = esc_html__( "There are no entries in this section.", 'berkeley-coe-theme' );
 	}
 	$text .= get_search_form( false );
 	return $text;
@@ -124,21 +124,21 @@ function berkeley_display_custom_field_content( $content ) {
 		
 		$link = get_field( 'link' );
 		if ( !empty( $link ) ) :
-			$label = apply_filters( 'berkeley_facility_website_label', __( 'Website', 'beng' ) );
-			$contact .= sprintf( '<p class="facility-link"><a href="%s">%s</a></p>', $link, $label );
+			$label = apply_filters( 'berkeley_facility_website_label', esc_html__( 'Website', 'berkeley-coe-theme' ) );
+			$contact .= sprintf( '<p class="facility-link"><a href="%s">%s</a></p>', esc_url( $link ), esc_html( $label ) );
 		endif;
 		
 		$phone = get_field( 'phone_number' );
 		$email = get_field( 'email' );
 		
 		if ( !empty( $email ) ) :
-			$contact .= sprintf( '<p class="facility-email"><a href="mailto:%1$s">%1$s</a></p>', $email );
+			$contact .= sprintf( '<p class="facility-email"><a href="mailto:%1$s">%1$s</a></p>', antispambot( $email ) );
 		endif;
 		
 		if ( !empty( $phone ) ) :
 			$punctuation = array( '(', ')', '-', ':', '.', ' ' );
 			$number = str_replace( $punctuation, '', $phone );
-			$prefix = apply_filters( 'berkeley_phone_prefix', __( 'Phone:', 'beng' ) );
+			$prefix = apply_filters( 'berkeley_phone_prefix', esc_html__( 'Phone:', 'berkeley-coe-theme' ) );
 			$contact .= sprintf( '<p class="facility-phone">%s <a class="tel" href="tel:%d">%s</a></p>', $prefix, $number, $phone );
 		endif;
 		
@@ -167,14 +167,14 @@ function berkeley_display_custom_field_content( $content ) {
 		$before_content .= '<div class="pub-details">';
 		$before_content .= sprintf( '<p class="pub-author">%s</p>', get_field( 'author' ) );
 		
-		if ( get_field( 'link' ) )
-			$before_content .= sprintf( '<p class="pub-link"><a href="%s">%s</a></p>', get_field( 'link' ), get_field( 'publication_name' ) );
+		if ( $link = get_field( 'link' ) )
+			$before_content .= sprintf( '<p class="pub-link"><a href="%s">%s</a></p>', esc_url( $link ), esc_html( get_field( 'publication_name' ) ) );
 		
-		if ( get_field( 'publication_date') )
-			$before_content .= sprintf( '<p class="pub-date">%s</p>', get_field( 'publication_date') );
+		if ( $pub_date = get_field( 'publication_date') )
+			$before_content .= sprintf( '<p class="pub-date">%s</p>', esc_html( $pub_date ) );
 		
-		if ( get_field( 'citation' ) )
-			$before_content .= sprintf( '<div class="pub-citation">%s</div>', get_field( 'citation' ) );
+		if ( $citation = get_field( 'citation' ) )
+			$before_content .= sprintf( '<div class="pub-citation">%s</div>', esc_html( $citation ) );
 		
 		$before_content .= '</div>';
 	endif; // publication
@@ -190,23 +190,23 @@ function berkeley_display_custom_field_content( $content ) {
 		
 			$after_content .= '<div class="course-info">';
 			if ( !empty( get_field( 'instructors' ) ) ) {
-				$prefix = apply_filters( 'berkeley_course_instructors_prefix', __( 'Instructor(s):', 'beng' ) );
+				$prefix = apply_filters( 'berkeley_course_instructors_prefix', esc_html__( 'Instructor(s):', 'berkeley-coe-theme' ) );
 				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'instructors' ) );
 			}
 			if ( !empty( get_field( 'credits' ) ) ) {
-				$prefix = apply_filters( 'berkeley_course_credits_prefix', __( 'Credits:', 'beng' ) );
+				$prefix = apply_filters( 'berkeley_course_credits_prefix', esc_html__( 'Credits:', 'berkeley-coe-theme' ) );
 				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'credits' ) );
 			}
 			if ( !empty( get_field( 'prerequisites' ) ) ) {
-				$prefix = apply_filters( 'berkeley_course_prereqs_prefix', __( 'Prerequisites:', 'beng' ) );
+				$prefix = apply_filters( 'berkeley_course_prereqs_prefix', esc_html__( 'Prerequisites:', 'berkeley-coe-theme' ) );
 				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'prerequisites' ) );
 			}
 			if ( !empty( get_field( 'times' ) ) ) {
-				$prefix = apply_filters( 'berkeley_course_time_prefix', __( 'Time:', 'beng' ) );
+				$prefix = apply_filters( 'berkeley_course_time_prefix', esc_html__( 'Time:', 'berkeley-coe-theme' ) );
 				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'times' ) );
 			}
 			if ( !empty( get_field( 'location' ) ) ) {
-				$prefix = apply_filters( 'berkeley_course_location_prefix', __( 'Location:', 'beng' ) );
+				$prefix = apply_filters( 'berkeley_course_location_prefix', esc_html__( 'Location:', 'berkeley-coe-theme' ) );
 				$after_content .= sprintf( '<p><strong>%s</strong> %s</p>', $prefix, get_field( 'location' ) );
 			}
 			$after_content .= '</div>';
@@ -232,14 +232,14 @@ function berkeley_display_custom_field_content( $content ) {
 
 		$email = get_field( 'email' );
 		if ( !empty( $email ) ) :
-			$before_content .= sprintf( '<p class="bio-email"><a href="mailto:%1$s">%1$s</a></p>', $email );
+			$before_content .= sprintf( '<p class="bio-email"><a href="mailto:%1$s">%1$s</a></p>', antispambot( $email ) );
 		endif;
 		
 		$phone = get_field( 'phone' );
 		if ( !empty( $phone ) ) :
 			$punctuation = array( '(', ')', '-', ':', '.', ' ' );
 			$number = str_replace( $punctuation, '', $phone );
-			$prefix = apply_filters( 'berkeley_phone_prefix', __( 'Phone:', 'beng' ) );
+			$prefix = apply_filters( 'berkeley_phone_prefix', esc_html__( 'Phone:', 'berkeley-coe-theme' ) );
 			$before_content .= sprintf( '<p class="bio-phone"><strong>%s </strong><a href="tel:%d">%s</a></p>', $prefix, $number, $phone );
 		endif;
 
@@ -276,9 +276,9 @@ function berkeley_display_custom_field_content( $content ) {
 			$hours = get_field( 'hours' );
 			if ( !empty( $hours ) ) :
 				if ( has_term( 'staff', 'people_type' ) )
-					$label = apply_filters( 'berkeley_staff_hours_prefix', __( 'Hours:', 'beng' ) );
+					$label = apply_filters( 'berkeley_staff_hours_prefix', esc_html__( 'Hours:', 'berkeley-coe-theme' ) );
 				else
-					$label = apply_filters( 'berkeley_faculty_hours_prefix', __( 'Office Hours:', 'beng' ) );
+					$label = apply_filters( 'berkeley_faculty_hours_prefix', esc_html__( 'Office Hours:', 'berkeley-coe-theme' ) );
 				$before_content .= sprintf( '<p class="bio-hours"><strong>%s</strong> %s</p>', $label, $hours );
 			endif;
 			
@@ -289,11 +289,11 @@ function berkeley_display_custom_field_content( $content ) {
 			if ( has_term( 'student', 'people_type' ) ) {
 				$before_content .= get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
 				if ( get_field( 'major' ) ) {
-					$prefix = apply_filters( 'berkeley_student_major_prefix', __( 'Major:', 'beng' ) );
+					$prefix = apply_filters( 'berkeley_student_major_prefix', esc_html__( 'Major:', 'berkeley-coe-theme' ) );
 					$before_content .= sprintf( '<p class="class-major"><strong>%s</strong> %s</p>', $prefix, get_field( 'major' ) );
 				}
 				if ( get_field( 'class_year' ) ) {
-					$prefix = apply_filters( 'berkeley_class_year_prefix', __( 'Class:', 'beng' ) );
+					$prefix = apply_filters( 'berkeley_class_year_prefix', esc_html__( 'Class:', 'berkeley-coe-theme' ) );
 					$before_content .= sprintf( '<p class="class-year"><strong>%s</strong> %s</p>', $prefix, get_field( 'class_year' ) );
 				}
 					
@@ -301,7 +301,7 @@ function berkeley_display_custom_field_content( $content ) {
 			}
 
 			if ( has_term( '', 'subject_area' ) ) {
-				$prefix = apply_filters( 'berkeley_subject_area_prefix', __( 'Research Interests: ', 'beng' ) );
+				$prefix = apply_filters( 'berkeley_subject_area_prefix', esc_html__( 'Research Interests: ', 'berkeley-coe-theme' ) );
 				$after_content .= get_the_term_list( get_the_ID(), 'subject_area', '<h3>'.$prefix.'</h3><div class="subject_area">', ', ', '</div>' );
 			}
 			if ( has_term( 'faculty', 'people_type' ) )	
@@ -309,11 +309,11 @@ function berkeley_display_custom_field_content( $content ) {
 
 			// WYSIWYG fields
 			$sections = array(
-				'education'					=> apply_filters( 'berkeley_people_education_prefix', __( 'Education', 'beng' ) ),
-				'awards'					=> apply_filters( 'berkeley_people_awards_prefix', __( 'Awards', 'beng' ) ),
-				'experience'				=> apply_filters( 'berkeley_people_experience_prefix', __( 'Experience', 'beng' ) ),
-				'publications'				=> apply_filters( 'berkeley_people_publications_prefix', __( 'Publications', 'beng' ) ),
-				'additional_information'	=> apply_filters( 'berkeley_people_additional_prefix', __( 'Additional Information', 'beng' ) ),
+				'education'					=> apply_filters( 'berkeley_people_education_prefix', esc_html__( 'Education', 'berkeley-coe-theme' ) ),
+				'awards'					=> apply_filters( 'berkeley_people_awards_prefix', esc_html__( 'Awards', 'berkeley-coe-theme' ) ),
+				'experience'				=> apply_filters( 'berkeley_people_experience_prefix', esc_html__( 'Experience', 'berkeley-coe-theme' ) ),
+				'publications'				=> apply_filters( 'berkeley_people_publications_prefix', esc_html__( 'Publications', 'berkeley-coe-theme' ) ),
+				'additional_information'	=> apply_filters( 'berkeley_people_additional_prefix', esc_html__( 'Additional Information', 'berkeley-coe-theme' ) ),
 			);
 
 			foreach ( $sections as $section => $section_title ) {
@@ -371,7 +371,7 @@ function berkeley_links_repeater() {
 			$url = get_sub_field( 'url' );
 			$site_title = get_sub_field( 'link_text' );
 			if ( !empty( $url ) && !empty( $site_title ) ) {
-				$links[] = sprintf( '<a href="%s">%s</a>', $url, $site_title );
+				$links[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), esc_html( $site_title ) );
 			}
 	    endwhile;
 		$content .= sprintf( '%s </p> <!-- #bio-links -->', implode( '<br>', array_filter( $links ) ) );
@@ -389,12 +389,12 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 			if ( has_term( 'student', 'people_type' ) ) {
 				$excerpt = get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
 				if ( get_field( 'major' ) ) {
-					$prefix = apply_filters( 'berkeley_student_major_prefix', __( 'Major:', 'beng' ) );
-					$excerpt .= sprintf( '<p class="class-major"><strong>%s</strong> %s</p> ', $prefix, get_field( 'major' ) );
+					$prefix = apply_filters( 'berkeley_student_major_prefix', __( 'Major:', 'berkeley-coe-theme' ) );
+					$excerpt .= sprintf( '<p class="class-major"><strong>%s</strong> %s</p> ', esc_html( $prefix ), get_field( 'major' ) );
 				}
-				if ( get_field( 'class_year' ) ) {
-					$prefix = apply_filters( 'berkeley_class_year_prefix', __( 'Class:', 'beng' ) );
-					$excerpt .= sprintf( '<p class="class-year"><strong>%s</strong> %s</p>', $prefix, get_field( 'class_year' ) );
+				if ( $year = get_field( 'class_year' ) ) {
+					$prefix = apply_filters( 'berkeley_class_year_prefix', __( 'Class:', 'berkeley-coe-theme' ) );
+					$excerpt .= sprintf( '<p class="class-year"><strong>%s</strong> %s</p>', esc_html( $prefix ), esc_html( $year ) );
 				}
 			}
 			
@@ -409,35 +409,35 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 			}
 
 			if ( has_term( '', 'subject_area' ) ) {
-				$prefix = apply_filters( 'berkeley_subject_area_prefix', __( 'Topics: ', 'beng' ) );
-				$excerpt .= get_the_term_list( $post_id, 'subject_area', '<span class="subject_area"> '.$prefix, ', ', '</span>' );
+				$prefix = apply_filters( 'berkeley_subject_area_prefix', __( 'Topics: ', 'berkeley-coe-theme' ) );
+				$excerpt .= get_the_term_list( $post_id, 'subject_area', '<span class="subject_area"> '.esc_html( $prefix ), ', ', '</span>' );
 			}
 			break;
 		case 'publication':
-			$pre = sprintf( '<p class="pub-author">%s</p>', get_field( 'author' ) );
+			$pre = sprintf( '<p class="pub-author">%s</p>', esc_html( get_field( 'author' ) ) );
 
-			if ( get_field( 'link' ) )
-				$pre .= sprintf( '<p class="pub-link"><a href="%s">%s</a></p>', get_field( 'link' ), get_field( 'publication_name' ) );
+			if ( $link = get_field( 'link' ) )
+				$pre .= sprintf( '<p class="pub-link"><a href="%s">%s</a></p>', esc_url( $link ), esc_html( get_field( 'publication_name' ) ) );
 
-			if ( get_field( 'publication_date' ) )
-				$pre .= sprintf( '<p class="pub-date">%s</p>', get_field( 'publication_date') );
+			if ( $pub_date = get_field( 'publication_date' ) )
+				$pre .= sprintf( '<p class="pub-date">%s</p>', esc_html( $pub_date ) );
 
 			break;
 		
 		case 'facility':
 			
-			if ( get_field( 'street_address' ) )
-				$pre .= sprintf( '<address>%s</address>', get_field( 'street_address' ) );
+			if ( $street = get_field( 'street_address' ) )
+				$pre .= sprintf( '<address>%s</address>', esc_html( $street ) );
 			
-			if ( get_field( 'link' ) ) {
-				$label = apply_filters( 'berkeley_facility_website_label', __( 'Website', 'beng' ) );
-				$pre .= sprintf( '<p class="facility-link"><a href="%s">%s</a></p>', $link, $label );
+			if ( $link = get_field( 'link' ) ) {
+				$label = apply_filters( 'berkeley_facility_website_label', esc_html__( 'Website', 'berkeley-coe-theme' ) );
+				$pre .= sprintf( '<p class="facility-link"><a href="%s">%s</a></p>', esc_url( $link ), esc_html( $label ) );
 			}
 			break;
 		
 		case 'course':
-			if ( get_field( 'course_number' ) )
-				$pre = sprintf( '<p class="course-number">%s</p>', get_field( 'course_number' ) );
+			if ( $course = get_field( 'course_number' ) )
+				$pre = sprintf( '<p class="course-number">%s</p>', esc_html( $course ) );
 			break;
 			
 		default: break;

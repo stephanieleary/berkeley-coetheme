@@ -15,7 +15,7 @@ add_filter( 'image_size_names_choose', 'berkeley_image_size_names_choose' );
  
 function berkeley_image_size_names_choose( $sizes ) {
     return array_merge( $sizes, array(
-        'small' => __( 'Small' ),
+        'berkeley-small' => esc_html__( 'Small', 'berkeley-coe-theme' ),
     ) );
 }
 

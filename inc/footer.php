@@ -4,8 +4,8 @@
 if ( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page( array(
-		'page_title' 	=> __('Footer Contents', 'beng'),
-		'menu_title'	=> __('Footer Contents', 'beng'),
+		'page_title' 	=> esc_html__('Footer Contents', 'berkeley-coe-theme'),
+		'menu_title'	=> esc_html__('Footer Contents', 'berkeley-coe-theme'),
 		'menu_slug' 	=> 'berkeley-footer-settings',
 		'parent_slug' 	=> 'genesis',
 		'capability'	=> 'edit_pages',
@@ -16,7 +16,7 @@ if ( function_exists('acf_add_options_page') ) {
 
 // Add menu location in footer
 function berkeley_register_footer_menu() {
-	register_nav_menu( 'footer-menu', __( 'Footer Navigation Menu', 'beng' ) );
+	register_nav_menu( 'footer-menu', esc_html__( 'Footer Navigation Menu', 'berkeley-coe-theme' ) );
 }
 add_action( 'init', 'berkeley_register_footer_menu' );
 
@@ -96,7 +96,7 @@ function berkeley_widget_count_params( $params ) {
 	
 	$params[0]['before_widget'] = str_replace( 'class="widget ', 'class="widget ' . $width_class . $index_class . ' ', $params[0]['before_widget'] );
 	
-	$params[0]['description'] .= __(' Limited to three widgets.', 'beng');
+	$params[0]['description'] .= esc_html__(' Limited to three widgets.', 'berkeley-coe-theme');
 	return $params;
 }
 
@@ -104,6 +104,6 @@ function berkeley_widget_count_params( $params ) {
 add_action( 'admin_enqueue_scripts', 'berkeley_enqueue_limit_sidebars_scripts' );
 function berkeley_enqueue_limit_sidebars_scripts( $hook_suffix ) {
     if ( 'widgets.php' == $hook_suffix ) {
-        wp_enqueue_script( 'limit-sidebar-widgets', get_stylesheet_directory_uri() . '/js/limit-sidebar-widgets.js', array(), false, true );
+        wp_enqueue_script( 'berkeley-limit-sidebar-widgets', get_stylesheet_directory_uri() . '/js/limit-sidebar-widgets.js', array(), false, true );
     }
 }

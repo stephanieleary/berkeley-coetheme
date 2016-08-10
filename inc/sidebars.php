@@ -25,26 +25,26 @@ function berkeley_register_sidebars() {
 	// * Announcement feature
 	genesis_register_sidebar( array(
 		'id'			=> 'berkeley-announcements',
-		'name'			=> __( 'Emergency Announcements', 'beng' ),
-		'description'	=> __( 'Area between the logo and the main navigation.' , 'beng'),
+		'name'			=> esc_html__( 'Emergency Announcements', 'berkeley-coe-theme' ),
+		'description'	=> esc_html__( 'Area between the logo and the main navigation.' , 'berkeley-coe-theme'),
 	) );
 	// * Slideshow widget area
 	genesis_register_sidebar( array(
 		'id'			=> 'berkeley-featured',
-		'name'			=> __( 'Featured Content', 'beng' ),
-		'description'	=> __( 'Full-width area below the main navigation.', 'beng' ),
+		'name'			=> esc_html__( 'Featured Content', 'berkeley-coe-theme' ),
+		'description'	=> esc_html__( 'Full-width area below the main navigation.', 'berkeley-coe-theme' ),
 	) );
 	//* News widget area
 	genesis_register_sidebar( array(
 		'id'			=> 'post',
-		'name'			=> __( 'News', 'beng' ),
-		'description'	=> __( 'This is the primary sidebar on news/blog archives.', 'beng' ),
+		'name'			=> esc_html__( 'News', 'berkeley-coe-theme' ),
+		'description'	=> esc_html__( 'This is the primary sidebar on news/blog archives.', 'berkeley-coe-theme' ),
 	) );
 	//* Whitepaper template widget area
 	genesis_register_sidebar( array(
 		'id'			=> 'whitepaper',
-		'name'			=> __( 'Whitepaper', 'beng' ),
-		'description'	=> __( 'This is the navigation area on Whitepaper template pages.', 'beng' ),
+		'name'			=> esc_html__( 'Whitepaper', 'berkeley-coe-theme' ),
+		'description'	=> esc_html__( 'This is the navigation area on Whitepaper template pages.', 'berkeley-coe-theme' ),
 	) );
 	
 	
@@ -54,32 +54,32 @@ function berkeley_register_sidebars() {
 	if ( 1 == $cpts[ 'people' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'people',
-			'name'			=>	__( 'People', 'beng' ),
-			'description'	=>	__( 'This is the primary sidebar on People pages.', 'beng' ),
+			'name'			=>	esc_html__( 'People', 'berkeley-coe-theme' ),
+			'description'	=>	esc_html__( 'This is the primary sidebar on People pages.', 'berkeley-coe-theme' ),
 		) );
 	if ( 1 == $cpts[ 'facility' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'facility',
-			'name'			=>	__( 'Facilities', 'beng' ),
-			'description'	=>	__( 'This is the primary sidebar on Facility pages.', 'beng' ),
+			'name'			=>	esc_html__( 'Facilities', 'berkeley-coe-theme' ),
+			'description'	=>	esc_html__( 'This is the primary sidebar on Facility pages.', 'berkeley-coe-theme' ),
 		) );
 	if ( 1 == $cpts[ 'course' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'course',
-			'name'			=>	__( 'Courses', 'beng' ),
-			'description'	=>	__( 'This is the primary sidebar on Course pages.', 'beng' ),
+			'name'			=>	esc_html__( 'Courses', 'berkeley-coe-theme' ),
+			'description'	=>	esc_html__( 'This is the primary sidebar on Course pages.', 'berkeley-coe-theme' ),
 		) );
 	if ( 1 == $cpts[ 'publication' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'publication',
-			'name'			=>	__( 'Publications', 'beng' ),
-			'description'	=>	__( 'This is the primary sidebar on Publication pages.', 'beng' ),
+			'name'			=>	esc_html__( 'Publications', 'berkeley-coe-theme' ),
+			'description'	=>	esc_html__( 'This is the primary sidebar on Publication pages.', 'berkeley-coe-theme' ),
 		) );
 	if ( 1 == $cpts[ 'research' ] )
 		genesis_register_sidebar( array(
 			'id'			=>	'research',
-			'name'			=>	__( 'Research', 'beng' ),
-			'description'	=>	__( 'This is the primary sidebar on Research pages.', 'beng' ),
+			'name'			=>	esc_html__( 'Research', 'berkeley-coe-theme' ),
+			'description'	=>	esc_html__( 'This is the primary sidebar on Research pages.', 'berkeley-coe-theme' ),
 		) );
 }
 
@@ -89,9 +89,6 @@ function berkeley_register_sidebars() {
 add_action( 'get_header', 'berkeley_cpt_switch_sidebar' );
 
 function berkeley_cpt_switch_sidebar() {
-	if ( is_admin() )
-		return;
-	
 	remove_action( 'genesis_sidebar', 'genesis_do_sidebar' ); 
 	add_action( 'genesis_sidebar', 'berkeley_do_sidebar' );
 }

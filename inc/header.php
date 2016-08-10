@@ -45,7 +45,7 @@ add_action( 'genesis_site_title', 'berkeley_header_image', 2 );
 function berkeley_header_image() {
 	$header_image = get_header_image();
 	if ( ! empty( $header_image ) ) : 
-		printf( '<a href="%s"><img id="custom-header" src="%s" alt="%s" /></a>', home_url(), esc_url( $header_image ), get_option( 'blogname' ) );
+		printf( '<a href="%s"><img id="custom-header" src="%s" alt="%s" /></a>', esc_url( home_url() ), esc_url( $header_image ), esc_attr( get_option( 'blogname' ) ) );
 	endif;
 }
 
@@ -91,7 +91,7 @@ function berkeley_logo_display() {
 					break;
 			}
 		}
-		printf( '<div id="berkeley-engineering-logo"><a href="http://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, __('Berkeley College of Engineering Logo', 'beng') );
+		printf( '<div id="berkeley-engineering-logo"><a href="http://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, esc_html__('Berkeley College of Engineering Logo', 'berkeley-coe-theme') );
 	}
 }
 add_action( 'genesis_site_title', 'berkeley_logo_display', 1 );
@@ -142,6 +142,6 @@ function berkeley_do_nav() {
 add_filter( 'genesis_skip_links_output', 'berkeley_skip_links_output' );
 
 function berkeley_skip_links_output( $links ) {
-	$links['genesis-content'] = __( 'Skip to main content', 'beng' );
+	$links['genesis-content'] = esc_html__( 'Skip to main content', 'berkeley-coe-theme' );
 	return $links;
 }
