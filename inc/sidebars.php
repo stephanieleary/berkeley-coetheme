@@ -3,7 +3,7 @@
 //* Add support for after-entry widget area (blog posts only)
 add_theme_support( 'genesis-after-entry-widget-area' );
 
-//* Add support for after-entry widget area to pages as well
+//* Add support for after-entry widget area to CPTs as well
 add_action( 'genesis_entry_footer', 'berkeley_after_entry_widget'  );
  
 function berkeley_after_entry_widget() {

@@ -52,8 +52,8 @@ function berkeley_theme_fonts_url() {
 		}
  
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
+			'family' => implode( '|', $font_families ),
+			'subset' => 'latin,latin-ext',
 		);
  
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -164,7 +164,7 @@ function berkeley_enqueue_files() {
 	// Enqueue color scheme stylesheet
 	$color = genesis_get_option( 'style_selection' );
 	$path = berkeley_get_color_stylesheet( $color );
-	if ( !empty( $path ) )
+	if ( !empty( $path ) && file_exists( $path ) )
 		wp_enqueue_style( 'berkeley-'.$color , $path );
 	
 	// Enqueue accordion js for Additional Content fields on single templates
@@ -181,6 +181,8 @@ function berkeley_enqueue_files() {
 // Add menu toggle buttons with specific IDs
 add_action( 'genesis_after_header', 'berkeley_menu_buttons', 99 );
 function berkeley_menu_buttons() {
-	echo '<button id="secondary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Secondary Menu', 'berkeley-coe-theme' ).'</button>';
-	echo '<button id="primary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Menu', 'berkeley-coe-theme' ).'</button>';
+	if ( has_nav_menu( 'primary' ) )
+		echo '<button id="secondary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Secondary Menu', 'berkeley-coe-theme' ).'</button>';
+	if ( has_nav_menu( 'secondary' ) )
+		echo '<button id="primary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Menu', 'berkeley-coe-theme' ).'</button>';
 }

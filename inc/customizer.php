@@ -16,7 +16,7 @@ function berkeley_customizer_register( $wp_customize ) {
 	$wp_customize->add_setting( 'berkeley-header-bg', array(
 		'default'  => $image,
 		'type'     => 'theme_mod',
-		'sanitize_callback' => 'esc_url_raw'
+		'sanitize_callback' => 'absint'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'berkeley-header-bg', array(

@@ -5,6 +5,9 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+* 1.5.2: Fix duplicate menu labels; fix font URL encoding; fix pub date format; fix header upload sanitizer
+* 1.5.1: Enqueue maps files in functions.php
+* 1.5: esc/sanitize/prefixes; maps->plugin; theme option defaults
 * 1.4.6: Added button text and for accessibility
 * 1.4.5: Updated help link for shortcodes on theme options screen
 * 1.4.4: New Whitepaper sidebar

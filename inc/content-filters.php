@@ -170,8 +170,10 @@ function berkeley_display_custom_field_content( $content ) {
 		if ( $link = get_field( 'link' ) )
 			$before_content .= sprintf( '<p class="pub-link"><a href="%s">%s</a></p>', esc_url( $link ), esc_html( get_field( 'publication_name' ) ) );
 		
-		if ( $pub_date = get_field( 'publication_date') )
-			$before_content .= sprintf( '<p class="pub-date">%s</p>', esc_html( $pub_date ) );
+		if ( $pub_date = get_field( 'publication_date') ) {
+			$date_format = apply_filters( 'berkeley_publication_date_format', get_option( 'date_format' ) );
+			$before_content .= sprintf( '<p class="pub-date">%s</p>', esc_html( date( $date_format, $pub_date ) ) );
+		}
 		
 		if ( $citation = get_field( 'citation' ) )
 			$before_content .= sprintf( '<div class="pub-citation">%s</div>', esc_html( $citation ) );
