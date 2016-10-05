@@ -63,7 +63,7 @@ function berkeley_theme_fonts_url() {
 }
 
 // Theme Setup
-add_action( 'after_setup_theme', 'berkeley_setup_theme' );
+add_action( 'after_setup_theme', 'berkeley_setup_theme', 5 );
 
 function berkeley_setup_theme() {
 	add_image_size( 'berkeley-small', 300, 300 );  // see also inc/image-sizes.php
