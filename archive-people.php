@@ -9,17 +9,21 @@ add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
 add_action( 'genesis_loop', 'berkeley_people_types_loop', 10 );
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
-function berkeley_people_types_loop() {
+function berkeley_people_types_loop( $taxonomy = 'people_type' ) {
 	$terms = get_terms( array(
-	    'taxonomy' => 'people_type',
+	    'taxonomy' => $taxonomy,
 	    'hide_empty' => true,
 	) );
-	
 	if ( empty( $terms ) )
 		return;
-		
+
 	global $query_args;
 	foreach ( $terms as $term ) {
+		if ( $taxonomy == 'people_type' && ( $term->slug == 'student' || $term->slug == 'students' ) ) {
+			printf( '<h2 %s>%s</h2>', genesis_attr( 'archive-title' ), strip_tags( $term->name ) );
+			berkeley_people_types_loop( 'student_type' );
+		}
+		
 		$args = array(
 			'fields' => 'ids',
 			'posts_per_page'  => -1,
@@ -27,7 +31,7 @@ function berkeley_people_types_loop() {
 			'post_type' => 'people',
 			'tax_query' => array(
 					array(
-						'taxonomy' => 'people_type',
+						'taxonomy' => $taxonomy,
 						'field'    => 'slug',
 						'terms'    => $term->slug,
 					),

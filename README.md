@@ -5,6 +5,9 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+* 1.5.5: Student_type loops within people_type loops
+* 1.5.4: People_type loops on people archive page
+* 1.5.3: Genesis 2.4.x compatibility
 * 1.5.2: Fix duplicate menu labels; fix font URL encoding; fix pub date format; fix header upload sanitizer
 * 1.5.1: Enqueue maps files in functions.php
 * 1.5: esc/sanitize/prefixes; maps->plugin; theme option defaults
