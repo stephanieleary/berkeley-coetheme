@@ -3,7 +3,9 @@
 // Sticky posts
 
 function berkeley_sticky_post_loop() {
-	
+	if ( !get_option( 'sticky_posts' ) )
+		return;
+		
 	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 	if ( 1 == $paged ) :
 		global $query_args;
