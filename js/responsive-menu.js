@@ -3,6 +3,7 @@
  
 // Add specific toggles to specific elements:
 $( ".nav-primary" ).before( $( '#primary-toggle' ) );
+$( ".nav-secondary" ).before( $( '#secondary-toggle' ) );
 $( 'nav .sub-menu' ).before( '<button class="sub-menu-toggle" role="button" aria-pressed="false"><span class="screen-reader-text">Open</span></button>' ); 
 $( '.header-widget-area' ).after( '<button class="search-toggle" id="search-toggle" role="button" aria-pressed="false"><span class="screen-reader-text">Open</span></button>' ); 
 

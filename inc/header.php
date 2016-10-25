@@ -119,7 +119,7 @@ function berkeley_notitle_body_class( $classes ) {
 
 // Replace primary navigation to remove unnecessary "Main navigation" heading
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_after_header', 'berkeley_do_nav' );
+add_action( 'genesis_after_header', 'berkeley_do_nav', 5 );
 function berkeley_do_nav() {
 
 	//* Do nothing if menu not supported

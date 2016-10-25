@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+* 1.5.7: Mobile menu button corrections
 * 1.5.6: Remove extraneous student_type loop header; abort sticky loop when there are no sticky posts
 * 1.5.5: Student_type loops within people_type loops
 * 1.5.4: People_type loops on people archive page
