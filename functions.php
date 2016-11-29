@@ -182,7 +182,7 @@ function berkeley_enqueue_files() {
 add_action( 'genesis_after_header', 'berkeley_menu_buttons', 99 );
 function berkeley_menu_buttons() {
 	if ( has_nav_menu( 'primary' ) )
-		echo '<button id="secondary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Secondary Menu', 'berkeley-coe-theme' ).'</button>';
-	if ( has_nav_menu( 'secondary' ) )
 		echo '<button id="primary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Menu', 'berkeley-coe-theme' ).'</button>';
+	if ( has_nav_menu( 'secondary' ) )
+		echo '<button id="secondary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Secondary Menu', 'berkeley-coe-theme' ).'</button>';
 }

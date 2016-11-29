@@ -5,72 +5,14 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.5.7
+Version: 1.5.8
 Template: genesis  
 Template Version: 2.4.2
 Text Domain: berkeley-coe-theme
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
-/* # Table of Contents
-- SASS Variables
-- HTML5 Reset
-	- Baseline Normalize
-	- Box Sizing
-	- Float Clearing
-- Defaults
-	- Typographical Elements
-	- Headings
-	- Objects
-	- Gallery
-	- Forms
-	- Tables
-- Structure and Layout
-	- Site Containers
-	- Column Widths and Positions
-	- Column Classes
-- Common Classes
-	- Avatar
-	- Genesis
-	- Search Form
-	- Titles
-	- WordPress
-- Widgets
-	- Featured Content
-- Plugins
-	- Form Widgets
-	- Google CSE
-	- Rich Text widget
-	- Pull Quotes
-	- Jetpack
-	- Announcements
-	- Soliloquy
-	- Accordion
-	- Posts by Term
-	- Berkeley Events
-- Site Header
-	- Title Area
-	- Widget Area
-- Site Navigation
-	- Header Navigation
-	- Primary Navigation
-	- Secondary Navigation
-- Content Area
-	- Entries
-	- Entry Meta
-	- Pagination
-	- Comments
-- Sidebars
-- Footer Widgets
-- Site Footer
-- Media Queries
-	- Retina Display
-	- Max-width: 1200px
-	- Max-width: 960px
-	- Max-width: 800px
-	- Max-width: 560px
-	- Max-width: 420px
-*/
+/* # Table of Contents - SASS Variables - HTML5 Reset - Baseline Normalize - Box Sizing - Float Clearing - Defaults - Typographical Elements - Headings - Objects - Gallery - Forms - Tables - Structure and Layout - Site Containers - Column Widths and Positions - Column Classes - Common Classes - Avatar - Genesis - Search Form - Titles - WordPress - Widgets - Featured Content - Plugins - Form Widgets - Google CSE - Rich Text widget - Pull Quotes - Jetpack - Announcements - Soliloquy - Accordion - Posts by Term - Berkeley Events - Site Header - Title Area - Widget Area - Site Navigation - Header Navigation - Primary Navigation - Secondary Navigation - Content Area - Entries - Entry Meta - Pagination - Comments - Sidebars - Footer Widgets - Site Footer - Media Queries - Retina Display - Max-width: 1200px - Max-width: 960px - Max-width: 800px - Max-width: 560px - Max-width: 420px */
 /* # SASS Variables
 ---------------------------------------------------------------------------------------------------- */
 /* # HTML5 Reset
@@ -245,17 +187,7 @@ cite, em, i { font-style: italic; }
 
 blockquote { margin: 20px; }
 
-/*
-blockquote::before {
-	content: "\201C";
-	display: block;
-	font-size: 30px;
-	height: 0;
-	left: -20px;
-	position: relative;
-	top: -10px;
-}
-/**/
+/* blockquote::before { content: "\201C"; display: block; font-size: 30px; height: 0; left: -20px; position: relative; top: -10px; } /**/
 blockquote cite { display: block; }
 
 blockquote cite::before { content: "\2014 "; }
@@ -451,14 +383,7 @@ td:before { display: none; }
 
 .entry-content .search-form, .site-header .search-form { width: 100%; }
 
-.genesis-nav-menu .search input[type="submit"], .widget_search input[type="submit"] { border: 0; /*
-clip: rect(0, 0, 0, 0);
-height: 1px;
-margin: -1px;
-padding: 0;
-position: absolute;
-width: 1px;
-/**/ }
+.genesis-nav-menu .search input[type="submit"], .widget_search input[type="submit"] { border: 0; /* clip: rect(0, 0, 0, 0); height: 1px; margin: -1px; padding: 0; position: absolute; width: 1px; /**/ }
 
 /* ## Titles
 --------------------------------------------- */
@@ -783,12 +708,7 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .entry.has-post-thumbnail { padding-top: 0; }
 
-/*
-.stickies .entry.sticky,
-.content .loop {
-	margin-left: 24px;
-}
-/**/
+/* .stickies .entry.sticky, .content .loop { margin-left: 24px; } /**/
 .content .entry { background-color: #fff; margin-bottom: 1em; -ms-word-wrap: break-word; word-wrap: break-word; }
 
 .content .stickies .entry.sticky, .blog .entry.sticky { background: #e5f0f6; color: #003262; }
@@ -1002,6 +922,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
   .content { width: 600px; }
   .sidebar-content-sidebar .content, .sidebar-sidebar-content .content, .content-sidebar-sidebar .content, .title-area { width: 600px; }
   .site-header .widget-area, .footer-widgets .widget.span-3, .sidebar-primary { width: 300px; } }
+
 @media only screen and (max-width: 960px) { .site-inner, .wrap { max-width: 800px; }
   .content, .content-sidebar-sidebar .content, .content-sidebar-sidebar .content-sidebar-wrap, .footer-widgets .widget.span-1, .footer-widgets .widget.span-2, .footer-widgets .widget.span-3, .sidebar-content-sidebar .content, .sidebar-content-sidebar .content-sidebar-wrap, .sidebar-primary, .sidebar-secondary, .sidebar-sidebar-content .content, .sidebar-sidebar-content .content-sidebar-wrap, .site-header .widget-area, .title-area, .content-sidebar-sidebar .sidebar-secondary, .sidebar-content-sidebar .sidebar-secondary, .sidebar-sidebar-content .sidebar-secondary { width: 100%; }
   .site-header .wrap { padding: 20px 5%; }
@@ -1013,6 +934,7 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
   .site-header .search-form { margin: 16px auto; }
   .genesis-nav-menu li.right { display: none; }
   .footer-widgets-1 { margin-right: 0; } }
+
 @media only screen and (max-width: 800px) { body { background-color: #fff; font-size: 16px; font-weight: 400; }
   .site-header { position: relative; }
   .site-header .wrap { padding: 0 5%; }
@@ -1054,7 +976,9 @@ li.comment { background-color: #eee; border: 2px solid #fff; border-right: none;
   .site-footer .genesis-nav-menu .social-icon, .site-footer .genesis-nav-menu.copy .menu-item { display: none; }
   .site-footer .genesis-nav-menu.copy { display: block; }
   .site-footer .genesis-nav-menu.copy .menu-item.social-icon { display: inline-block; } }
+
 @media only screen and (max-width: 560px) { .five-sixths, .four-sixths, .one-fourth, .one-half, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds { margin: 0; padding: 0; width: 100%; } }
+
 @media only screen and (max-width: 420px) { .site-title { font-size: 24px; }
   .site-description { font-size: 12px; }
   #berkeley-engineering-logo img { height: 12px; width: 123px; }
