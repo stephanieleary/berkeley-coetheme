@@ -164,7 +164,7 @@ function berkeley_enqueue_files() {
 	// Enqueue color scheme stylesheet
 	$color = genesis_get_option( 'style_selection' );
 	$path = berkeley_get_color_stylesheet( $color );
-	if ( !empty( $path ) && file_exists( $path ) )
+	if ( !empty( $path ) )
 		wp_enqueue_style( 'berkeley-'.$color , $path );
 	
 	// Enqueue accordion js for Additional Content fields on single templates
