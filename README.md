@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+* 1.5.9: Remove file_exists check for color scheme stylesheet
 * 1.5.8: Swap mobile menu button toggle IDs
 * 1.5.7: Mobile menu button corrections
 * 1.5.6: Remove extraneous student_type loop header; abort sticky loop when there are no sticky posts
