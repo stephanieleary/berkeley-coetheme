@@ -384,12 +384,13 @@ function berkeley_links_repeater() {
 function berkeley_display_custom_excerpts( $excerpt ) {
 	$post_type = get_post_type();
 	$post_id = get_the_ID();
-	$pre = '';
+	$pre = $excerpt = '';
 	
 	switch ( $post_type ) {
 		case 'people':
+			/*
 			if ( has_term( 'student', 'people_type' ) ) {
-				$excerpt = get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
+				$excerpt .= get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
 				if ( get_field( 'major' ) ) {
 					$prefix = apply_filters( 'berkeley_student_major_prefix', __( 'Major:', 'berkeley-coe-theme' ) );
 					$excerpt .= sprintf( '<p class="class-major"><strong>%s</strong> %s</p> ', esc_html( $prefix ), get_field( 'major' ) );
@@ -401,12 +402,12 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 			}
 			
 			if ( has_term( 'faculty', 'people_type' ) ) {
-				$excerpt = sprintf( '<span class="job_title">%s </span> ', get_field( 'job_title' ) );
+				$excerpt .= sprintf( '<span class="job_title">%s </span> ', get_field( 'job_title' ) );
 				$excerpt .= berkeley_links_repeater();
 			}
 			
 			if ( has_term( 'staff', 'people_type' ) ) {
-				$excerpt = sprintf( '<span class="job_title">%s </span> ', get_field( 'job_title' ) );
+				$excerpt .= sprintf( '<span class="job_title">%s </span> ', get_field( 'job_title' ) );
 				$excerpt .= get_field( 'responsibilities' );
 			}
 
@@ -414,6 +415,7 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 				$prefix = apply_filters( 'berkeley_subject_area_prefix', __( 'Topics: ', 'berkeley-coe-theme' ) );
 				$excerpt .= get_the_term_list( $post_id, 'subject_area', '<span class="subject_area"> '.esc_html( $prefix ), ', ', '</span>' );
 			}
+			/**/
 			break;
 		case 'publication':
 			$pre = sprintf( '<p class="pub-author">%s</p>', esc_html( get_field( 'author' ) ) );
