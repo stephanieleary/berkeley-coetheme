@@ -8,7 +8,7 @@ function berkeley_customizer_register( $wp_customize ) {
 
 	$allowed_html = array( 'br' => array(), 'strong' => array() ); 
 	$wp_customize->add_section( 'berkeley-settings', array( 
-		'description' => wp_kses( __( 'You may upload a header background image here.<br /><br />The default image is <strong>1200 pixels wide and 235 pixels tall</strong>.<br /><br />To upload an image to replace your site title instead, see the Header Image section of the Customizer.', 'berkeley-coe-theme' ), $allowed_html ), 
+		'description' => wp_kses_post( __( 'You may upload a header background image here.<br /><br />The default image is <strong>1200 pixels wide and 235 pixels tall</strong>.<br /><br />To upload an image to replace your site title instead, see the Header Image section of the Customizer.', 'berkeley-coe-theme' ) ), 
 		'title' => esc_html__( 'Header Background Image', 'berkeley-coe-theme' ), 
 		'priority' => 35, 
 	) );
