@@ -21,11 +21,6 @@ function berkeley_people_types_loop( $taxonomy ) {
 
 	global $query_args;
 	foreach ( $terms as $term ) {
-		if ( $taxonomy == 'people_type' && ( $term->slug == 'student' || $term->slug == 'students' ) ) {
-			//printf( '<h2 %s>%s</h2>', genesis_attr( 'archive-title' ), strip_tags( $term->name ) );
-			berkeley_people_types_loop( 'student_type' );
-			continue;
-		}
 		
 		$args = array(
 			'fields' => 'ids',
