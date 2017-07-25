@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+* 1.6.2: Remove student_type taxonomy from post_meta and excerpt content filters
 * 1.6.1: Remove extra archive-people loop for defunct student_type taxonomy
 * 1.6.0: Use wp_kses_post() instead of wp_kses() to use default allowed HTML in customizer background upload
 * 1.5.9: Remove file_exists check for color scheme stylesheet

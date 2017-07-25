@@ -289,7 +289,6 @@ function berkeley_display_custom_field_content( $content ) {
 			// $content
 
 			if ( has_term( 'student', 'people_type' ) ) {
-				$before_content .= get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
 				if ( get_field( 'major' ) ) {
 					$prefix = apply_filters( 'berkeley_student_major_prefix', esc_html__( 'Major:', 'berkeley-coe-theme' ) );
 					$before_content .= sprintf( '<p class="class-major"><strong>%s</strong> %s</p>', $prefix, get_field( 'major' ) );
@@ -390,7 +389,6 @@ function berkeley_display_custom_excerpts( $excerpt ) {
 		case 'people':
 			/*
 			if ( has_term( 'student', 'people_type' ) ) {
-				$excerpt .= get_the_term_list( get_the_ID(), 'student_type', '<p class="student_type">', ', ', '</p>' );
 				if ( get_field( 'major' ) ) {
 					$prefix = apply_filters( 'berkeley_student_major_prefix', __( 'Major:', 'berkeley-coe-theme' ) );
 					$excerpt .= sprintf( '<p class="class-major"><strong>%s</strong> %s</p> ', esc_html( $prefix ), get_field( 'major' ) );
