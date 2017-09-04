@@ -91,7 +91,7 @@ function berkeley_logo_display() {
 					break;
 			}
 		}
-		printf( '<div id="berkeley-engineering-logo"><a href="http://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, esc_html__('Berkeley College of Engineering Logo', 'berkeley-coe-theme') );
+		printf( '<div id="berkeley-engineering-logo"><a href="https://engineering.berkeley.edu"><img src="%s" alt="%s"></a></div>', $path, esc_html__('Berkeley College of Engineering Logo', 'berkeley-coe-theme') );
 	}
 }
 add_action( 'genesis_site_title', 'berkeley_logo_display', 1 );
