@@ -137,11 +137,3 @@ function berkeley_do_nav() {
 	) );
 
 }
-
-// Filter Skip link text
-add_filter( 'genesis_skip_links_output', 'berkeley_skip_links_output' );
-
-function berkeley_skip_links_output( $links ) {
-	$links['genesis-content'] = esc_html__( 'Skip to main content', 'berkeley-coe-theme' );
-	return $links;
-}
