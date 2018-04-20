@@ -1,18 +1,8 @@
 <?php
 // Start the engine
 include_once( get_template_directory() 	 . '/lib/init.php' );
-include_once( get_stylesheet_directory() . '/inc/announcements.php' );
-include_once( get_stylesheet_directory() . '/inc/content-filters.php' );
 include_once( get_stylesheet_directory() . '/inc/customizer.php' );
-include_once( get_stylesheet_directory() . '/inc/editor.php' );
-include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/inc/header.php' );
-include_once( get_stylesheet_directory() . '/inc/image-sizes.php' );
-include_once( get_stylesheet_directory() . '/inc/loops.php' );
-include_once( get_stylesheet_directory() . '/inc/metaboxes.php' );
-include_once( get_stylesheet_directory() . '/inc/sidebars.php' );
-include_once( get_stylesheet_directory() . '/inc/theme-options.php' );
-include_once( get_stylesheet_directory() . '/inc/widgets.php' );
 
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Berkeley CoE Theme' );
