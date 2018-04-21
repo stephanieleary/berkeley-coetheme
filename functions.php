@@ -16,40 +16,12 @@ if ( ! isset( $content_width ) )
 
 // Add Fonts
 function berkeley_theme_fonts_url() {
-	$fonts_url = '';
- 
-	/* Translators: If there are characters in your language that are not
-	* supported by Lora, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$lato = _x( 'on', 'Lato font: on or off', 'berkeley-coe-theme' );
- 
-	/* Translators: If there are characters in your language that are not
-	* supported by Open Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$source_serif = _x( 'on', 'Source Serif font: on or off', 'berkeley-coe-theme' );
- 
-	if ( 'off' !== $lato || 'off' !== $source_serif ) {
-		$font_families = array();
- 
-		if ( 'off' !== $lato ) {
-			$font_families[] = 'Lato:400,400italic,700,700italic';
-		}
- 
-		if ( 'off' !== $source_serif ) {
-			$font_families[] = 'Source+Serif+Pro:400,700';
-		}
- 
-		$query_args = array(
-			'family' => implode( '|', $font_families ),
-			'subset' => 'latin,latin-ext',
-		);
- 
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
- 
-	return esc_url_raw( $fonts_url );
+ 	$urls = array(
+		'open-sans' => 'https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,700,700italic&subset=latin,latin-ext',
+		'lato' => 'https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic&subset=latin,latin-ext',
+		'source-serif' => 'https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700&subset=latin,latin-ext',
+	);
+	return $urls;
 }
 
 // Theme Setup
@@ -141,13 +113,19 @@ function berkeley_settings_admin_styles( $hook ) {
 		return;
 		
     wp_enqueue_style( 'berkeley-admin-css', get_stylesheet_directory_uri() . '/css/admin-style.css' );
+	add_editor_style( berkeley_theme_fonts_url() );
 }
 
 add_action( 'wp_enqueue_scripts', 'berkeley_enqueue_files', 1 );
 function berkeley_enqueue_files() {
-	// Enqueue fonts
-	wp_enqueue_style( 'berkeley-coetheme-fonts', berkeley_theme_fonts_url(), array(), null );
-		
+	// Enqueue external fonts and FontFaceObserver lazy loader
+	$font_files = berkeley_theme_fonts_url();
+	wp_enqueue_style( 'fonts-open-sans', $font_files['open-sans'], array(), null );
+	wp_enqueue_style( 'fonts-lato', $font_files['lato'], array(), null );
+	wp_enqueue_style( 'fonts-source-serif', $font_files['source-serif'], array(), null );
+	wp_enqueue_script( 'fontfaceobserver', get_stylesheet_directory_uri() . "/js/fontfaceobserver.standalone.js", false, CHILD_THEME_VERSION, false );
+	wp_enqueue_script( 'berkeley-font-loader', get_stylesheet_directory_uri() . "/js/fonts.js", 'fontfaceobserver', CHILD_THEME_VERSION, false );
+
 	// Enqueue responsive menu script
 	wp_enqueue_script( 'berkeley-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 	

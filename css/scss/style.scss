@@ -97,8 +97,10 @@ $light-gray:			#eee;
 $med-gray:				#888;
 $dark-gray: 			#333;
 $super-light-gray:		#f0f0f0;
-$fonts-sans:			"Lato", "open sans", Arial, sans-serif;
-$fonts-serif:			"source serif pro", "Georgia", "Times New Roman", serif;
+$fonts-sans:			Arial, sans-serif;
+$fonts-loaded-sans:		"Lato", "open sans", Arial, sans-serif;
+$fonts-serif:			Georgia, "Times New Roman", serif;
+$fonts-loaded-serif:	"source serif pro", Georgia, "Times New Roman", serif;
 $standard-padding: 		16px 24px;
 $widget-padding: 		24px 24px 16px;
 $form-padding: 			8px;
@@ -256,6 +258,10 @@ body {
 	font-weight: 400;
 	line-height: 1.625;
 	margin: 0;
+}
+
+.fonts-loaded body {
+	font-family: $fonts-loaded-sans;
 }
 
 a,
@@ -427,17 +433,17 @@ blockquote cite::before {
 /* ## Headings
 --------------------------------------------- */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
 	color: $pacific;
 	font-family: $fonts-sans;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0 0 10px;
+}
+
+.fonts-loaded h1, .fonts-loaded h2, .fonts-loaded h3,
+.fonts-loaded h4, .fonts-loaded h5, .fonts-loaded h6 {
+	font-family: $fonts-loaded-sans;
 }
 
 h1 {
@@ -1465,6 +1471,10 @@ input.gsc-input {
 	line-height: 1.2;
 }
 
+.fonts-loaded .site-title {
+	font-family: $fonts-loaded-serif;
+}
+
 .site-title a,
 .site-title a:hover,
 .site-title a:focus {
@@ -2199,6 +2209,10 @@ body.whitepaper .title-area {
 	font-family: $fonts-serif;
 	margin: 2em auto;
 	padding: 2em 4em;
+}
+
+.fonts-loaded .whitepaper .entry {
+	font-family: $fonts-loaded-serif;
 }
 
 .whitepaper .entry-title {

@@ -141,7 +141,9 @@ tr.entry:before, tr.entry:after { clear: none; content: none; }
 ---------------------------------------------------------------------------------------------------- */
 /* ## Typographical Elements
 --------------------------------------------- */
-body { background-color: #fff; color: #46535e; font-family: "Lato", "open sans", Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.625; margin: 0; }
+body { background-color: #fff; color: #46535e; font-family: Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.625; margin: 0; }
+
+.fonts-loaded body { font-family: "Lato", "open sans", Arial, sans-serif; }
 
 a, button, input:focus, input[type="button"], input[type="reset"], input[type="submit"], textarea:focus, .button, .gallery img { -webkit-transition: all 0.1s ease-in-out; -moz-transition: all 0.1s ease-in-out; -ms-transition: all 0.1s ease-in-out; -o-transition: all 0.1s ease-in-out; transition: all 0.1s ease-in-out; }
 
@@ -194,7 +196,9 @@ blockquote cite::before { content: "\2014 "; }
 
 /* ## Headings
 --------------------------------------------- */
-h1, h2, h3, h4, h5, h6 { color: #46535e; font-family: "Lato", "open sans", Arial, sans-serif; font-weight: 700; line-height: 1.2; margin: 0 0 10px; }
+h1, h2, h3, h4, h5, h6 { color: #46535e; font-family: Arial, sans-serif; font-weight: 700; line-height: 1.2; margin: 0 0 10px; }
+
+.fonts-loaded h1, .fonts-loaded h2, .fonts-loaded h3, .fonts-loaded h4, .fonts-loaded h5, .fonts-loaded h6 { font-family: "Lato", "open sans", Arial, sans-serif; }
 
 h1 { font-size: 36px; }
 
@@ -608,7 +612,9 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .header-full-width .title-area { width: 100%; }
 
-.site-title { font-family: "source serif pro", "Georgia", "Times New Roman", serif; font-size: 42px; font-weight: 600; line-height: 1.2; }
+.site-title { font-family: Georgia, "Times New Roman", serif; font-size: 42px; font-weight: 600; line-height: 1.2; }
+
+.fonts-loaded .site-title { font-family: "source serif pro", Georgia, "Times New Roman", serif; }
 
 .site-title a, .site-title a:hover, .site-title a:focus { color: #fff; text-decoration: none; }
 
@@ -881,7 +887,9 @@ body.whitepaper .title-area { width: auto; max-width: 50em; float: none; margin:
 
 .whitepaper .site-inner { max-width: 50em; padding-top: 0; }
 
-.whitepaper .entry { background: #fff; font-family: "source serif pro", "Georgia", "Times New Roman", serif; margin: 2em auto; padding: 2em 4em; }
+.whitepaper .entry { background: #fff; font-family: Georgia, "Times New Roman", serif; margin: 2em auto; padding: 2em 4em; }
+
+.fonts-loaded .whitepaper .entry { font-family: "source serif pro", Georgia, "Times New Roman", serif; }
 
 .whitepaper .entry-title { margin-bottom: 1em; }
 
