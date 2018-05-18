@@ -312,6 +312,8 @@ p {
 	margin-top: 0;
 }
 
+th p,
+td p,
 .course-info p,
 .facility-link,
 .facility-phone,
@@ -795,6 +797,7 @@ td:before {
 .four-sixths,
 .one-fourth,
 .one-half,
+.one-fifth,
 .one-sixth,
 .one-third,
 .three-fourths,
@@ -828,6 +831,10 @@ td:before {
 
 .three-fourths {
 	width: 74.35897435897436%;
+}
+
+.one-fifth {
+	width: 17.94871794871794%;
 }
 
 .one-sixth {
@@ -1862,6 +1869,7 @@ p.entry-meta {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
+	margin-right: 2px;
 	padding: 8px 12px;
 	text-decoration: none;
 }

@@ -159,7 +159,7 @@ address, p { font-style: normal; margin: 28px 0; padding: 0; }
 
 .notitle .entry-content p:first-child { margin-top: 0; }
 
-.course-info p, .facility-link, .facility-phone, .facility-email, .job_title p, .bio-links, .bio-email, .bio-phone, .bio-links, .class-year, .class-major, .pub-author, .pub-date, .pub-link, .pub-citation, .student_type, .people .entry-content address, .facility .entry-content address { margin: 0; }
+th p, td p, .course-info p, .facility-link, .facility-phone, .facility-email, .job_title p, .bio-links, .bio-email, .bio-phone, .bio-links, .class-year, .class-major, .pub-author, .pub-date, .pub-link, .pub-citation, .student_type, .people .entry-content address, .facility .entry-content address { margin: 0; }
 
 .pub-details, .facility-details, .bio-details { margin-bottom: 28px; }
 
@@ -335,7 +335,7 @@ td:before { display: none; }
 /* ## Column Classes
 --------------------------------------------- */
 /* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
-.five-sixths, .four-sixths, .one-fourth, .one-half, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds { float: left; margin-left: 2.564102564102564%; }
+.five-sixths, .four-sixths, .one-fourth, .one-half, .one-fifth, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds { float: left; margin-left: 2.564102564102564%; }
 
 .one-half, .three-sixths, .two-fourths { width: 48.717948717948715%; }
 
@@ -346,6 +346,8 @@ td:before { display: none; }
 .one-fourth { width: 23.076923076923077%; }
 
 .three-fourths { width: 74.35897435897436%; }
+
+.one-fifth { width: 17.94871794871794%; }
 
 .one-sixth { width: 14.52991452991453%; }
 
@@ -757,7 +759,7 @@ p.entry-meta { font-size: 16px; margin-bottom: 24px; }
 
 .archive-pagination li { display: inline; }
 
-.archive-pagination li a { background-color: #00b0da; color: #fff; cursor: pointer; display: inline-block; font-size: 16px; padding: 8px 12px; text-decoration: none; }
+.archive-pagination li a { background-color: #00b0da; color: #fff; cursor: pointer; display: inline-block; font-size: 16px; margin-right: 2px; padding: 8px 12px; text-decoration: none; }
 
 .archive-pagination li a:hover, .archive-pagination li a:focus, .archive-pagination .active a { background-color: #3b7ea1; }
 
