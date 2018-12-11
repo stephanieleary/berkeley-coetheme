@@ -102,6 +102,7 @@ $fonts-loaded-sans:		"Lato", "open sans", Arial, sans-serif;
 $fonts-serif:			Georgia, "Times New Roman", serif;
 $fonts-loaded-serif:	"source serif pro", Georgia, "Times New Roman", serif;
 $standard-padding: 		16px 24px;
+$standard-padding-left: 24px;
 $widget-padding: 		24px 24px 16px;
 $form-padding: 			8px;
 $section-inset-shadow: 	inset 0px 0px 40px 0px rgba(0,0,0,0.5);
@@ -456,6 +457,10 @@ h2 {
 	font-size: 30px;
 }
 
+.subdivided h2.archive-title {
+	padding-left: $standard-padding-left;
+}
+
 h3 {
 	font-size: 24px;
 }
@@ -668,6 +673,10 @@ table {
 	line-height: 2;
 	margin-bottom: 40px;
 	width: 100%;
+}
+
+.archive .loop {
+	padding-left: $standard-padding-left;
 }
 
 tbody {
