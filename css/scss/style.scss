@@ -1757,11 +1757,12 @@ input.gsc-input {
 .entry,
 .entry.sticky,
 .entry.sticky.has-post-thumbnail,
-.after-entry.widget-area {
+.after-entry.widget-area,
+h2.archive-subtitle {
 	padding: $standard-padding;
 }
 
-.entry.has-post-thumbnail {
+.content_archive_thumbnails_on .entry.has-post-thumbnail {
 	padding-top: 0;
 }
 
@@ -1812,6 +1813,11 @@ input.gsc-input {
 
 .archive .entry-content p {
 	margin-bottom: 0;
+}
+
+.archive .excerpt-pre,
+.archive .excerpt-post {
+	margin: 0;
 }
 
 .single-people .entry-content .wp-post-image {
