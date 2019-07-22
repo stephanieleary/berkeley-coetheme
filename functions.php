@@ -8,7 +8,7 @@ include_once( get_stylesheet_directory() . '/inc/header.php' );
 define( 'CHILD_THEME_NAME', 'Berkeley CoE Theme' );
 define( 'CHILD_THEME_URL', 'http://www.stephanieleary.com/' );
 // based on Genesis version:
-define( 'CHILD_THEME_VERSION', '2.4.2' ); 
+define( 'CHILD_THEME_VERSION', '3.0.2' ); 
 
 // Content Width
 if ( ! isset( $content_width ) )

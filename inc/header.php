@@ -52,7 +52,7 @@ function berkeley_header_image() {
 // Berkeley Logo
 
 function berkeley_logo_display() {
-	$logo = genesis_get_option( 'be_logo' );
+	$logo = get_option( 'genesis_be_show_logo' );
 	if ( $logo ) {
 		$path = get_stylesheet_directory_uri() . '/images/';
 		if ( is_page_template( 'page_whitepaper.php' ) )
@@ -104,7 +104,7 @@ function berkeley_hide_home_title() {
 	if ( !is_front_page() )
 		return;
 	
-	$hide_title	= genesis_get_option( 'hide_home_title' );
+	$hide_title	= get_option( 'genesis_be_hide_title' );
 	if ( !$hide_title )
 		return;
 		
