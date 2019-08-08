@@ -25,9 +25,9 @@ function berkeley_theme_fonts_url() {
 }
 
 // Theme Setup
-add_action( 'after_setup_theme', 'berkeley_setup_theme', 5 );
+add_action( 'after_setup_theme', 'berkeley_eng_setup_theme', 5 );
 
-function berkeley_setup_theme() {
+function berkeley_eng_setup_theme() {
 	add_image_size( 'berkeley-small', 300, 300 );  // see also inc/image-sizes.php
 	remove_theme_support( 'genesis-custom-header' );
 	add_theme_support( 'genesis-style-selector', berkeley_get_colors() );
@@ -66,7 +66,7 @@ function berkeley_setup_theme() {
         'flex-width'         => true,
         'flex-height'        => true,
 		'random-default'	 => false,
-		'wp-head-callback'	 => 'berkeley_header_body_classes',
+		'wp-head-callback'	 => 'berkeley_eng_header_body_classes',
     );
     add_theme_support( 'custom-header', $headers );
 	add_theme_support( 'title-tag' );
@@ -107,8 +107,8 @@ function berkeley_get_color_stylesheet( $color ) {
 
 // Add scripts
 
-add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
-function berkeley_settings_admin_styles( $hook ) {
+add_action( 'admin_enqueue_scripts', 'berkeley_theme_settings_admin_styles', 99 );
+function berkeley_theme_settings_admin_styles( $hook ) {
 	if ( !in_array( $hook, array( 'edit.php', 'post.php', 'post-new.php', 'toplevel_page_genesis', 'widgets.php' ) ) )
 		return;
 		
@@ -116,8 +116,8 @@ function berkeley_settings_admin_styles( $hook ) {
 	add_editor_style( berkeley_theme_fonts_url() );
 }
 
-add_action( 'wp_enqueue_scripts', 'berkeley_enqueue_files', 1 );
-function berkeley_enqueue_files() {
+add_action( 'wp_enqueue_scripts', 'berkeley_theme_enqueue_files', 1 );
+function berkeley_theme_enqueue_files() {
 	// Enqueue external fonts and FontFaceObserver lazy loader
 	$font_files = berkeley_theme_fonts_url();
 	wp_enqueue_style( 'fonts-open-sans', $font_files['open-sans'], array(), null );
@@ -147,8 +147,8 @@ function berkeley_enqueue_files() {
 }
 
 // Add menu toggle buttons with specific IDs
-add_action( 'genesis_after_header', 'berkeley_menu_buttons', 99 );
-function berkeley_menu_buttons() {
+add_action( 'genesis_after_header', 'berkeley_theme_menu_buttons', 99 );
+function berkeley_theme_menu_buttons() {
 	if ( has_nav_menu( 'primary' ) )
 		echo '<button id="primary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Menu', 'berkeley-coe-theme' ).'</button>';
 	if ( has_nav_menu( 'secondary' ) )

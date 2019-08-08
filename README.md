@@ -5,6 +5,7 @@ Github project link: https://github.com/sillybean/berkeley-coetheme
 
 ## Changelog
 
+* 2.1: Rename some functions to avoid collisions; remove obsolete a11y replacement for genesis_do_nav()
 * 2.0: Move logical functions from theme to plugin in order to use them across other Genesis-based themes. Genesis 3 compatibility.
 * 1.6.3: https for engineering.berkeley.edu links
 * 1.6.2: Remove student_type taxonomy from post_meta and excerpt content filters
