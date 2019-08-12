@@ -5,9 +5,9 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.6.3
+Version: 2.1
 Template: genesis  
-Template Version: 2.5.2
+Template Version: 3.0.2
 Text Domain: berkeley-coe-theme
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -141,7 +141,9 @@ tr.entry:before, tr.entry:after { clear: none; content: none; }
 ---------------------------------------------------------------------------------------------------- */
 /* ## Typographical Elements
 --------------------------------------------- */
-body { background-color: #fff; color: #46535e; font-family: "Lato", "open sans", Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.625; margin: 0; }
+body { background-color: #fff; color: #46535e; font-family: Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.625; margin: 0; }
+
+.fonts-loaded body { font-family: "Lato", "open sans", Arial, sans-serif; }
 
 a, button, input:focus, input[type="button"], input[type="reset"], input[type="submit"], textarea:focus, .button, .gallery img { -webkit-transition: all 0.1s ease-in-out; -moz-transition: all 0.1s ease-in-out; -ms-transition: all 0.1s ease-in-out; -o-transition: all 0.1s ease-in-out; transition: all 0.1s ease-in-out; }
 
@@ -157,7 +159,7 @@ address, p { font-style: normal; margin: 28px 0; padding: 0; }
 
 .notitle .entry-content p:first-child { margin-top: 0; }
 
-.course-info p, .facility-link, .facility-phone, .facility-email, .job_title p, .bio-links, .bio-email, .bio-phone, .bio-links, .class-year, .class-major, .pub-author, .pub-date, .pub-link, .pub-citation, .student_type, .people .entry-content address, .facility .entry-content address { margin: 0; }
+th p, td p, .course-info p, .facility-link, .facility-phone, .facility-email, .job_title p, .bio-links, .bio-email, .bio-phone, .bio-links, .class-year, .class-major, .pub-author, .pub-date, .pub-link, .pub-citation, .student_type, .people .entry-content address, .facility .entry-content address { margin: 0; }
 
 .pub-details, .facility-details, .bio-details { margin-bottom: 28px; }
 
@@ -194,11 +196,15 @@ blockquote cite::before { content: "\2014 "; }
 
 /* ## Headings
 --------------------------------------------- */
-h1, h2, h3, h4, h5, h6 { color: #46535e; font-family: "Lato", "open sans", Arial, sans-serif; font-weight: 700; line-height: 1.2; margin: 0 0 10px; }
+h1, h2, h3, h4, h5, h6 { color: #46535e; font-family: Arial, sans-serif; font-weight: 700; line-height: 1.2; margin: 0 0 10px; }
+
+.fonts-loaded h1, .fonts-loaded h2, .fonts-loaded h3, .fonts-loaded h4, .fonts-loaded h5, .fonts-loaded h6 { font-family: "Lato", "open sans", Arial, sans-serif; }
 
 h1 { font-size: 36px; }
 
 h2 { font-size: 30px; }
+
+.subdivided h2.archive-title { padding-left: 24px; }
 
 h3 { font-size: 24px; }
 
@@ -278,6 +284,8 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 --------------------------------------------- */
 table { background-color: #fff; border-collapse: collapse; border-spacing: 0; line-height: 2; margin-bottom: 40px; width: 100%; }
 
+.archive .loop { padding-left: 24px; }
+
 tbody { border-bottom: 1px solid #c0dae8; }
 
 td, th { text-align: left; border-top: 1px solid #c0dae8; padding: .5em 1em .5em .5em; vertical-align: top; }
@@ -331,7 +339,7 @@ td:before { display: none; }
 /* ## Column Classes
 --------------------------------------------- */
 /* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
-.five-sixths, .four-sixths, .one-fourth, .one-half, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds { float: left; margin-left: 2.564102564102564%; }
+.five-sixths, .four-sixths, .one-fourth, .one-half, .one-fifth, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds { float: left; margin-left: 2.564102564102564%; }
 
 .one-half, .three-sixths, .two-fourths { width: 48.717948717948715%; }
 
@@ -342,6 +350,8 @@ td:before { display: none; }
 .one-fourth { width: 23.076923076923077%; }
 
 .three-fourths { width: 74.35897435897436%; }
+
+.one-fifth { width: 17.94871794871794%; }
 
 .one-sixth { width: 14.52991452991453%; }
 
@@ -608,7 +618,9 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 
 .header-full-width .title-area { width: 100%; }
 
-.site-title { font-family: "source serif pro", "Georgia", "Times New Roman", serif; font-size: 42px; font-weight: 600; line-height: 1.2; }
+.site-title { font-family: Georgia, "Times New Roman", serif; font-size: 42px; font-weight: 600; line-height: 1.2; }
+
+.fonts-loaded .site-title { font-family: "source serif pro", Georgia, "Times New Roman", serif; }
 
 .site-title a, .site-title a:hover, .site-title a:focus { color: #fff; text-decoration: none; }
 
@@ -704,9 +716,9 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 ---------------------------------------------------------------------------------------------------- */
 /* ## Entries
 --------------------------------------------- */
-.entry, .entry.sticky, .entry.sticky.has-post-thumbnail, .after-entry.widget-area { padding: 16px 24px; }
+.entry, .entry.sticky, .entry.sticky.has-post-thumbnail, .after-entry.widget-area, h2.archive-subtitle { padding: 16px 24px; }
 
-.entry.has-post-thumbnail { padding-top: 0; }
+.content_archive_thumbnails_on .entry.has-post-thumbnail { padding-top: 0; }
 
 /* .stickies .entry.sticky, .content .loop { margin-left: 24px; } /**/
 .content .entry { background-color: #fff; margin-bottom: 1em; -ms-word-wrap: break-word; word-wrap: break-word; }
@@ -724,6 +736,8 @@ input.gsc-input { height: auto !important; padding: 8px !important; }
 .entry-content code { background-color: #46535e; color: #eee; }
 
 .archive .entry-content p { margin-bottom: 0; }
+
+.archive .excerpt-pre, .archive .excerpt-post { margin: 0; }
 
 .single-people .entry-content .wp-post-image { float: right; margin: 0 0 1em 1em; }
 
@@ -751,7 +765,7 @@ p.entry-meta { font-size: 16px; margin-bottom: 24px; }
 
 .archive-pagination li { display: inline; }
 
-.archive-pagination li a { background-color: #00b0da; color: #fff; cursor: pointer; display: inline-block; font-size: 16px; padding: 8px 12px; text-decoration: none; }
+.archive-pagination li a { background-color: #00b0da; color: #fff; cursor: pointer; display: inline-block; font-size: 16px; margin-right: 2px; padding: 8px 12px; text-decoration: none; }
 
 .archive-pagination li a:hover, .archive-pagination li a:focus, .archive-pagination .active a { background-color: #3b7ea1; }
 
@@ -881,7 +895,9 @@ body.whitepaper .title-area { width: auto; max-width: 50em; float: none; margin:
 
 .whitepaper .site-inner { max-width: 50em; padding-top: 0; }
 
-.whitepaper .entry { background: #fff; font-family: "source serif pro", "Georgia", "Times New Roman", serif; margin: 2em auto; padding: 2em 4em; }
+.whitepaper .entry { background: #fff; font-family: Georgia, "Times New Roman", serif; margin: 2em auto; padding: 2em 4em; }
+
+.fonts-loaded .whitepaper .entry { font-family: "source serif pro", Georgia, "Times New Roman", serif; }
 
 .whitepaper .entry-title { margin-bottom: 1em; }
 

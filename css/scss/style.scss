@@ -5,9 +5,9 @@ GitHub Theme URI: https://github.com/sillybean/berkeley-coetheme
 Description: This is the Berkeley College of Engineering theme based on the Genesis Framework.   
 Author: Stephanie Leary  
 Author URI: http://www.stephanieleary.com/  
-Version: 1.6.3
+Version: 2.1
 Template: genesis  
-Template Version: 2.5.2
+Template Version: 3.0.2
 Text Domain: berkeley-coe-theme
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -97,9 +97,12 @@ $light-gray:			#eee;
 $med-gray:				#888;
 $dark-gray: 			#333;
 $super-light-gray:		#f0f0f0;
-$fonts-sans:			"Lato", "open sans", Arial, sans-serif;
-$fonts-serif:			"source serif pro", "Georgia", "Times New Roman", serif;
+$fonts-sans:			Arial, sans-serif;
+$fonts-loaded-sans:		"Lato", "open sans", Arial, sans-serif;
+$fonts-serif:			Georgia, "Times New Roman", serif;
+$fonts-loaded-serif:	"source serif pro", Georgia, "Times New Roman", serif;
 $standard-padding: 		16px 24px;
+$standard-padding-left: 24px;
 $widget-padding: 		24px 24px 16px;
 $form-padding: 			8px;
 $section-inset-shadow: 	inset 0px 0px 40px 0px rgba(0,0,0,0.5);
@@ -258,6 +261,10 @@ body {
 	margin: 0;
 }
 
+.fonts-loaded body {
+	font-family: $fonts-loaded-sans;
+}
+
 a,
 button,
 input:focus,
@@ -306,6 +313,8 @@ p {
 	margin-top: 0;
 }
 
+th p,
+td p,
 .course-info p,
 .facility-link,
 .facility-phone,
@@ -427,17 +436,17 @@ blockquote cite::before {
 /* ## Headings
 --------------------------------------------- */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
 	color: $pacific;
 	font-family: $fonts-sans;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0 0 10px;
+}
+
+.fonts-loaded h1, .fonts-loaded h2, .fonts-loaded h3,
+.fonts-loaded h4, .fonts-loaded h5, .fonts-loaded h6 {
+	font-family: $fonts-loaded-sans;
 }
 
 h1 {
@@ -446,6 +455,10 @@ h1 {
 
 h2 {
 	font-size: 30px;
+}
+
+.subdivided h2.archive-title {
+	padding-left: $standard-padding-left;
 }
 
 h3 {
@@ -662,6 +675,10 @@ table {
 	width: 100%;
 }
 
+.archive .loop {
+	padding-left: $standard-padding-left;
+}
+
 tbody {
 	border-bottom: 1px solid lighten($founders-rock, 40%);
 }
@@ -789,6 +806,7 @@ td:before {
 .four-sixths,
 .one-fourth,
 .one-half,
+.one-fifth,
 .one-sixth,
 .one-third,
 .three-fourths,
@@ -822,6 +840,10 @@ td:before {
 
 .three-fourths {
 	width: 74.35897435897436%;
+}
+
+.one-fifth {
+	width: 17.94871794871794%;
 }
 
 .one-sixth {
@@ -1465,6 +1487,10 @@ input.gsc-input {
 	line-height: 1.2;
 }
 
+.fonts-loaded .site-title {
+	font-family: $fonts-loaded-serif;
+}
+
 .site-title a,
 .site-title a:hover,
 .site-title a:focus {
@@ -1731,11 +1757,12 @@ input.gsc-input {
 .entry,
 .entry.sticky,
 .entry.sticky.has-post-thumbnail,
-.after-entry.widget-area {
+.after-entry.widget-area,
+h2.archive-subtitle {
 	padding: $standard-padding;
 }
 
-.entry.has-post-thumbnail {
+.content_archive_thumbnails_on .entry.has-post-thumbnail {
 	padding-top: 0;
 }
 
@@ -1786,6 +1813,11 @@ input.gsc-input {
 
 .archive .entry-content p {
 	margin-bottom: 0;
+}
+
+.archive .excerpt-pre,
+.archive .excerpt-post {
+	margin: 0;
 }
 
 .single-people .entry-content .wp-post-image {
@@ -1852,6 +1884,7 @@ p.entry-meta {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
+	margin-right: 2px;
 	padding: 8px 12px;
 	text-decoration: none;
 }
@@ -2199,6 +2232,10 @@ body.whitepaper .title-area {
 	font-family: $fonts-serif;
 	margin: 2em auto;
 	padding: 2em 4em;
+}
+
+.fonts-loaded .whitepaper .entry {
+	font-family: $fonts-loaded-serif;
 }
 
 .whitepaper .entry-title {

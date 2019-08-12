@@ -1,24 +1,14 @@
 <?php
 // Start the engine
 include_once( get_template_directory() 	 . '/lib/init.php' );
-include_once( get_stylesheet_directory() . '/inc/announcements.php' );
-include_once( get_stylesheet_directory() . '/inc/content-filters.php' );
 include_once( get_stylesheet_directory() . '/inc/customizer.php' );
-include_once( get_stylesheet_directory() . '/inc/editor.php' );
-include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/inc/header.php' );
-include_once( get_stylesheet_directory() . '/inc/image-sizes.php' );
-include_once( get_stylesheet_directory() . '/inc/loops.php' );
-include_once( get_stylesheet_directory() . '/inc/metaboxes.php' );
-include_once( get_stylesheet_directory() . '/inc/sidebars.php' );
-include_once( get_stylesheet_directory() . '/inc/theme-options.php' );
-include_once( get_stylesheet_directory() . '/inc/widgets.php' );
 
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Berkeley CoE Theme' );
 define( 'CHILD_THEME_URL', 'http://www.stephanieleary.com/' );
 // based on Genesis version:
-define( 'CHILD_THEME_VERSION', '2.4.2' ); 
+define( 'CHILD_THEME_VERSION', '3.0.2' ); 
 
 // Content Width
 if ( ! isset( $content_width ) )
@@ -26,46 +16,18 @@ if ( ! isset( $content_width ) )
 
 // Add Fonts
 function berkeley_theme_fonts_url() {
-	$fonts_url = '';
- 
-	/* Translators: If there are characters in your language that are not
-	* supported by Lora, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$lato = _x( 'on', 'Lato font: on or off', 'berkeley-coe-theme' );
- 
-	/* Translators: If there are characters in your language that are not
-	* supported by Open Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$source_serif = _x( 'on', 'Source Serif font: on or off', 'berkeley-coe-theme' );
- 
-	if ( 'off' !== $lato || 'off' !== $source_serif ) {
-		$font_families = array();
- 
-		if ( 'off' !== $lato ) {
-			$font_families[] = 'Lato:400,400italic,700,700italic';
-		}
- 
-		if ( 'off' !== $source_serif ) {
-			$font_families[] = 'Source+Serif+Pro:400,700';
-		}
- 
-		$query_args = array(
-			'family' => implode( '|', $font_families ),
-			'subset' => 'latin,latin-ext',
-		);
- 
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
- 
-	return esc_url_raw( $fonts_url );
+ 	$urls = array(
+		'open-sans' => 'https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,700,700italic&subset=latin,latin-ext',
+		'lato' => 'https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic&subset=latin,latin-ext',
+		'source-serif' => 'https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700&subset=latin,latin-ext',
+	);
+	return $urls;
 }
 
 // Theme Setup
-add_action( 'after_setup_theme', 'berkeley_setup_theme', 5 );
+add_action( 'after_setup_theme', 'berkeley_eng_setup_theme', 5 );
 
-function berkeley_setup_theme() {
+function berkeley_eng_setup_theme() {
 	add_image_size( 'berkeley-small', 300, 300 );  // see also inc/image-sizes.php
 	remove_theme_support( 'genesis-custom-header' );
 	add_theme_support( 'genesis-style-selector', berkeley_get_colors() );
@@ -104,7 +66,7 @@ function berkeley_setup_theme() {
         'flex-width'         => true,
         'flex-height'        => true,
 		'random-default'	 => false,
-		'wp-head-callback'	 => 'berkeley_header_body_classes',
+		'wp-head-callback'	 => 'berkeley_eng_header_body_classes',
     );
     add_theme_support( 'custom-header', $headers );
 	add_theme_support( 'title-tag' );
@@ -145,19 +107,25 @@ function berkeley_get_color_stylesheet( $color ) {
 
 // Add scripts
 
-add_action( 'admin_enqueue_scripts', 'berkeley_settings_admin_styles', 99 );
-function berkeley_settings_admin_styles( $hook ) {
+add_action( 'admin_enqueue_scripts', 'berkeley_theme_settings_admin_styles', 99 );
+function berkeley_theme_settings_admin_styles( $hook ) {
 	if ( !in_array( $hook, array( 'edit.php', 'post.php', 'post-new.php', 'toplevel_page_genesis', 'widgets.php' ) ) )
 		return;
 		
     wp_enqueue_style( 'berkeley-admin-css', get_stylesheet_directory_uri() . '/css/admin-style.css' );
+	add_editor_style( berkeley_theme_fonts_url() );
 }
 
-add_action( 'wp_enqueue_scripts', 'berkeley_enqueue_files', 1 );
-function berkeley_enqueue_files() {
-	// Enqueue fonts
-	wp_enqueue_style( 'berkeley-coetheme-fonts', berkeley_theme_fonts_url(), array(), null );
-		
+add_action( 'wp_enqueue_scripts', 'berkeley_theme_enqueue_files', 1 );
+function berkeley_theme_enqueue_files() {
+	// Enqueue external fonts and FontFaceObserver lazy loader
+	$font_files = berkeley_theme_fonts_url();
+	wp_enqueue_style( 'fonts-open-sans', $font_files['open-sans'], array(), null );
+	wp_enqueue_style( 'fonts-lato', $font_files['lato'], array(), null );
+	wp_enqueue_style( 'fonts-source-serif', $font_files['source-serif'], array(), null );
+	wp_enqueue_script( 'fontfaceobserver', get_stylesheet_directory_uri() . "/js/fontfaceobserver.standalone.js", false, CHILD_THEME_VERSION, false );
+	wp_enqueue_script( 'berkeley-font-loader', get_stylesheet_directory_uri() . "/js/fonts.js", 'fontfaceobserver', CHILD_THEME_VERSION, false );
+
 	// Enqueue responsive menu script
 	wp_enqueue_script( 'berkeley-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 	
@@ -179,8 +147,8 @@ function berkeley_enqueue_files() {
 }
 
 // Add menu toggle buttons with specific IDs
-add_action( 'genesis_after_header', 'berkeley_menu_buttons', 99 );
-function berkeley_menu_buttons() {
+add_action( 'genesis_after_header', 'berkeley_theme_menu_buttons', 99 );
+function berkeley_theme_menu_buttons() {
 	if ( has_nav_menu( 'primary' ) )
 		echo '<button id="primary-toggle" class="menu-toggle" role="button" aria-pressed="false">'.esc_html__( 'Menu', 'berkeley-coe-theme' ).'</button>';
 	if ( has_nav_menu( 'secondary' ) )
